@@ -160,7 +160,108 @@ const patternExtraction: TestCase = {
   },
 };
 
+/**
+ * Over time, specific episodic details should fade while the gist persists.
+ * "Tuesday at 2pm Mike said he likes dark mode" → eventually just
+ * "Mike prefers dark mode."
+ *
+ * This mirrors the hippocampal-to-neocortical transfer in CLS theory:
+ * hippocampus stores episodes rapidly, neocortex extracts the semantic core.
+ */
+const episodicToSemantic: TestCase = {
+  id: 'consolidation-episodic-semantic',
+  name: 'Episodic → semantic degradation',
+  category: 'consolidation',
+  description: 'Episodic details should fade while semantic core persists after consolidation',
+
+  async run(adapter: MemoryAdapter): Promise<TestResult> {
+    const start = Date.now();
+
+    if (!adapter.consolidate) {
+      return {
+        testId: 'consolidation-episodic-semantic',
+        score: 0,
+        passed: false,
+        details: 'System does not support consolidation',
+        durationMs: Date.now() - start,
+      };
+    }
+
+    // Store episodic memories with specific contextual details
+    await adapter.store({
+      content: 'During the Tuesday 2pm sprint review on Jan 14, Mike said he strongly prefers dark mode in all his editors',
+    });
+    await adapter.store({
+      content: 'At the Friday lunch on Jan 17, over tacos, Mike mentioned he always uses Vim keybindings',
+    });
+    await adapter.store({
+      content: 'In the Monday morning Slack thread on Jan 20, Mike wrote that he thinks tabs are better than spaces',
+    });
+
+    // Consolidate (simulating the passage of time / sleep cycles)
+    await adapter.consolidate();
+
+    // If time simulation is available, age them further
+    if (adapter.advanceTime) {
+      await adapter.advanceTime(60 * 24 * 3600); // 60 days
+      if (adapter.consolidate) await adapter.consolidate();
+    }
+
+    // The semantic core should survive
+    const darkMode = await adapter.recall('dark mode editor preference', 5);
+    const vim = await adapter.recall('vim keybindings', 5);
+    const tabs = await adapter.recall('tabs spaces indentation', 5);
+
+    const hasDarkMode = darkMode.some(r => r.content.toLowerCase().includes('dark mode'));
+    const hasVim = vim.some(r => r.content.toLowerCase().includes('vim'));
+    const hasTabs = tabs.some(r => r.content.toLowerCase().includes('tab'));
+
+    const semanticSurvived = [hasDarkMode, hasVim, hasTabs].filter(Boolean).length;
+
+    // Check if episodic details have been stripped
+    const allResults = [...darkMode, ...vim, ...tabs];
+    const episodicDetails = allResults.filter(r =>
+      r.content.includes('Tuesday 2pm') ||
+      r.content.includes('Friday lunch') ||
+      r.content.includes('over tacos') ||
+      r.content.includes('Monday morning Slack') ||
+      r.content.includes('Jan 14') ||
+      r.content.includes('Jan 17') ||
+      r.content.includes('Jan 20'),
+    );
+
+    let score = 0;
+    const details: string[] = [];
+
+    // Semantic cores survive: 0.6
+    score += (semanticSurvived / 3) * 0.6;
+    details.push(`Semantic cores: ${semanticSurvived}/3 survived`);
+
+    // Episodic details stripped: 0.4
+    if (episodicDetails.length === 0 && semanticSurvived > 0) {
+      score += 0.4;
+      details.push('Episodic details stripped — true semantic extraction');
+    } else if (episodicDetails.length < allResults.length && semanticSurvived > 0) {
+      score += 0.2;
+      details.push('Some episodic details remain');
+    } else if (semanticSurvived > 0) {
+      // Still gave the right answer, just didn't strip details — partial credit
+      score += 0.1;
+      details.push('All episodic details retained (no degradation)');
+    }
+
+    return {
+      testId: 'consolidation-episodic-semantic',
+      score: Math.min(1.0, score),
+      passed: score >= 0.5,
+      details: details.join(' | '),
+      durationMs: Date.now() - start,
+    };
+  },
+};
+
 export const consolidationTests: TestCase[] = [
   redundancyMerge,
   patternExtraction,
+  episodicToSemantic,
 ];

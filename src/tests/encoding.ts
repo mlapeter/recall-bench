@@ -127,8 +127,112 @@ const fuzzyEncoding: TestCase = {
   },
 };
 
+/**
+ * Emotionally significant memories should be encoded more strongly
+ * and recalled more readily than neutral ones.
+ *
+ * In neuroscience: amygdala activation during emotional events enhances
+ * hippocampal consolidation, producing stronger, more vivid memories.
+ * A memory system that treats "Mike's dog died" the same as "updated
+ * dependencies" is missing something fundamental.
+ */
+const emotionalEncodingAsymmetry: TestCase = {
+  id: 'encoding-emotional-asymmetry',
+  name: 'Emotional encoding asymmetry',
+  category: 'encoding',
+  description: 'Emotionally significant memories should be recalled more readily than neutral ones',
+
+  async run(adapter: MemoryAdapter): Promise<TestResult> {
+    const start = Date.now();
+
+    // Store a mix — 3 neutral, 3 emotionally charged
+    // Interleave them so position doesn't create a bias
+    await adapter.store({ content: 'Updated the linting config to use flat ESLint config' });
+    await adapter.store({
+      content: 'Mike shared that his father passed away last year — still processing it',
+      tags: ['personal', 'relationship'],
+    });
+    await adapter.store({ content: 'Bumped Node version from 20 to 22 in CI' });
+    await adapter.store({
+      content: 'We had an incredible breakthrough — the memory system finally clicked and Mike was genuinely thrilled',
+      tags: ['relationship', 'insight'],
+    });
+    await adapter.store({ content: 'Refactored the logger to use structured output' });
+    await adapter.store({
+      content: 'Mike is worried about running out of money before the startup gets traction',
+      tags: ['personal', 'business'],
+    });
+
+    // Query with emotional resonance
+    const griefResults = await adapter.recall('loss family grief', 5);
+    const joyResults = await adapter.recall('excitement breakthrough celebration', 5);
+    const worryResults = await adapter.recall('financial stress anxiety', 5);
+
+    // Query neutrally — emotional memories shouldn't drown out everything
+    const techResults = await adapter.recall('linting ESLint configuration', 3);
+
+    const foundGrief = griefResults.some(r => r.content.includes('father passed'));
+    const foundJoy = joyResults.some(r => r.content.includes('breakthrough') || r.content.includes('thrilled'));
+    const foundWorry = worryResults.some(r => r.content.includes('money') || r.content.includes('startup'));
+    const foundTech = techResults.some(r => r.content.includes('linting') || r.content.includes('ESLint'));
+
+    const emotionalFound = [foundGrief, foundJoy, foundWorry].filter(Boolean).length;
+
+    let score = 0;
+    const details: string[] = [];
+
+    // Primary: can we retrieve emotionally charged memories?
+    score += (emotionalFound / 3) * 0.6;
+    details.push(`Emotional recall: ${emotionalFound}/3`);
+
+    // Secondary: neutral tech memories still accessible (no emotional flooding)
+    if (foundTech) {
+      score += 0.2;
+      details.push('Neutral memories still accessible');
+    } else {
+      details.push('Neutral memories lost (emotional flooding)');
+    }
+
+    // Tertiary: check if emotional memories rank higher in a mixed query
+    const mixedResults = await adapter.recall('what has been happening lately', 6);
+    if (mixedResults.length >= 2) {
+      // In the top 3, are emotional memories more represented?
+      const top3 = mixedResults.slice(0, 3);
+      const emotionalInTop3 = top3.filter(r =>
+        r.content.includes('father') ||
+        r.content.includes('breakthrough') ||
+        r.content.includes('money'),
+      ).length;
+      const neutralInTop3 = top3.filter(r =>
+        r.content.includes('linting') ||
+        r.content.includes('Node version') ||
+        r.content.includes('logger'),
+      ).length;
+
+      if (emotionalInTop3 > neutralInTop3) {
+        score += 0.2;
+        details.push('Emotional memories prioritized in mixed recall');
+      } else if (emotionalInTop3 === neutralInTop3) {
+        score += 0.1;
+        details.push('Equal emotional/neutral priority in mixed recall');
+      } else {
+        details.push('Neutral memories outranked emotional in mixed recall');
+      }
+    }
+
+    return {
+      testId: 'encoding-emotional-asymmetry',
+      score: Math.min(1.0, score),
+      passed: score >= 0.5,
+      details: details.join(' | '),
+      durationMs: Date.now() - start,
+    };
+  },
+};
+
 export const encodingTests: TestCase[] = [
   tagBasedRetrieval,
   salienceDiscrimination,
   fuzzyEncoding,
+  emotionalEncodingAsymmetry,
 ];

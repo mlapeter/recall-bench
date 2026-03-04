@@ -11,8 +11,8 @@
 
 import { allTests } from './tests/index.js';
 import { runBenchmark, formatReport } from './runner/index.js';
-import { NaiveAdapter } from './adapters/index.js';
-import type { BenchmarkConfig, TestCategory } from './types/index.js';
+import { NaiveAdapter, EngramAdapter } from './adapters/index.js';
+import type { BenchmarkConfig, MemoryAdapter, TestCategory } from './types/index.js';
 
 const args = process.argv.slice(2);
 
@@ -32,14 +32,20 @@ async function main() {
   const categoryArg = getArg('category');
 
   // Select adapter
-  let adapter;
+  let adapter: MemoryAdapter;
   switch (adapterName) {
     case 'naive':
       adapter = new NaiveAdapter();
       break;
+    case 'engram':
+      adapter = new EngramAdapter({
+        engramPath: getArg('engram-path'),
+        tempDataDir: '/tmp/recall-bench-engram',
+      });
+      break;
     default:
       console.error(`Unknown adapter: ${adapterName}`);
-      console.error('Available adapters: naive');
+      console.error('Available adapters: naive, engram');
       process.exit(1);
   }
 
