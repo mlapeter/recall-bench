@@ -172,6 +172,22 @@ export class EngramAdapter implements MemoryAdapter {
     }));
   }
 
+  async searchByTag(tags: string[], limit = 10): Promise<RecalledMemory[]> {
+    await this.ensureReady();
+    const all = await this._engram.loadAll();
+    return all
+      .filter(m => tags.some(t => m.tags.includes(t)))
+      .sort((a, b) => this._calcStrength(b) - this._calcStrength(a))
+      .slice(0, limit)
+      .map(m => ({
+        id: m.id,
+        content: m.content,
+        strength: this._calcStrength(m),
+        tags: m.tags,
+        matchType: 'fuzzy' as const,
+      }));
+  }
+
   async reinforce(memoryId: string): Promise<void> {
     await this.ensureReady();
     const all = await this._engram.loadAll();

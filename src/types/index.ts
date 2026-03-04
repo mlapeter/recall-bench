@@ -29,6 +29,9 @@ export interface MemoryAdapter {
   /** Trigger consolidation (if supported) */
   consolidate?(): Promise<void>;
 
+  /** Search by tags (if supported) */
+  searchByTag?(tags: string[], limit?: number): Promise<RecalledMemory[]>;
+
   /** Get memory by ID (if supported) */
   get?(memoryId: string): Promise<StoredMemory | null>;
 

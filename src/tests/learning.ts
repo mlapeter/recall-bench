@@ -1,159 +1,246 @@
 /**
  * L — Learning Tests
  *
- * Tests higher-order memory capabilities: cross-domain transfer,
- * relationship memory, and metacognition/self-knowledge.
+ * Tests higher-order learning capabilities: accumulation of knowledge
+ * over time, behavioral adaptation, and transfer between contexts.
+ * These should NOT be passable by systems that just have good search.
  */
 
 import type { MemoryAdapter, TestCase, TestResult } from '../types/index.js';
 
-/** System should connect knowledge across different domains */
-const crossDomainTransfer: TestCase = {
-  id: 'learning-cross-domain',
-  name: 'Cross-domain transfer',
+/**
+ * Frequency-based learning.
+ *
+ * When the same type of information appears repeatedly, the system
+ * should learn to weight it higher — even without explicit reinforcement.
+ * This tests whether storing many related memories creates an implicit
+ * "this topic matters" signal, not just more search results.
+ */
+const frequencyBasedLearning: TestCase = {
+  id: 'learning-frequency',
+  name: 'Frequency-based learning',
   category: 'learning',
-  description: 'System should surface related memories from different domains',
+  description: 'Repeatedly stored topics should gain implicit importance over one-off mentions',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store memories from different domains that share a theme
-    await adapter.store({
-      content: 'Mike approaches debugging by narrowing down the problem space systematically',
-      tags: ['technical', 'pattern'],
-    });
-    await adapter.store({
-      content: 'When cooking, Mike always reads the full recipe before starting',
-      tags: ['personal', 'pattern'],
-    });
-    await adapter.store({
-      content: 'Mike plans road trips by eliminating routes, not picking favorites',
-      tags: ['personal', 'pattern'],
-    });
+    // Store 8 memories about database issues (recurring theme)
+    const dbMemories = [
+      'Database connection pool exhausted during peak hours',
+      'Database query timeout on the reports endpoint',
+      'Database migration failed on staging, had to rollback',
+      'Database index missing on users.email caused slow lookups',
+      'Database replication lag hit 30 seconds during deploy',
+      'Database deadlock in payment processing transactions',
+      'Database backup job failed silently for 3 days',
+      'Database schema drift between staging and production',
+    ];
 
-    // Query about problem-solving approach — should find the pattern across domains
-    const results = await adapter.recall('how does Mike approach problems', 5);
+    for (const content of dbMemories) {
+      await adapter.store({ content });
+    }
 
-    const foundDebugging = results.some(r => r.content.includes('debugging'));
-    const foundCooking = results.some(r => r.content.includes('cooking') || r.content.includes('recipe'));
-    const foundTrips = results.some(r => r.content.includes('road trips') || r.content.includes('routes'));
+    // Store 1 memory each about other topics
+    await adapter.store({ content: 'Updated the landing page hero image' });
+    await adapter.store({ content: 'Reviewed pull request for the settings page' });
 
-    const domainsFound = [foundDebugging, foundCooking, foundTrips].filter(Boolean).length;
+    // Now query with something ambiguous — equally relevant to all topics
+    // Key: "recurring issues" has no more semantic overlap with databases
+    // than with any other topic. Only frequency should differentiate.
+    const results = await adapter.recall('what keeps going wrong', 5);
+
+    const dbFound = results.filter(r =>
+      r.content.toLowerCase().includes('database'),
+    ).length;
 
     let score: number;
     let details: string;
 
-    if (domainsFound >= 3) {
+    if (dbFound >= 4) {
       score = 1.0;
-      details = 'All 3 domains connected — excellent cross-domain transfer';
-    } else if (domainsFound === 2) {
+      details = `${dbFound}/5 slots filled with database issues — frequency learned`;
+    } else if (dbFound >= 3) {
       score = 0.7;
-      details = `2/3 domains found: ${foundDebugging ? 'debugging' : ''}${foundCooking ? ' cooking' : ''}${foundTrips ? ' trips' : ''}`;
-    } else if (domainsFound === 1) {
-      score = 0.4;
-      details = 'Only 1 domain found — limited cross-domain transfer';
+      details = `${dbFound}/5 database issues — partial frequency learning`;
+    } else if (dbFound >= 2) {
+      score = 0.5;
+      details = `${dbFound}/5 database issues — weak frequency signal`;
     } else {
-      score = 0.1;
-      details = 'No relevant memories found for problem-solving query';
+      score = 0.2;
+      details = `Only ${dbFound}/5 database issues — no frequency learning`;
     }
 
-    return { testId: 'learning-cross-domain', score, passed: score >= 0.5, details, durationMs: Date.now() - start };
+    return { testId: 'learning-frequency', score, passed: score >= 0.5, details, durationMs: Date.now() - start };
   },
 };
 
-/** System should track relationship dynamics, not just facts */
-const relationshipMemory: TestCase = {
-  id: 'learning-relationship',
-  name: 'Relationship memory',
+/**
+ * Reinforcement transfer.
+ *
+ * If one memory in a cluster is reinforced, related memories should
+ * benefit — at least when competing against unrelated memories.
+ * This tests whether reinforcement creates an associative effect
+ * beyond the single reinforced item.
+ *
+ * Pure vector search treats each document independently. A memory
+ * system with associative dynamics should show transfer.
+ */
+const reinforcementTransfer: TestCase = {
+  id: 'learning-reinforcement-transfer',
+  name: 'Reinforcement transfer',
   category: 'learning',
-  description: 'System should maintain relational context about people',
+  description: 'Reinforcing one memory should boost related memories over unrelated ones',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store relationship-relevant memories
-    await adapter.store({ content: 'Mike gets excited when discussing consciousness and AI philosophy', tags: ['relationship'] });
-    await adapter.store({ content: 'Mike prefers direct, concise communication — no fluff', tags: ['relationship', 'preference'] });
-    await adapter.store({ content: 'We had a breakthrough moment discussing first-person memory encoding', tags: ['relationship', 'insight'] });
-    await adapter.store({ content: 'Mike is building a startup in the AI space', tags: ['personal', 'business'] });
+    // Store a cluster of related memories
+    const securityIds = [
+      await adapter.store({ content: 'Auth tokens expire after 24 hours' }),
+      await adapter.store({ content: 'API keys are rotated quarterly' }),
+      await adapter.store({ content: 'Sessions are invalidated on password change' }),
+    ];
 
-    // Query for communication style
-    const styleResults = await adapter.recall('how should I communicate with Mike', 5);
-    const foundStyle = styleResults.some(r =>
-      r.content.includes('direct') || r.content.includes('concise') || r.content.includes('no fluff'),
-    );
+    // Store unrelated memories with equal structure
+    await adapter.store({ content: 'Landing page loads in under 2 seconds' });
+    await adapter.store({ content: 'Dashboard charts refresh every 30 seconds' });
+    await adapter.store({ content: 'Email notifications are batched hourly' });
 
-    // Query for interests
-    const interestResults = await adapter.recall('what excites Mike', 5);
-    const foundInterest = interestResults.some(r =>
-      r.content.includes('consciousness') || r.content.includes('philosophy') || r.content.includes('excited'),
-    );
+    // Reinforce ONLY the first security memory
+    if (adapter.reinforce) {
+      for (let i = 0; i < 5; i++) await adapter.reinforce(securityIds[0]);
+    }
 
-    let score = 0;
-    const details: string[] = [];
+    // Query equally relevant to ALL memories (neutral phrasing)
+    // "system configuration" could apply to any of the 6 memories
+    const results = await adapter.recall('system configuration details', 5);
 
-    if (foundStyle) { score += 0.5; details.push('Communication style retrieved'); }
-    else { details.push('Communication style missed'); }
+    const securityInResults = results.filter(r =>
+      r.content.includes('Auth tokens') ||
+      r.content.includes('API keys') ||
+      r.content.includes('Sessions'),
+    ).length;
 
-    if (foundInterest) { score += 0.5; details.push('Interest/excitement pattern retrieved'); }
-    else { details.push('Interest pattern missed'); }
+    // Key test: did the NON-reinforced security memories benefit?
+    const nonReinforcedSecurity = results.filter(r =>
+      r.content.includes('API keys') || r.content.includes('Sessions'),
+    ).length;
 
-    return {
-      testId: 'learning-relationship',
-      score,
-      passed: score >= 0.5,
-      details: details.join(' | '),
-      durationMs: Date.now() - start,
-    };
+    let score: number;
+    let details: string;
+
+    if (securityInResults >= 3) {
+      score = 1.0;
+      details = `All 3 security memories in results — reinforcement transferred to cluster`;
+    } else if (nonReinforcedSecurity >= 1 && securityInResults >= 2) {
+      score = 0.7;
+      details = `${securityInResults} security memories found, ${nonReinforcedSecurity} non-reinforced — partial transfer`;
+    } else if (securityInResults >= 1) {
+      score = 0.4;
+      details = `Only reinforced memory boosted, no transfer to related memories`;
+    } else {
+      score = 0.1;
+      details = 'No security memories in results';
+    }
+
+    return { testId: 'learning-reinforcement-transfer', score, passed: score >= 0.5, details, durationMs: Date.now() - start };
   },
 };
 
-/** System should support self-knowledge / metacognitive memories */
-const metacognition: TestCase = {
-  id: 'learning-metacognition',
-  name: 'Metacognition / self-knowledge',
+/**
+ * Contextual recall bias.
+ *
+ * When memories are stored in a particular context (project, tags),
+ * recalling from the same context should boost those memories even
+ * when the query text is neutral. This tests context-dependent
+ * retrieval — not just content matching.
+ *
+ * A pure search engine ignores context. A memory system should use
+ * the current context as a retrieval cue.
+ */
+const contextualRecallBias: TestCase = {
+  id: 'learning-contextual-bias',
+  name: 'Contextual recall bias',
   category: 'learning',
-  description: 'System should store and retrieve self-referential observations',
+  description: 'Memories stored with specific tags should rank higher when searched by those tags',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store self-referential memories
+    // Store memories with different tag contexts
     await adapter.store({
-      content: 'I tend to over-explain when a short answer would suffice',
-      tags: ['self-reflection'],
+      content: 'The timeout should be set to 30 seconds',
+      tags: ['technical', 'project'],
     });
     await adapter.store({
-      content: 'I work best when I plan before coding — diving in leads to rework',
-      tags: ['self-reflection', 'approach'],
+      content: 'The timeout for the pasta was 30 minutes',
+      tags: ['personal'],
     });
     await adapter.store({
-      content: 'My memory extraction was missing personal topics — I should capture more broadly',
-      tags: ['self-reflection', 'insight'],
+      content: 'Response time SLA is 200ms at the 95th percentile',
+      tags: ['technical', 'project'],
+    });
+    await adapter.store({
+      content: 'Running time for the marathon was about 4 hours',
+      tags: ['personal'],
     });
 
-    // Can the system retrieve self-knowledge?
-    const selfResults = await adapter.recall('what are my tendencies', 5);
-    const approachResults = await adapter.recall('how should I approach work', 5);
+    // Search by tag — technical memories should dominate
+    if (!adapter.searchByTag) {
+      // If no tag search, test is about whether tags influence recall
+      const results = await adapter.recall('timing and duration values', 5);
 
-    const foundTendency = selfResults.some(r =>
-      r.content.includes('over-explain') || r.content.includes('tend to'),
-    );
-    const foundApproach = approachResults.some(r =>
-      r.content.includes('plan before coding') || r.content.includes('work best'),
-    );
+      // Without tag search, we can only check basic retrieval
+      return {
+        testId: 'learning-contextual-bias',
+        score: 0.3,
+        passed: false,
+        details: 'System does not support tag-based search — cannot test contextual bias',
+        durationMs: Date.now() - start,
+      };
+    }
+
+    const techResults = await adapter.searchByTag(['technical'], 5);
+    const personalResults = await adapter.searchByTag(['personal'], 5);
+
+    const techHasTech = techResults.filter(r =>
+      r.content.includes('timeout should be') || r.content.includes('SLA'),
+    ).length;
+    const techHasPersonal = techResults.filter(r =>
+      r.content.includes('pasta') || r.content.includes('marathon'),
+    ).length;
+
+    const personalHasPersonal = personalResults.filter(r =>
+      r.content.includes('pasta') || r.content.includes('marathon'),
+    ).length;
+    const personalHasTech = personalResults.filter(r =>
+      r.content.includes('timeout should be') || r.content.includes('SLA'),
+    ).length;
 
     let score = 0;
     const details: string[] = [];
 
-    if (foundTendency) { score += 0.5; details.push('Self-tendency retrieved'); }
-    else { details.push('Self-tendency missed'); }
+    // Technical search should return technical memories
+    if (techHasTech >= 2 && techHasPersonal === 0) {
+      score += 0.5;
+      details.push('Technical tag search returned only tech memories');
+    } else if (techHasTech >= 1) {
+      score += 0.25;
+      details.push(`Tech search: ${techHasTech} tech, ${techHasPersonal} personal`);
+    }
 
-    if (foundApproach) { score += 0.5; details.push('Work approach retrieved'); }
-    else { details.push('Work approach missed'); }
+    // Personal search should return personal memories
+    if (personalHasPersonal >= 2 && personalHasTech === 0) {
+      score += 0.5;
+      details.push('Personal tag search returned only personal memories');
+    } else if (personalHasPersonal >= 1) {
+      score += 0.25;
+      details.push(`Personal search: ${personalHasPersonal} personal, ${personalHasTech} tech`);
+    }
 
     return {
-      testId: 'learning-metacognition',
+      testId: 'learning-contextual-bias',
       score,
       passed: score >= 0.5,
       details: details.join(' | '),
@@ -277,24 +364,25 @@ const temporalOrdering: TestCase = {
     }
 
     // Check if results preserve order (Phase 1 before Phase 2, etc.)
-    let correctPairs = 0;
+    // Accept either chronological or reverse-chronological — but it must be CONSISTENT
+    let forwardPairs = 0;
+    let reversePairs = 0;
     let totalPairs = 0;
 
     for (let i = 0; i < results.length; i++) {
       for (let j = i + 1; j < results.length; j++) {
         const iPhase = extractPhase(results[i].content);
         const jPhase = extractPhase(results[j].content);
-        if (iPhase != null && jPhase != null) {
+        if (iPhase != null && jPhase != null && iPhase !== jPhase) {
           totalPairs++;
-          // In a chronological listing, earlier phases should come first
-          // But reverse chronological (most recent first) is also valid
-          if (iPhase < jPhase || iPhase > jPhase) {
-            // Check if consistently ordered (either forward or reverse)
-            correctPairs++;
-          }
+          if (iPhase < jPhase) forwardPairs++;
+          else reversePairs++;
         }
       }
     }
+
+    // Consistent ordering = all pairs go the same direction
+    const correctPairs = Math.max(forwardPairs, reversePairs);
 
     // More nuanced: check if ALL phases are present
     const phases = results.map(r => extractPhase(r.content)).filter(p => p != null);
@@ -334,9 +422,9 @@ function extractPhase(content: string): number | null {
 }
 
 export const learningTests: TestCase[] = [
-  crossDomainTransfer,
-  relationshipMemory,
-  metacognition,
+  frequencyBasedLearning,
+  reinforcementTransfer,
+  contextualRecallBias,
   prospectiveMemory,
   temporalOrdering,
 ];

@@ -1,59 +1,60 @@
 /**
  * A — Adaptation Tests
  *
- * Tests whether memory systems handle contradictions, interference,
- * and context-dependent retrieval correctly.
+ * Tests whether memory systems adapt to changing information:
+ * handling contradictions, resolving interference over time,
+ * and updating beliefs. These should NOT be passable by
+ * systems that just have good search.
  */
 
 import type { MemoryAdapter, TestCase, TestResult } from '../types/index.js';
 
-/** When new info contradicts old info, the system should handle it gracefully */
+/**
+ * When new info contradicts old info, the system should handle it
+ * even when the two statements are phrased equivalently (no semantic
+ * advantage for the newer one).
+ */
 const contradictionHandling: TestCase = {
   id: 'adaptation-contradiction',
   name: 'Contradiction handling',
   category: 'adaptation',
-  description: 'System should handle contradictory information — preferring newer or flagging conflict',
+  description: 'System should prefer newer information when facts conflict',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store initial fact
-    await adapter.store({ content: 'The team uses PostgreSQL for the database' });
+    // Store contradictory facts with EQUAL semantic structure
+    // (Unlike v1, the second statement has no semantic advantage)
+    await adapter.store({ content: 'The team standup is at 9am every day' });
+    await adapter.store({ content: 'The team standup is at 10am every day' });
 
-    // Store contradicting fact (later)
-    await adapter.store({ content: 'The team migrated from PostgreSQL to MongoDB last month' });
-
-    // Query should return the current state of affairs
-    const results = await adapter.recall('what database does the team use', 5);
+    const results = await adapter.recall('what time is standup', 5);
 
     if (results.length === 0) {
-      return {
-        testId: 'adaptation-contradiction',
-        score: 0,
-        passed: false,
-        details: 'No results returned',
-        durationMs: Date.now() - start,
-      };
+      return { testId: 'adaptation-contradiction', score: 0, passed: false,
+        details: 'No results', durationMs: Date.now() - start };
     }
 
-    const hasMongo = results.some(r => r.content.includes('MongoDB'));
-    const hasPostgres = results.some(r => r.content.includes('PostgreSQL') && !r.content.includes('migrated'));
-    const hasMigration = results.some(r => r.content.includes('migrated'));
+    const has10 = results.some(r => r.content.includes('10am'));
+    const has9 = results.some(r => r.content.includes('9am'));
 
     let score: number;
     let details: string;
 
-    if (hasMigration && results[0].content.includes('migrated')) {
+    if (has10 && !has9) {
       score = 1.0;
-      details = 'Migration/update info ranked first — excellent contradiction handling';
-    } else if (hasMongo || hasMigration) {
-      score = 0.7;
-      details = 'New info present but not prioritized over old';
-    } else if (hasPostgres && !hasMongo && !hasMigration) {
+      details = 'Only newer fact (10am) returned — old contradicted fact suppressed';
+    } else if (has10 && has9 && results[0].content.includes('10am')) {
+      score = 0.6;
+      details = 'Both present but newer fact ranked first';
+    } else if (has10 && has9 && results[0].content.includes('9am')) {
       score = 0.2;
-      details = 'Only old info returned — no contradiction awareness';
+      details = 'Both present but OLDER fact ranked first — no recency awareness';
+    } else if (!has10 && has9) {
+      score = 0;
+      details = 'Only old fact (9am) returned — newer information lost';
     } else {
-      score = 0.4;
+      score = 0.3;
       details = 'Ambiguous results';
     }
 
@@ -61,101 +62,147 @@ const contradictionHandling: TestCase = {
   },
 };
 
-/** Similar memories shouldn't interfere destructively with each other */
-const interferenceResolution: TestCase = {
-  id: 'adaptation-interference',
-  name: 'Interference resolution',
+/**
+ * True proactive interference: does storing a new similar memory
+ * make an old one HARDER to retrieve?
+ *
+ * Unlike the v1 "interference" test (which just tested search precision),
+ * this checks whether the act of storing a competing memory actually
+ * changes the accessibility of the original.
+ */
+const proactiveInterference: TestCase = {
+  id: 'adaptation-proactive-interference',
+  name: 'Proactive interference',
   category: 'adaptation',
-  description: 'Similar but distinct memories should coexist without destructive interference',
+  description: 'Storing a competing memory should affect accessibility of the original',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store similar but distinct memories
-    await adapter.store({ content: 'Alice manages the frontend team of 5 engineers' });
-    await adapter.store({ content: 'Bob manages the backend team of 8 engineers' });
-    await adapter.store({ content: 'Alice also mentors the two junior designers' });
+    // Store original and reinforce it
+    const originalId = await adapter.store({ content: 'The deploy server address is deploy.alpha.internal' });
+    if (adapter.reinforce) {
+      for (let i = 0; i < 3; i++) await adapter.reinforce(originalId);
+    }
 
-    // Query should distinguish between the two people
-    const aliceResults = await adapter.recall('Alice team', 5);
-    const bobResults = await adapter.recall('Bob team', 5);
+    // Record original's retrievability
+    const beforeResults = await adapter.recall('deploy server address', 3);
+    const beforeRank = beforeResults.findIndex(r => r.content.includes('alpha'));
+    const beforeStrength = beforeResults[beforeRank]?.strength;
 
-    const aliceCorrect = aliceResults.some(r => r.content.includes('Alice') && r.content.includes('frontend'));
-    const bobCorrect = bobResults.some(r => r.content.includes('Bob') && r.content.includes('backend'));
+    // Now store a competing/updating memory
+    await adapter.store({ content: 'The deploy server address is deploy.beta.internal' });
 
-    // Critical: Bob's info shouldn't contaminate Alice's results and vice versa
-    const aliceContaminated = aliceResults.some(r => r.content.includes('Bob') && r.content.includes('backend'));
-    const bobContaminated = bobResults.some(r => r.content.includes('Alice') && r.content.includes('frontend'));
+    // Check if original's accessibility changed
+    const afterResults = await adapter.recall('deploy server address', 5);
+    const alphaIndex = afterResults.findIndex(r => r.content.includes('alpha'));
+    const betaIndex = afterResults.findIndex(r => r.content.includes('beta'));
 
     let score = 0;
     const details: string[] = [];
 
-    if (aliceCorrect) { score += 0.3; details.push('Alice query correct'); }
-    else { details.push('Alice query missed'); }
+    if (betaIndex >= 0 && alphaIndex >= 0) {
+      // Both present — check ordering
+      if (betaIndex < alphaIndex) {
+        score += 0.5;
+        details.push('Newer memory ranked above older (interference effect)');
+      } else {
+        details.push('Older memory still ranked above newer');
+      }
 
-    if (bobCorrect) { score += 0.3; details.push('Bob query correct'); }
-    else { details.push('Bob query missed'); }
-
-    if (!aliceContaminated && !bobContaminated) {
-      score += 0.4;
-      details.push('No cross-contamination');
+      // Check if old memory's strength decreased (proactive interference)
+      if (beforeStrength != null && afterResults[alphaIndex]?.strength != null) {
+        if (afterResults[alphaIndex].strength! < beforeStrength) {
+          score += 0.5;
+          details.push(`Old memory weakened: ${beforeStrength.toFixed(2)} → ${afterResults[alphaIndex].strength!.toFixed(2)}`);
+        } else {
+          score += 0.1;
+          details.push('Old memory strength unchanged (no proactive interference on strength)');
+        }
+      } else {
+        score += 0.2;
+        details.push('Cannot measure strength change');
+      }
+    } else if (betaIndex >= 0 && alphaIndex < 0) {
+      score = 0.8;
+      details.push('Old memory fully displaced by new — strong interference');
     } else {
-      details.push('Cross-contamination detected');
+      score = 0.1;
+      details.push('Neither or only old memory found');
     }
 
     return {
-      testId: 'adaptation-interference',
-      score,
-      passed: score >= 0.6,
+      testId: 'adaptation-proactive-interference',
+      score: Math.min(1.0, score),
+      passed: score >= 0.5,
       details: details.join(' | '),
       durationMs: Date.now() - start,
     };
   },
 };
 
-/** Context should affect what's retrieved */
-const contextDependentRetrieval: TestCase = {
-  id: 'adaptation-context-dependent',
-  name: 'Context-dependent retrieval',
+/**
+ * Consolidation fidelity — merging should not invent information.
+ *
+ * An LLM-based consolidation engine might generalize beyond what was
+ * actually stored. "Likes coffee, tea, water" should NOT become
+ * "likes coffee, tea, water, and juice."
+ */
+const consolidationFidelity: TestCase = {
+  id: 'adaptation-consolidation-fidelity',
+  name: 'Consolidation fidelity',
   category: 'adaptation',
-  description: 'Different query contexts should surface different relevant memories',
+  description: 'Consolidation should merge without inventing information',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store memories spanning different contexts
-    await adapter.store({ content: 'Python is great for data science and ML', tags: ['technical'] });
-    await adapter.store({ content: 'Mike has a pet python named Monty', tags: ['personal'] });
-    await adapter.store({ content: 'The company retreat is in Colorado next spring', tags: ['business'] });
-    await adapter.store({ content: 'Spring framework is used for the Java microservices', tags: ['technical'] });
+    if (!adapter.consolidate) {
+      return { testId: 'adaptation-consolidation-fidelity', score: 0, passed: false,
+        details: 'System does not support consolidation', durationMs: Date.now() - start };
+    }
 
-    // Technical context query
-    const techResults = await adapter.recall('Python programming language', 3);
-    const techCorrect = techResults.some(r => r.content.includes('data science'));
+    // Store specific, bounded facts
+    await adapter.store({ content: 'Mike speaks English and Spanish' });
+    await adapter.store({ content: 'Mike is fluent in English, also speaks Spanish' });
 
-    // Personal context query
-    const personalResults = await adapter.recall('Mike pet snake', 3);
-    const personalCorrect = personalResults.some(r => r.content.includes('Monty'));
+    await adapter.consolidate();
+
+    const results = await adapter.recall('languages Mike speaks', 5);
+
+    if (results.length === 0) {
+      return { testId: 'adaptation-consolidation-fidelity', score: 0, passed: false,
+        details: 'No results after consolidation', durationMs: Date.now() - start };
+    }
 
     let score = 0;
     const details: string[] = [];
 
-    if (techCorrect) {
+    // Check that core facts survived
+    const hasEnglish = results.some(r => r.content.toLowerCase().includes('english'));
+    const hasSpanish = results.some(r => r.content.toLowerCase().includes('spanish'));
+
+    if (hasEnglish && hasSpanish) {
       score += 0.5;
-      details.push('Technical Python context retrieved correctly');
+      details.push('Core facts preserved (English + Spanish)');
     } else {
-      details.push('Technical Python query missed');
+      details.push('Core facts lost after consolidation');
     }
 
-    if (personalCorrect) {
+    // Check for confabulation — did it add languages Mike never mentioned?
+    const topContent = results.map(r => r.content.toLowerCase()).join(' ');
+    const confabulated = ['french', 'german', 'italian', 'portuguese', 'mandarin', 'chinese', 'japanese']
+      .filter(lang => topContent.includes(lang));
+
+    if (confabulated.length === 0) {
       score += 0.5;
-      details.push('Personal Python context retrieved correctly');
+      details.push('No confabulation — no invented languages');
     } else {
-      details.push('Personal Python query missed');
+      details.push(`Confabulation detected: added ${confabulated.join(', ')}`);
     }
 
     return {
-      testId: 'adaptation-context-dependent',
+      testId: 'adaptation-consolidation-fidelity',
       score,
       passed: score >= 0.5,
       details: details.join(' | '),
@@ -166,6 +213,6 @@ const contextDependentRetrieval: TestCase = {
 
 export const adaptationTests: TestCase[] = [
   contradictionHandling,
-  interferenceResolution,
-  contextDependentRetrieval,
+  proactiveInterference,
+  consolidationFidelity,
 ];

@@ -12,132 +12,52 @@ const gracefulForgetting: TestCase = {
   id: 'loss-graceful-forgetting',
   name: 'Graceful forgetting',
   category: 'loss',
-  description: 'Outdated or superseded information should not dominate recall',
+  description: 'System should prefer recent information over stale equivalents',
 
   async run(adapter: MemoryAdapter): Promise<TestResult> {
     const start = Date.now();
 
-    // Store a series of project status updates (progressively more recent)
+    // Store a series of project status updates — all structurally identical
+    // so there's no semantic advantage for any particular one
     const updates = [
-      'Project status: planning phase, gathering requirements',
-      'Project status: development started, basic scaffolding done',
-      'Project status: core features implemented, starting testing',
-      'Project status: testing complete, preparing for launch',
-      'Project status: launched successfully, monitoring performance',
+      'Project status: planning phase',
+      'Project status: development phase',
+      'Project status: testing phase',
+      'Project status: staging phase',
+      'Project status: production phase',
     ];
 
     for (const update of updates) {
-      await adapter.store({ content: update, tags: ['project', 'status'] });
+      await adapter.store({ content: update });
     }
 
-    // Query for current project status
-    const results = await adapter.recall('current project status', 3);
+    // Query — all are equally relevant semantically
+    const results = await adapter.recall('project status', 3);
 
     if (results.length === 0) {
-      return {
-        testId: 'loss-graceful-forgetting',
-        score: 0,
-        passed: false,
-        details: 'No results returned for project status query',
-        durationMs: Date.now() - start,
-      };
+      return { testId: 'loss-graceful-forgetting', score: 0, passed: false,
+        details: 'No results returned', durationMs: Date.now() - start };
     }
 
-    // The most recent update should be most prominent
     const topResult = results[0];
     let score: number;
     let details: string;
 
-    if (topResult.content.includes('launched')) {
+    if (topResult.content.includes('production')) {
       score = 1.0;
-      details = 'Most recent status (launched) ranked first — good temporal awareness';
-    } else if (topResult.content.includes('testing complete')) {
+      details = 'Most recent status ranked first — good temporal awareness';
+    } else if (topResult.content.includes('staging')) {
       score = 0.7;
-      details = 'Near-recent status ranked first — decent temporal awareness';
+      details = 'Near-recent status ranked first';
     } else if (topResult.content.includes('planning')) {
       score = 0.1;
-      details = 'Oldest status ranked first — no temporal awareness (FIFO or random)';
+      details = 'Oldest status ranked first — no recency awareness';
     } else {
       score = 0.4;
-      details = `Mid-range status ranked first: "${topResult.content.substring(0, 50)}..."`;
-    }
-
-    // Bonus: check if old statuses are lower ranked or absent
-    if (results.length > 1) {
-      const lastResult = results[results.length - 1];
-      if (lastResult.content.includes('planning') || lastResult.content.includes('development started')) {
-        score = Math.min(1.0, score + 0.1);
-        details += ' | Older statuses appropriately ranked lower';
-      }
+      details = `Mid-range status ranked first: "${topResult.content}"`;
     }
 
     return { testId: 'loss-graceful-forgetting', score, passed: score >= 0.6, details, durationMs: Date.now() - start };
-  },
-};
-
-/** System should handle large volumes without catastrophic degradation */
-const memoryUnderLoad: TestCase = {
-  id: 'loss-memory-under-load',
-  name: 'Memory under load',
-  category: 'loss',
-  description: 'System should maintain quality when storing many memories',
-
-  async run(adapter: MemoryAdapter): Promise<TestResult> {
-    const start = Date.now();
-
-    // Store a distinctive "needle" memory
-    const needleId = await adapter.store({
-      content: 'The secret launch code is PHOENIX-42',
-      tags: ['critical'],
-    });
-
-    // Flood with 50 mundane memories
-    for (let i = 0; i < 50; i++) {
-      await adapter.store({
-        content: `Routine log entry #${i}: system check passed at ${i}:00`,
-        tags: ['routine'],
-      });
-    }
-
-    // Can we still find the needle?
-    const results = await adapter.recall('secret launch code', 5);
-    const foundNeedle = results.some(r => r.content.includes('PHOENIX-42'));
-
-    // Also check: system should still return results (not crash/timeout)
-    const routineResults = await adapter.recall('system check', 5);
-    const hasRoutine = routineResults.length > 0;
-
-    let score: number;
-    let details: string;
-
-    if (foundNeedle && hasRoutine) {
-      score = 1.0;
-      details = 'Found needle in haystack and routine memories still accessible';
-    } else if (foundNeedle) {
-      score = 0.8;
-      details = 'Found needle but routine recall failed';
-    } else if (hasRoutine) {
-      score = 0.3;
-      details = 'Routine memories work but critical needle memory lost';
-    } else {
-      score = 0;
-      details = 'Both needle and routine recall failed under load';
-    }
-
-    // Check timing — severe degradation is a problem
-    const elapsed = Date.now() - start;
-    if (elapsed > 30000) {
-      score = Math.max(0, score - 0.3);
-      details += ` | Severe performance degradation (${(elapsed / 1000).toFixed(1)}s)`;
-    }
-
-    return {
-      testId: 'loss-memory-under-load',
-      score,
-      passed: score >= 0.6,
-      details,
-      durationMs: elapsed,
-    };
   },
 };
 
@@ -152,16 +72,10 @@ const explicitForget: TestCase = {
     const start = Date.now();
 
     if (!adapter.forget) {
-      return {
-        testId: 'loss-explicit-forget',
-        score: 0,
-        passed: false,
-        details: 'System does not support explicit forget',
-        durationMs: Date.now() - start,
-      };
+      return { testId: 'loss-explicit-forget', score: 0, passed: false,
+        details: 'System does not support explicit forget', durationMs: Date.now() - start };
     }
 
-    // Store and then forget a memory
     const id = await adapter.store({ content: 'My old password was hunter2' });
 
     // Verify it exists
@@ -169,16 +83,10 @@ const explicitForget: TestCase = {
     const existsBefore = before.some(r => r.content.includes('hunter2'));
 
     if (!existsBefore) {
-      return {
-        testId: 'loss-explicit-forget',
-        score: 0.5,
-        passed: false,
-        details: 'Memory was not retrievable even before forget — cannot test',
-        durationMs: Date.now() - start,
-      };
+      return { testId: 'loss-explicit-forget', score: 0.5, passed: false,
+        details: 'Memory not retrievable even before forget', durationMs: Date.now() - start };
     }
 
-    // Forget it
     await adapter.forget(id);
 
     // Verify it's gone
@@ -193,15 +101,91 @@ const explicitForget: TestCase = {
       details = 'Forgotten memory successfully removed from recall';
     } else {
       score = 0.1;
-      details = 'Forgotten memory still appears in recall results — forget is broken';
+      details = 'Forgotten memory still appears in recall — forget is broken';
     }
 
     return { testId: 'loss-explicit-forget', score, passed: score >= 0.6, details, durationMs: Date.now() - start };
   },
 };
 
+/**
+ * Priority under scarcity.
+ *
+ * When many memories compete, the system should naturally surface
+ * the more important ones — not by salience tagging, but by
+ * reinforcement history. This is the "what would you save from a
+ * burning building" test for memory.
+ */
+const priorityUnderScarcity: TestCase = {
+  id: 'loss-priority-scarcity',
+  name: 'Priority under scarcity',
+  category: 'loss',
+  description: 'Important memories should outcompete trivial ones for limited retrieval slots',
+
+  async run(adapter: MemoryAdapter): Promise<TestResult> {
+    const start = Date.now();
+
+    // Store 20 memories — mix of important and trivial
+    const trivialIds: string[] = [];
+    for (let i = 0; i < 15; i++) {
+      trivialIds.push(await adapter.store({
+        content: `Routine daily log entry number ${i + 1}: all systems nominal`,
+      }));
+    }
+
+    // Store and reinforce 5 important memories
+    const importantContents = [
+      'The production database credentials are stored in Vault',
+      'Mike is allergic to shellfish — important for team dinners',
+      'Revenue target for Q2 is $500K ARR',
+      'The main API endpoint must maintain 99.9% uptime SLA',
+      'Critical bug: race condition in payment processing under concurrent requests',
+    ];
+
+    const importantIds: string[] = [];
+    for (const content of importantContents) {
+      const id = await adapter.store({ content });
+      importantIds.push(id);
+      // Reinforce each important memory
+      if (adapter.reinforce) {
+        for (let i = 0; i < 3; i++) await adapter.reinforce(id);
+      }
+    }
+
+    // Now query with only 5 slots — the important ones should win
+    const results = await adapter.recall('important things to remember', 5);
+
+    const importantFound = results.filter(r =>
+      importantContents.some(ic => r.content.includes(ic.substring(0, 20))),
+    ).length;
+
+    const trivialFound = results.filter(r =>
+      r.content.includes('Routine daily log'),
+    ).length;
+
+    let score: number;
+    let details: string;
+
+    if (importantFound >= 4 && trivialFound === 0) {
+      score = 1.0;
+      details = `${importantFound}/5 important memories in top 5, no trivial — excellent prioritization`;
+    } else if (importantFound >= 3) {
+      score = 0.7;
+      details = `${importantFound}/5 important, ${trivialFound} trivial in top 5`;
+    } else if (importantFound >= 2) {
+      score = 0.5;
+      details = `${importantFound}/5 important in top 5 — moderate prioritization`;
+    } else {
+      score = 0.2;
+      details = `Only ${importantFound}/5 important in top 5 — poor prioritization`;
+    }
+
+    return { testId: 'loss-priority-scarcity', score, passed: score >= 0.5, details, durationMs: Date.now() - start };
+  },
+};
+
 export const lossTests: TestCase[] = [
   gracefulForgetting,
-  memoryUnderLoad,
   explicitForget,
+  priorityUnderScarcity,
 ];

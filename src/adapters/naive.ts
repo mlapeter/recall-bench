@@ -69,6 +69,18 @@ export class NaiveAdapter implements MemoryAdapter {
       }));
   }
 
+  async searchByTag(tags: string[], limit = 10): Promise<RecalledMemory[]> {
+    return this.memories
+      .filter(m => tags.some(t => m.tags.includes(t)))
+      .slice(0, limit)
+      .map(m => ({
+        id: m.id,
+        content: m.content,
+        tags: m.tags,
+        matchType: 'exact' as const,
+      }));
+  }
+
   async forget(memoryId: string): Promise<void> {
     this.memories = this.memories.filter(m => m.id !== memoryId);
   }
