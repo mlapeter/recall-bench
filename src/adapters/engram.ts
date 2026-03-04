@@ -7,6 +7,8 @@
  * Requires engram to be installed at a known path (default: ~/claude-engram).
  */
 
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import type {
   MemoryAdapter,
   RecalledMemory,
@@ -14,6 +16,27 @@ import type {
   StoreInput,
   SystemStatus,
 } from '../types/index.js';
+
+/** Load .env file into process.env (simple key=value parser, no overwrite) */
+function loadDotEnv(dir: string): void {
+  try {
+    const raw = readFileSync(join(dir, '.env'), 'utf-8');
+    for (const line of raw.split('\n')) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx === -1) continue;
+      const key = trimmed.slice(0, eqIdx).trim();
+      const value = trimmed.slice(eqIdx + 1).trim();
+      // Don't overwrite existing env vars
+      if (!process.env[key]) {
+        process.env[key] = value;
+      }
+    }
+  } catch {
+    // No .env file — that's fine
+  }
+}
 
 // Engram's internal types (reproduced to avoid import dependency)
 interface EngramMemory {
@@ -67,6 +90,9 @@ export class EngramAdapter implements MemoryAdapter {
 
   private async init(): Promise<void> {
     const engramPath = this.options.engramPath ?? `${process.env.HOME}/claude-engram`;
+
+    // Load engram's .env for API keys (VOYAGE_API_KEY, etc.)
+    loadDotEnv(engramPath);
 
     // Isolate from real engram data
     process.env.ENGRAM_DATA_DIR = this.tempDir;
