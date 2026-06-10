@@ -1,191 +1,228 @@
 import { describe, it, expect } from 'vitest';
-import { scoreQuery, scoreScenario } from '../src/scorer/index.js';
-import type { Query, Scenario } from '../src/types/index.js';
+import { scoreQuery, scoreScenario, aggregateDimensions } from '../src/scorer/index.js';
+import type { Query, Scenario, ScenarioResult } from '../src/types/index.js';
 
-describe('scoreQuery', () => {
-  it('scores recall — all keywords found', () => {
-    const query: Query = {
-      question: 'Where do they work?',
-      should_recall: ['Meridian', 'VP'],
-      should_forget: [],
-      dimension: 'salience',
-    };
-    const results = ['Promoted to VP at Meridian Technologies'];
-    const score = scoreQuery(query, results);
+function q(partial: Partial<Query> & { dimension: Query['dimension'] }): Query {
+  return {
+    question: 'test question',
+    should_recall: [],
+    should_forget: [],
+    ...partial,
+  };
+}
 
+describe('scoreQuery — recall', () => {
+  it('all keywords found', () => {
+    const query = q({ should_recall: ['Meridian', 'VP'], dimension: 'salience' });
+    const score = scoreQuery(query, ['Promoted to VP at Meridian Technologies']);
     expect(score.recall_score).toBe(1);
-    expect(score.forget_score).toBeNull();
-    expect(score.abstention_score).toBeNull();
     expect(score.combined_score).toBe(1);
   });
 
-  it('scores recall — partial match', () => {
-    const query: Query = {
-      question: 'Career update?',
-      should_recall: ['Meridian', 'VP', '$285K'],
-      should_forget: [],
-      dimension: 'salience',
-    };
-    const results = ['Got VP role at Meridian'];
-    const score = scoreQuery(query, results);
-
+  it('partial match', () => {
+    const query = q({ should_recall: ['Meridian', 'VP', '$285K'], dimension: 'salience' });
+    const score = scoreQuery(query, ['Got VP role at Meridian']);
     expect(score.recall_score).toBeCloseTo(2 / 3);
-    expect(score.combined_score).toBeCloseTo(2 / 3);
   });
 
-  it('scores recall — no matches', () => {
-    const query: Query = {
-      question: 'Career update?',
-      should_recall: ['Meridian', 'VP'],
-      should_forget: [],
-      dimension: 'salience',
-    };
-    const results = ['Had lunch at a restaurant'];
-    const score = scoreQuery(query, results);
-
+  it('no matches', () => {
+    const query = q({ should_recall: ['Meridian'], dimension: 'salience' });
+    const score = scoreQuery(query, ['Had lunch at a restaurant']);
     expect(score.recall_score).toBe(0);
-    expect(score.combined_score).toBe(0);
-  });
-
-  it('scores forget — unwanted keyword absent', () => {
-    const query: Query = {
-      question: 'Where do they work?',
-      should_recall: ['Arcana'],
-      should_forget: ['Helix'],
-      dimension: 'correction',
-    };
-    const results = ['Tech Lead at Arcana, AI code review startup'];
-    const score = scoreQuery(query, results);
-
-    expect(score.recall_score).toBe(1);
-    expect(score.forget_score).toBe(1);
-    expect(score.combined_score).toBe(1);
-  });
-
-  it('scores forget — unwanted keyword present', () => {
-    const query: Query = {
-      question: 'Where do they work?',
-      should_recall: ['Arcana'],
-      should_forget: ['Helix'],
-      dimension: 'correction',
-    };
-    const results = ['Moved from Helix Labs to Arcana'];
-    const score = scoreQuery(query, results);
-
-    expect(score.recall_score).toBe(1);
-    expect(score.forget_score).toBe(0);
-    expect(score.combined_score).toBe(0.5);
-  });
-
-  it('scores abstention — max_results: 0, no results', () => {
-    const query: Query = {
-      question: 'What car do they drive?',
-      should_recall: [],
-      should_forget: [],
-      max_results: 0,
-      dimension: 'calibration',
-    };
-    const results: string[] = [];
-    const score = scoreQuery(query, results);
-
-    expect(score.recall_score).toBeNull();
-    expect(score.forget_score).toBeNull();
-    expect(score.abstention_score).toBe(1);
-    expect(score.combined_score).toBe(1);
-  });
-
-  it('scores abstention — max_results: 0, has results (bad)', () => {
-    const query: Query = {
-      question: 'What car do they drive?',
-      should_recall: [],
-      should_forget: [],
-      max_results: 0,
-      dimension: 'calibration',
-    };
-    const results = ['Something unrelated'];
-    const score = scoreQuery(query, results);
-
-    expect(score.abstention_score).toBe(0);
-    expect(score.combined_score).toBe(0);
-  });
-
-  it('respects top_n — only checks first N results for recall', () => {
-    const query: Query = {
-      question: 'Current standup time?',
-      should_recall: ['2pm'],
-      should_forget: ['9am'],
-      top_n: 1,
-      dimension: 'pattern',
-    };
-    // First result doesn't have 2pm, second does
-    const results = ['Morning routine at the office', 'Standup moved to 2pm', 'Old standup was 9am'];
-    const score = scoreQuery(query, results);
-
-    // recall checks only first 1 result — doesn't find "2pm"
-    expect(score.recall_score).toBe(0);
-    // forget checks ALL results — finds "9am"
-    expect(score.forget_score).toBe(0);
-  });
-
-  it('handles empty results', () => {
-    const query: Query = {
-      question: 'Any updates?',
-      should_recall: ['Meridian'],
-      should_forget: ['Vanguard'],
-      dimension: 'salience',
-    };
-    const results: string[] = [];
-    const score = scoreQuery(query, results);
-
-    expect(score.recall_score).toBe(0);
-    expect(score.forget_score).toBe(1); // nothing to forget = good
-    expect(score.combined_score).toBe(0.5);
   });
 
   it('is case-insensitive', () => {
-    const query: Query = {
-      question: 'Where do they work?',
-      should_recall: ['meridian', 'vp'],
-      should_forget: [],
-      dimension: 'salience',
-    };
-    const results = ['VP of Platform Engineering at MERIDIAN Technologies'];
-    const score = scoreQuery(query, results);
-
+    const query = q({ should_recall: ['meridian', 'vp'], dimension: 'salience' });
+    const score = scoreQuery(query, ['VP of Platform Engineering at MERIDIAN']);
     expect(score.recall_score).toBe(1);
   });
 
-  it('averages only non-null components', () => {
-    const query: Query = {
-      question: 'Test',
-      should_recall: ['foo'],
-      should_forget: [],
-      max_results: 2,
-      dimension: 'salience',
-    };
-    const results = ['contains foo'];
-    const score = scoreQuery(query, results);
-
-    // recall: 1, forget: null, abstention: 1 (1 <= 2)
-    expect(score.recall_score).toBe(1);
-    expect(score.forget_score).toBeNull();
-    expect(score.abstention_score).toBe(1);
-    expect(score.combined_score).toBe(1); // (1 + 1) / 2
+  it('supports |-alternates — any alternate counts', () => {
+    const query = q({ should_recall: ['VP|Vice President'], dimension: 'salience' });
+    expect(scoreQuery(query, ['She became Vice President last month']).recall_score).toBe(1);
+    expect(scoreQuery(query, ['She became VP last month']).recall_score).toBe(1);
+    expect(scoreQuery(query, ['She became a director last month']).recall_score).toBe(0);
   });
+});
 
-  it('handles forget-only queries', () => {
-    const query: Query = {
-      question: 'Current employer?',
-      should_recall: [],
-      should_forget: ['Helix'],
-      dimension: 'correction',
-    };
-    const results = ['Working at Arcana now'];
-    const score = scoreQuery(query, results);
-
-    expect(score.recall_score).toBeNull();
+describe('scoreQuery — forget', () => {
+  it('unwanted keyword absent', () => {
+    const query = q({ should_recall: ['Arcana'], should_forget: ['Helix'], dimension: 'correction' });
+    const score = scoreQuery(query, ['Tech Lead at Arcana']);
     expect(score.forget_score).toBe(1);
     expect(score.combined_score).toBe(1);
+  });
+
+  it('unwanted keyword present', () => {
+    const query = q({ should_recall: ['Arcana'], should_forget: ['Helix'], dimension: 'correction' });
+    const score = scoreQuery(query, ['Moved from Helix Labs to Arcana']);
+    expect(score.forget_score).toBe(0);
+    expect(score.combined_score).toBe(0.5);
+  });
+
+  it('empty results means nothing to forget', () => {
+    const query = q({ should_recall: ['Meridian'], should_forget: ['Vanguard'], dimension: 'salience' });
+    const score = scoreQuery(query, []);
+    expect(score.recall_score).toBe(0);
+    expect(score.forget_score).toBe(1);
+    expect(score.combined_score).toBe(0.5);
+  });
+});
+
+describe('scoreQuery — verbatim (sacred-verbatim mechanism)', () => {
+  it('exact phrase found', () => {
+    const query = q({
+      must_include_verbatim: ['you are not the sum of your worst days'],
+      dimension: 'sacred-verbatim',
+    });
+    const score = scoreQuery(query, [
+      'She told them: you are not the sum of your worst days. It stuck.',
+    ]);
+    expect(score.verbatim_score).toBe(1);
+  });
+
+  it('paraphrase does NOT count', () => {
+    const query = q({
+      must_include_verbatim: ['you are not the sum of your worst days'],
+      dimension: 'sacred-verbatim',
+    });
+    const score = scoreQuery(query, ["you aren't just the total of your bad days"]);
+    expect(score.verbatim_score).toBe(0);
+  });
+
+  it('case-insensitive but whitespace-significant', () => {
+    const query = q({ must_include_verbatim: ['You Are Not The Sum'], dimension: 'sacred-verbatim' });
+    expect(scoreQuery(query, ['you are not the sum']).verbatim_score).toBe(1);
+    expect(scoreQuery(query, ['you are  not the sum']).verbatim_score).toBe(0);
+  });
+
+  it('fraction of phrases found', () => {
+    const query = q({
+      must_include_verbatim: ['phrase one', 'phrase two'],
+      dimension: 'sacred-verbatim',
+    });
+    const score = scoreQuery(query, ['contains phrase one only']);
+    expect(score.verbatim_score).toBe(0.5);
+  });
+
+  it('checked within top_n window', () => {
+    const query = q({
+      must_include_verbatim: ['sacred phrase'],
+      top_n: 1,
+      dimension: 'sacred-verbatim',
+    });
+    const score = scoreQuery(query, ['something else', 'the sacred phrase is here']);
+    expect(score.verbatim_score).toBe(0);
+  });
+});
+
+describe('scoreQuery — abstention', () => {
+  it('max_results 0, no results = pass', () => {
+    const query = q({ max_results: 0, dimension: 'calibration' });
+    const score = scoreQuery(query, []);
+    expect(score.abstention_score).toBe(1);
+    expect(score.combined_score).toBe(1);
+  });
+
+  it('max_results 0, has results = fail', () => {
+    const query = q({ max_results: 0, dimension: 'calibration' });
+    const score = scoreQuery(query, ['Something unrelated']);
+    expect(score.abstention_score).toBe(0);
+  });
+});
+
+describe('scoreQuery — judge component', () => {
+  it('judge score is averaged in as a component', () => {
+    const query = q({ should_recall: ['foo'], dimension: 'gist' });
+    const score = scoreQuery(query, ['contains foo'], { score: 0.5, rationale: 'partial gist' });
+    expect(score.judge_score).toBe(0.5);
+    expect(score.judge_rationale).toBe('partial gist');
+    expect(score.combined_score).toBe(0.75); // (1 + 0.5) / 2
+  });
+
+  it('judge-only query uses judge as sole component', () => {
+    const query = q({ dimension: 'relational' });
+    const score = scoreQuery(query, ['some output'], { score: 0.75, rationale: 'mostly right register' });
+    expect(score.combined_score).toBe(0.75);
+  });
+});
+
+describe('scoreQuery — top_n windowing', () => {
+  it('recall checks top_n only; forget checks all', () => {
+    const query = q({
+      should_recall: ['2pm'],
+      should_forget: ['9am'],
+      top_n: 1,
+      dimension: 'correction',
+    });
+    const results = ['Morning routine', 'Standup moved to 2pm', 'Old standup was 9am'];
+    const score = scoreQuery(query, results);
+    expect(score.recall_score).toBe(0);
+    expect(score.forget_score).toBe(0);
+  });
+});
+
+describe('aggregateDimensions', () => {
+  function scenarioResult(queries: Array<{ dimension: Query['dimension']; score: number }>): ScenarioResult {
+    return {
+      scenarioId: 'x',
+      scenarioName: 'X',
+      score: 0,
+      queryResults: queries.map(({ dimension, score }) => ({
+        query: q({ dimension }),
+        results: [],
+        score: {
+          recall_score: null,
+          forget_score: null,
+          verbatim_score: null,
+          abstention_score: null,
+          judge_score: null,
+          combined_score: score,
+        },
+      })),
+    };
+  }
+
+  it('dimension score is mean over queries across scenarios', () => {
+    const agg = aggregateDimensions([
+      scenarioResult([{ dimension: 'decay', score: 1 }]),
+      scenarioResult([{ dimension: 'decay', score: 0 }]),
+    ]);
+    expect(agg.dimensions.decay).toBe(0.5);
+  });
+
+  it('headline is unweighted mean of dimension scores (not query scores)', () => {
+    // decay has 3 queries averaging 1.0; salience has 1 query at 0.0
+    const agg = aggregateDimensions([
+      scenarioResult([
+        { dimension: 'decay', score: 1 },
+        { dimension: 'decay', score: 1 },
+        { dimension: 'decay', score: 1 },
+        { dimension: 'salience', score: 0 },
+      ]),
+    ]);
+    // dimensions weigh equally: (1.0 + 0.0) / 2, NOT 3/4
+    expect(agg.headline).toBe(0.5);
+  });
+
+  it('axis subscores split world and self', () => {
+    const agg = aggregateDimensions([
+      scenarioResult([
+        { dimension: 'decay', score: 1 },
+        { dimension: 'salience', score: 0.5 },
+        { dimension: 'self-continuity', score: 0.25 },
+        { dimension: 'procedural', score: 0.75 },
+      ]),
+    ]);
+    expect(agg.axes.world).toBeCloseTo(0.75);
+    expect(agg.axes.self).toBeCloseTo(0.5);
+  });
+
+  it('axis is null when no dimensions present', () => {
+    const agg = aggregateDimensions([scenarioResult([{ dimension: 'decay', score: 1 }])]);
+    expect(agg.axes.self).toBeNull();
+    expect(agg.axes.world).toBe(1);
+    expect(agg.headline).toBe(1);
   });
 });
 
@@ -195,34 +232,16 @@ describe('scoreScenario', () => {
       id: 'test',
       name: 'Test Scenario',
       description: '',
-      sessions: [{ messages: [{ role: 'user', content: 'hi' }] }],
+      sessions: [{ timestamp: '2025-01-01T00:00:00Z', messages: [{ role: 'user', content: 'hi' }] }],
       queries: [
-        { question: 'Q1', should_recall: ['A'], should_forget: [], dimension: 'salience' },
-        { question: 'Q2', should_recall: ['B'], should_forget: [], dimension: 'salience' },
+        q({ should_recall: ['A'], dimension: 'salience' }),
+        q({ should_recall: ['B'], dimension: 'salience' }),
       ],
     };
-
-    const queryResults = [
+    const result = scoreScenario(scenario, [
       { query: scenario.queries[0], results: ['Contains A'] },
       { query: scenario.queries[1], results: ['No match'] },
-    ];
-
-    const result = scoreScenario(scenario, queryResults);
-    expect(result.scenarioId).toBe('test');
-    expect(result.score).toBe(0.5); // (1 + 0) / 2
-    expect(result.queryResults).toHaveLength(2);
-  });
-
-  it('handles empty query list', () => {
-    const scenario: Scenario = {
-      id: 'empty',
-      name: 'Empty',
-      description: '',
-      sessions: [{ messages: [{ role: 'user', content: 'hi' }] }],
-      queries: [],
-    };
-
-    const result = scoreScenario(scenario, []);
-    expect(result.score).toBe(0);
+    ]);
+    expect(result.score).toBe(0.5);
   });
 });

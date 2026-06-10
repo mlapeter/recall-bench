@@ -7,7 +7,7 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { MemoryAdapter, Message } from '../types/index.js';
+import type { MemoryAdapter, Message, QueryOptions, SessionMeta } from '../types/index.js';
 
 /** Load .env file into process.env (simple key=value parser, no overwrite) */
 function loadDotEnv(dir: string): void {
@@ -106,7 +106,7 @@ export class EngramAdapter implements MemoryAdapter {
     await this.ready;
   }
 
-  async processConversation(messages: Message[]): Promise<void> {
+  async processConversation(messages: Message[], meta: SessionMeta): Promise<void> {
     await this.ensureReady();
 
     // Format as transcript for extraction
@@ -119,8 +119,10 @@ export class EngramAdapter implements MemoryAdapter {
 
     if (extracted.length === 0) return;
 
-    // Convert NewMemory → full Memory objects and store
-    const now = new Date().toISOString();
+    // Convert NewMemory → full Memory objects and store.
+    // Stamp memories with the scenario's virtual time so engram's internal
+    // recency/decay logic operates on the benchmark timeline, not wall clock.
+    const now = meta.timestamp;
     const memories: EngramMemory[] = extracted.map(m => ({
       id: this._generateId(),
       content: m.content,
@@ -140,9 +142,9 @@ export class EngramAdapter implements MemoryAdapter {
     await this._store.add(memories);
   }
 
-  async query(question: string, limit = 5): Promise<string[]> {
+  async query(question: string, options: QueryOptions): Promise<string[]> {
     await this.ensureReady();
-    const results = await this._store.search(question, limit);
+    const results = await this._store.search(question, options.limit);
     return results.map(m => m.content);
   }
 

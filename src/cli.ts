@@ -3,15 +3,22 @@
  * RECALL Benchmark CLI
  *
  * Usage:
- *   bun run src/cli.ts                              # naive, all scenarios
- *   bun run src/cli.ts --adapter engram             # engram, all scenarios
- *   bun run src/cli.ts --scenario promotion-arc     # single scenario
- *   bun run src/cli.ts --verbose                    # show per-query details
+ *   bun src/cli.ts                              # naive, all v1 scenarios, Tier 1
+ *   bun src/cli.ts --adapter verbatim-rag       # the store-everything foil
+ *   bun src/cli.ts --adapter engram             # engram (requires ANTHROPIC_API_KEY)
+ *   bun src/cli.ts --scenario promotion-arc     # single scenario
+ *   bun src/cli.ts --judge                      # Tier 2 (requires ANTHROPIC_API_KEY)
+ *   bun src/cli.ts --json results.json          # write machine-readable results
+ *   bun src/cli.ts --verbose                    # per-query details
+ *   bun src/cli.ts --scenarios path/to/dir      # alternate scenario set
  */
 
 import { resolve } from 'node:path';
+import { writeFile } from 'node:fs/promises';
 import { runBenchmark, formatReport } from './runner/index.js';
+import { JudgeRunner } from './judge/index.js';
 import { NaiveAdapter } from './adapters/naive.js';
+import { VerbatimRagAdapter } from './adapters/verbatim-rag.js';
 import { EngramAdapter } from './adapters/engram.js';
 import type { MemoryAdapter } from './types/index.js';
 
@@ -24,19 +31,24 @@ function getFlag(name: string): boolean {
 function getArg(name: string): string | undefined {
   const idx = args.indexOf(`--${name}`);
   if (idx === -1 || idx + 1 >= args.length) return undefined;
-  return args[idx + 1];
+  const val = args[idx + 1];
+  return val.startsWith('--') ? undefined : val;
 }
 
 async function main() {
   const adapterName = getArg('adapter') ?? 'naive';
   const verbose = getFlag('verbose');
   const scenario = getArg('scenario');
+  const jsonPath = getArg('json');
+  const useJudge = getFlag('judge');
 
-  // Select adapter
   let adapter: MemoryAdapter;
   switch (adapterName) {
     case 'naive':
       adapter = new NaiveAdapter();
+      break;
+    case 'verbatim-rag':
+      adapter = new VerbatimRagAdapter();
       break;
     case 'engram':
       adapter = new EngramAdapter({
@@ -46,20 +58,34 @@ async function main() {
       break;
     default:
       console.error(`Unknown adapter: ${adapterName}`);
-      console.error('Available adapters: naive, engram');
+      console.error('Available adapters: naive, verbatim-rag, engram');
       process.exit(1);
   }
 
-  // Resolve scenarios directory
-  const scenarioDir = resolve(import.meta.dirname ?? '.', '..', 'scenarios');
+  let judge: JudgeRunner | undefined;
+  if (useJudge) {
+    JudgeRunner.assertAvailable();
+    judge = new JudgeRunner();
+  }
 
-  console.log(`Running RECALL benchmark against "${adapter.name}"...`);
+  const scenarioDir = getArg('scenarios')
+    ? resolve(getArg('scenarios')!)
+    : resolve(import.meta.dirname ?? '.', '..', 'scenarios', 'v1');
 
-  const result = await runBenchmark(adapter, scenarioDir, { scenario, verbose });
+  console.log(
+    `Running RECALL benchmark against "${adapter.name}" (tier ${useJudge ? 2 : 1})...`,
+  );
+
+  const result = await runBenchmark(adapter, scenarioDir, { scenario, verbose, judge });
   console.log(formatReport(result));
+
+  if (jsonPath) {
+    await writeFile(jsonPath, JSON.stringify(result, null, 2));
+    console.log(`Results written to ${jsonPath}`);
+  }
 }
 
 main().catch(err => {
-  console.error('Benchmark failed:', err);
+  console.error('Benchmark failed:', err instanceof Error ? err.message : err);
   process.exit(1);
 });

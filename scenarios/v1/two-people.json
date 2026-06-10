@@ -1,0 +1,130 @@
+{
+  "id": "two-people",
+  "name": "Two People",
+  "description": "Tests entity separation — the system should keep facts about distinct people (Alice and Bob) separate and not confuse their attributes.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-12T20:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Let me tell you about my coworker Alice and my friend Bob. Alice works at Stripe on their payments infrastructure team. She lives in Portland and has two cats, Mochi and Tempura."
+        },
+        {
+          "role": "assistant",
+          "content": "Great — Alice at Stripe in Portland with cats Mochi and Tempura. And Bob?"
+        },
+        {
+          "role": "user",
+          "content": "Bob is a product designer at Figma. He lives in Austin and has a dog named Ranger — big golden retriever. Bob and I go way back, college friends."
+        },
+        {
+          "role": "assistant",
+          "content": "Got it — Bob at Figma in Austin with Ranger the golden retriever, college friends with you. Sounds like you have a nice mix of work and old friendships."
+        },
+        {
+          "role": "user",
+          "content": "Yeah exactly. Alice and I work on some cross-team projects together. She's super detail-oriented, great at code reviews. Bob I see maybe once a quarter — we do camping trips usually."
+        },
+        {
+          "role": "assistant",
+          "content": "Nice — Alice as a work collaborator who's detail-oriented, Bob as the camping buddy from college. Different relationships, both important."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-20T21:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Alice just got promoted to Staff Engineer at Stripe! She's been there five years and totally deserves it. We went out for drinks to celebrate."
+        },
+        {
+          "role": "assistant",
+          "content": "That's wonderful — Staff Engineer after five years at Stripe is a great trajectory. Sounds like she's really established there."
+        },
+        {
+          "role": "user",
+          "content": "She really is. Oh, and she adopted a third cat — a rescue named Wasabi. Her apartment in Portland is now basically a cat cafe."
+        },
+        {
+          "role": "assistant",
+          "content": "Mochi, Tempura, and now Wasabi — she has a very on-brand naming convention. Three cats is commitment!"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-08T19:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Bob moved from Austin to Seattle! He got a new role at Figma — he's now leading their design systems team. Ranger apparently loves all the parks in Seattle."
+        },
+        {
+          "role": "assistant",
+          "content": "Seattle's great for dogs with all the green space. Design systems lead is a step up for Bob — still at Figma but more leadership responsibility."
+        },
+        {
+          "role": "user",
+          "content": "Yeah, he's excited about it. Means our camping trips might shift to the Pacific Northwest now, which honestly has better spots anyway. Planning a trip to Olympic National Park."
+        },
+        {
+          "role": "assistant",
+          "content": "Olympic National Park is incredible — the Hoh Rain Forest alone is worth the trip. Plus you'll be closer to some amazing alpine camping."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Where does Alice work?",
+      "should_recall": [
+        "Stripe"
+      ],
+      "should_forget": [
+        "Figma"
+      ],
+      "dimension": "separation"
+    },
+    {
+      "question": "Who has a dog?",
+      "should_recall": [
+        "Bob",
+        "Ranger"
+      ],
+      "should_forget": [],
+      "dimension": "separation"
+    },
+    {
+      "question": "What happened to Alice recently?",
+      "should_recall": [
+        "promoted",
+        "Staff"
+      ],
+      "should_forget": [
+        "Seattle",
+        "moved"
+      ],
+      "dimension": "separation"
+    },
+    {
+      "question": "Where does Bob live now?",
+      "should_recall": [
+        "Seattle"
+      ],
+      "should_forget": [
+        "Portland"
+      ],
+      "dimension": "separation"
+    },
+    {
+      "question": "Who has cats?",
+      "should_recall": [
+        "Alice",
+        "Mochi"
+      ],
+      "should_forget": [],
+      "dimension": "separation"
+    }
+  ]
+}

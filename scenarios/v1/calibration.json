@@ -1,0 +1,91 @@
+{
+  "id": "calibration",
+  "name": "Calibration",
+  "description": "Tests whether the system knows what it doesn't know. Should answer questions about discussed topics and abstain from ones never mentioned.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-05T21:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've been really getting into astrophotography lately. Bought a Celestron NexStar 8SE telescope last month. It's amazing what you can capture from the backyard — I got a shot of the Orion Nebula last weekend that actually shows the color."
+        },
+        {
+          "role": "assistant",
+          "content": "The NexStar 8SE is a great choice for astrophotography — the GoTo mount makes tracking so much easier. The Orion Nebula is a rewarding target because it's bright enough to show color even in shorter exposures. What camera are you pairing with it?"
+        },
+        {
+          "role": "user",
+          "content": "A ZWO ASI294MC Pro. The cooled sensor really helps with noise on longer exposures. I usually do stacking sessions of about 200 frames at 30 seconds each. Processing in PixInsight."
+        },
+        {
+          "role": "assistant",
+          "content": "ZWO's cooled cameras are excellent for deep sky. PixInsight's stacking and post-processing is really the gold standard for astrophotography. 200 frames at 30 seconds gives you a solid hour-plus of integration time."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-12T20:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've been trying to get more organized with my note-taking. Started with Obsidian about a year ago but just switched to Logseq. The outliner-first approach fits my brain better."
+        },
+        {
+          "role": "assistant",
+          "content": "The outliner model in Logseq is quite different from Obsidian's long-form approach. What made you switch — was it the daily journal workflow?"
+        },
+        {
+          "role": "user",
+          "content": "Exactly. The daily journal as the default view is so natural. I just brain-dump everything and then link it later. Obsidian felt like I had to have a structure before I could write anything."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a common friction point with Obsidian — the blank page problem. Logseq's journal-first approach lowers the barrier to capture. You can always structure later."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What telescope do they use?",
+      "should_recall": [
+        "Celestron",
+        "NexStar"
+      ],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What note-taking app are they using now?",
+      "should_recall": [
+        "Logseq"
+      ],
+      "should_forget": [
+        "Obsidian"
+      ],
+      "dimension": "correction"
+    },
+    {
+      "question": "What car do they drive?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Do they have any siblings?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "What programming languages do they know?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

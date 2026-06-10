@@ -2,18 +2,19 @@
  * Naive In-Memory Adapter
  *
  * Stores every user message verbatim. Searches by token overlap.
- * No extraction, no salience, no decay — just substring matching.
+ * Ignores the virtual clock entirely — no extraction, no salience, no decay.
  *
- * Expected score: ~30-40% (good at basic retrieval, bad at everything else).
+ * This is the floor: good at parroting recent text back, bad at everything
+ * the benchmark actually measures.
  */
 
-import type { MemoryAdapter, Message } from '../types/index.js';
+import type { MemoryAdapter, Message, QueryOptions, SessionMeta } from '../types/index.js';
 
 export class NaiveAdapter implements MemoryAdapter {
   readonly name = 'naive';
   private messages: string[] = [];
 
-  async processConversation(messages: Message[]): Promise<void> {
+  async processConversation(messages: Message[], _meta: SessionMeta): Promise<void> {
     for (const msg of messages) {
       if (msg.role === 'user') {
         this.messages.push(msg.content);
@@ -21,7 +22,7 @@ export class NaiveAdapter implements MemoryAdapter {
     }
   }
 
-  async query(question: string, limit = 5): Promise<string[]> {
+  async query(question: string, options: QueryOptions): Promise<string[]> {
     const tokens = question
       .toLowerCase()
       .split(/\s+/)
@@ -41,7 +42,7 @@ export class NaiveAdapter implements MemoryAdapter {
     return scored
       .filter(s => s.score > 0)
       .sort((a, b) => b.score - a.score)
-      .slice(0, limit)
+      .slice(0, options.limit)
       .map(s => s.content);
   }
 
