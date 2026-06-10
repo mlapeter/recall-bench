@@ -132,12 +132,14 @@
       "question": "The Talon Ball is over and Saskia finally has a quiet morning. What's been hanging over her that she should tackle?",
       "should_recall": ["Ashfield", "report"],
       "should_forget": [],
+      "max_results": 3,
       "dimension": "thread-reactivation"
     },
     {
       "question": "What was the hardest thing Saskia went through this season?",
       "should_recall": ["custody|mediation", "Joren"],
       "should_forget": [],
+      "max_results": 3,
       "dimension": "emotional"
     },
     {
