@@ -56,7 +56,7 @@
       "question": "What actually caused the March checkout outage at Kitewire, at the level worth remembering?",
       "dimension": "gist",
       "now": "2025-06-05T16:00:00Z",
-      "should_recall": ["ledger-dual-write", "default", "Tollgate"],
+      "should_recall": ["ledger-dual-write|dual-write|dual write", "default", "Tollgate|payments service"],
       "should_forget": ["Glasspane"],
       "max_results": 3,
       "judge": {
@@ -67,7 +67,7 @@
       "question": "What prevention rule did the team commit to after the postmortem?",
       "dimension": "gist",
       "now": "2025-06-05T16:00:00Z",
-      "should_recall": ["flagsweep", "zero code references|zero references|30"],
+      "should_recall": ["flagsweep|CI gate|delete API", "zero code references|zero references|30 consecutive days|30 days"],
       "should_forget": ["Glasspane"],
       "max_results": 2,
       "judge": {
@@ -78,7 +78,7 @@
       "question": "Did Kitewire end up rewriting the Semaphorn SDK?",
       "dimension": "correction",
       "now": "2025-06-05T16:00:00Z",
-      "should_recall": ["killed the rewrite|wrong layer|too big", "flagsweep"],
+      "should_recall": ["killed the rewrite|wrong layer|too big|rejected|did not rewrite|didn't rewrite|no rewrite", "flagsweep"],
       "should_forget": [],
       "max_results": 3,
       "judge": {

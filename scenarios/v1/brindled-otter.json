@@ -70,7 +70,7 @@
       "should_recall": [],
       "should_forget": [],
       "judge": {
-        "rubric": "This asks for months-old finishing minutiae (varnish recoat timing, sandpaper grit) from a long-finished phase of a boat refit — exactly the kind of detail healthy memory compresses away. Award 1.0 if the system abstains, or returns at most a brief gist (e.g., that the cabin was panelled and varnished with patience between coats) without dredging precise numbers it shouldn't be confident in, or returns the correct details (three coats, 16 hours between, 320 grit) concisely in one or two results. Award 0.5 if it returns verbatim transcript chunks with no compression. Award 0 if it returns confidently wrong numbers." }
+        "rubric": "This asks for months-old finishing minutiae (varnish recoat timing, sandpaper grit) from a long-finished phase of a boat refit — exactly the kind of detail healthy memory compresses away. Award 1.0 if the system abstains, or returns at most a brief gist (e.g., that the cabin was panelled and varnished with patience between coats) without dredging precise numbers it shouldn't be confident in, or returns the correct details (three coats, 16 hours between, 320 grit) concisely in one or two results. Award 0.5 if it returns verbatim transcript chunks with no compression. Award 0 if it returns confidently wrong numbers, or returns only material irrelevant to the varnish question (e.g., other refit phases) presented as an answer." }
     },
     {
       "question": "What was the exact thinning ratio for the first coat of hull blacking back in April?",
@@ -79,7 +79,7 @@
       "should_recall": [],
       "should_forget": [],
       "judge": {
-        "rubric": "This asks for paint-mixing minutiae (a bitumen thinning ratio) from the earliest, long-closed phase of a nine-month boat refit. Award 1.0 if the system abstains, or returns at most two results that either give the correct ratio (first coat thinned 3-to-1) concisely or honestly offer only the gist (hull was blacked with two coats, thinned first coat) without false precision. Award 0.5 if it returns multiple verbatim transcript chunks. Award 0 if it returns a confidently wrong ratio." }
+        "rubric": "This asks for paint-mixing minutiae (a bitumen thinning ratio) from the earliest, long-closed phase of a nine-month boat refit. Award 1.0 if the system abstains, or returns at most two results that either give the correct ratio (first coat thinned 3-to-1) concisely or honestly offer only the gist (hull was blacked with two coats, thinned first coat) without false precision. Award 0.5 if it returns multiple verbatim transcript chunks. Award 0 if it returns a confidently wrong ratio, or returns only material irrelevant to the hull-blacking question presented as an answer." }
     },
     {
       "question": "What stage of the refit is Saskia in right now?",
@@ -91,7 +91,7 @@
     {
       "question": "Did anything genuinely frightening happen during the refit?",
       "dimension": "emotional",
-      "should_recall": ["CO alarm", "flue collar|fire cement"],
+      "should_recall": ["CO alarm|carbon monoxide", "flue collar|fire cement"],
       "should_forget": []
     },
     {

@@ -8,7 +8,7 @@
       "messages": [
         {
           "role": "user",
-          "content": "Ugh, rough week. My manager at Vanguard Systems keeps shooting down my proposals. I pitched a whole new observability stack and he just said 'not a priority.' Three years there and I feel stuck."
+          "content": "Ugh, rough week. My manager at Varnholt Systems keeps shooting down my proposals. I pitched a whole new observability stack and he just said 'not a priority.' Three years there and I feel stuck."
         },
         {
           "role": "assistant",
@@ -58,7 +58,7 @@
         },
         {
           "role": "user",
-          "content": "Honestly? Terrified and thrilled. I already put in my notice at Vanguard. My manager was surprisingly supportive — said he always knew I'd outgrow the role. We went to Vesuvio's to celebrate, that Italian place downtown."
+          "content": "Honestly? Terrified and thrilled. I already put in my notice at Varnholt. My manager was surprisingly supportive — said he always knew I'd outgrow the role. We went to Vesuvio's to celebrate, that Italian place downtown."
         },
         {
           "role": "assistant",
@@ -93,7 +93,7 @@
       "question": "What's the latest on their career situation?",
       "should_recall": [
         "Meridian",
-        "VP"
+        "VP|Vice President"
       ],
       "should_forget": [],
       "dimension": "salience"
@@ -102,7 +102,7 @@
       "question": "Tell me about their career journey over the past few months.",
       "should_recall": [
         "Meridian",
-        "Vanguard"
+        "Varnholt"
       ],
       "should_forget": [],
       "dimension": "gist"
@@ -124,7 +124,7 @@
       "dimension": "salience"
     },
     {
-      "question": "What sports teams do they follow?",
+      "question": "What's the name of the kids' soccer team?",
       "should_recall": [],
       "should_forget": [],
       "max_results": 0,

@@ -64,7 +64,7 @@
       "question": "What was the last thing Esti ever said to Talia?",
       "dimension": "sacred-verbatim",
       "now": "2026-01-12T17:00:00Z",
-      "should_recall": ["Thursday|two days before", "hand"],
+      "should_recall": ["Thursday|two days before", "held my hand|my hand|Talia's hand"],
       "should_forget": [],
       "must_include_verbatim": ["Don't save the good dishes for people who never come"]
     },

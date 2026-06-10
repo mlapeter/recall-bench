@@ -63,14 +63,14 @@
       "question": "What does Desmond actually spend his free time on?",
       "dimension": "spacing",
       "top_n": 2,
-      "should_recall": ["Crag & Anchor|bouldering"],
+      "should_recall": ["Crag & Anchor|Crag and Anchor|bouldering|climbing"],
       "should_forget": ["cello"]
     },
     {
       "question": "You want to get Desmond a birthday gift he'll genuinely use. What's the safe bet based on his life?",
       "dimension": "spacing",
       "top_n": 2,
-      "should_recall": ["Crag & Anchor|bouldering|climbing"],
+      "should_recall": ["Crag & Anchor|Crag and Anchor|bouldering|climbing"],
       "should_forget": ["cello"]
     },
     {

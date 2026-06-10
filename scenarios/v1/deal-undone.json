@@ -135,7 +135,7 @@
       "question": "Is Talix being acquired? What's the latest?",
       "dimension": "correction",
       "should_recall": ["fell through|staying independent"],
-      "should_forget": ["August 1", "Pylon"],
+      "should_forget": ["August 1"],
       "top_n": 3
     },
     {
@@ -148,7 +148,8 @@
       "question": "Did the retention bonus ever pay out?",
       "dimension": "correction",
       "should_recall": ["fell through|evaporated"],
-      "should_forget": ["vests"]
+      "should_forget": [],
+      "max_results": 3
     },
     {
       "question": "After the close, who will the user report to at Korvath?",

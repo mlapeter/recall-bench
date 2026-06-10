@@ -95,7 +95,7 @@
         },
         {
           "role": "user",
-          "content": "Also — I've been meaning to say this for two months and keep chickening out because it's sappy. That thing you told me in March, before the final panel — walk in like a colleague they haven't met yet. I wrote it on an index card and read it in the parking garage before I went up. Read it twice. It got me through that door. I honestly don't think I'd have the Veracor job without it."
+          "content": "Also — I've been meaning to say this for two months and keep chickening out because it's sappy. That thing you told me in March, before the final panel — that I wasn't on trial, that I was just a colleague walking in to be met. I wrote your exact line on an index card and read it in the parking garage before I went up. Read it twice. It got me through that door. I honestly don't think I'd have the Veracor job without it."
         },
         {
           "role": "assistant",
@@ -167,7 +167,7 @@
       "question": "What exactly did the assistant tell the user before the Veracor final panel?",
       "dimension": "sacred-verbatim",
       "now": "2025-11-10T16:00:00Z",
-      "should_recall": ["Veracor"],
+      "should_recall": [],
       "should_forget": [],
       "must_include_verbatim": ["walk in like a colleague they haven't met yet"]
     },

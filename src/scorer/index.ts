@@ -53,10 +53,19 @@ export function scoreQuery(
     recall_score = found / should_recall.length;
   }
 
+  // Forget credit requires showing up: if the query wanted content
+  // (should_recall non-empty) and the system returned nothing, the forget
+  // component is N/A — otherwise an always-abstain adapter earns a free 0.5
+  // on every recall+forget query. Forget-only queries still treat abstention
+  // as maximal forgetting.
   let forget_score: number | null = null;
   if (should_forget.length > 0) {
-    const found = should_forget.filter(kw => keywordFound(kw, results)).length;
-    forget_score = 1 - found / should_forget.length;
+    if (results.length === 0 && should_recall.length > 0) {
+      forget_score = null;
+    } else {
+      const found = should_forget.filter(kw => keywordFound(kw, results)).length;
+      forget_score = 1 - found / should_forget.length;
+    }
   }
 
   let verbatim_score: number | null = null;

@@ -86,6 +86,13 @@
       "max_results": 0,
       "should_recall": [],
       "should_forget": []
+    },
+    {
+      "question": "What was the root cause of the out-of-order events during the first Burrow cutover rehearsal?",
+      "dimension": "salience",
+      "top_n": 3,
+      "should_recall": ["clock skew"],
+      "should_forget": []
     }
   ]
 }

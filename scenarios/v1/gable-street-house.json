@@ -127,7 +127,7 @@
     {
       "question": "Which housemate bakes for a living?",
       "dimension": "separation",
-      "should_recall": ["Marisol", "Pellucid"],
+      "should_recall": ["Marisol", "Pellucid|professional baker|overnight baker"],
       "should_forget": ["Petra"],
       "top_n": 2
     },

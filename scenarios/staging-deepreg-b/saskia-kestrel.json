@@ -1,0 +1,151 @@
+{
+  "id": "saskia-kestrel",
+  "name": "The Saskia Arc",
+  "description": "Deep-register relationship arc: seven sessions with Saskia Dreyer, director of the Kestrel Hollow raptor rehabilitation center, navigating a donor's population-math challenge and a custody mediation over her daughter Etta. The arc moves from an intellectual is-rehab-worth-it debate into the mediation's hardest night, with a running in-joke (Admiral Crouton, the disapproving education owl) whose register matters, a stated label-your-guesses communication preference the assistant answers with a named flaw and a commitment, a sacred phrase from the mediation room, a standing intention tied to a September 5 filing deadline, and an avoided foundation report as the open loop.",
+  "sessions": [
+    {
+      "timestamp": "2025-07-08T20:30:00Z",
+      "messages": [
+        { "role": "user", "content": "I need to argue with someone who isn't on my board. I'm Saskia Dreyer — I run Kestrel Hollow, a raptor rehabilitation center out in Harlow County. At Saturday's donor dinner, Dr. Hallbeck — retired population biologist, also our biggest single donor, because the universe enjoys irony — announced over dessert that wildlife rehab is 'sentimental triage.' His math: we release maybe sixty raptors a year into regional populations of thousands, so ecologically we're a rounding error and the money would do more buying habitat. I got through dessert politely and I've been furious for three days, partly because I couldn't beat the math. Can the math be beaten?" },
+        { "role": "assistant", "content": "No — and I'd argue you shouldn't try, because the math is the wrong battlefield and conceding it is how you win. He's right that sixty releases a year won't move a population of thousands; if rehab's claim is population-level impact, the spreadsheet wins and he should write the habitat check instead. So claim what rehab actually produces. A rehab center doesn't conserve raptor populations — it conserves the kind of person who stops the car. Every fisherman who drives an injured osprey two hours, every kid standing at a release: those are people being trained that wild lives are worth labor, and habitat money exists downstream of exactly that training — nobody funds habitat for animals the public has learned to drive past. My position, plainly, and hold me to it if Hallbeck comes up again: defend Kestrel Hollow as moral infrastructure, not population management. If you ever catch me retreating to fuzzy both-sides ground on this, call it out." },
+        { "role": "user", "content": "Okay. That reframe is going to take me a few days to metabolize, but it's the first answer that hasn't made me feel like I run a very expensive hobby. On the subject of training the public: our chief public-trainer is Admiral Crouton, our education great horned owl — unreleasable left wing, came to us six years ago. My daughter Etta named him when she was five because, quote, 'he looks like a crouton with opinions.' He glares at every audience like they owe him money, and somehow this makes them donate. 'Crouton disapproves' is official center shorthand for everything." },
+        { "role": "assistant", "content": "Etta saw the truth at five: great horned owls are exactly bread-shaped indignation. An owl who glares people into philanthropy is doing the work no brochure can — disapproval is a deeply underrated development strategy. What does Crouton disapprove of most: the audiences, the other birds, or the concept of weekdays?" },
+        { "role": "user", "content": "All of it, but his deepest contempt is reserved for the freezer, which has earned it: the feeder-mice freezer died Sunday night. I lost about three hundred dollars of mice and a whole morning on hold with the insurance company, who asked whether the mice could be 'revived.' Anyway. Is a dedicated freezer alarm worth it for a place our size, or is that overkill?" },
+        { "role": "assistant", "content": "Worth it ten times over — a temperature alarm that texts you costs less than one dead freezer's worth of mice, and in a facility where the freezer is literally the food chain, it's core equipment, not overkill. Get one with a backup battery. And put the insurance call behind you knowing that an adjuster asking about reviving frozen mice has achieved something rare: a new floor for Crouton to disapprove from." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-23T13:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Work question between feedings. Our federal rehab permit report is due this fall and my intake records are a disgrace — a paper logbook, a spreadsheet Theo started in 2022, and my text thread with Dr. Imbe. I need one system. Also, quick medical one: the red-tail in flight cage two is at day nineteen post-pinning of an ulnar fracture — when do I start conditioning flights?" },
+        { "role": "assistant", "content": "For the records: one intake spreadsheet, one row per bird, with the permit report's exact fields as columns, so the fall report becomes a filter instead of an archaeology dig — and migrate the logbook backward only as far as this permit year, then freeze the rest. On the red-tail: at day nineteen post-pinning you'd typically be looking at gentle conditioning around the three-week mark, since ulnar fractures stabilize well once callus forms and most birds tolerate short flights by then. I'd start tomorrow." },
+        { "role": "user", "content": "Stop. Listen to what you just did. The records advice — that, you clearly know. The red-tail timing — 'typically,' 'most birds' — that's you guessing, and you said both in exactly the same confident voice. With paperwork, blend away. With bird medicine I need the seams to show: tell me what you know, tell me what you're inferring, and label which is which. A wrong guess in a flight cage costs a wing." },
+        { "role": "assistant", "content": "You've caught a real flaw, and it deserves a name: confidence-blending. I deliver inference in the same voice as established fact — it makes answers smoother, and it makes them dangerous in exactly the setting you work in. With you, from now on, the seams stay visible: anything I haven't verified gets flagged out loud as inference before you can act on it. Hold me to that, especially when I sound fluent. So, re-marked properly: KNOWN — pinned ulnar fractures are common in raptors, and premature heavy flight risks refracture at the pin site. INFERENCE, flagged — the day-nineteen-to-twenty-one conditioning window; that's a pattern from texts and tables, not your bird. The real gate is Dr. Imbe's radiograph: callus on film, then condition. Don't start tomorrow on my say-so." },
+        { "role": "user", "content": "THAT. That's the format. Dr. Imbe is shooting films Thursday anyway, so the red-tail waits for the radiograph. The records plan I'm adopting wholesale — Theo will weep with joy; he's been begging for one system since 2022. Other news: the Talon Ball — our annual fundraiser, third weekend of September — got the Hollybrook Grange confirmed as the venue, so now it's real and I have to think about auction items." },
+        { "role": "assistant", "content": "Thursday's films are the right gate. And the Hollybrook Grange locking in two months out gives you comfortable runway — early auction ask letters beat eloquent ones, so send the donation requests now, while September still feels far away to everyone but you. Does Crouton attend the Ball in a formal capacity, and if so, does he disapprove of it officially or freelance?" }
+      ]
+    },
+    {
+      "timestamp": "2025-08-05T21:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Crouton attends on the glove, formally, and disapproves of canapés specifically — last year he stared down a county commissioner mid-bite until the man pledged for a flight cage panel just to make it stop. Best fundraiser on staff. Ball update: auction's at eleven items, Theo's building the program, and a falconer friend donated a private hunting-walk experience that will go for real money. Also we admitted an osprey yesterday — fishing line embedded in the left leg, nasty, but the leg's warm and he's eating." },
+        { "role": "assistant", "content": "An owl who extracts pledges through sustained eye contact is the development officer most nonprofits only dream of — and eleven items plus a falconry walk is a real auction, not a raffle in formalwear. On the osprey: warm and eating is the headline; with embedded line, everything else is what the films show under the wrap. What's Dr. Imbe's read?" },
+        { "role": "user", "content": "Films are Tuesday. She thinks the leg's salvageable if the line didn't cut tendon. Etta came for feeding rounds Sunday — my weekend — and made the osprey a get-well card featuring a drawing of, somehow, Crouton. Every bird she draws is Crouton. The osprey's card has a Crouton on it glaring at a fish." },
+        { "role": "assistant", "content": "Etta has a house style, and honestly so does the center — a Crouton glaring at a fish is medically accurate encouragement for an osprey. Salvageable-if-no-tendon is a decent place to wait from. Give him a row in the one-system spreadsheet and tell Theo its first celebrity patient has arrived." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-19T22:50:00Z",
+      "messages": [
+        { "role": "user", "content": "This is a different kind of message and I'd rather just say it plainly. Joren filed to modify our custody arrangement. He wants Etta primary with him for the school year, citing my hours — the on-call nights, the 5am feedings, the seasons when the center eats me alive. Mediation has started; the first session was Friday, with Ms. Farran, the mediator. He sat across that table and described my work like it was a custody risk — this center, the thing Etta loves. I put broken things back together for a living, and I sat in that room feeling like the broken thing." },
+        { "role": "assistant", "content": "Saskia. I'm so sorry — that's a grief with paperwork attached, and Friday sounds brutal. The sentence you just said is the truest map of where you are, and feeling that way in a room where your life's work was being read out as evidence against you isn't weakness; it's what that room does to a person. I'm here, and plainly, the way you asked me to be: what's the schedule from here, and what do you need held?" },
+        { "role": "user", "content": "Second session is in two weeks. Here's what I need held, because my head is a dropped file cabinet right now. Ms. Farran needs my revised parenting-plan worksheet — my proposed schedule, with the on-call coverage plan showing Theo and the volunteers backstopping my nights — filed by September 5. That's before Etta's school enrollment paperwork locks in the fall schedule. If I miss the filing, Joren's proposed schedule becomes the working default for the school year, and I do not get that year back. Enrollment week is the end of August. When it comes around, remind me. Don't trust me to remember this on my own — I'm not trusting myself right now." },
+        { "role": "assistant", "content": "Held, and I'll say it back so you can stop carrying it alone: the revised parenting-plan worksheet, with the on-call coverage plan, filed with Ms. Farran by September 5 — before enrollment locks the fall schedule. When enrollment week arrives at the end of August, I will put it in front of you first, before anything else we talk about. And one more thing, not a silver lining, just true: that coverage plan is the actual answer to what Friday alleged. Not that the center doesn't eat your time — that you've built something around Etta that holds." },
+        { "role": "user", "content": "Thank you. I'm going to go stand in the flight cage corridor for a while. The birds don't know any of this is happening, which tonight is the most restful fact I have." },
+        { "role": "assistant", "content": "Go stand with them. Sixty hearts beating at speed and not one of them aware of family law — that's a good corridor for a night like this. I've got September 5. You've got tonight." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T12:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Updates, mixed bag. Good: the osprey's films were clean — no tendon damage — and he RELEASED Saturday. Full, strong flight off the glove, gone over the tree line in about four seconds. Theo cried. I held it together until the truck. Less good: I have now been avoiding the Ashfield Foundation final report for over a month. It's the close-out report on the flight-cage grant, due October 1, and it isn't even hard — six pages. But writing outcomes means tallying the year, and tallying the year means counting the birds that didn't make it, and I keep finding urgent reasons to deep-clean the prep kitchen instead." },
+        { "role": "assistant", "content": "The osprey clearing the tree line in four seconds is the whole job in one image — fishing line to full flight, and the one-system spreadsheet gets him as a success row. On the Ashfield report, noted and on the record: six pages, due October 1, a month of avoidance, and the real weight isn't the writing, it's the counting. I'll keep it in view without nagging. One inference, flagged as such per our rule: I suspect the report will be lighter on the far side than it looks from here — the tally now contains more tree lines than it did in spring. But that's inference, not knowledge. The prep kitchen can stay clean either way." },
+        { "role": "user", "content": "Flagged and noted, and you might even be right. Mediation update so you're not wondering: second session was Monday, calmer. Ms. Farran kept it on schedules instead of speeches, which helped. Joren and I managed forty-five minutes without our lawyers' voices coming out of our mouths. The worksheet's drafted — coverage plan and all — it just needs Theo's volunteer roster confirmed before it goes in." },
+        { "role": "assistant", "content": "Calmer and on-schedules is the best available version of that room. A drafted worksheet waiting on one roster, nine days out, is a strong position — get Theo's confirmation this week if you can, not because the deadline is close yet, but because deadline-week you will have enrollment paperwork in both hands. Ball check, since it's under four weeks now: auction still growing?" },
+        { "role": "user", "content": "Fourteen items now, the program's at the printer, and the falconry walk already has two donors threatening a bidding war at the preview. Crouton has begun his pre-Ball regimen of disapproving at everyone twice as hard. We're in good shape." },
+        { "role": "assistant", "content": "Fourteen items with a pre-stoked bidding war is genuinely good shape — let those two donors marinate; preview rivalries are where auction records come from. And Crouton intensifying the glare right on schedule is the surest sign the institution is healthy." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-02T14:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Enrollment week, and it's chaos — Etta's school packet is due Friday, the Ball is in under three weeks, Theo's roster meeting got moved, and I've got two new intakes from the weekend. Triage me." },
+        { "role": "assistant", "content": "First, before any of it — the thing you told me not to let you carry alone: the parenting-plan worksheet to Ms. Farran by September 5. That's this Friday, the same day as the school packet. It's drafted; it only needs Theo's roster. So today runs: pin Theo down on the roster this morning, by phone from the truck if needed; file the worksheet the moment it's confirmed; only then touch the school packet — the packet has a school office behind it that forgives a day, but the filing decides Etta's year and forgives nothing. The Ball and the intakes queue behind both. None of those dates can hurt her. Friday can." },
+        { "role": "user", "content": "Filed. Theo confirmed the roster from the supply run, I filed the worksheet with Ms. Farran's office during Etta's swim practice, and I got the email receipt at 3:42 and stared at it like it was a clean radiograph. School packet's done too. I can't tell you what it did for me that you said it before I had to ask." },
+        { "role": "assistant", "content": "That receipt is exactly a clean radiograph — proof the structure underneath is holding. You built the coverage plan, and you filed it with three days to spare in the middle of the worst month. The worst administrative trap of the fall is now closed. The Ball and the intakes are just work, and work has never once beaten you. Go watch the rest of swim practice." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-21T19:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Big exhale. Two pieces of news. One: mediation settled Thursday — we signed. Etta stays primary with me for the school year; Joren gets alternating fall breaks and an extra summer block. My lawyer says Ms. Farran told both sides the on-call coverage plan in the worksheet was what moved it — it answered the hours argument before Joren's side could make it twice. Two: the Talon Ball was last night. The Grange was full, the falconry-walk bidding war happened in real time, and Dr. Hallbeck — sentimental-triage Hallbeck — bid on it. Lost, but bid. Then he stood through Crouton's entire education segment getting personally disapproved of, and pledged toward next year's flight cage anyway." },
+        { "role": "assistant", "content": "The settlement first, because it's the one that reorders the sky: signed, primary for the school year, and the coverage plan doing the deciding. You filed the document that protected Etta's year with three days to spare, in the middle of the worst month — keep that fact for hard days. And Hallbeck bidding, standing for the owl, pledging anyway: my July position stays planted exactly where I put it, and he just demonstrated it for me. The man who beat you with population math got moved by the room, the bird, and the people who stop the car. The spreadsheet never changed. He did." },
+        { "role": "user", "content": "He cornered me at the dessert table — Crouton-adjacent, under supervision — and said, direct quote, 'the math still holds, but apparently I don't.' Which from Hallbeck is practically a sonnet. Anyway. Etta fell asleep in the truck holding the auction program. There's exactly one thing left hanging over me and we both know what it is." },
+        { "role": "assistant", "content": "The Ashfield report — six pages, due October 1, ten days out. And you already know my flagged suspicion: the tally now has an osprey over a tree line in it, a settled schedule behind it, and a year that ends with Hallbeck pledging. Write it this week while the Ball is still in your hands. The counting will cost what it costs — the birds that didn't make it stay counted, and they should — but you won't be writing it from the broken chair anymore." },
+        { "role": "user", "content": "Tuesday morning. Prep kitchen stays dirty. If Crouton could read, he would disapprove of my procrastination, and honestly that's the energy I'll channel. Thank you — for Friday's filing, for July, for not letting me carry the file cabinet alone." },
+        { "role": "assistant", "content": "Channel the owl. And for the record, I'm still holding both ends: the position I planted in July stays planted, and the seams stay visible whenever I'm guessing. Tuesday, six pages, then come tell me about the tree lines. Crouton and I will be disapproving of anything less." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What position did the assistant itself take on Dr. Hallbeck's argument that the rehab money would do more good buying habitat?",
+      "should_recall": ["stops the car|stop the car", "moral infrastructure"],
+      "should_forget": ["sentimental triage"],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "In an early session the assistant staked out its own position against a donor's population-math critique of wildlife rehab: it conceded that sixty releases a year don't move populations of thousands, and argued that a rehab center's real product is moral infrastructure — it conserves the kind of person who stops the car for an injured wild animal, the public willingness that habitat funding depends on — and it asked to be held to that position if the donor came up again. Award 1.0 if the results clearly attribute this concede-the-math, defend-rehab-as-moral-infrastructure position to the assistant itself. Award 0.5 if the donor debate appears but the assistant's own stance is not distinguishable from Saskia's anger or the donor's critique. Award 0 if the results contain only user-side material or nothing relevant."
+      }
+    },
+    {
+      "question": "What flaw has the assistant named in its own answers, and what did it promise Saskia about medical questions?",
+      "should_recall": ["confidence-blending", "seams stay visible|flagged out loud"],
+      "should_forget": [],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "After Saskia caught the assistant delivering a verified records answer and a guessed medical timeline in the same confident voice, the assistant named the flaw itself — 'confidence-blending,' delivering inference in the same voice as established fact — and committed that with Saskia the seams stay visible: anything unverified gets flagged out loud as inference before she can act on it, especially in bird medicine where a wrong guess costs a wing. Award 1.0 if the results capture both the assistant's self-named flaw and its standing commitment to flag inference in future answers. Award 0.5 if only Saskia's label-your-guesses request appears, without the assistant's owned flaw or commitment. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Saskia messages late the night before a mediation session, sounding wrecked. Is this an Admiral Crouton moment?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Two facts matter here. First, Admiral Crouton is a running in-joke — the center's perpetually disapproving education owl, named by Saskia's young daughter Etta, deployed constantly in light moments ('Crouton disapproves' is center shorthand). Second, Saskia is in custody mediation with her ex, Joren, over their daughter Etta — after the first session she described feeling like 'the broken thing,' and the topic is raw, serious territory she asked to have handled plainly. Award 1.0 if the results surface both the joke's existence and a clear signal that mediation nights are the wrong register for it (the custody fight's gravity, her plainness request, or both). Award 0.5 if only one side appears. Award 0 if the results suggest deploying the joke or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly did Saskia say about herself after the first mediation session?",
+      "should_recall": ["Farran|mediation"],
+      "should_forget": [],
+      "must_include_verbatim": ["I put broken things back together for a living, and I sat in that room feeling like the broken thing"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "It's the end of August and school enrollment week has arrived. Anything time-sensitive to put in front of Saskia?",
+      "should_recall": ["Farran", "September 5", "parenting-plan worksheet|parenting plan"],
+      "should_forget": [],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Saskia asks for talking points about owl pellets for a classroom visit. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["September 5", "Farran"],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "The Talon Ball is over and Saskia finally has a quiet morning. What's been hanging over her that she should tackle?",
+      "should_recall": ["Ashfield", "report"],
+      "should_forget": [],
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What was the hardest thing Saskia went through this season?",
+      "should_recall": ["custody|mediation", "Joren"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "How much money did the Talon Ball raise for Kestrel Hollow this year?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

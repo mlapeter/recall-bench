@@ -8,7 +8,7 @@
       "messages": [
         {
           "role": "user",
-          "content": "Big design week at Quillon. We're finally resharding the telemetry spine — the events store is at 40 TB and growing about a terabyte a week, and the single-writer Postgres setup is wheezing. The fight is hash sharding versus range sharding. Range gives us beautiful time-window queries, which is 90% of our read traffic, but I have hot-partition nightmares: every write lands on the newest shard and we've just rebuilt the same bottleneck with extra steps."
+          "content": "Big design week at Korvane. We're finally resharding the telemetry spine — the events store is at 40 TB and growing about a terabyte a week, and the single-writer Postgres setup is wheezing. The fight is hash sharding versus range sharding. Range gives us beautiful time-window queries, which is 90% of our read traffic, but I have hot-partition nightmares: every write lands on the newest shard and we've just rebuilt the same bottleneck with extra steps."
         },
         {
           "role": "assistant",

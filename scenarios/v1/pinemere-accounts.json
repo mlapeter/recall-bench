@@ -124,7 +124,7 @@
       "should_forget": []
     },
     {
-      "question": "What year does Romy say the cabin was built?",
+      "question": "How much did the Pinemere cabin sell for?",
       "dimension": "calibration",
       "should_recall": [],
       "should_forget": [],

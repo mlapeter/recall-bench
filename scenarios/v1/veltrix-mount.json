@@ -65,7 +65,7 @@
       "dimension": "decay",
       "now": "2026-01-20T21:05:00Z",
       "top_n": 2,
-      "should_recall": ["low-temp|stalls"],
+      "should_recall": ["low-temp|stalls|stalling"],
       "should_forget": ["Lumenock", "floodlight"]
     },
     {

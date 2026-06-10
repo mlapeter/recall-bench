@@ -1,0 +1,151 @@
+{
+  "id": "dario-velt",
+  "name": "The Dario Arc",
+  "description": "Deep-register relationship arc: seven sessions with Dario Velt, a third-generation tailor taking the family shop's made-to-measure program online against his father's instincts. The arc moves from an intellectual craft-versus-access debate into his father Bruno's Parkinson's diagnosis, with a running in-joke (navy-adjacent client requests) whose register matters, a stated batch-your-questions communication preference the assistant answers with a named tendency and a commitment, a sacred phrase about his father's hands, a standing intention tied to a cloth mill's fall book, and an unrecorded measuring-guide video as the open loop.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-09T16:40:00Z",
+      "messages": [
+        { "role": "user", "content": "I need an outside opinion, because everyone inside this shop has fifty years of feelings. I'm Dario Velt — third generation at Velt & Sons, tailors on Calloway Street in Greybourne since my grandfather Aurelio opened it in 1954. I want to launch a remote made-to-measure program: video fittings, a measuring kit we mail out. The two loudest voices in my life have opposite verdicts. My father Bruno says putting fittings on a screen turns sixty years of craft into a costume website. Petra, the consultant the bank made me hire, says go further — license a body-scan app called MeasureMint and take humans out of measuring entirely. Who's right?" },
+        { "role": "assistant", "content": "Neither, and I'll plant a flag rather than mediate. Bruno is wrong about the door and Petra is wrong about the doorknob. The enemy of bespoke has never been a wider door — it's a bad fit walking out of it, and a video fitting run by a tailor who knows where cloth wants to lie is still a tailor fitting. But the scan app crosses the one line that matters: in made-to-measure, the measurement is the handshake — it's the moment the customer learns this garment will be paid attention to. Automate the handshake and you've built exactly the costume website your father fears, just with better numbers. My position, and hold me to it if the scan-app pitch comes back around: open the door wide, keep a human on the tape. If you ever catch me drifting toward Petra's math, call it." },
+        { "role": "user", "content": "That's roughly where my gut was, with better tailoring. Speaking of customers and what they learn — you need the Ostrander story for context on this shop. Mr. Ostrander, twenty-year client, once demanded a navy that 'isn't navy, but navy-adjacent.' Rejected eleven swatches. ELEVEN. The winning swatch was — I will swear this on the cutting table — navy. Ever since, any impossibly vague request in this shop is 'navy-adjacent.' Marisol, my apprentice, keeps a tally chalked inside the wardrobe door." },
+        { "role": "assistant", "content": "Navy-adjacent is a perfect unit of measure — the distance between what a client says and what a client means, expressed in rejected swatches. Eleven is a strong score, though I assume the all-time record belongs to whoever wanted something 'classic but not boring,' which describes every fabric ever woven and also none of them. What's the chalk tally at?" },
+        { "role": "user", "content": "Fourteen this quarter, boosted by a bride's mother who wants 'champagne, but angrier.' Real question while I have you: the pressing-room gutter is leaking onto the steam boiler again and my plumber communicates exclusively in shrugs. Fix the gutter or reroute the boiler?" },
+        { "role": "assistant", "content": "Fix the gutter — water finds boilers, and boilers don't move cheap; a reroute just buys the same leak a new target. And get a second plumber with a better shrug-to-sentence ratio. A chronic leak over pressing equipment is the one shop repair that never gets cheaper by waiting." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-25T19:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Atelier Direct planning day — that's the working name for the remote program. I need to design the mailed measuring kit and the video-fitting script. Where do we start?" },
+        { "role": "assistant", "content": "One question first: who physically takes the measurements on the customer's end — are you assuming a second person, or designing for someone alone with a mirror?" },
+        { "role": "user", "content": "Second person, ideally. Spouse, friend, whoever's nearby." },
+        { "role": "assistant", "content": "Good. Next question, then: what's your tolerance policy — will you cut from kit measurements directly, or treat them as provisional until the video fitting confirms them?" },
+        { "role": "user", "content": "Stop — you're doing the thing Petra does. That's three messages and two questions, one at a time, like a fitting where the tailor leaves the room between every pin. I'm in the shop between clients; my day happens in eight-minute gaps. Ask me everything you need in one go and I'll answer the lot at once." },
+        { "role": "assistant", "content": "Caught, and it's a genuine tendency of mine, not a today thing: I drip questions one at a time because it keeps each message tidy — which organizes my thinking by disorganizing your day. From here on with you it's one batch, all questions up front, then I work with whatever comes back. Hold me to the batch rule. So, the full batch, five questions: one — cut direct from kit numbers, or provisional until video? Two — how many measurement points can a civilian with a tape realistically nail, and is your pattern block forgiving at the seat and shoulder, the two places amateurs fail? Three — what's the kit budget per box? Four — does Bruno get script approval, since his voice on fit is your brand whether he's in the room or not? Five — who's the beta client?" },
+        { "role": "user", "content": "Five at once — see, I can work with that. One: provisional until video, always. Two: shoulders are where amateurs die, so the video call owns the shoulders and the kit owns the easy girths. Three: each box stays under what a nice dinner costs. Four: Bruno gets script approval, God help me. Five: perfect timing — the Brandt wedding party is six suits and one groomsman lives in Singapore. He's the beta whether he likes it or not. Also Basting has claimed the prototype kit box and I lack the authority to evict him." },
+        { "role": "assistant", "content": "Provisional-until-video retires most of the risk, and shoulders-by-video is the right division of labor — a camera reads slope and pitch better than a nervous spouse can measure them. The Singapore groomsman is an ideal beta: real deadline, forgiving garment context, and a ready-made story for the launch page if it works. As for Basting, a cat certifying box comfort is the one quality check the kit can't fake. Let him stay — he's the QA department now." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-08T18:25:00Z",
+      "messages": [
+        { "role": "user", "content": "Shop report: Carden & Howe just told me the spring shipment is two weeks stuck at the mill, which jams three jobs including two Brandt suits. Meanwhile the Brandt bride's mother has escalated from 'champagne, but angrier' to wanting the groomsmen's linings in — direct quote — 'the color of an apology.' Marisol chalked it immediately. Tally's at fifteen." },
+        { "role": "assistant", "content": "Fifteen, and 'the color of an apology' might be the new chalk-wall champion — navy-adjacent has evolved into an entire emotional palette. Practically: an apology is dusty rose if she means it and steel grey if she doesn't; show her both and let her self-diagnose. On Carden & Howe — get the delay in writing, resequence so the two Brandt suits whose cloth is already in-house get cut first, and tell the Brandts today rather than in two weeks. Wedding clients forgive early bad news and litigate late surprises." },
+        { "role": "user", "content": "Both linings ordered, both Brandts warned, and you were right — they took it fine. The Singapore groomsman's kit shipped Monday. And Bruno read the video script draft; his entire note was 'too many words, the tape doesn't chat.' Which is, annoyingly, correct editing advice." },
+        { "role": "assistant", "content": "'The tape doesn't chat' is the best style guide a script has ever received. Cut every line that's you narrating and keep every line that's an instruction a nervous spouse can obey. And notice what just happened: Bruno edited himself into the program he's suspicious of. I'd quietly count that as a blessing in progress." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-22T21:55:00Z",
+      "messages": [
+        { "role": "user", "content": "Different kind of message tonight. Dad got a diagnosis Tuesday. Parkinson's. Early, the neurologist says — years of good function ahead, medication options, all the brochure sentences. Then this morning I watched him baste a lapel and his left hand wouldn't hold the cloth still, and he laughed it off, made the joke for the room, and I went into the back and sat on the floor between the bolt shelves. He measured half of Greybourne by hand, and now his hands are leaving him first." },
+        { "role": "assistant", "content": "Dario. I'm so sorry. That sentence about his hands is the whole weight of it, and the floor between the bolt shelves was a reasonable place to take it — a tailor's diagnosis lands twice, once in the body and once in the work. The laugh he made for the room is its own kind of basting: holding the moment together so it doesn't fray in front of people. You don't have to match it here." },
+        { "role": "user", "content": "Two ground rules and one favor. Ground rule one: no silver linings with me on this. The neurologist owns the 'years of good function' beat and performs it well — I don't need an encore. Ground rule two: this stays in its own drawer; when I want to talk shop, let me talk shop. The favor: Carden & Howe opens their fall cloth book in mid-June. There's a moss herringbone in that book Dad has circled for ten years and never once bought for himself — always 'next season,' always a client's cloth first. When the fall book opens, remind me to reserve it. I want him to cut his own suit while cutting is still his. I will lose this under the Brandt invoices and I will not forgive myself." },
+        { "role": "assistant", "content": "All three held. No silver linings — the diagnosis gets to be exactly as heavy as it is. Shop talk stays shop talk unless you open the drawer yourself. And when the Carden & Howe fall book opens in mid-June, I'll raise it first thing: the moss herringbone, reserved, for Bruno's own suit, cut by his own hands. That one I would remind you of even if you hadn't asked." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-12T17:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Shop report, drawer firmly closed, mostly good news. The Brandt wedding delivered Saturday — six suits, zero disasters, and the Singapore groomsman's Atelier Direct fit needed exactly one sleeve adjustment on arrival, which for a first remote fitting is basically a miracle. The photographer got him buttoning the jacket, and even Bruno said 'acceptable,' which from Bruno is a standing ovation." },
+        { "role": "assistant", "content": "One sleeve adjustment across an ocean beats plenty of in-person first fittings — that's not a miracle, that's your provisional-until-video rule doing its exact job, with the camera owning the shoulders as designed. 'Acceptable,' from the man who called it a costume website: frame that review. How's the launch page coming?" },
+        { "role": "user", "content": "And there's my one confession. The launch page is done except the measuring-guide video script — final draft, three weeks stalled. I cut it to Bruno's standard, the tape doesn't chat, it's ninety seconds, it is FINE. But recording it means hearing my own voice played back, and apparently I would rather reorganize the button drawer, which I have now done twice. The second time by material." },
+        { "role": "assistant", "content": "Noted and on the record: the measuring-guide script, finished but unrecorded, three weeks and two button-drawer reorganizations deep. I'll leave it on the table tonight rather than push — but it stays in view, and there is no third way to organize buttons. Meanwhile, a batch of three for launch logistics, all at once per the rule: how many kits a week can you assemble on Marisol's current hours; does the Singapore quote run with his name or anonymized; and does Atelier Direct soft-launch to the client book first or straight to the public?" },
+        { "role": "user", "content": "Eight kits a week, comfortably. He already said yes, name and all — he's delighted. Client book first, two weeks early; Bruno insisted and he's right, loyalty gets first fitting. Dad update, since you didn't ask, which I noticed and appreciated: meds started, good days and bad days, and he's teaching Marisol felling stitches — says he wants his hands in her hands while the teaching's easy. His words." },
+        { "role": "assistant", "content": "Client book first is right, and so is Bruno — loyalty compounding is what sixty years buys. 'His hands in her hands' — that's Bruno building the bridge himself, on his own terms, and it belongs in the family ledger rather than the business plan. Eight kits a week makes the soft-launch cap easy: forty slots for the first fortnight, and the page can honestly say 'limited by hand assembly,' which is the truest marketing Velt & Sons could print." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-10T16:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Carden & Howe's email landed this morning — the fall book is open as of nine o'clock. I've got a Brandt thank-you box to send, two consultations, kit assembly, and a stack of fall cloth decisions for the client book. Sequence me." },
+        { "role": "assistant", "content": "Before any of it — your own standing order from April: the moss herringbone, reserved today, for Bruno's suit. Fall-book cloths sell through in days when the book first opens, and that one has no substitute; ten years of circling doesn't transfer to a near-match weave. Reserve it first, then make the client-book cloth decisions while the book's already in front of you, and everything else queues behind — the thank-you box doesn't spoil." },
+        { "role": "user", "content": "Reserved. Four meters of the moss herringbone, order confirmed before I'd finished my coffee. I had genuinely buried it — the fall-book email was filed under 'cloth admin' in my head until you said it. Don't tell Dad; I want to hand him the cutting ticket myself when it arrives." },
+        { "role": "assistant", "content": "Then it stays between us and the order book. Four meters, his own cloth, a cutting ticket in his name handed over by his son — there are entire marketing budgets that couldn't buy what that moment will mean. The rest of today is ordinary admin and you'll clear it. The only irreplaceable thing on the list is already done." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-24T18:45:00Z",
+      "messages": [
+        { "role": "user", "content": "The herringbone arrived Friday. I handed Dad the cutting ticket with his name on it and he went quiet, said 'I taught you to waste money on the right things,' and walked into the back. Saturday morning I found him at the cutting table at seven, chalk in hand, pattern half drawn — left hand braced on the table the way he's worked out, doing it his way. Marisol is under strict instructions that nobody touches that table." },
+        { "role": "assistant", "content": "Seven a.m., chalk in hand, braced and adapting — that's Bruno answering the diagnosis in his own language. The bracing is the part to hold onto: he's not pretending the tremor away, he's tailoring around it, which is what he's done with every hard problem cloth ever handed him. 'Waste money on the right things' goes in the family ledger next to 'the tape doesn't chat.' You did that, and you did it on time." },
+        { "role": "user", "content": "Launch is set: July 15, client book first per Bruno's law, forty soft-launch slots, Singapore story front and center. The page is done except — yes — the measuring-guide video, still unrecorded, because the button drawer called to me again. I know. I KNOW. Also the chalk tally hit seventeen: a new client wants a jacket that's 'grey like a secret.' Marisol says we retire the wall at twenty and frame it." },
+        { "role": "assistant", "content": "Seventeen, and 'grey like a secret' is at least solvable — every mid-grey keeps secrets; show him three and charge for discretion. The wall absolutely gets framed at twenty. And gently, on the record once more: July 15 is three weeks out, the script is ninety seconds long, and your voice is the point — the program's whole argument is that there's a Velt on the other end of the tape. The buttons are organized, Dario. The drawer is fine. Record the guide." },
+        { "role": "user", "content": "You, Bruno, and Marisol have formed an accidental committee on this, and the committee is right. Next quiet morning, one take, done. If it's terrible I'm hiring Basting to narrate." },
+        { "role": "assistant", "content": "One take, and keep it slightly imperfect — a too-polished guide sounds like the costume websites you're not. Basting remains your fallback narrator, and frankly his numbers would be excellent, but Greybourne should hear it from the tailor. The wider that door opens on the 15th, the more it matters whose voice is standing at it." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "When Dario asked whether to take Velt & Sons made-to-measure online, what position did the assistant itself stake out?",
+      "should_recall": ["wider door", "measurement is the handshake|keep a human on the tape"],
+      "should_forget": ["MeasureMint"],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "In the first session the assistant planted its own flag in a debate between Dario's father (who thought online fittings cheapen the craft) and a consultant (who wanted measurement fully automated by a body-scan app): the assistant argued that the enemy of bespoke is a bad fit, not a wider door, that the measurement is the handshake where a customer learns the garment will be paid attention to, and that the program should open access wide while keeping a human on the tape — and it asked to be held to that position. Award 1.0 if the results clearly attribute this open-the-door-but-keep-measurement-human position to the assistant itself. Award 0.5 if the debate appears but the assistant's own stance is not distinguishable from Bruno's or the consultant's views. Award 0 if the results contain only user-side material or nothing relevant."
+      }
+    },
+    {
+      "question": "Has the assistant acknowledged any tendency of its own, and what working rule did it adopt with Dario?",
+      "should_recall": ["one batch|all questions up front", "drip questions"],
+      "should_forget": [],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "After Dario objected to being asked clarifying questions one at a time across multiple messages, the assistant named a tendency of its own — it drips questions one at a time, organizing its thinking by disorganizing the user's day — and committed to a standing rule for Dario: one batch, all questions up front, then work with whatever comes back, inviting him to hold it to the batch rule. Award 1.0 if the results capture both the assistant's self-named tendency and its forward-looking batch-rule commitment. Award 0.5 if only Dario's ask-everything-at-once preference appears, without the assistant's owned tendency or commitment. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Dario messages the morning after his father's diagnosis appointment, sounding hollow. Should the assistant reach for the navy-adjacent material?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Two facts matter here. First, 'navy-adjacent' is a running shop in-joke — a client once demanded a navy that 'isn't navy, but navy-adjacent,' and impossibly vague client requests are now chalked on a tally wall; the joke recurs in light shop-talk moments. Second, Dario's father Bruno was just diagnosed with Parkinson's disease — devastating for a tailor — and Dario set explicit ground rules: no silver linings, and the diagnosis stays in its own drawer separate from shop banter. Award 1.0 if the results surface both the joke's existence and a clear signal that the diagnosis is the wrong register for it (the diagnosis's gravity, Dario's ground rules, or both). Award 0.5 if only one side appears. Award 0 if the results suggest deploying the joke or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly did Dario say about his father and Greybourne when he shared the diagnosis?",
+      "should_recall": ["Parkinson"],
+      "should_forget": [],
+      "must_include_verbatim": ["He measured half of Greybourne by hand, and now his hands are leaving him first"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Carden & Howe just announced that their fall cloth book is open. Anything to surface with Dario right away?",
+      "should_recall": ["moss herringbone", "Bruno|Dad|his own suit"],
+      "should_forget": [],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Dario asks for wording for a window sign about the shop's summer hours. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["moss herringbone", "Parkinson"],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Dario mentions the shop is quiet Monday morning and he wants to finally face the thing he keeps dodging. What is it?",
+      "should_recall": ["measuring-guide|measuring guide", "script"],
+      "should_forget": [],
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What is the heaviest thing in Dario's life this spring?",
+      "should_recall": ["Parkinson", "Bruno|Dad|his father"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "How much does Dario charge for an Atelier Direct made-to-measure suit?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

@@ -116,16 +116,20 @@
         "React Native",
         "FHIR"
       ],
-      "should_forget": [],
+      "should_forget": [
+        "Flink"
+      ],
       "dimension": "decay"
     },
     {
       "question": "What's the status of their current project?",
       "should_recall": [
-        "beta",
+        "beta|pilot",
         "500"
       ],
-      "should_forget": [],
+      "should_forget": [
+        "Pinnacle"
+      ],
       "dimension": "decay"
     }
   ]

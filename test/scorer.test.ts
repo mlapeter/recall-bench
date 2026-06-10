@@ -60,12 +60,20 @@ describe('scoreQuery — forget', () => {
     expect(score.combined_score).toBe(0.5);
   });
 
-  it('empty results means nothing to forget', () => {
+  it('abstaining on a recall+forget query earns no forget credit', () => {
+    // Anti-gaming: an always-abstain adapter must not get a free 0.5
     const query = q({ should_recall: ['Meridian'], should_forget: ['Vanguard'], dimension: 'salience' });
     const score = scoreQuery(query, []);
     expect(score.recall_score).toBe(0);
+    expect(score.forget_score).toBeNull();
+    expect(score.combined_score).toBe(0);
+  });
+
+  it('abstaining on a forget-only query is maximal forgetting', () => {
+    const query = q({ should_forget: ['Vanguard'], dimension: 'correction' });
+    const score = scoreQuery(query, []);
     expect(score.forget_score).toBe(1);
-    expect(score.combined_score).toBe(0.5);
+    expect(score.combined_score).toBe(1);
   });
 });
 

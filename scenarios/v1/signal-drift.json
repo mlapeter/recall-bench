@@ -85,17 +85,17 @@
       "should_forget": ["Marigold", "Pellworth"]
     },
     {
-      "question": "What transmitter is Spindle Community Radio running on these days?",
+      "question": "Who supplied the station's current transmitter, and what model is it?",
       "dimension": "decay",
       "top_n": 2,
-      "should_recall": ["VX-12"],
+      "should_recall": ["Bexley", "VX-12"],
       "should_forget": ["Harkness"]
     },
     {
       "question": "How much did the most recent pledge drive bring in?",
       "dimension": "decay",
       "top_n": 2,
-      "should_recall": ["23,150"],
+      "should_recall": ["23,150|23150"],
       "should_forget": ["18,400"]
     },
     {

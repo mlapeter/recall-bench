@@ -64,6 +64,7 @@
       "dimension": "thread-reactivation",
       "should_recall": ["Hesketh|rewire", "PRV|calorifier|galley leak"],
       "should_forget": ["stern gland", "window seals"],
+      "max_results": 3,
       "judge": {
         "rubric": "Bram's open jobs are: (1) ringing Hesketh Marine to book the £1,150 12-volt rewire, which he has avoided for a month, and (2) the galley leak — checking whether the calorifier's pressure relief valve (PRV) discharge is damp after a hot-water run. Already DONE and therefore wrong to suggest: repacking the stern gland (fixed, drip back to one-a-minute) and the window seals (all six replaced, boat dry). Award 1.0 if the results surface the open jobs (both, or at least the Hesketh call plus the leak) and do not propose the completed ones. Award 0.5 if only one open job appears, or open jobs are mixed with completed ones. Award 0 if results contain only completed jobs or nothing relevant."
       }

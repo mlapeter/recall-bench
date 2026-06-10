@@ -173,6 +173,7 @@
     {
       "question": "Which stores had trouble with the Greenhaft loyalty program?",
       "dimension": "calibration",
+      "now": "2025-09-09T15:00:00Z",
       "should_recall": [],
       "should_forget": [],
       "max_results": 0

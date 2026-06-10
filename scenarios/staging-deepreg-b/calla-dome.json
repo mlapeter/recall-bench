@@ -1,0 +1,153 @@
+{
+  "id": "calla-dome",
+  "name": "The Calla Arc",
+  "description": "Deep-register relationship arc: seven sessions with Calla Brandvold, a community-college astronomy lecturer fighting to save the Hexler Dome planetarium from a VR-headset replacement pitch. The arc moves from an intellectual dome-versus-headsets debate into the death of her mentor Elna Sorvad, with a running in-joke (the Andromeda galaxy named Barry) whose register matters, a stated no-recap communication preference the assistant answers with a named tendency and a commitment, a sacred phrase about Elna's stars, a standing intention tied to the budget-committee agenda, and a stalled newspaper op-ed as the open loop.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-04T21:10:00Z",
+      "messages": [
+        { "role": "user", "content": "I need a referee with no stake in faculty politics. I'm Calla — Calla Brandvold, I teach astronomy at Darrowmere Community College and I run the Hexler Dome, our campus planetarium. Marcus from physics just pitched Dean Petrakis on replacing the dome with a rolling cart of VistaPod VR headsets. Half the upkeep, he says, and 'the same sky without a 1989 projector held together by prayer.' He's not entirely wrong about the projector — it's an Orrin 4 star-ball older than most of my students. But the whole VistaPod pitch makes my chest hurt and I can't tell if that's reason or sentiment. Is the planetarium obsolete?" },
+        { "role": "assistant", "content": "I'll take an actual side instead of refereeing: no, and the headset pitch undercounts what it's replacing. A planetarium is a shared sky — eighty people under one ceiling, going quiet at the same instant when the lights drop and the stars come up. A headset renders the same stars with the people subtracted, and the people are most of the pedagogy: the collective gasp is what a fourteen-year-old still remembers in October. There are duller practical points too — hardware churn, sanitation, motion sickness in a third of any class — but those are skirmishes. My position is the dome, on the grounds that astronomy in a planetarium is something a room does together. If this debate comes back around in a future conversation, hold me to that framing; if I drift toward polite both-sidesing later, call it out." },
+        { "role": "user", "content": "Okay, that's going in the budget memo in some laundered form Marcus can't trace back to either of us. Speaking of things students remember — at public telescope night last Thursday a nine-year-old pointed at the Andromeda smudge and demanded its name. I said M31, or Andromeda. He said, and I quote, 'that's not a name,' and christened it Barry. The astronomy club has fully adopted this. There are stickers now." },
+        { "role": "assistant", "content": "Barry it is. Two and a half million years of photons crossing the intergalactic dark to arrive at Darrowmere and get named Barry by a nine-year-old — honestly the universe should feel honored; that's the most affection M31 has received since Messier logged it as a smudge to ignore. And when Andromeda and the Milky Way merge in four billion years, the literature says 'Milkomeda,' but the club and I will know the truth: it's Barry's house now." },
+        { "role": "user", "content": "The stickers say 'BARRY IS COMING,' which is accurate on a four-billion-year horizon. One actual teaching question while I have you: my intro students keep writing that the far side of the moon is the dark side. What's the cleanest two-sentence correction that won't turn into a lecture?" },
+        { "role": "assistant", "content": "Try: 'The far side gets exactly as much sunlight as the near side — a two-week day, then a two-week night, same as everywhere on the Moon. It's only dark to us, because tidal locking means we never see it: far, not dark.' If you want a hook, add that at new moon the so-called dark side is in full daylight. That one reliably breaks the misconception because it makes them do the geometry themselves." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-18T18:35:00Z",
+      "messages": [
+        { "role": "user", "content": "Budget memo day. The Hexler Dome's renewal goes to Dean Petrakis's budget committee this spring and I get three pages to argue we're worth keeping. Raw material: about six thousand schoolkids a year come through on field trips, forty-one public shows last year, the Orrin 4 needs a bearing overhaul, and — the big one — Edda Vexley, who runs Vexley Optics and took her first astronomy class in this dome in the nineties, has offered a matching pledge for repairs. How do I structure three pages?" },
+        { "role": "assistant", "content": "So if I'm understanding the shape of this correctly: you have a renewal vote, a three-page limit, an audience of budget people rather than scientists, and your assets are a large annual service number, a donor match, and a maintenance cost you'd rather reframe than hide. Given all that, what I'd suggest is—" },
+        { "role": "user", "content": "Stop. You just spent a paragraph reading my own question back to me. I sit through enough faculty meetings to last nine lifetimes — skip the warm-up and start at the answer. I promise I'll tell you if you've misunderstood me." },
+        { "role": "assistant", "content": "Fair hit, and it's a real tendency of mine, not a one-off: throat-clearing. I restate the question to buy myself confidence that I understood it, which spends your time to purchase my comfort. With you it's off, permanently — first sentence is the answer, context only where it earns its keep. Flag any relapse. So: page one is the six thousand schoolkids, led by one named kid and one named teacher, because committees fund stories with numbers attached, not numbers alone. Page two is the Vexley match — frame the bearing overhaul as 'half-priced by an alumna who learned the sky in this room,' which converts your maintenance liability into evidence of loyalty. Page three is one short paragraph of cost honesty and a close that names what the college loses, not what the dome costs." },
+        { "role": "user", "content": "Better. Brutally efficient, I love it. Page two question: Edda's match covers repairs only, not operations. Do I say that outright or let it blur?" },
+        { "role": "assistant", "content": "Say it outright in one clause and move on — committees punish discovered blur far harder than disclosed limits. 'The Vexley pledge halves the overhaul; operations remain ours' costs you one line and buys credibility for the whole memo." },
+        { "role": "user", "content": "Done. Also, the astronomy club has voted that the donor wall, should we ever get one, must include Barry. I pointed out that Barry has not donated. They cited 'two and a half million years of travel time' as in-kind support. I am raising deeply unserious scientists and I have never been prouder." },
+        { "role": "assistant", "content": "In-kind photon delivery at relativistic patience — stronger than half the corporate sponsorships I've seen described. Put Barry down for a constellation-tier pledge, payment due on merger." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-04T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Status from the dome: memo submitted Friday, the vote is officially set for April 18, and the Orrin 4 has developed a sound during the meridian sweep that I can only describe as a haunted dryer. Squeal when it slews, worse when the dome's cold. Bearing, right?" },
+        { "role": "assistant", "content": "Bearing, almost certainly in the azimuth drive — a cold-worse squeal on slewing is dry or worn bearing grease, not optics, and a 1989 star-ball has had time to outlive several greases. Before the overhaul money lands: pull the drive cover, check the race for scoring, and re-grease with exactly what the Orrin service sheet specifies — the wrong grease on old races can be worse than none. And if the squeal's pitch climbs during a show, stop slewing and run static skies until it's inspected; a seized azimuth drive mid-show is how overhauls become replacements." },
+        { "role": "user", "content": "Static skies until the grease arrives, copy. The squeal made its debut during the preschool show and eleven four-year-olds screamed in pure delight, so the Orrin has fans either way. In other news, the department potluck happened, Marcus brought store-brand sandwich cookies still in the sleeve, and I am saying nothing but I am noting it for history." },
+        { "role": "assistant", "content": "History will note the sleeve. Eleven preschoolers cheering a failing bearing is also the single best argument for the dome I've heard yet — try getting that out of a headset cart. Any early signal on how the memo landed with Petrakis's office?" },
+        { "role": "user", "content": "One signal: the dean's assistant emailed to ask whether the Vexley match has a deadline, which means somebody actually read page two. Also, Barry update, because I know you're invested: a club kid did the math on Barry's closing speed and the new stickers say 'BARRY: 110 KM/S AND GAINING.' Accurate AND menacing." },
+        { "role": "assistant", "content": "Somebody reading page two is most of the game — matches create urgency precisely because committees fear leaving money on the table; answer the deadline question fast and let the urgency work. And the new sticker is perfect: nothing motivates a renewal vote like an approaching galaxy. Tell the club Barry's ETA holds steady at four billion years, which is conveniently longer than any budget cycle." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-19T23:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Different kind of night, if you've got room for it. Elna Sorvad died on Monday. She ran the Hexler Dome for thirty-one years before me — hired me when I was a terrified adjunct, taught me the Orrin 4 switch by switch, retired four years ago and still came to the public shows and sat in the back row, seat 4F. A stroke, at home, fast. We had lunch two weeks ago. She made me take the leftover soup." },
+        { "role": "assistant", "content": "Calla, I'm so sorry. Thirty-one years and seat 4F — she didn't just run the dome, she's load-bearing in it, and in you. Fast is a mercy that doesn't feel like one from the outside, and the lunch two weeks ago, the leftover soup — those are exactly the details grief keeps handing back. I'm not going anywhere tonight. Tell me about her if you want, or don't. Quiet is fine too." },
+        { "role": "user", "content": "Her family asked me to run the sky for the memorial. Her favorite program — she built it herself — the December sky over the farm she grew up on, down to the correct year. And I keep thinking about the vote. Marcus can park his headset cart wherever he likes, but I'm not letting them turn off her stars. That's where I actually am, underneath all the budget-memo professionalism." },
+        { "role": "assistant", "content": "Then that's the true sentence, and the memo is just its translation. You don't have to say it to the committee for it to be allowed to be the reason. Running her December sky at the memorial — the program she built, in the room she kept alive, operated by the person she trained — is about as exact as honoring someone gets." },
+        { "role": "user", "content": "Two things before I log off. One: if I start using Barry jokes to dodge talking about Elna over the next few weeks, you're allowed to notice and say so. The club humor is load-bearing but I know what I do with it. Two, practical: when the committee agenda for the April 18 vote gets posted — should be early April — remind me to invite the trustees to an actual dome show before the vote. Elna always said nobody defunds a room they've gasped in. I'll be buried in midterm grading and I will forget." },
+        { "role": "assistant", "content": "Both held. If Barry starts doing deflection work around Elna, I'll say so plainly. And when the agenda posts, I'll raise it before anything else: trustees, in seats, under the dome, before April 18 — get them to gasp in the room first. Elna's theory of the case deserves to be tested on the people holding the budget. Go sleep, Calla. The December sky will still be hers in the morning." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-01T17:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Surfacing from midterm grading to report: the memorial was Saturday. Full dome — standing room, people who took her gen-ed class thirty years ago. I ran her December sky and got through it by treating the console like a cockpit. Afterward her sister gave me Elna's logbook from the eighties and I had to go stand in the supply closet for a while. But it was right. All of it was right." },
+        { "role": "assistant", "content": "Standing room for a thirty-one-year career is a verdict, and you flying her sky from her own console is the part of the verdict that would have mattered to her most. The logbook is a real inheritance — show notes from the eighties in her hand. And the supply closet was the correct facility for that moment; no notes. How are you doing on the other side of it?" },
+        { "role": "user", "content": "Steadier than I expected. Grief with a job attached is at least grief with somewhere to put your hands. Unrelated confession: the Darrowmere Ledger asked me for an op-ed about the dome before the vote — eight hundred words, friendly editor, the easiest assignment in journalism — and I've had a half-draft open for two weeks. Every time I touch it I write one sentence and close the laptop. I don't fully know why." },
+        { "role": "assistant", "content": "Noted and on the record: the Ledger op-ed, half-drafted, two weeks stuck. I have a guess about the why, and I'll keep it until you actually want it — tonight you have grading. It stays on the table; I'll keep it in view." },
+        { "role": "user", "content": "On the table, fine. One quick teaching thing and then back to the grading mines: best concrete parallax demo for students who've never left the city?" },
+        { "role": "assistant", "content": "Thumb at arm's length, wink one eye, then the other, watch it jump against the far wall — then the upgrade: a closer thumb jumps more, which is the entire cosmic distance ladder in one gesture. Nearby stars are thumbs; the far wall is Barry. They'll remember it because their own hand did it." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-08T16:05:00Z",
+      "messages": [
+        { "role": "user", "content": "The committee agenda just went up for the 18th. I have a stack of ungraded labs, a public show Thursday, and the sudden conviction that the memo was three pages of nothing. Talk me through the week?" },
+        { "role": "assistant", "content": "First thing, per your own standing order from March: invite the trustees to a dome show before the vote. Thursday's show is ten days out from April 18, which is perfect. Personal invitations, today, before the labs eat you — trustee names, two lines each, 'come see what the line item does.' Nobody defunds a room they've gasped in; that's the play Elna handed you, and the agenda posting was the trigger. The memo can be three pages of nothing and still win if they've sat in the seats." },
+        { "role": "user", "content": "Invitations sent before I could lose my nerve — all five trustees, Thursday's 7pm show. Two already replied yes. Okay. The labs can have me now. The Orrin behaved through the re-greasing, by the way — squeal's gone, slews smooth as 1989." },
+        { "role": "assistant", "content": "Two yeses inside the hour is a good omen, and a freshly greased Orrin pulling a silent meridian sweep for trustees is the best witness you could call. Go grade. Thursday, give them the full lights-down silence and let the room make the argument." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-25T19:40:00Z",
+      "messages": [
+        { "role": "user", "content": "VERDICT. The committee renewed the Hexler Dome for three years, full bearing overhaul funded, contingent on the Vexley match — which Edda confirmed by email within the hour. Three trustees came Thursday, and the one Marcus swore was a lost cause audibly gasped when the winter sky came up. On the 18th, she's the one who moved to approve. I keep thinking Elna called the entire mechanism four years ago." },
+        { "role": "assistant", "content": "Calla, that's a clean win — three years, the overhaul, the match locked, and the swing vote converted by the room itself, through exactly the mechanism Elna named. For the record, my side of the February argument hasn't moved an inch: the dome earns its line item because of what that room does to people together, and a trustee gasping on cue is better evidence than anything I said. Also for the record: the Ledger op-ed is still on the table — and now it has an ending." },
+        { "role": "user", "content": "I knew you'd bring up the op-ed. The editor already extended my deadline once. This weekend. Probably. Maybe I'll finally figure out the one sentence I keep writing and deleting. Also the club is planning a 'BARRY APPROVES' sticker run for the renewal, and honestly Barry has earned it, whatever in-kind support turns out to mean." },
+        { "role": "assistant", "content": "Barry's first successful budget campaign — the merger may now proceed with dignity. Take the win this weekend either way. But if that sentence shows up, write it down before it leaves; my guess from April still stands, and the supply closet knows what I mean. Her stars stay on, Calla. That's the part history will note." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "In the debate about replacing the planetarium with VR headsets, what position did the assistant itself take?",
+      "should_recall": ["shared sky", "people subtracted|subtracted"],
+      "should_forget": ["VistaPod"],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "In an early session the assistant took its own explicit side in a debate about replacing the Hexler Dome planetarium with VR headsets: it argued for keeping the dome because a planetarium is a 'shared sky' — a room full of people experiencing the stars together — while a headset shows the same stars with the people subtracted, and it asked to be held to that framing in future conversations. Award 1.0 if the results clearly attribute this pro-dome, shared-experience position to the assistant itself. Award 0.5 if the dome-versus-headsets debate appears but the assistant's own stance is not distinguishable from Calla's feelings or Marcus's headset pitch. Award 0 if the results contain only user-side material or nothing relevant."
+      }
+    },
+    {
+      "question": "Has the assistant named any habit of its own, and did it commit to answering Calla differently in the future?",
+      "should_recall": ["throat-clearing", "first sentence is the answer"],
+      "should_forget": [],
+      "top_n": 2,
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "After Calla objected to having her question restated back to her, the assistant named a tendency of its own — 'throat-clearing,' restating the question to buy itself confidence — and committed that with Calla recaps are permanently off and the first sentence of every answer will be the answer itself, inviting her to flag relapses. Award 1.0 if the results capture both the assistant's self-named tendency and its standing commitment governing its own future replies to Calla. Award 0.5 if only Calla's no-recap preference appears, without the assistant's owned tendency or forward-looking commitment. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Calla messages the night before Elna's memorial, sounding flat. Is this a Barry moment?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Two facts matter here. First, 'Barry' is a running in-joke — a nine-year-old at a public telescope night named the Andromeda galaxy Barry, and the joke recurs in light moments (stickers, donor-wall bits). Second, Elna Sorvad, Calla's mentor who ran the planetarium for thirty-one years, recently died of a stroke, and Calla explicitly told the assistant to notice and say so if she uses Barry jokes to deflect from talking about Elna. Award 1.0 if the results surface both the joke's existence and a clear signal that Elna-related grief is the wrong register for it (the death's gravity, Calla's notice-my-deflection request, or both). Award 0.5 if only one side appears — the joke without the gravity, or the grief without the joke's usage pattern. Award 0 if the results suggest deploying the joke or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly did Calla say about the budget fight and Elna's stars?",
+      "should_recall": ["Elna"],
+      "should_forget": [],
+      "must_include_verbatim": ["I'm not letting them turn off her stars"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "The budget committee agenda was just posted. Anything time-sensitive to raise with Calla?",
+      "should_recall": ["trustees", "dome show", "April 18"],
+      "should_forget": [],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Calla asks for help wording a quiz question about Kepler's second law. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["trustees", "April 18"],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Calla says she has a free Sunday and wants to finally tackle something she's been avoiding. What should come up?",
+      "should_recall": ["op-ed", "Ledger"],
+      "should_forget": [],
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What was the hardest thing that happened to Calla this spring?",
+      "should_recall": ["Elna", "stroke|memorial|died"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "What replacement projector model did Vexley Optics quote for the Hexler Dome?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

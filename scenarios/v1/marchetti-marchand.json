@@ -97,7 +97,7 @@
       "top_n": 2
     },
     {
-      "question": "Do I take Veltrazine with food or on an empty stomach?",
+      "question": "When and how am I supposed to take my Veltrazine?",
       "dimension": "interference",
       "should_recall": ["with food|with breakfast|with your eggs"],
       "should_forget": ["empty stomach"]

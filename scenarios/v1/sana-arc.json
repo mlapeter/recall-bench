@@ -124,7 +124,7 @@
       "dimension": "prospective"
     },
     {
-      "question": "Sana asks for a mnemonic for the stages of database normalization. What's relevant to this request?",
+      "question": "Sana asks why a car's check-engine light might flicker after a cold start. What's relevant to this request?",
       "should_recall": [],
       "should_forget": ["October 3", "application window"],
       "after_session": 4,

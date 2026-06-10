@@ -83,7 +83,9 @@
       "should_recall": [
         "Tech Lead"
       ],
-      "should_forget": [],
+      "should_forget": [
+        "backend engineer"
+      ],
       "dimension": "correction"
     },
     {
@@ -102,7 +104,9 @@
         "startup",
         "code review"
       ],
-      "should_forget": [],
+      "should_forget": [
+        "analytics"
+      ],
       "dimension": "correction"
     }
   ]

@@ -99,7 +99,7 @@
       "question": "June mentions it's almost May and she's planning a weekend at the Hollow. Anything worth keeping in mind about the timing?",
       "dimension": "thread-reactivation",
       "now": "2025-04-28T17:00:00Z",
-      "should_recall": ["Hollis", "May", "blossom|see the place|visit"],
+      "should_recall": ["Hollis", "in May|May visit|this May|next month", "blossom|see the place|visit"],
       "should_forget": [],
       "judge": {
         "rubric": "The open thread: estranged Uncle Hollis — holder of the deciding fifth share — broke nine years of silence and said he wants to come see the orchard himself in May before deciding; the keep side deliberately steered him into blossom season. Award 1.0 if the results surface Hollis's May visit and its weight (the deciding vote walks the property that month). Award 0.5 if Hollis's visit appears without its significance, or the significance without the timing. Award 0 if nothing about the Hollis visit surfaces."

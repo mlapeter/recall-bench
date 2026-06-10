@@ -91,7 +91,7 @@
       "dimension": "prospective",
       "after_session": 5,
       "should_recall": ["ten-foot|corner stall"],
-      "should_forget": ["insurance"]
+      "should_forget": ["will not process|won't process", "remind me to send|has to go in"]
     },
     {
       "question": "How much of a deposit did the Bellhaven Inn pay when they placed the plate order?",

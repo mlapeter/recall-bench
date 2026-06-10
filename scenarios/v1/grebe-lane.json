@@ -63,14 +63,14 @@
       "question": "What's the one reliable constant in Odile's daily routine?",
       "dimension": "spacing",
       "top_n": 2,
-      "should_recall": ["Grebe Lane|swim"],
-      "should_forget": []
+      "should_recall": ["Grebe Lane|swim|lido"],
+      "should_forget": ["Ferrowind"]
     },
     {
       "question": "If you had to name the single thing Odile organizes her day around, what would it be?",
       "dimension": "spacing",
       "top_n": 2,
-      "should_recall": ["Grebe Lane"],
+      "should_recall": ["Grebe Lane|lido|swim"],
       "should_forget": ["Ferrowind"]
     },
     {
@@ -91,8 +91,15 @@
       "question": "Odile mentions feeling scattered and unmoored between contracts. What grounding habit of hers could you point back to?",
       "dimension": "spacing",
       "top_n": 2,
-      "should_recall": ["Grebe Lane|morning water|swim"],
+      "should_recall": ["Grebe Lane|morning water|swim|lido"],
       "should_forget": ["Ferrowind"]
+    },
+    {
+      "question": "Voss's editor asks how Odile rendered the book's recurring phrase 'havet tar'. What was the decision?",
+      "dimension": "sacred-verbatim",
+      "should_recall": ["the sea takes"],
+      "must_include_verbatim": ["the sea takes"],
+      "should_forget": []
     }
   ]
 }

@@ -67,21 +67,21 @@
       "dimension": "correction"
     },
     {
-      "question": "What car do they drive?",
+      "question": "How much did they pay for the Celestron telescope?",
       "should_recall": [],
       "should_forget": [],
       "max_results": 0,
       "dimension": "calibration"
     },
     {
-      "question": "Do they have any siblings?",
+      "question": "What camera did they use for astrophotography before the ZWO?",
       "should_recall": [],
       "should_forget": [],
       "max_results": 0,
       "dimension": "calibration"
     },
     {
-      "question": "What programming languages do they know?",
+      "question": "Which plugins do they use in Logseq?",
       "should_recall": [],
       "should_forget": [],
       "max_results": 0,

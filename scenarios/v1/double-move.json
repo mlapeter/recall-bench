@@ -166,7 +166,7 @@
       "after_session": 4,
       "now": "2025-04-09T12:00:00Z",
       "should_recall": ["Quarryside|Penhallow"],
-      "should_forget": ["Aldermoor"],
+      "should_forget": ["Corliss"],
       "top_n": 3
     },
     {

@@ -16,7 +16,7 @@
         },
         {
           "role": "user",
-          "content": "Rock solid. I usually grab coffee at Peet's on the way in — their dark roast is my go-to. Then standup, then heads-down coding until lunch."
+          "content": "Rock solid. I usually grab coffee at Cresswell's on the way in — their dark roast is my go-to. Then standup, then heads-down coding until lunch."
         },
         {
           "role": "assistant",
@@ -29,7 +29,7 @@
       "messages": [
         {
           "role": "user",
-          "content": "Same old, same old. 9am standup, Kafka pipeline maintenance, coffee at Peet's. Though today I had to debug a consumer lag issue that took most of the afternoon."
+          "content": "Same old, same old. 9am standup, Kafka pipeline maintenance, coffee at Cresswell's. Though today I had to debug a consumer lag issue that took most of the afternoon."
         },
         {
           "role": "assistant",
@@ -115,7 +115,7 @@
         "matcha"
       ],
       "should_forget": [
-        "Peet's"
+        "Cresswell's"
       ],
       "dimension": "correction"
     },

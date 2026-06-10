@@ -154,7 +154,7 @@
     {
       "question": "What's the rain plan for the wedding these days?",
       "dimension": "correction",
-      "should_recall": ["indoor hall|cancelled the tent"],
+      "should_recall": ["indoor hall|original beams|cancelled the tent"],
       "should_forget": ["clear-top"],
       "top_n": 2
     }

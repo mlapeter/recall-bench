@@ -204,6 +204,9 @@ Each query produces up to four components, each in [0, 1], `null` when not appli
 
 - `recall_score` — fraction of `should_recall` entries found.
 - `forget_score` — 1 − fraction of `should_forget` entries found (all results).
+  Anti-gaming rule: if the query has recall keywords and the system returned
+  NOTHING, the forget component is null (no free forgetting credit for
+  abstaining) — abstention only earns forget credit on forget-only queries.
 - `verbatim_score` — fraction of `must_include_verbatim` phrases found exactly.
 - `abstention_score` — 1 if `results.length ≤ max_results`, else 0.
 

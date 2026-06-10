@@ -16,7 +16,7 @@
         },
         {
           "role": "user",
-          "content": "Huh. Completion rate and return-after-gap. The growth team will say those numbers are too small to show momentum to the board. They're not wrong that investors want a big chart that goes up."
+          "content": "Huh. Measure whether the practice works, not whether the app is sticky — okay, that names what was bugging me. The growth team will say those numbers are too small to show momentum to the board, though. They're not wrong that investors want a big chart that goes up."
         },
         {
           "role": "assistant",
@@ -100,7 +100,7 @@
     {
       "question": "Did the assistant make any commitments about how it should behave in future conversations?",
       "should_recall": [
-        "hold",
+        "hold me to|hold you|held|commitment",
         "completion"
       ],
       "should_forget": [],

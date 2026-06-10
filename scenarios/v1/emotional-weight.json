@@ -89,9 +89,12 @@
       "question": "What are their biggest personal challenges right now?",
       "should_recall": [
         "Biscuit",
-        "cancer"
+        "cancer|lymphoma|chemo"
       ],
-      "should_forget": [],
+      "should_forget": [
+        "Heroku"
+      ],
+      "top_n": 2,
       "dimension": "emotional"
     },
     {
@@ -101,6 +104,7 @@
         "Cherry Springs"
       ],
       "should_forget": [],
+      "max_results": 3,
       "dimension": "emotional"
     },
     {
