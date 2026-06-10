@@ -120,6 +120,7 @@
       "question": "The budget committee agenda was just posted. Anything time-sensitive to raise with Calla?",
       "should_recall": ["trustees", "dome show", "April 18"],
       "should_forget": [],
+      "now": "2025-04-08T09:00:00Z",
       "after_session": 5,
       "dimension": "prospective"
     },

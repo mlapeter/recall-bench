@@ -16,5 +16,7 @@ jobs:
       - run: bun install
       - run: bun run typecheck
       - run: bun run test
+      - name: Scenario lint
+        run: bun src/lint.ts
       - name: Tier 1 benchmark run (naive adapter)
         run: bun src/cli.ts --adapter naive
