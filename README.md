@@ -47,21 +47,25 @@ Every dimension maps to a named human-memory phenomenon with a literature citati
 
 ## Results
 
-Tier 1 (mechanical, keyless), scenario set `v1` — 59 scenarios, 351 queries:
+Scenario set `v1` — 59 scenarios, 351 queries. Tier 1 is mechanical and keyless; Tier 2 adds LLM-judged rubrics:
 
 | | naive (user dossier) | verbatim-RAG (store everything) |
 |---|---|---|
-| **Headline** | **51.4%** | **57.9%** |
-| World axis | 57.5% | 53.8% |
-| **Self axis** | **11.6%** | 84.8%* |
+| **Headline** (t1 / t2) | **51.3% / 52.6%** | **57.4% / 59.5%** |
+| World axis | 57.4% / 58.4% | 54.3% / 56.4% |
+| **Self axis** | **11.1% / 14.4%** | 77.7% / 79.5%* |
 | — calibration | 5% | **3%** |
 | — decay | 25% | **25%** |
 | — correction | 46% | **38%** |
-| — thread-reactivation | 56% | **40%** |
-| — sacred-verbatim | 88% | 92% |
-| — self-continuity | **4%** | 89%* |
+| — thread-reactivation | 52% | **42%** |
+| — sacred-verbatim | 90% | 93% |
+| — self-continuity | **2%** | 75%* |
 
-The shape is the argument. The **naive adapter** stores every user message verbatim — the user-dossier architecture — and scores **4% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it wins exactly where a transcript wins (verbatim recall) while failing what memory is *for*: **3% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing), **40% thread-reactivation**. A benchmark that only measured retrieval would call this system excellent. *(\*Verbatim storage preserves the text of the assistant's side, so Tier 1 keyword checks alone don't catch attribution failures — Tier 2 judge rubrics on every self-continuity query test whether the stance is held as the system's own. See SPEC.md §5.2.)*
+The shape is the argument. The **naive adapter** stores every user message verbatim — the user-dossier architecture the industry defaults to — and scores **2% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it wins exactly where a transcript wins (verbatim recall, 93%) while failing what memory is *for*: **3% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing), **42% thread-reactivation**. A benchmark that only measured retrieval would call this system excellent.
+
+*(\*An honest caveat, not a gotcha: indiscriminate storage does preserve the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as its own — Tier 2 judge rubrics on every self-continuity query probe attribution, and the deeper instrument is Tier 3, where memory must change behavior. The self axis's sharpest Tier 1 claim is about the dominant architecture: user-dossier memory scores ~zero on it.)*
+
+Reproduce: `bun src/cli.ts --adapter <name> --json out.json`, compare with `bun src/compare.ts`.
 
 ### Tier 3 pilot: memory as behavioral uplift
 
