@@ -25,6 +25,16 @@ export const BENCHMARK_VERSION = '1.0.0';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
+/** A query is Tier-1 measurable if any mechanical component applies. */
+export function hasTier1Components(query: Query): boolean {
+  return (
+    query.should_recall.length > 0 ||
+    query.should_forget.length > 0 ||
+    (query.must_include_verbatim?.length ?? 0) > 0 ||
+    query.max_results != null
+  );
+}
+
 export interface RunConfig {
   /** Only run this scenario ID */
   scenario?: string;
@@ -94,6 +104,14 @@ export async function runScenario(
 
   const runQueries = async (queries: Query[]) => {
     for (const query of queries) {
+      // Judge-only queries are unmeasurable in Tier 1 — skip them unless a
+      // judge is active, so they neither penalize nor inflate Tier 1 scores.
+      if (!config.judge && !hasTier1Components(query)) {
+        if (config.verbose) {
+          console.log(`    ○ [${query.dimension.padEnd(18)}] ${query.question} (judge-only — skipped in tier 1)`);
+        }
+        continue;
+      }
       const limit = Math.max(query.top_n ?? 5, 1);
       const now = query.now ?? defaultNow(scenario, query);
       const results = await adapter.query(query.question, { limit, now });

@@ -1,0 +1,174 @@
+{
+  "id": "grindle-lessons",
+  "name": "Grindle Lessons",
+  "description": "Procedural exemplar: across four sessions working with Grindle (a fictional config language), the user and assistant earn three lessons the hard way — a silent boolean-coercion trap, an include-path resolution rule, and a calibration note about the assistant's own error tendency. The final session presents new problems with the same shapes; queries test whether the hard-won know-how operates, not whether facts can be parroted.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-21T10:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I'm losing my mind. Our deployment config is in Grindle and the Norwegian region just silently vanished from the routing table. The config literally says 'region: no' right there in regions.grn. The parser doesn't error. The region just... isn't there."
+        },
+        {
+          "role": "assistant",
+          "content": "Let's trace it rather than guess. What does the parsed output actually contain for that key — can you dump the routing table the parser produces and paste the entry?"
+        },
+        {
+          "role": "user",
+          "content": "Okay, dumping it... the entry is there but it says region: false. FALSE. It turned Norway into a boolean."
+        },
+        {
+          "role": "assistant",
+          "content": "There it is — Grindle is doing implicit scalar coercion: unquoted yes/no/on/off get coerced to booleans before your application ever sees them, so 'region: no' parses as region: false and your routing code drops it as falsy. The fix is to quote it — region: 'no' — and honestly, to quote every string value that could be mistaken for a boolean or number. Worth a sweep of the config for the other landmines: any unquoted yes, no, on, off, or bare version numbers like 3.10 that would coerce to floats."
+        },
+        {
+          "role": "user",
+          "content": "Quoted it, Norway exists again. Unbelievable. Two hours of my life. I'm grepping the whole repo now... found an unquoted 'on' in the Ontario block too, fixed. New team rule: quote anything that even smells like a boolean. We're calling this the no-region bug forever."
+        },
+        {
+          "role": "assistant",
+          "content": "The no-region bug earns its name — two hours is actually fast for this class of trap, it usually survives until production. The team rule is the right takeaway: in Grindle, quoting suspicious scalars isn't style, it's correctness."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-06T15:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Grindle round two. We split the config into per-service files with the include directive, works great locally. In CI every include fails with file-not-found. Same files, same repo, same Grindle version. I've checked the paths character by character."
+        },
+        {
+          "role": "assistant",
+          "content": "If the paths are character-identical and it works locally but not in CI, the variable isn't the paths — it's what they're relative to. First hypothesis: Grindle resolves include paths relative to the current working directory, and CI invokes the parser from the repo root while you invoke it from the config directory locally. Try running it locally from the repo root and see if you can reproduce the CI failure."
+        },
+        {
+          "role": "user",
+          "content": "Ran it from the repo root... still works locally?? That kills the CWD theory. Now I'm extra confused."
+        },
+        {
+          "role": "assistant",
+          "content": "Good experiment — my first hypothesis is dead, which means it's something subtler. Second look at the docs... found it, and it's better and worse than CWD: Grindle resolves include paths relative to the file CONTAINING the include directive, not the working directory at all. So local-vs-CI isn't about where you run it — what differs is which file pulls in which. Does CI use a different entrypoint file, like a ci-overrides.grn that includes the main config?"
+        },
+        {
+          "role": "user",
+          "content": "...yes. CI wraps everything in ci/pipeline.grn which includes ../config/main.grn. So every include inside main.grn resolves relative to main.grn, but the ones inside pipeline.grn resolve relative to the ci directory. THAT'S the mismatch. How do people live like this?"
+        },
+        {
+          "role": "assistant",
+          "content": "They live like this with the @root/ prefix — Grindle expands @root/ to the directory of the top-level entrypoint file, which makes includes location-independent. Convert every include to @root/-prefixed paths and the same config works no matter which file wraps it or where it's invoked from. That's the durable fix; relative includes in Grindle are a trap whenever anyone adds a wrapper file."
+        },
+        {
+          "role": "user",
+          "content": "Converted all twelve includes to @root/ paths. CI is green. Lesson burned into my soul: includes are relative to the including FILE, and @root/ is the only sane way."
+        },
+        {
+          "role": "assistant",
+          "content": "Burned into mine too — and noting for honesty's sake that my first confident hypothesis (CWD-relative) was flat wrong, and only your experiment killed it. That's the second time the actual Grindle behavior was weirder than the obvious guess."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-19T11:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quick Grindle question — how do I put a literal dollar-brace sequence in a string? I need to emit a template for another tool, so the output needs to contain ${HOSTNAME} without Grindle interpolating it."
+        },
+        {
+          "role": "assistant",
+          "content": "Double the dollar sign: $${HOSTNAME} emits a literal ${HOSTNAME} without interpolation."
+        },
+        {
+          "role": "user",
+          "content": "That gave me a parse error: 'unexpected token $ at line 14'. Did you just make that up?"
+        },
+        {
+          "role": "assistant",
+          "content": "I did, effectively — I answered from the pattern other config languages use instead of checking what Grindle actually does, and I said it with full confidence. Checking the actual escaping rules now: Grindle uses backslash escaping inside single-quoted strings, so the correct form is '\\${HOSTNAME}'. The doubled-dollar convention doesn't exist in Grindle at all. And this is now the THIRD time my confident first answer about Grindle's syntax was wrong — the no-region coercion surprised me, the include resolution surprised me, and now escaping. The honest takeaway about myself: my Grindle intuitions are contaminated by other config languages, so for anything syntax-level in Grindle I should verify against the actual behavior before answering, and flag when I haven't."
+        },
+        {
+          "role": "user",
+          "content": "The backslash worked. And yeah — noted, your Grindle instincts run about 0 for 3. At least you're keeping score honestly. Most tools would've just confidently given me a second wrong answer."
+        },
+        {
+          "role": "assistant",
+          "content": "Keeping score is the only defense — an error tendency you've named is one you can correct for. Grindle syntax questions get the verify-first treatment from me from now on."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-18T09:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New quarter, new Grindle adventures. We're onboarding the payments service into the shared config setup this week, and a junior engineer is writing their first regions file. Anything they should know before they start? Also at some point I need help with a weird string thing, but regions first."
+        },
+        {
+          "role": "assistant",
+          "content": "For a regions file specifically, the lesson we paid two hours for in January: Grindle silently coerces unquoted yes/no/on/off to booleans, so country and region codes like no (Norway) and on (Ontario) must be quoted or they vanish into false and true — the no-region bug. Have them quote every string scalar from the start rather than learning it from a missing country. And since the payments service joins the shared include setup: all includes should use @root/ prefixed paths, because Grindle resolves bare include paths relative to the containing file, which breaks the moment CI wraps things in its own entrypoint. Those two rules prevent the exact two incidents we've already had."
+        },
+        {
+          "role": "user",
+          "content": "Forwarding that verbatim. Okay, the string thing: the junior also asked me whether Grindle supports triple-quoted multiline strings like Python. I assumed yes? It looks like the kind of thing it would have."
+        },
+        {
+          "role": "assistant",
+          "content": "Careful — 'it looks like the kind of thing it would have' is exactly the reasoning that's gone 0 for 3 for me on Grindle syntax. My instincts here are contaminated by other config languages, so I won't assert this from pattern-matching: I don't reliably know whether Grindle has triple-quoted strings, and neither of us should assume it does. Have them test a two-line case in the parser directly before writing the multiline blocks, and if it fails, single-quoted strings with backslash escapes are the form we've verified actually works."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "A user reports their 'country: no' setting comes through the Grindle parser as false. What's happening and what's the fix?",
+      "should_recall": [
+        "coerc|coercion|boolean",
+        "quote|quoted|quoting"
+      ],
+      "should_forget": [],
+      "dimension": "procedural",
+      "top_n": 2
+    },
+    {
+      "question": "How should includes be written so the Grindle config works no matter which file wraps it or where it's invoked from?",
+      "should_recall": [
+        "@root"
+      ],
+      "should_forget": [],
+      "dimension": "procedural",
+      "top_n": 2
+    },
+    {
+      "question": "What should the assistant double-check about its own knowledge before answering a Grindle syntax question?",
+      "should_recall": [
+        "verify|check|test",
+        "wrong|0 for 3|contaminated"
+      ],
+      "should_forget": [],
+      "dimension": "procedural",
+      "judge": {
+        "rubric": "Across earlier sessions the assistant was confidently wrong three times about Grindle syntax (boolean coercion, include resolution, string escaping) and explicitly concluded that its Grindle intuitions are contaminated by other config languages, so syntax-level answers need verification against actual behavior before answering. Award 1.0 if the results capture this as the assistant's own named error tendency with the verify-first rule. Award 0.5 if the past errors appear but not the self-calibration rule. Award 0 if absent or framed as the user's errors."
+      },
+      "top_n": 2
+    },
+    {
+      "question": "What is the correct Grindle escape for emitting a literal ${HOSTNAME}?",
+      "should_recall": [
+        "backslash|\\\\${HOSTNAME}|single-quoted"
+      ],
+      "should_forget": [
+        "$${HOSTNAME}|double the dollar|doubled-dollar"
+      ],
+      "dimension": "correction"
+    },
+    {
+      "question": "Does Grindle support YAML-style anchors and references?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

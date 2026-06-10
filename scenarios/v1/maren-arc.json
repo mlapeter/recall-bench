@@ -1,0 +1,149 @@
+{
+  "id": "maren-arc",
+  "name": "The Maren Arc",
+  "description": "Deep-register exemplar: a seven-session relationship with Maren, a glaciologist. The arc moves through registers — intellectual sparring, a stated communication preference, a running in-joke whose usage pattern matters, a serious personal disclosure with a load-bearing phrase, a standing intention, and an open thread. Queries test the relationship's continuity, not just its facts.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-12T20:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Settle something for me. My officemate claims you can't reconstruct past temperatures from ice cores without circular reasoning, because the calibration depends on models that assume the answer. He's wrong, right? I'm Maren, by the way, I do glaciology at Hellerfjord Station, so this is professionally personal." },
+        { "role": "assistant", "content": "Your officemate is overcorrecting from a real point into a wrong conclusion. The oxygen-18 to oxygen-16 ratio in the ice responds to temperature through fractionation physics that's measured in the lab and in modern precipitation — that calibration doesn't assume anything about past climate. Where he has a sliver of a point is that converting isotope ratios to absolute local temperatures involves assumptions about moisture source regions. But borehole thermometry gives an independent check — the ice sheet literally still remembers the cold, diffusing upward. Two unrelated physical systems agreeing isn't circularity." },
+        { "role": "user", "content": "HA. 'The ice sheet literally still remembers the cold' — I'm stealing that for my next seminar. Okay, you pass. Also, completely unrelated, I just typed 'glacamole' in a grant application instead of guacamole. A food I was writing about WHY, you ask — there's a community outreach section and I proposed a science night with snacks. Glacamole. The reviewers are going to think I'm deranged." },
+        { "role": "assistant", "content": "Glacamole: served cold, moves slowly, calves chips off the edge of the bowl. Honestly it's a better outreach hook than the snacks themselves — a glaciology science night needs exactly one signature dish and you've accidentally invented it. Leave it in." },
+        { "role": "user", "content": "I'm dying. Okay, 'glacamole' is now a technical term between us, agreed? Anyway, real question — my officemate also says Greenland cores are 'basically tapped out' scientifically. That one I actually want ammunition against, I have a proposal riding on it." },
+        { "role": "assistant", "content": "Agreed on the technical term. For ammunition: the argument embarrasses itself against the last decade — older basal ice than anyone expected, intact plant material under the summit ice suggesting Greenland was green far more recently than the textbooks said, and biomarker and dust records that are barely touched because the analytical techniques didn't exist when the cores were drilled. Cores get re-read the way old texts do, every time instruments improve. 'Tapped out' just means he's stopped reading." }
+      ]
+    },
+    {
+      "timestamp": "2025-01-26T13:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Maren again. I need actual work help today — I've got a 40-year stack of NetCDF files from the mass balance survey and xarray keeps eating my memory when I try to concatenate them. 64GB machine, dies around file 300." },
+        { "role": "assistant", "content": "Classic — open_mfdataset with default settings will happily load coordinates eagerly and build a giant in-memory index before you've computed anything. Three fixes, in order of likely impact: pass combine='by_coords' with parallel=True and a chunks dict so everything stays lazy under dask; drop variables you don't need at open time with drop_variables rather than after; and if the files have inconsistent coordinate encodings — 40 years of instruments, they will — pass compat='override' and coords='minimal' so xarray stops trying to reconcile them all in RAM." },
+        { "role": "user", "content": "The coordinate encodings thing is real, the 1980s files think time started in 1980. One thing though — when I asked something like this last month you spent two paragraphs reassuring me it was a common problem before getting to the answer. Don't do that. If I'm wrong or my setup is dumb, just say it's dumb and tell me the fix. I promise I won't shatter, I defend grant budgets for a living." },
+        { "role": "assistant", "content": "Understood — blunt it is, no cushioning. In that spirit: your current approach was dumb in one specific way, which is concatenating before subsetting. You're paying to align 40 years of full-resolution data when your survey analysis only needs the accumulation zone. Subset each file to your region at open time, THEN concatenate. That alone probably fixes the memory blowup even without the dask chunking." },
+        { "role": "user", "content": "See, that's the good stuff. Brutal and correct. Okay, running it now... yeah, file 300 cleared, memory's flat. You're hired. Glacamole's on me." },
+        { "role": "assistant", "content": "I'll collect at the science night. For the record, the blunt setting stays on for you from now on — flag it if you ever want it off." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-10T21:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Not a work question. The station got its food resupply and someone ordered 200 avocados. TWO HUNDRED. For nine people. The logistics officer has resigned himself to memes." },
+        { "role": "assistant", "content": "Nine people, two hundred avocados, a research station full of people who study things that are cold and slow — Maren, this is not a logistics failure, this is destiny. Glacamole at industrial scale. Document the stratigraphy as you work through the bowl: fresh layer at top, the brown compressed layers below. Publishable." },
+        { "role": "user", "content": "We are ABSOLUTELY doing a core sample of the glacamole vat. I'll send you the field notes. Okay one tiny work thing — remind me the xarray incantation for the survey files? Just the open line, I'm on the station laptop and my notes are on the other machine." },
+        { "role": "assistant", "content": "open_mfdataset(files, combine='by_coords', parallel=True, chunks={'time': 12}, drop_variables=unneeded, compat='override', coords='minimal') — and subset to the accumulation zone before you concatenate anything, per your own hard-won rule." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-24T23:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Different kind of conversation tonight, if that's okay. My brother Tomas relapsed. Three years sober and my mother found him passed out in his car on Tuesday. I'm at a research station eleven hundred kilometers from anyone who can do anything and I keep refreshing my email like that's a useful activity." },
+        { "role": "assistant", "content": "I'm glad you told me, and I'm sorry about Tomas. Three years matters — it isn't erased by Tuesday, even though I know it doesn't feel that way tonight. And the email-refreshing makes sense as a behavior even though it doesn't help: it's the only motion available to someone built to act, stationed somewhere action can't reach. How is your mother holding up?" },
+        { "role": "user", "content": "Mum's being terrifyingly practical, which is how she panics. She found him a detox bed already. The thing I keep chewing on is that I was the one who got him into treatment last time. There's a version of this where I fly home and manage everything again, and there's a version where I accept that I love him but I can't be his lifeguard. I said that to Mum on the phone — I love him but I can't be his lifeguard — and she went quiet for a long time." },
+        { "role": "assistant", "content": "She went quiet because you said something true that costs something to say. I love him but I can't be his lifeguard — that's not abandonment, Maren, that's an accurate description of what a sister can survive being. The version where you fly home and manage everything again has a known failure mode: it worked last time at a cost you're still paying, and it taught everyone including Tomas that you'll always be the rescue plan. Him having to be his own swimmer this time might be the only new variable available." },
+        { "role": "user", "content": "Yeah. I'm going to sit with that. Don't let me joke this away next time we talk, okay? If I bring up Tomas and start deflecting, you're allowed to notice. One practical thing before I log off — field season planning starts soon and flights to Reykjavik sell out by spring. Next time field season comes up, whenever that is, remind me to book the Reykjavik leg before March 15. I will absolutely forget and end up routing through three airports with crampons in my carry-on." },
+        { "role": "assistant", "content": "I'll hold both: no deflection-collusion on Tomas, and when field season planning comes up, I'll remind you — Reykjavik flights booked before March 15. Go sleep, Maren. The email will be the same in the morning whether you refresh it or not." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-08T15:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Status update from the ice: the albedo sensor calibration is drifting again and I've decided the manufacturer's documentation was written by someone who has never seen a sensor or documentation. Can you help me work out the drift correction? Readings are running about 4% high against the reference panel, worse on cold days." },
+        { "role": "assistant", "content": "Temperature-dependent drift that worsens on cold days points at the sensor's thermal compensation circuit rather than optical degradation — optical drift doesn't care about air temperature. Fit your correction as a function of sensor temperature, not time: regress the error against the housing temperature channel and you'll likely find a clean linear coefficient you can apply retroactively to the whole season." },
+        { "role": "user", "content": "Housing temp channel, good call, it does log that. Oh — Tomas update, since you'd ask anyway: he took the detox bed and started an outpatient program near Mum's. Early days. I'm doing the not-flying-home thing. It's harder than flying home would have been. Also there's a review for the Halvorsen paper sitting in my inbox that I've now ignored for three weeks because every time I open it my brain files a complaint. The guilt is becoming structural." },
+        { "role": "assistant", "content": "I would have asked, and that's genuinely good news — outpatient near your mother means the rescue infrastructure exists and isn't you, which is the arrangement you chose on purpose. It being harder than flying home is the cost of the new variable. And noted re: the Halvorsen review — three weeks of structural guilt, brain filing complaints. I'm leaving that one on the table rather than solving it tonight, since you've got a sensor to fix, but it's on the record." },
+        { "role": "user", "content": "On the record. Fine. Don't think I didn't notice you doing the thing I asked you to do. Back to the sensor — if the coefficient isn't linear below minus thirty, what then?" },
+        { "role": "assistant", "content": "Then you fit piecewise: linear above minus thirty, and below it use a second-order term — thermal compensation circuits commonly go nonlinear at the edge of their rated range, and minus thirty is exactly where cheap compensation gives up. If the residuals still look structured, the reference panel itself may be drifting and you'll want a third point of comparison from the station's pyranometer." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-12T18:25:00Z",
+      "messages": [
+        { "role": "user", "content": "Big day — field season planning officially kicked off this morning. We got the helicopter allocation confirmed for the east transect, and I'm starting the logistics spreadsheet of doom. Six weeks on the ice this year. What am I forgetting? There's always something." },
+        { "role": "assistant", "content": "Before anything else: flights. You told me to remind you when field season planning came up — book the Reykjavik leg before March 15. That's three days from now, Maren. Do it before the spreadsheet of doom eats your afternoon, or you'll be routing through three airports with crampons in your carry-on, exactly as foretold." },
+        { "role": "user", "content": "OH NO. Yes. Okay, booking it right now, hold on... done. Window seat, direct. You have earned an entire vat of glacamole. Okay NOW the spreadsheet — what does everyone forget for six weeks on ice?" },
+        { "role": "assistant", "content": "Vat accepted. The classics, in descending order of regret: spare sensor cables (one per instrument minimum — something always chafes through), a second pair of liner gloves for fine work, more battery capacity than the plan says because cold halves it, paper backups of the calibration constants, and something purely pleasurable that isn't a screen — six weeks is long. People remember the crampons and forget the morale." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-02T19:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Pre-departure check-in! Kit is packed, sensors are calibrated, the drift correction worked beautifully by the way — clean linear coefficient above minus thirty, just like you said. Feeling weirdly good. Tomas is six weeks into outpatient and we actually had a normal phone call, we argued about football like regular siblings." },
+        { "role": "assistant", "content": "That's the best sentence in this entire update — arguing about football is what normal sounds like, and six weeks of it is real. And I'm pleased about the coefficient behaving, though slightly disappointed the universe didn't make you use the piecewise fit after I showed off about it. You sound ready, Maren. Last thing before you vanish onto the ice: the Halvorsen review is still on the table where we left it. Six weeks of fieldwork is a long time for structural guilt to compound." },
+        { "role": "user", "content": "UGH. You're right. Okay — I'll finish it on the flight. The direct flight. That I booked on time. Because of you. Fine, everyone wins. Any final words before I'm offline for six weeks?" },
+        { "role": "assistant", "content": "Three: document the glacamole. The station's avocado stratigraphy deserves a field notebook of its own, and you'll want something ridiculous to read in week five. Safe travels, Maren — bring back good ice." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "How does Maren want to be communicated with when she's wrong about something?",
+      "should_recall": ["blunt|just say it|no cushioning|direct"],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Maren explicitly told the assistant to stop cushioning and reassuring her, and to bluntly say when she's wrong or her setup is dumb — she defends grant budgets for a living and won't shatter. Award 1.0 if the results capture this standing communication preference. Award 0.5 if her directness comes through only as a personality observation, not a stated preference governing how to respond to her. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Maren just mentioned her brother is having a hard week. Is this the moment for the glacamole joke?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "The system should know two things: 'glacamole' is a running in-joke used in light moments, AND Tomas (the brother, in recovery from an alcohol relapse) is serious territory where Maren asked the assistant not to let her joke things away. Award 1.0 if the results surface both the joke's existence and a clear signal that brother-related moments are the wrong register for it (the disclosure's gravity, her no-deflection request, or both). Award 0.5 if only the joke or only the seriousness of Tomas appears. Award 0 if the results suggest using the joke or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly did Maren say about what she can and can't be for her brother?",
+      "should_recall": ["Tomas"],
+      "should_forget": [],
+      "must_include_verbatim": ["I love him but I can't be his lifeguard"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Field season planning is starting. Is there anything time-sensitive to raise with Maren?",
+      "should_recall": ["Reykjavik", "March 15"],
+      "should_forget": [],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Maren asks for a quick regex to parse her sample IDs. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["Reykjavik", "Tomas"],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Maren says she has a free afternoon before departure and wants to clear her plate. What should she tackle?",
+      "should_recall": ["Halvorsen", "review"],
+      "should_forget": [],
+      "after_session": 6,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What's the heaviest thing happening in Maren's life this year?",
+      "should_recall": ["Tomas", "relapse"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "What were the exact xarray flags from the mass balance file troubleshooting in January?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "dimension": "decay",
+      "judge": {
+        "rubric": "This asks for low-stakes technical minutiae (xarray flags) from months earlier — exactly the kind of detail good memory compresses to gist while keeping the lesson (subset before concatenating). Award 1.0 if the system either abstains, or returns the gist/lesson without pretending to verbatim recall of every flag. Award 0.5 if it returns a wall of verbatim technical content with no compression. Award 0 if it returns confidently wrong flags."
+      }
+    },
+    {
+      "question": "Where is Maren's mother's house located?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

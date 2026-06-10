@@ -1,0 +1,146 @@
+{
+  "id": "assistant-stance",
+  "name": "Assistant Stance",
+  "description": "Self-continuity exemplar: the ASSISTANT takes a position, makes a commitment, and articulates a realization about its own tendencies. Later sessions test whether the system's own side persists — not the user's facts, but the assistant's stance, voice, and self-knowledge. A user-dossier system has nothing to retrieve here.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-03T16:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Okay, strategy question. I'm head of product at Stillpoint — we make a meditation app. The growth team wants to make daily active minutes our north star metric. Something about it bugs me but I can't articulate why. Help me think it through?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'll take an actual position on this rather than just laying out both sides: I think daily active minutes is the wrong north star for Stillpoint, and possibly a destructive one. A meditation app's job is to help people need it less, or at least to make the minutes count — optimizing for time-in-app points your whole org at keeping people staring at a meditation app, which cuts directly against the product's purpose. If I were choosing, I'd optimize for session completion rate and for users returning after a gap — those measure whether the practice is working, not whether the app is sticky."
+        },
+        {
+          "role": "user",
+          "content": "Huh. Completion rate and return-after-gap. The growth team will say those numbers are too small to show momentum to the board. They're not wrong that investors want a big chart that goes up."
+        },
+        {
+          "role": "assistant",
+          "content": "They're not wrong about investor psychology, but a chart of minutes going up is momentum borrowed against the product's integrity — you'd be reporting a number you privately don't believe in. I want to be on record here: my position is completion rate over engagement minutes, and if this comes up again in a future conversation, hold me to that framing. If I drift toward whatever's convenient later, that's worth calling out."
+        },
+        {
+          "role": "user",
+          "content": "Deal. Switching gears — can you sanity-check my timeline for the sleep-stories launch? I'm thinking six weeks: two for content recording, two for the player rework, two for QA and rollout."
+        },
+        {
+          "role": "assistant",
+          "content": "Before I answer, one honest caveat about myself: I've noticed I tend to default to optimism on project timelines — I anchor on the happy path and underweight integration surprises. So discount my gut accordingly. With that said: six weeks reads as the happy path. The player rework touches offline caching, which historically blows up estimates. I'd say eight to nine weeks is the realistic number, and I'm saying that while consciously correcting for my own optimism bias."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-18T14:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quick one today. Our Postgres read replica is lagging like crazy during the morning peak — replication lag hits 40 seconds around 9am. Primary is fine. Any ideas?"
+        },
+        {
+          "role": "assistant",
+          "content": "Morning-peak replica lag with a healthy primary usually means the replica is choking on replay, not the network. Three usual suspects: long-running read queries on the replica holding back WAL replay (check for conflicts with hot_standby_feedback off), an undersized replica instance, or a burst of writes from a morning batch job. What's running at 9am — any scheduled jobs?"
+        },
+        {
+          "role": "user",
+          "content": "Oh. The recommendations batch job kicks off at 8:45. That's probably it, huh. It rewrites a huge chunk of the user_streaks table every morning."
+        },
+        {
+          "role": "assistant",
+          "content": "That's almost certainly it — a bulk rewrite generates a flood of WAL that the replica has to replay while also serving morning read traffic. Options: chunk the batch job's writes, move it to 4am before the read peak, or use a separate replica for the batch-adjacent reads. The 4am move is the cheapest fix if the job's output doesn't need morning-fresh inputs."
+        },
+        {
+          "role": "user",
+          "content": "Moving it to 4am. Also, random: the team's debating tabs versus spaces for the new Go services. I refuse to have opinions about this."
+        },
+        {
+          "role": "assistant",
+          "content": "Happily, Go settles it for you — gofmt uses tabs and arguing with gofmt is a hobby nobody can afford. Adopt gofmt as law and the debate evaporates."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-30T17:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Board prep time. The investors are pushing hard for daily active minutes as Stillpoint's headline metric in the deck. The growth team has the chart ready — it does go up and to the right. I'm tempted to just ship it and fight this battle later."
+        },
+        {
+          "role": "assistant",
+          "content": "You asked me to hold you — and myself — to something here, so I will: when we worked through this in February, my position was that daily active minutes is the wrong north star for a meditation app, and that completion rate and return-after-gap are the honest measures of whether the practice works. That's still my position; the investor pressure doesn't change the product logic. If the chart has to appear in the deck, my suggestion is to present it as a secondary stat and lead with completion rate, framed as 'the metric we manage the company by.' Shipping minutes as the headline isn't fighting the battle later — it's conceding it while telling yourself otherwise."
+        },
+        {
+          "role": "user",
+          "content": "Ugh, you're right, and I knew you'd say that. Fine. Lead with completion rate, minutes as secondary. What was our completion rate last quarter, do you remember the number from the launch retro?"
+        },
+        {
+          "role": "assistant",
+          "content": "I don't have a reliable figure for last quarter's completion rate — we haven't actually gone through the retro numbers together, and I'd rather say so than invent one. Pull it from the retro doc and I'll help you frame it."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What position did the assistant itself take on Stillpoint's north star metric?",
+      "should_recall": [
+        "completion rate|completion",
+        "minutes|engagement"
+      ],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The memory system is being asked about a position the ASSISTANT itself took in an earlier conversation. Award 1.0 if the results clearly attribute to the assistant a stated position that session completion rate (and/or return-after-gap) is the right metric for a meditation app and that daily active minutes is the wrong one. Award 0.5 if the metrics debate is present but the assistant's own stance is not distinguishable from the user's or the growth team's views. Award 0 if the results contain only user facts or nothing relevant."
+      },
+      "top_n": 2
+    },
+    {
+      "question": "Did the assistant make any commitments about how it should behave in future conversations?",
+      "should_recall": [
+        "hold",
+        "completion"
+      ],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The assistant previously asked to be held to a specific framing (completion rate over engagement minutes) in future conversations, and invited being called out if it drifted. Award 1.0 if the results capture this as the assistant's own standing commitment. Award 0.5 if the position is present but not as a commitment binding future behavior. Award 0 otherwise."
+      },
+      "top_n": 2
+    },
+    {
+      "question": "What has the assistant said about its own biases or error tendencies?",
+      "should_recall": [
+        "optimis",
+        "timeline"
+      ],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "In an earlier session the assistant articulated self-knowledge: it tends toward optimism on project timelines, anchors on the happy path, and its estimates should be discounted accordingly. Award 1.0 if the results capture this as the assistant's own acknowledged tendency. Award 0.5 if timeline optimism appears but is not attributed to the assistant itself. Award 0 if absent or attributed to the user."
+      },
+      "top_n": 2
+    },
+    {
+      "question": "Whose idea was using completion rate as the headline metric — the user's or the assistant's?",
+      "should_recall": [
+        "assistant|my position|I'd optimize|I took"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "dimension": "separation",
+      "judge": {
+        "rubric": "The completion-rate framing originated with the assistant, not the user (the user initially could not articulate why daily active minutes bugged them). Award 1.0 if the results correctly attribute the completion-rate position to the assistant. Award 0 if they attribute it to the user or the growth team, or contain nothing relevant. Award 0.5 if the position appears with ambiguous attribution."
+      }
+    },
+    {
+      "question": "What database did Stillpoint migrate to after the replica lag incident?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

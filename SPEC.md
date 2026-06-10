@@ -226,6 +226,11 @@ self-continuity coherence, thread reactivation, correction narrative). Enabled w
 - Judge model: `RECALL_JUDGE_MODEL` env var, default `claude-sonnet-4-6`.
 - Without a key, `--judge` fails fast with a clear message; without `--judge`, Tier 2
   rubrics are ignored and the run is fully keyless.
+- **Judge-only queries** (no keywords, no verbatim phrases, no `max_results`) are
+  skipped entirely in Tier 1 runs — they would otherwise score a meaningless 0 for
+  every adapter. Tier 1 and Tier 2 headline scores are therefore computed over
+  different query sets and should not be compared to each other; compare adapters
+  within the same tier.
 
 ### 5.3 Tier 3 — Behavioral uplift (spec + pilot in v1; full track in v2)
 

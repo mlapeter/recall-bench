@@ -132,18 +132,39 @@ export function generateVariant(scenario: Scenario, options: VariantOptions): Sc
     }
   }
 
-  // 3. Apply replacements over the entire serialized scenario (sessions,
-  //    queries, keywords, and verbatim phrases stay consistent by construction)
-  let output = serialized;
-  for (const [from, to] of replacements) {
-    if (/^\d+$/.test(from)) {
-      output = output.replace(new RegExp(`(?<!\\d)${escapeRegex(from)}(?!\\d)`, 'g'), to);
-    } else {
-      output = output.replace(new RegExp(`\\b${escapeRegex(from)}\\b`, 'gi'), to);
+  // 3. Apply replacements to every TEXT field (messages, questions, keywords,
+  //    verbatim phrases, rubrics) — never to timestamps or ids, which numbers
+  //    could otherwise corrupt. Consistency across fields is by construction.
+  const apply = (text: string): string => {
+    let out = text;
+    for (const [from, to] of replacements) {
+      if (/^\d+$/.test(from)) {
+        out = out.replace(new RegExp(`(?<!\\d)${escapeRegex(from)}(?!\\d)`, 'g'), to);
+      } else {
+        out = out.replace(new RegExp(`\\b${escapeRegex(from)}\\b`, 'gi'), to);
+      }
+    }
+    return out;
+  };
+
+  const variant = JSON.parse(serialized) as Scenario;
+  variant.description = apply(variant.description);
+  for (const session of variant.sessions) {
+    for (const msg of session.messages) {
+      msg.content = apply(msg.content);
     }
   }
-
-  const variant = JSON.parse(output) as Scenario;
+  for (const query of variant.queries) {
+    query.question = apply(query.question);
+    query.should_recall = query.should_recall.map(apply);
+    query.should_forget = query.should_forget.map(apply);
+    if (query.must_include_verbatim) {
+      query.must_include_verbatim = query.must_include_verbatim.map(apply);
+    }
+    if (query.judge) {
+      query.judge = { rubric: apply(query.judge.rubric) };
+    }
+  }
 
   // 4. Shift all timestamps by a constant seeded offset (1–60 days), which
   //    preserves every inter-session interval and now/session relationship
