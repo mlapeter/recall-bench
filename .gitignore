@@ -3,3 +3,6 @@ dist/
 *.tsbuildinfo
 .env
 results/
+FABLE-PROMPT.md
+WORKLOG-FABLE.md
+.judge-cache/

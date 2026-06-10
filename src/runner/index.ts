@@ -1,179 +1,199 @@
 /**
- * RECALL Benchmark Runner
+ * RECALL Benchmark — Runner
  *
- * Executes test cases against a memory adapter and produces results.
+ * Loads scenario JSON files, runs them against an adapter, reports results.
  */
 
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { ScenarioSchema } from '../types/index.js';
+import { scoreScenario } from '../scorer/index.js';
 import type {
-  BenchmarkConfig,
   BenchmarkResult,
-  CategoryScore,
   MemoryAdapter,
-  TestCase,
-  TestCategory,
-  TestResult,
+  Scenario,
+  ScenarioResult,
+  QueryDimension,
 } from '../types/index.js';
 
-const VERSION = '0.1.0';
+export interface RunConfig {
+  /** Only run this scenario ID */
+  scenario?: string;
+  /** Print per-query details */
+  verbose?: boolean;
+}
 
-const ALL_CATEGORIES: TestCategory[] = [
-  'retention', 'encoding', 'consolidation', 'adaptation', 'loss', 'learning',
-];
+/**
+ * Load and validate all scenario JSON files from a directory.
+ */
+export async function loadScenarios(dir: string): Promise<Scenario[]> {
+  const files = await readdir(dir);
+  const jsonFiles = files.filter(f => f.endsWith('.json')).sort();
 
+  const scenarios: Scenario[] = [];
+  for (const file of jsonFiles) {
+    const raw = await readFile(join(dir, file), 'utf-8');
+    const parsed = JSON.parse(raw);
+    const validated = ScenarioSchema.parse(parsed);
+    scenarios.push(validated);
+  }
+
+  return scenarios;
+}
+
+/**
+ * Run all scenarios against an adapter.
+ */
 export async function runBenchmark(
   adapter: MemoryAdapter,
-  tests: TestCase[],
-  config: BenchmarkConfig = {},
+  scenarioDir: string,
+  config: RunConfig = {},
 ): Promise<BenchmarkResult> {
   const startTime = Date.now();
-  const categories = config.categories ?? ALL_CATEGORIES;
+  let scenarios = await loadScenarios(scenarioDir);
 
-  // Filter tests based on config
-  let filtered = tests.filter(t => categories.includes(t.category));
-
-  if (config.tests?.length) {
-    filtered = filtered.filter(t => config.tests!.includes(t.id));
-  }
-
-  if (!config.allowLlmJudge) {
-    filtered = filtered.filter(t => !t.tags?.includes('llm-judge'));
-  }
-
-  if (!config.allowTimeSimulation) {
-    filtered = filtered.filter(t => !t.tags?.includes('time-simulation'));
-  }
-
-  // Run tests sequentially (each test may mutate adapter state)
-  const results: TestResult[] = [];
-
-  for (const test of filtered) {
-    if (config.verbose) {
-      process.stdout.write(`  ${test.category}/${test.id} ... `);
+  if (config.scenario) {
+    scenarios = scenarios.filter(s => s.id === config.scenario);
+    if (scenarios.length === 0) {
+      throw new Error(`Scenario "${config.scenario}" not found`);
     }
+  }
 
-    // Reset adapter between tests for isolation
+  const results: ScenarioResult[] = [];
+
+  for (const scenario of scenarios) {
     await adapter.reset();
 
-    try {
-      const result = await test.run(adapter);
-      results.push(result);
+    if (config.verbose) {
+      console.log(`\n  ─ ${scenario.name} (${scenario.sessions.length} sessions, ${scenario.queries.length} queries)`);
+    }
+
+    // Feed all conversation sessions in order
+    for (const session of scenario.sessions) {
+      await adapter.processConversation(session.messages);
+    }
+
+    // Run all queries
+    const queryResults: Array<{ query: typeof scenario.queries[0]; results: string[] }> = [];
+    for (const query of scenario.queries) {
+      const limit = query.top_n ?? 5;
+      const queryLimit = query.max_results != null ? Math.max(limit, 1) : limit;
+      const results = await adapter.query(query.question, queryLimit);
+      queryResults.push({ query, results });
 
       if (config.verbose) {
-        const icon = result.passed ? '✓' : '✗';
-        console.log(`${icon} ${result.score.toFixed(2)}  ${result.details}`);
+        const score = (await import('../scorer/index.js')).scoreQuery(query, results);
+        const icon = score.combined_score >= 0.5 ? '✓' : '✗';
+        const dim = query.dimension.padEnd(12);
+        console.log(`    ${icon} [${dim}] ${query.question}`);
+        console.log(`      score: ${score.combined_score.toFixed(2)}  (recall: ${fmt(score.recall_score)}, forget: ${fmt(score.forget_score)}, abstain: ${fmt(score.abstention_score)})`);
+        if (results.length > 0) {
+          console.log(`      results: ${results.length} returned, first: "${truncate(results[0], 80)}"`);
+        } else {
+          console.log(`      results: (none)`);
+        }
       }
-    } catch (err) {
-      const result: TestResult = {
-        testId: test.id,
-        score: 0,
-        passed: false,
-        details: `Error: ${err instanceof Error ? err.message : String(err)}`,
-        durationMs: 0,
-      };
-      results.push(result);
+    }
 
-      if (config.verbose) {
-        console.log(`✗ ERROR  ${result.details}`);
-      }
+    const scenarioResult = scoreScenario(scenario, queryResults);
+    results.push(scenarioResult);
+
+    if (config.verbose) {
+      console.log(`    → scenario score: ${(scenarioResult.score * 100).toFixed(0)}%`);
     }
   }
 
-  // Score by category
-  const categoryScores = scoreByCategory(results, filtered);
-
-  // Overall score: weighted average of category scores
-  const overallScore = categoryScores.length > 0
-    ? categoryScores.reduce((sum, c) => sum + c.score, 0) / categoryScores.length
+  const overallScore = results.length > 0
+    ? results.reduce((sum, r) => sum + r.score, 0) / results.length
     : 0;
 
   return {
-    systemName: adapter.name,
+    adapterName: adapter.name,
+    scenarios: results,
     overallScore,
-    categories: categoryScores,
-    tests: results,
     totalDurationMs: Date.now() - startTime,
     timestamp: new Date().toISOString(),
-    version: VERSION,
   };
 }
 
-function scoreByCategory(
-  results: TestResult[],
-  tests: TestCase[],
-): CategoryScore[] {
-  const byCategory = new Map<TestCategory, TestResult[]>();
-
-  for (const result of results) {
-    const test = tests.find(t => t.id === result.testId);
-    if (!test) continue;
-    const existing = byCategory.get(test.category) ?? [];
-    existing.push(result);
-    byCategory.set(test.category, existing);
-  }
-
-  return Array.from(byCategory.entries()).map(([category, categoryResults]) => {
-    const score = categoryResults.length > 0
-      ? categoryResults.reduce((sum, r) => sum + r.score, 0) / categoryResults.length
-      : 0;
-
-    return {
-      category,
-      score,
-      testsRun: categoryResults.length,
-      testsPassed: categoryResults.filter(r => r.passed).length,
-      testResults: categoryResults,
-    };
-  });
-}
-
-/** Print a formatted report of benchmark results */
+/**
+ * Format a benchmark result as a readable report.
+ */
 export function formatReport(result: BenchmarkResult): string {
   const lines: string[] = [];
 
   lines.push('');
   lines.push('╔══════════════════════════════════════════════════════════════╗');
   lines.push('║                    RECALL Benchmark Results                 ║');
-  lines.push('║  Retention · Encoding · Consolidation · Adaptation ·       ║');
-  lines.push('║  Loss · Learning                                           ║');
   lines.push('╚══════════════════════════════════════════════════════════════╝');
   lines.push('');
-  lines.push(`  System:  ${result.systemName}`);
-  lines.push(`  Score:   ${(result.overallScore * 100).toFixed(1)}%`);
-  lines.push(`  Tests:   ${result.tests.length} run, ${result.tests.filter(t => t.passed).length} passed`);
-  lines.push(`  Time:    ${(result.totalDurationMs / 1000).toFixed(1)}s`);
+  lines.push(`  Adapter:  ${result.adapterName}`);
+  lines.push(`  Score:    ${(result.overallScore * 100).toFixed(1)}%`);
+  lines.push(`  Time:     ${(result.totalDurationMs / 1000).toFixed(1)}s`);
   lines.push('');
-  lines.push('  ┌────────────────┬───────┬─────────────────┐');
-  lines.push('  │ Category       │ Score │ Tests           │');
-  lines.push('  ├────────────────┼───────┼─────────────────┤');
 
-  const categoryLabels: Record<TestCategory, string> = {
-    retention: 'R  Retention',
-    encoding: 'E  Encoding',
-    consolidation: 'C  Consolidation',
-    adaptation: 'A  Adaptation',
-    loss: 'L  Loss',
-    learning: 'L  Learning',
-  };
+  // Scenario table
+  lines.push('  ┌──────────────────────────┬───────┬─────────────────────────┐');
+  lines.push('  │ Scenario                 │ Score │ Queries                 │');
+  lines.push('  ├──────────────────────────┼───────┼─────────────────────────┤');
 
-  for (const cat of result.categories) {
-    const label = categoryLabels[cat.category].padEnd(14);
-    const score = `${(cat.score * 100).toFixed(0)}%`.padStart(4);
-    const tests = `${cat.testsPassed}/${cat.testsRun} passed`.padEnd(15);
-    lines.push(`  │ ${label} │ ${score}  │ ${tests} │`);
+  for (const s of result.scenarios) {
+    const name = s.scenarioName.padEnd(24);
+    const score = `${(s.score * 100).toFixed(0)}%`.padStart(4);
+    const passed = s.queryResults.filter(q => q.score.combined_score >= 0.5).length;
+    const total = s.queryResults.length;
+    const queries = `${passed}/${total} passed`.padEnd(23);
+    lines.push(`  │ ${name} │ ${score}  │ ${queries} │`);
   }
 
-  lines.push('  └────────────────┴───────┴─────────────────┘');
+  lines.push('  └──────────────────────────┴───────┴─────────────────────────┘');
   lines.push('');
 
-  // Show failed tests
-  const failed = result.tests.filter(t => !t.passed);
-  if (failed.length > 0) {
-    lines.push('  Failed tests:');
-    for (const t of failed) {
-      lines.push(`    ✗ ${t.testId}: ${t.details}`);
+  // Dimension breakdown
+  const dimScores = new Map<QueryDimension, number[]>();
+  for (const s of result.scenarios) {
+    for (const qr of s.queryResults) {
+      const dim = qr.query.dimension;
+      const arr = dimScores.get(dim) ?? [];
+      arr.push(qr.score.combined_score);
+      dimScores.set(dim, arr);
+    }
+  }
+
+  if (dimScores.size > 0) {
+    lines.push('  By dimension:');
+    const sortedDims = [...dimScores.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    for (const [dim, scores] of sortedDims) {
+      const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+      const bar = '█'.repeat(Math.round(avg * 20)).padEnd(20, '░');
+      lines.push(`    ${dim.padEnd(14)} ${bar} ${(avg * 100).toFixed(0)}%`);
     }
     lines.push('');
   }
 
+  // Failed queries
+  const failed: string[] = [];
+  for (const s of result.scenarios) {
+    for (const qr of s.queryResults) {
+      if (qr.score.combined_score < 0.5) {
+        failed.push(`    ✗ [${s.scenarioId}] ${qr.query.question} (${(qr.score.combined_score * 100).toFixed(0)}%)`);
+      }
+    }
+  }
+
+  if (failed.length > 0) {
+    lines.push(`  Failed queries (${failed.length}):`);
+    lines.push(...failed);
+    lines.push('');
+  }
+
   return lines.join('\n');
+}
+
+function fmt(n: number | null): string {
+  return n === null ? 'n/a' : n.toFixed(2);
+}
+
+function truncate(s: string, max: number): string {
+  return s.length > max ? s.slice(0, max) + '…' : s;
 }

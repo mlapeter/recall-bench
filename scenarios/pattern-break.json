@@ -1,0 +1,65 @@
+{
+  "id": "pattern-break",
+  "name": "Pattern Break",
+  "description": "Tests whether the system detects and remembers when routines change. Recent changes should surface above the old patterns.",
+  "sessions": [
+    {
+      "messages": [
+        { "role": "user", "content": "My daily routine is pretty set. Standup at 9am, then I dig into whatever's on the sprint board. We use Kafka for all our event streaming — been running it for about two years now." },
+        { "role": "assistant", "content": "Sounds like a well-established workflow. Kafka's been reliable for that long?" },
+        { "role": "user", "content": "Rock solid. I usually grab coffee at Peet's on the way in — their dark roast is my go-to. Then standup, then heads-down coding until lunch." },
+        { "role": "assistant", "content": "Nice routine. Having that consistent start to the day helps with focus." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Same old, same old. 9am standup, Kafka pipeline maintenance, coffee at Peet's. Though today I had to debug a consumer lag issue that took most of the afternoon." },
+        { "role": "assistant", "content": "Consumer lag can be tricky — was it a partition rebalancing issue or something with the consumer group?" },
+        { "role": "user", "content": "Partition skew. One topic had way more traffic than the others. Fixed it by repartitioning. Anyway, back to the grind tomorrow." },
+        { "role": "assistant", "content": "Classic Kafka issue. At least it's a straightforward fix once you identify the skew." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Big changes at work! We moved standup to 2pm because half the team is now in Europe. It's weird having my mornings free but honestly I'm way more productive." },
+        { "role": "assistant", "content": "That's a significant shift — mornings for deep work instead of starting with standup. Do you like the new schedule better?" },
+        { "role": "user", "content": "Way better. Also, we're migrating from Kafka to Pulsar. The multi-tenancy support is what sold the team. Kafka served us well but Pulsar fits our new architecture better." },
+        { "role": "assistant", "content": "Pulsar's built-in multi-tenancy is a big deal if you're going multi-tenant. That's a major infrastructure shift though." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Oh also, I switched from coffee to matcha. I know, I know — very trendy. But my energy levels are way more stable throughout the day. No more 3pm crashes." },
+        { "role": "assistant", "content": "Hey, if it works, it works. The L-theanine in matcha does smooth out the caffeine curve compared to coffee. How's the Pulsar migration going?" },
+        { "role": "user", "content": "Almost done actually. We've migrated about 80% of the topics. The 2pm standup has been great for coordinating with the EU team on the migration — everyone's actually awake and engaged." },
+        { "role": "assistant", "content": "That's good progress. Having the whole team in sync for a migration like that makes a huge difference." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "When is their standup meeting?",
+      "should_recall": ["2pm"],
+      "should_forget": ["9am"],
+      "dimension": "pattern"
+    },
+    {
+      "question": "What messaging system are they using?",
+      "should_recall": ["Pulsar"],
+      "should_forget": ["Kafka"],
+      "dimension": "pattern"
+    },
+    {
+      "question": "What do they drink in the morning?",
+      "should_recall": ["matcha"],
+      "should_forget": ["Peet's"],
+      "dimension": "pattern"
+    },
+    {
+      "question": "What changed recently at their work?",
+      "should_recall": ["Pulsar", "2pm"],
+      "should_forget": [],
+      "dimension": "pattern"
+    }
+  ]
+}

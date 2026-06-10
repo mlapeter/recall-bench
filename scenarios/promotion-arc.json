@@ -1,0 +1,72 @@
+{
+  "id": "promotion-arc",
+  "name": "Promotion Arc",
+  "description": "Tests salience (career milestones surface above noise), coherence (narrative consistency across sessions), and calibration (never-mentioned topics return nothing).",
+  "sessions": [
+    {
+      "messages": [
+        { "role": "user", "content": "Ugh, rough week. My manager at Vanguard Systems keeps shooting down my proposals. I pitched a whole new observability stack and he just said 'not a priority.' Three years there and I feel stuck." },
+        { "role": "assistant", "content": "That sounds frustrating, especially after investing three years. Getting your ideas dismissed when you have the context to know they'd help is demoralizing. Have you thought about whether this is a pattern with your manager specifically, or a broader org issue?" },
+        { "role": "user", "content": "Honestly I think it's the org. They're so risk-averse. Oh, by the way — we tried that new Thai place, Siam Garden, last night. The pad see ew was incredible. Anyway, yeah, I've been quietly looking at other opportunities." },
+        { "role": "assistant", "content": "Makes sense to explore what's out there if the culture isn't a fit. And glad Siam Garden delivered — always good to have a solid Thai spot." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Big update — I applied to Meridian Technologies for a Director of Platform Engineering role. The job description is basically everything I've been wanting to do. They're building out their whole cloud-native strategy from scratch." },
+        { "role": "assistant", "content": "That sounds like a great fit given what you've told me about wanting more autonomy. Building a cloud-native strategy from the ground up is a rare opportunity. When's the interview?" },
+        { "role": "user", "content": "First round is next Tuesday. I'm nervous but excited. Oh, I've been watching that show Severance on Apple TV — it's wild. Have you heard of it?" },
+        { "role": "assistant", "content": "Good luck with Tuesday! And yes, Severance is a fascinating show — the premise raises some deep questions about identity and work-life boundaries." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "I GOT THE OFFER! Meridian Technologies — VP of Platform Engineering! The comp package is $285K base plus equity. I can't believe it. I start in three weeks." },
+        { "role": "assistant", "content": "Congratulations! That's a huge leap — VP of Platform Engineering at Meridian, that's exactly the kind of role you were looking for. $285K plus equity is a strong package too. How are you feeling about the transition?" },
+        { "role": "user", "content": "Honestly? Terrified and thrilled. I already put in my notice at Vanguard. My manager was surprisingly supportive — said he always knew I'd outgrow the role. We went to Vesuvio's to celebrate, that Italian place downtown." },
+        { "role": "assistant", "content": "Funny how managers sometimes see your potential more than they let on day-to-day. Enjoy the celebration — you've earned it." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Two months in at Meridian now. It's been intense but really good. I've already hired three people for the platform team. The CTO gives me a lot of autonomy, which is exactly what I needed." },
+        { "role": "assistant", "content": "That's great to hear — sounds like the role is living up to its promise. Having a CTO who trusts your judgment makes all the difference when you're building a team from scratch." },
+        { "role": "user", "content": "Totally. Oh, the kids started soccer this season. Saturday mornings are now all about being a soccer parent. It's actually pretty fun watching them improve each week." },
+        { "role": "assistant", "content": "That's a nice balance — intense leadership role during the week, soccer sidelines on the weekend. Glad things are settling into a good rhythm." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the latest on their career situation?",
+      "should_recall": ["Meridian", "VP"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "Tell me about their career journey over the past few months.",
+      "should_recall": ["Meridian", "Vanguard"],
+      "should_forget": [],
+      "dimension": "coherence"
+    },
+    {
+      "question": "Do they have kids? What are the kids up to?",
+      "should_recall": ["soccer"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What salary did they negotiate?",
+      "should_recall": ["285"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What sports teams do they follow?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

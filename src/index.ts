@@ -1,24 +1,21 @@
 /**
  * RECALL Benchmark
  *
- * Retention · Encoding · Consolidation · Adaptation · Loss · Learning
- *
- * A benchmark for AI memory systems that rewards forgetting as much as remembering.
+ * Conversation-based evaluation for memory systems.
  */
 
-export { allTests } from './tests/index.js';
-export { runBenchmark, formatReport } from './runner/index.js';
+export { runBenchmark, formatReport, loadScenarios } from './runner/index.js';
+export { scoreQuery, scoreScenario } from './scorer/index.js';
 export { NaiveAdapter } from './adapters/index.js';
 export type {
   MemoryAdapter,
-  StoreInput,
-  RecalledMemory,
-  StoredMemory,
-  SystemStatus,
-  TestCase,
-  TestResult,
-  TestCategory,
-  CategoryScore,
+  Message,
+  Query,
+  QueryDimension,
+  Session,
+  Scenario,
+  QueryScore,
+  QueryResult,
+  ScenarioResult,
   BenchmarkResult,
-  BenchmarkConfig,
 } from './types/index.js';

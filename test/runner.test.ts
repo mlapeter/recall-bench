@@ -1,77 +1,92 @@
 import { describe, it, expect } from 'vitest';
-import { runBenchmark, formatReport } from '../src/runner/index.js';
+import { resolve } from 'node:path';
+import { loadScenarios, runBenchmark, formatReport } from '../src/runner/index.js';
 import { NaiveAdapter } from '../src/adapters/naive.js';
-import { allTests } from '../src/tests/index.js';
 
-describe('RECALL runner', () => {
-  it('runs all tests against naive adapter', async () => {
-    const adapter = new NaiveAdapter();
-    const result = await runBenchmark(adapter, allTests, {
-      allowTimeSimulation: true,
-    });
+const SCENARIO_DIR = resolve(import.meta.dirname, '..', 'scenarios');
 
-    expect(result.systemName).toBe('naive-baseline');
-    expect(result.tests.length).toBeGreaterThan(0);
-    expect(result.overallScore).toBeGreaterThanOrEqual(0);
-    expect(result.overallScore).toBeLessThanOrEqual(1);
-    expect(result.categories.length).toBeGreaterThan(0);
-    expect(result.version).toBe('0.1.0');
+describe('loadScenarios', () => {
+  it('loads and validates all scenario files', async () => {
+    const scenarios = await loadScenarios(SCENARIO_DIR);
+
+    expect(scenarios.length).toBe(7);
+    for (const s of scenarios) {
+      expect(s.id).toBeTruthy();
+      expect(s.name).toBeTruthy();
+      expect(s.sessions.length).toBeGreaterThan(0);
+      expect(s.queries.length).toBeGreaterThan(0);
+    }
   });
 
-  it('formats a report', async () => {
-    const adapter = new NaiveAdapter();
-    const result = await runBenchmark(adapter, allTests);
-    const report = formatReport(result);
+  it('has the expected scenario IDs', async () => {
+    const scenarios = await loadScenarios(SCENARIO_DIR);
+    const ids = scenarios.map(s => s.id).sort();
 
-    expect(report).toContain('RECALL Benchmark Results');
-    expect(report).toContain('naive-baseline');
-    expect(report).toContain('Score:');
-  });
-
-  it('filters by category', async () => {
-    const adapter = new NaiveAdapter();
-    const result = await runBenchmark(adapter, allTests, {
-      categories: ['retention'],
-    });
-
-    expect(result.categories.length).toBe(1);
-    expect(result.categories[0].category).toBe('retention');
-  });
-
-  it('filters by test ID', async () => {
-    const adapter = new NaiveAdapter();
-    const result = await runBenchmark(adapter, allTests, {
-      tests: ['retention-hebbian'],
-    });
-
-    expect(result.tests.length).toBe(1);
-    expect(result.tests[0].testId).toBe('retention-hebbian');
+    expect(ids).toEqual([
+      'calibration',
+      'correction',
+      'emotional-weight',
+      'pattern-break',
+      'promotion-arc',
+      'slow-fade',
+      'two-people',
+    ]);
   });
 });
 
-describe('NaiveAdapter', () => {
-  it('stores and recalls', async () => {
+describe('runBenchmark', () => {
+  it('runs all scenarios against naive adapter', async () => {
     const adapter = new NaiveAdapter();
-    await adapter.store({ content: 'hello world' });
-    const results = await adapter.recall('hello');
-    expect(results.length).toBe(1);
-    expect(results[0].content).toBe('hello world');
+    const result = await runBenchmark(adapter, SCENARIO_DIR);
+
+    expect(result.adapterName).toBe('naive');
+    expect(result.scenarios.length).toBe(7);
+    expect(result.overallScore).toBeGreaterThanOrEqual(0);
+    expect(result.overallScore).toBeLessThanOrEqual(1);
+    expect(result.totalDurationMs).toBeGreaterThan(0);
+    expect(result.timestamp).toBeTruthy();
   });
 
-  it('forgets', async () => {
+  it('filters by scenario ID', async () => {
     const adapter = new NaiveAdapter();
-    const id = await adapter.store({ content: 'secret data' });
-    await adapter.forget(id);
-    const results = await adapter.recall('secret');
-    expect(results.length).toBe(0);
+    const result = await runBenchmark(adapter, SCENARIO_DIR, {
+      scenario: 'correction',
+    });
+
+    expect(result.scenarios.length).toBe(1);
+    expect(result.scenarios[0].scenarioId).toBe('correction');
   });
 
-  it('resets', async () => {
+  it('throws on unknown scenario', async () => {
     const adapter = new NaiveAdapter();
-    await adapter.store({ content: 'item 1' });
-    await adapter.store({ content: 'item 2' });
-    await adapter.reset();
-    const all = await adapter.getAll();
-    expect(all.length).toBe(0);
+    await expect(
+      runBenchmark(adapter, SCENARIO_DIR, { scenario: 'nonexistent' }),
+    ).rejects.toThrow('not found');
+  });
+
+  it('resets adapter between scenarios', async () => {
+    let resetCount = 0;
+    const adapter = new NaiveAdapter();
+    const origReset = adapter.reset.bind(adapter);
+    adapter.reset = async () => {
+      resetCount++;
+      await origReset();
+    };
+
+    await runBenchmark(adapter, SCENARIO_DIR);
+    expect(resetCount).toBe(7); // once per scenario
+  });
+});
+
+describe('formatReport', () => {
+  it('produces readable output', async () => {
+    const adapter = new NaiveAdapter();
+    const result = await runBenchmark(adapter, SCENARIO_DIR);
+    const report = formatReport(result);
+
+    expect(report).toContain('RECALL Benchmark Results');
+    expect(report).toContain('naive');
+    expect(report).toContain('Score');
+    expect(report).toContain('%');
   });
 });

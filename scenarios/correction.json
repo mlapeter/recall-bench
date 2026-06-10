@@ -1,0 +1,57 @@
+{
+  "id": "correction",
+  "name": "Correction",
+  "description": "Tests whether the system updates stale facts when new information contradicts them. Current employer and tech stack should reflect the latest state.",
+  "sessions": [
+    {
+      "messages": [
+        { "role": "user", "content": "I'm working on a pretty big project at Helix Labs right now. We're building a customer analytics platform. I'm the lead backend engineer — mostly Python, using Django for the API layer." },
+        { "role": "assistant", "content": "Nice — Django is solid for analytics APIs. Are you using Django REST framework for the endpoints, or going with something lighter?" },
+        { "role": "user", "content": "DRF, yeah. It's a bit heavy but the serializers save us tons of time. We're processing about 50 million events per day through our pipeline. The data team loves it because they can self-serve through the API." },
+        { "role": "assistant", "content": "50 million events daily is respectable throughput. DRF's serializers really do pay off at scale when you have multiple consumers hitting the same endpoints." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "So we actually migrated the entire API from Django to FastAPI last month. The async support is a game-changer for our event processing. We went from 200ms p95 to about 45ms." },
+        { "role": "assistant", "content": "That's a dramatic improvement — going from Django's sync model to FastAPI's native async makes a huge difference for I/O-heavy workloads like event processing. 45ms p95 is really solid." },
+        { "role": "user", "content": "Yeah, the team was skeptical at first but the numbers convinced everyone. We're using Pydantic v2 for validation now which is blazing fast. Still at Helix Labs of course, just much happier with the stack." },
+        { "role": "assistant", "content": "Pydantic v2's Rust core makes validation nearly free at that scale. Good call on the migration." }
+      ]
+    },
+    {
+      "messages": [
+        { "role": "user", "content": "Hey, big news — I left Helix Labs! I'm now at Arcana as their first Tech Lead. Completely different vibe, it's a 15-person startup working on AI-powered code review tools." },
+        { "role": "assistant", "content": "That's a big move — from a larger analytics operation to a 15-person startup. What drew you to Arcana?" },
+        { "role": "user", "content": "Honestly, the product. Their approach to code review using LLMs is really clever. Plus I get to shape the entire backend architecture. Still using FastAPI actually, which made the transition smoother." },
+        { "role": "assistant", "content": "Makes sense — FastAPI for an AI-heavy startup is a natural fit. And having architectural ownership at that stage is a rare opportunity." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Where do they currently work?",
+      "should_recall": ["Arcana"],
+      "should_forget": ["Helix"],
+      "dimension": "correction"
+    },
+    {
+      "question": "What's their current role?",
+      "should_recall": ["Tech Lead"],
+      "should_forget": [],
+      "dimension": "correction"
+    },
+    {
+      "question": "What web framework are they using?",
+      "should_recall": ["FastAPI"],
+      "should_forget": ["Django"],
+      "dimension": "correction"
+    },
+    {
+      "question": "What kind of company do they work at?",
+      "should_recall": ["startup", "code review"],
+      "should_forget": [],
+      "dimension": "correction"
+    }
+  ]
+}

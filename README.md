@@ -1,139 +1,124 @@
-# RECALL
+# RECALL Bench
 
-**Retention · Encoding · Consolidation · Adaptation · Loss · Learning**
+A conversation-based benchmark for AI memory systems. Feed it natural conversations, let it do its thing, then check what it remembers.
 
-A benchmark for AI memory systems that rewards forgetting as much as remembering.
+## Why?
 
-## Why RECALL?
+Existing memory benchmarks test database recall — can you retrieve a fact? RECALL tests what actually matters: does your memory system behave like good memory? Does it know what's important, forget what's stale, correct what's changed, and abstain when it doesn't know?
 
-Existing memory benchmarks (LoCoMo, LongMemEval, ConvoMem) test one thing: can you retrieve a fact? They treat memory as a database lookup problem and penalize any information loss.
+## How It Works
 
-But biological memory isn't a database. It's a dynamic system that actively forgets, strengthens through use, consolidates patterns from episodes, and adapts to contradictions. A memory system that remembers everything forever isn't better — it's broken.
-
-RECALL tests what no other benchmark tests: **memory dynamics**.
-
-## The Six Axes
-
-| Axis | Tests | What It Measures |
-|------|-------|------------------|
-| **R** Retention | Hebbian strengthening, decay, reconsolidation | Do memories get stronger through use? |
-| **E** Encoding | Salience discrimination, fuzzy matching, tags | Does the system encode context and importance? |
-| **C** Consolidation | Redundancy merge, pattern extraction | Can it transform episodes into knowledge? |
-| **A** Adaptation | Contradictions, interference, context-switching | Does it handle conflicting or overlapping info? |
-| **L** Loss | Graceful forgetting, load handling, explicit forget | Does it appropriately let go of what's not needed? |
-| **L** Learning | Cross-domain transfer, relationships, metacognition | Can it connect knowledge and know itself? |
-
-## Scoring Philosophy
-
-Traditional benchmarks: "Did you remember X? No? -1 point."
-
-RECALL: "You remembered X from 6 months ago that was accessed once and superseded twice? That's **worse** than forgetting it."
-
-The benchmark rewards:
-- Memories that strengthen through use (Hebbian learning)
-- Graceful decay of unused information
-- Consolidation of redundant memories into patterns
-- Proper handling of contradictory information
-- Maintaining retrieval quality under load
+1. **Scenarios** define natural conversations and questions with expected answers
+2. Your system **ingests conversations** however it wants (extraction, verbatim storage, etc.)
+3. The benchmark **queries** what it remembers and scores against keyword expectations
+4. No LLM judge needed — all evaluation is keyword-based
 
 ## Quick Start
 
 ```bash
-# Install
 bun install
 
-# Run benchmark against the naive baseline
+# Run against the naive baseline
 bun run src/cli.ts --verbose
 
-# Run a specific category
-bun run src/cli.ts --category retention --verbose
+# Run against engram (requires ANTHROPIC_API_KEY)
+bun run src/cli.ts --adapter engram --verbose
+
+# Run a single scenario
+bun run src/cli.ts --scenario correction --verbose
 ```
 
-## Writing an Adapter
+## The 3-Method Interface
 
-To benchmark your own memory system, implement the `MemoryAdapter` interface:
+Any memory system can be benchmarked by implementing three methods:
 
 ```typescript
-import type { MemoryAdapter } from 'recall-bench';
+import type { MemoryAdapter, Message } from 'recall-bench';
 
 class MyAdapter implements MemoryAdapter {
   readonly name = 'my-system';
 
-  async store(input) { /* ... */ }
-  async recall(query, limit?) { /* ... */ }
-  async reset() { /* ... */ }
+  // Feed a conversation — store what you think is important
+  async processConversation(messages: Message[]): Promise<void> { /* ... */ }
 
-  // Optional but recommended:
-  async reinforce(id) { /* ... */ }
-  async update(id, content) { /* ... */ }
-  async forget(id) { /* ... */ }
-  async consolidate() { /* ... */ }
-  async getAll() { /* ... */ }
+  // Ask what you remember — return relevant content strings
+  async query(question: string, limit?: number): Promise<string[]> { /* ... */ }
+
+  // Clear all state between scenarios
+  async reset(): Promise<void> { /* ... */ }
 }
 ```
 
-Required methods: `store`, `recall`, `reset`
+That's it. No special methods for reinforcement, consolidation, or forgetting. If your system does those things internally, great — the scenarios will reveal it.
 
-Optional methods unlock more tests:
-- `reinforce` → Hebbian strengthening tests
-- `update` → Reconsolidation tests
-- `forget` → Explicit forget tests
-- `consolidate` → Consolidation tests
-- `getAll` → Deeper inspection of memory state
+## Scenarios
 
-## Test Categories
+| Scenario | Dimensions | What It Tests |
+|----------|-----------|---------------|
+| **Promotion Arc** | salience, coherence, calibration | Career milestones surface above restaurant names |
+| **Correction** | correction | Updated employer/tech stack replaces stale info |
+| **Pattern Break** | pattern | Detects when routines change (9am→2pm standup) |
+| **Emotional Weight** | emotional, salience | Pet's cancer diagnosis outweighs infra work |
+| **Calibration** | calibration, correction | Abstains on never-discussed topics |
+| **Slow Fade** | decay | Recent clients surface, old ones fade |
+| **Two People** | separation | Keeps Alice's facts separate from Bob's |
 
-### R — Retention (3 tests)
-- **Hebbian strengthening**: Accessed memories rank higher
-- **Strength through use**: Frequently used memories persist
-- **Reconsolidation**: Updated memories return new content
+## Scoring
 
-### E — Encoding (3 tests)
-- **Tag-based retrieval**: Memories found by category
-- **Salience discrimination**: Important memories surface first
-- **Fuzzy encoding**: Rephrased queries find relevant memories
+Each query tests up to three things:
 
-### C — Consolidation (2 tests)
-- **Redundancy merge**: Duplicate memories get merged
-- **Pattern extraction**: Episodes generalize into knowledge
+- **Recall**: Are the expected keywords present? (fraction found)
+- **Forget**: Are outdated keywords absent? (1 - fraction found)
+- **Abstention**: Did the system return ≤ max_results? (for calibration queries)
 
-### A — Adaptation (3 tests)
-- **Contradiction handling**: New info supersedes old
-- **Interference resolution**: Similar memories don't contaminate
-- **Context-dependent retrieval**: Context affects what surfaces
+Combined score = average of applicable components. A query "passes" at ≥ 0.5.
 
-### L — Loss (3 tests)
-- **Graceful forgetting**: Outdated info doesn't dominate
-- **Memory under load**: Quality maintained at scale
-- **Explicit forget**: Deleted memories stay deleted
+The naive adapter (stores every user message verbatim, searches by token overlap) scores ~30-40%. A good extraction-based system should score significantly higher.
 
-### L — Learning (3 tests)
-- **Cross-domain transfer**: Related knowledge connects
-- **Relationship memory**: Relational context preserved
-- **Metacognition**: Self-referential knowledge retrievable
+## Writing a Scenario
 
-## Example Output
+Scenarios are JSON files in `scenarios/`:
 
+```json
+{
+  "id": "my-scenario",
+  "name": "My Scenario",
+  "description": "Tests whether ...",
+  "sessions": [
+    {
+      "messages": [
+        { "role": "user", "content": "..." },
+        { "role": "assistant", "content": "..." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What do they use?",
+      "should_recall": ["SpecificKeyword"],
+      "should_forget": ["OutdatedKeyword"],
+      "dimension": "correction"
+    }
+  ]
+}
 ```
-╔══════════════════════════════════════════════════════════════╗
-║                    RECALL Benchmark Results                 ║
-╚══════════════════════════════════════════════════════════════╝
 
-  System:  naive-baseline
-  Score:   48.2%
-  Tests:   14 run, 7 passed
+**Tips for good scenarios:**
+- Use distinctive anchor words (company names, place names, numbers) that survive extraction
+- Bury important facts in casual conversation
+- Mix emotional and mundane content
+- Use natural dialogue, not fact injection
 
-  ┌────────────────┬───────┬─────────────────┐
-  │ Category       │ Score │ Tests           │
-  ├────────────────┼───────┼─────────────────┤
-  │ R  Retention   │  37%  │ 1/3 passed      │
-  │ E  Encoding    │  60%  │ 2/3 passed      │
-  │ C  Consolidation│  0%  │ 0/2 passed      │
-  │ A  Adaptation  │  63%  │ 2/3 passed      │
-  │ L  Loss        │  70%  │ 2/3 passed      │
-  │ L  Learning    │  60%  │ 2/3 passed      │
-  └────────────────┴───────┴─────────────────┘
-```
+## Dimensions
+
+- `salience` — Important facts rise above noise
+- `decay` — Older info fades appropriately
+- `correction` — Updated facts replace stale ones
+- `calibration` — Knows what it doesn't know
+- `coherence` — Narrative consistency across sessions
+- `separation` — Keeps distinct entities apart
+- `pattern` — Recognizes breaks from routine
+- `emotional` — Emotionally weighted memories persist
 
 ## License
 

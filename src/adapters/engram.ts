@@ -1,21 +1,13 @@
 /**
  * Engram Adapter
  *
- * Wraps claude-engram's store directly for benchmarking.
- * Uses engram's native store, strength, consolidation, and search.
- *
- * Requires engram to be installed at a known path (default: ~/claude-engram).
+ * Uses engram's real extraction pipeline (Haiku) and search.
+ * Requires ANTHROPIC_API_KEY. Costs ~$0.001/conversation.
  */
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type {
-  MemoryAdapter,
-  RecalledMemory,
-  StoredMemory,
-  StoreInput,
-  SystemStatus,
-} from '../types/index.js';
+import type { MemoryAdapter, Message } from '../types/index.js';
 
 /** Load .env file into process.env (simple key=value parser, no overwrite) */
 function loadDotEnv(dir: string): void {
@@ -28,7 +20,6 @@ function loadDotEnv(dir: string): void {
       if (eqIdx === -1) continue;
       const key = trimmed.slice(0, eqIdx).trim();
       const value = trimmed.slice(eqIdx + 1).trim();
-      // Don't overwrite existing env vars
       if (!process.env[key]) {
         process.env[key] = value;
       }
@@ -38,7 +29,7 @@ function loadDotEnv(dir: string): void {
   }
 }
 
-// Engram's internal types (reproduced to avoid import dependency)
+// Engram types (reproduced to avoid hard dependency)
 interface EngramMemory {
   id: string;
   content: string;
@@ -55,31 +46,32 @@ interface EngramMemory {
   updated_from: string | null;
 }
 
+type NewEngramMemory = Omit<EngramMemory, 'id' | 'access_count' | 'last_accessed' | 'created_at' | 'consolidated' | 'generalized' | 'updated_from'> & {
+  updates: string | null;
+};
+
 interface EngramStoreApi {
   loadAll(): Promise<EngramMemory[]>;
   add(memories: EngramMemory[]): Promise<void>;
-  remove(id: string): Promise<void>;
-  update(id: string, updates: Partial<EngramMemory>): Promise<void>;
   search(query: string, limit?: number): Promise<EngramMemory[]>;
   save(scope: 'global' | 'project', memories: EngramMemory[]): Promise<void>;
-  load(scope: 'global' | 'project'): Promise<EngramMemory[]>;
-  loadMeta(scope: 'global' | 'project'): Promise<{ lastConsolidation: string | null }>;
-  saveMeta(scope: 'global' | 'project', meta: unknown): Promise<void>;
 }
 
 export interface EngramAdapterOptions {
-  /** Path to engram installation (default: ~/claude-engram) */
   engramPath?: string;
-  /** Temporary data directory for isolated benchmarking */
   tempDataDir?: string;
 }
 
 export class EngramAdapter implements MemoryAdapter {
   readonly name = 'engram';
-  private _engram!: EngramStoreApi;
-  private _calcStrength!: (memory: EngramMemory) => number;
-  private _genId!: () => string;
-  private _consolidate: ((store: EngramStoreApi) => Promise<unknown>) | null = null;
+  private _store!: EngramStoreApi;
+  private _extractMemories!: (
+    input: string,
+    existing: EngramMemory[],
+    mode: 'summary' | 'transcript',
+    weightsHint?: string | null,
+  ) => Promise<NewEngramMemory[]>;
+  private _generateId!: () => string;
   private ready: Promise<void>;
   private tempDir: string;
 
@@ -91,27 +83,17 @@ export class EngramAdapter implements MemoryAdapter {
   private async init(): Promise<void> {
     const engramPath = this.options.engramPath ?? `${process.env.HOME}/claude-engram`;
 
-    // Load engram's .env for API keys (VOYAGE_API_KEY, etc.)
     loadDotEnv(engramPath);
-
-    // Isolate from real engram data
     process.env.ENGRAM_DATA_DIR = this.tempDir;
 
     try {
       const storeMod = await import(`${engramPath}/src/core/store.js`);
-      const strengthMod = await import(`${engramPath}/src/core/strength.js`);
+      const salienceMod = await import(`${engramPath}/src/core/salience.js`);
       const typesMod = await import(`${engramPath}/src/core/types.js`);
 
-      this._engram = storeMod.createStore(this.tempDir) as EngramStoreApi;
-      this._calcStrength = strengthMod.calculateStrength;
-      this._genId = typesMod.generateId;
-
-      try {
-        const consolMod = await import(`${engramPath}/src/core/consolidation.js`);
-        this._consolidate = consolMod.runConsolidation;
-      } catch {
-        // Consolidation not available
-      }
+      this._store = storeMod.createStore(this.tempDir) as EngramStoreApi;
+      this._extractMemories = salienceMod.extractMemories;
+      this._generateId = typesMod.generateId;
     } catch (err) {
       throw new Error(
         `Failed to load engram from ${engramPath}. ` +
@@ -124,141 +106,49 @@ export class EngramAdapter implements MemoryAdapter {
     await this.ready;
   }
 
-  async store(input: StoreInput): Promise<string> {
+  async processConversation(messages: Message[]): Promise<void> {
     await this.ensureReady();
 
-    const id = this._genId();
-    const salience = { novelty: 0.5, relevance: 0.5, emotional: 0.3, predictive: 0.3 };
+    // Format as transcript for extraction
+    const transcript = messages
+      .map(m => `${m.role === 'user' ? 'Human' : 'Assistant'}: ${m.content}`)
+      .join('\n\n');
 
-    // Boost salience for emotionally-tagged memories
-    if (input.tags?.some(t => ['personal', 'relationship', 'insight'].includes(t))) {
-      salience.emotional = 0.7;
-      salience.relevance = 0.7;
-    }
-    if (input.tags?.some(t => ['goal'].includes(t))) {
-      salience.predictive = 0.7;
-      salience.relevance = 0.6;
-    }
+    const existing = await this._store.loadAll();
+    const extracted = await this._extractMemories(transcript, existing, 'transcript');
 
-    const memory: EngramMemory = {
-      id,
-      content: input.content,
-      scope: input.scope ?? 'global',
-      memory_type: 'episodic',
-      salience,
-      tags: input.tags?.length ? input.tags : ['benchmark'],
+    if (extracted.length === 0) return;
+
+    // Convert NewMemory → full Memory objects and store
+    const now = new Date().toISOString();
+    const memories: EngramMemory[] = extracted.map(m => ({
+      id: this._generateId(),
+      content: m.content,
+      scope: m.scope,
+      memory_type: m.memory_type,
+      salience: m.salience,
+      tags: m.tags,
       access_count: 0,
       last_accessed: null,
-      created_at: new Date().toISOString(),
+      created_at: now,
       consolidated: false,
       generalized: false,
       source_session: 'recall-bench',
-      updated_from: null,
-    };
-
-    await this._engram.add([memory]);
-    return id;
-  }
-
-  async recall(query: string, limit = 10): Promise<RecalledMemory[]> {
-    await this.ensureReady();
-    const results = await this._engram.search(query, limit);
-    return results.map(m => ({
-      id: m.id,
-      content: m.content,
-      strength: this._calcStrength(m),
-      tags: m.tags,
-      matchType: 'fuzzy' as const,
+      updated_from: m.updates,
     }));
+
+    await this._store.add(memories);
   }
 
-  async searchByTag(tags: string[], limit = 10): Promise<RecalledMemory[]> {
+  async query(question: string, limit = 5): Promise<string[]> {
     await this.ensureReady();
-    const all = await this._engram.loadAll();
-    return all
-      .filter(m => tags.some(t => m.tags.includes(t)))
-      .sort((a, b) => this._calcStrength(b) - this._calcStrength(a))
-      .slice(0, limit)
-      .map(m => ({
-        id: m.id,
-        content: m.content,
-        strength: this._calcStrength(m),
-        tags: m.tags,
-        matchType: 'fuzzy' as const,
-      }));
-  }
-
-  async reinforce(memoryId: string): Promise<void> {
-    await this.ensureReady();
-    const all = await this._engram.loadAll();
-    const memory = all.find(m => m.id === memoryId);
-    if (memory) {
-      await this._engram.update(memoryId, {
-        access_count: memory.access_count + 1,
-        last_accessed: new Date().toISOString(),
-      });
-    }
-  }
-
-  async update(memoryId: string, newContent: string): Promise<void> {
-    await this.ensureReady();
-    await this._engram.update(memoryId, { content: newContent });
-  }
-
-  async forget(memoryId: string): Promise<void> {
-    await this.ensureReady();
-    await this._engram.remove(memoryId);
-  }
-
-  async consolidate(): Promise<void> {
-    await this.ensureReady();
-    if (this._consolidate) {
-      await this._consolidate(this._engram);
-    }
-  }
-
-  async get(memoryId: string): Promise<StoredMemory | null> {
-    await this.ensureReady();
-    const all = await this._engram.loadAll();
-    const m = all.find(m => m.id === memoryId);
-    if (!m) return null;
-    return {
-      id: m.id,
-      content: m.content,
-      strength: this._calcStrength(m),
-      tags: m.tags,
-      createdAt: m.created_at,
-      accessCount: m.access_count,
-    };
-  }
-
-  async getAll(): Promise<StoredMemory[]> {
-    await this.ensureReady();
-    const all = await this._engram.loadAll();
-    return all.map(m => ({
-      id: m.id,
-      content: m.content,
-      strength: this._calcStrength(m),
-      tags: m.tags,
-      createdAt: m.created_at,
-      accessCount: m.access_count,
-    }));
-  }
-
-  async status(): Promise<SystemStatus> {
-    await this.ensureReady();
-    const all = await this._engram.loadAll();
-    return {
-      totalMemories: all.length,
-      averageStrength: all.length > 0
-        ? all.reduce((s, m) => s + this._calcStrength(m), 0) / all.length
-        : 0,
-    };
+    const results = await this._store.search(question, limit);
+    return results.map(m => m.content);
   }
 
   async reset(): Promise<void> {
     await this.ensureReady();
-    await this._engram.save('global', []);
-    await this._engram.save('project', []);
+    await this._store.save('global', []);
+    await this._store.save('project', []);
   }
 }

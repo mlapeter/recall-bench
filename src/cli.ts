@@ -3,16 +3,17 @@
  * RECALL Benchmark CLI
  *
  * Usage:
- *   bun run src/cli.ts                     # Run all tests against naive baseline
- *   bun run src/cli.ts --adapter naive      # Explicit adapter selection
- *   bun run src/cli.ts --verbose            # Show individual test results
- *   bun run src/cli.ts --category retention # Run specific category
+ *   bun run src/cli.ts                              # naive, all scenarios
+ *   bun run src/cli.ts --adapter engram             # engram, all scenarios
+ *   bun run src/cli.ts --scenario promotion-arc     # single scenario
+ *   bun run src/cli.ts --verbose                    # show per-query details
  */
 
-import { allTests } from './tests/index.js';
+import { resolve } from 'node:path';
 import { runBenchmark, formatReport } from './runner/index.js';
-import { NaiveAdapter, EngramAdapter } from './adapters/index.js';
-import type { BenchmarkConfig, MemoryAdapter, TestCategory } from './types/index.js';
+import { NaiveAdapter } from './adapters/naive.js';
+import { EngramAdapter } from './adapters/engram.js';
+import type { MemoryAdapter } from './types/index.js';
 
 const args = process.argv.slice(2);
 
@@ -29,7 +30,7 @@ function getArg(name: string): string | undefined {
 async function main() {
   const adapterName = getArg('adapter') ?? 'naive';
   const verbose = getFlag('verbose');
-  const categoryArg = getArg('category');
+  const scenario = getArg('scenario');
 
   // Select adapter
   let adapter: MemoryAdapter;
@@ -49,27 +50,12 @@ async function main() {
       process.exit(1);
   }
 
-  // Build config
-  const config: BenchmarkConfig = {
-    verbose,
-    allowTimeSimulation: true,
-    allowLlmJudge: false,
-  };
-
-  if (categoryArg) {
-    const valid: TestCategory[] = ['retention', 'encoding', 'consolidation', 'adaptation', 'loss', 'learning'];
-    if (!valid.includes(categoryArg as TestCategory)) {
-      console.error(`Unknown category: ${categoryArg}`);
-      console.error(`Valid categories: ${valid.join(', ')}`);
-      process.exit(1);
-    }
-    config.categories = [categoryArg as TestCategory];
-  }
+  // Resolve scenarios directory
+  const scenarioDir = resolve(import.meta.dirname ?? '.', '..', 'scenarios');
 
   console.log(`Running RECALL benchmark against "${adapter.name}"...`);
-  if (verbose) console.log('');
 
-  const result = await runBenchmark(adapter, allTests, config);
+  const result = await runBenchmark(adapter, scenarioDir, { scenario, verbose });
   console.log(formatReport(result));
 }
 
