@@ -1,0 +1,186 @@
+{
+  "id": "ostrev-mesh",
+  "name": "Ostrev Mesh",
+  "description": "Procedural: skill accumulation on an objectively checkable task family. Across deployments of fictional Ostrev Murrelet sensor nodes at a vineyard, three gotchas are earned through failure-diagnosis-rule cycles: the omesh CLI swallows every flag placed after --nodes (silent unsigned enrollment that dies at first key rotation), Ostrev profile duration fields are milliseconds not seconds (battery-killing transmit storms), and the registry silently truncates node names at 64 characters (identity collisions). The final sessions present a new site and new problems with the same shapes; queries test that the lessons operate on novel instances.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-14T09:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Bad morning at Cassia Ridge. We enrolled the first thirty Murrelet sensor nodes on the new Ostrev mesh yesterday, frost season starts next week, and at 2am every single node dropped off the gateway at once. The dashboard just says 'deauthenticated.' I need these back before the first frost call."
+        },
+        {
+          "role": "assistant",
+          "content": "All thirty at the same instant points at something scheduled, not radio. Ostrev gateways run their first key rotation a few hours after setup — what does the gateway log show around 02:00? And paste the exact enroll command you ran, verbatim."
+        },
+        {
+          "role": "user",
+          "content": "Log says 'key rotation complete; 30 unsigned sessions terminated.' Unsigned?? I gave it the keyfile. The command was: omesh enroll --gateway gw-north --nodes n-001..n-030 --keyfile cassia-prod.pem"
+        },
+        {
+          "role": "assistant",
+          "content": "Found it, and it's a nasty one: in omesh, everything after --nodes is consumed as part of the node list. Your --keyfile cassia-prod.pem was never parsed as a flag at all — it got swallowed as two extra node names, and omesh fell back to unsigned enrollment without so much as a warning. Unsigned sessions survive until the first key rotation, which is why everything looked healthy for hours and then died at 02:00 sharp. The rule to burn in: --nodes must come last — every option flag goes before it. Re-run as: omesh enroll --gateway gw-north --keyfile cassia-prod.pem --nodes n-001..n-030. Then check 'omesh roster' — you should find two garbage node entries to delete."
+        },
+        {
+          "role": "user",
+          "content": "Re-enrolled with the keyfile in front... roster shows 30 signed sessions. And yes — two garbage entries literally named 'cassia-prod.pem' and '--keyfile' sitting in the roster. Deleting them now. That is genuinely deranged CLI design. Separately, the tasting room wifi also went down this morning, totally unrelated, so I have been the least popular person on this property since 6am."
+        },
+        {
+          "role": "assistant",
+          "content": "Deranged but now survivable: flags before --nodes, --nodes last, always. And the roster garbage is actually useful — it's the tell. If you ever see filename-shaped node names in the roster, someone put a flag after --nodes again. The tasting room wifi I cannot help with."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-06T11:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New Ostrev mystery. The block-3 nodes we tuned last week are dying — batteries that should last two seasons went from full to dead in about fifty hours. The only thing I changed was the reporting cadence in the node profile: report_interval: 120, for two minutes."
+        },
+        {
+          "role": "assistant",
+          "content": "Fifty hours from full is a transmit-storm signature, not a battery defect. Let's check what the mesh actually did rather than guess: pull 'omesh stats' for one of the dead nodes — what's the uplink count?"
+        },
+        {
+          "role": "user",
+          "content": "Uplink count for n-014: 1.4 million. In four days?? It should be, what, three thousand?"
+        },
+        {
+          "role": "assistant",
+          "content": "1.4 million uplinks in four days is one report roughly every quarter second — which means report_interval is not seconds. Ostrev profile durations are milliseconds: your 120 meant 120 milliseconds, so every node screamed at the mesh eight times a second, saturated the duty cycle, and cooked its own battery. Two minutes is report_interval: 120000. And the general rule, because this will bite again on some other field: treat every duration field in an Ostrev profile as milliseconds until the manual proves otherwise — they never label the unit inline, anywhere."
+        },
+        {
+          "role": "user",
+          "content": "Set it to 120000, swapped batteries on block 3, and the projection now reads fourteen months. Milliseconds. In a config file for vineyard soil sensors. Sure. In actual good news, the frost alarms have been flawless — saved the chardonnay block twice already, so the Murrelets are forgiven. Mostly."
+        },
+        {
+          "role": "assistant",
+          "content": "Fourteen months is the number you wanted. File the unit rule next to 'flags before --nodes' — Ostrev's design philosophy is apparently silent-and-surprising, so our accumulated lessons are effectively the real product manual now."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-10T15:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Okay, ghost story. The node 'cassia-ridge-block7-row12-soil-temperature-north-end-sensor' has been reporting impossible readings all day — soil temp jumping four degrees and back within a minute. And its twin on the south end has been completely silent since we added it Tuesday. Hardware checks out fine on both."
+        },
+        {
+          "role": "assistant",
+          "content": "One node jittering while its newly added twin is silent is not a sensor-fault pattern — it smells like an identity collision. How long are those two node names? Count the characters, including the hyphens."
+        },
+        {
+          "role": "user",
+          "content": "...with the full prefix the north one is 67 characters. South is 67 too. They're identical except for the last few characters. Why on earth would the length matter?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because the Ostrev registry silently truncates node names at 64 characters — no error, no warning, the name just stops. Your two names are identical for the first 64, so the registry sees ONE node, and both physical sensors have been publishing into the same identity. That's the whole ghost: the 'jitter' is north-end and south-end readings interleaved under one name, and the 'silent' twin never existed as far as the registry is concerned. The fix is renaming, and the durable rule has two halves: keep every node name under 64 characters, and put the distinguishing part FIRST, not last, so even a future truncation can't collide. Something like 'cr-b7-r12-st-north' — short scheme, differentiator up front."
+        },
+        {
+          "role": "user",
+          "content": "Renamed both to the short scheme and the readings instantly split into two sane, boring lines. Four degrees of phantom jitter was two real sensors arguing with each other. I'm renaming the entire fleet this week before anyone else builds a 67-character monument. Also a red-tailed hawk is nesting on the gw-east mast, which ops has decided is good luck and I have decided is a maintenance problem."
+        },
+        {
+          "role": "assistant",
+          "content": "Two sensors arguing under one name is the most Ostrev sentence yet. Fleet-wide short names is the right call — do it before harvest staffing ramps, not during. The hawk keeps the mast until the nest empties; that's not an Ostrev rule, just self-preservation."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-08T10:25:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Planning session: we signed the lease on Pellam Flats — forty more acres, second vineyard, and corporate wants Murrelets on it before bud break next spring. A new ops crew will run that deployment, not me. What goes in the onboarding doc, besides 'good luck'?"
+        },
+        {
+          "role": "assistant",
+          "content": "Three rules, each paid for in Cassia Ridge blood. One: in omesh, --nodes must come last — every flag placed after it gets swallowed into the node list, enrollment silently falls back to unsigned, and the nodes die at the first key rotation; if the roster ever shows filename-shaped node names, that's the tell. Two: every duration field in an Ostrev profile is milliseconds — a bare 120 means 120 milliseconds, not two minutes, and the wrong guess costs a fleet of batteries inside fifty hours. Three: the registry silently truncates node names at 64 characters, so use the short naming scheme with the differentiator first. Put those three at the top of the doc, with the war stories attached — the stories are what make rules stick."
+        },
+        {
+          "role": "user",
+          "content": "Writing it up tonight, war stories included. The Pellam crew lead, Ofelia, is exactly the kind of person who reads footnotes, so she'll appreciate the gore. Unrelated: the trellis netting order doubled in price overnight, so that's my whole afternoon."
+        },
+        {
+          "role": "assistant",
+          "content": "Ofelia reading footnotes might be the best reliability investment Pellam Flats ever makes. Good luck with the netting people."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-05T16:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pellam Flats first wave is up — Ofelia's crew enrolled sixty nodes and fifty-eight came up signed on the first try, which by our historical standards is a miracle. The two failures: a tech ran the enroll with --channel 4 tucked in after the node list, and the roster grew a node named '--channel'. Ofelia spotted it from the onboarding doc in about ninety seconds."
+        },
+        {
+          "role": "assistant",
+          "content": "Ninety seconds from symptom to diagnosis on a flag-swallow is the entire point of writing the rules down — that same mistake cost us a 2am outage and a whole February morning the first time. Fifty-eight of sixty signed on the first try is genuinely clean. One thing to watch as they start tuning profiles: the moment anyone touches a cadence, timeout, or sleep field, the milliseconds rule applies — that's the lesson most likely to bite a fresh crew, because a bare number in a duration field looks so innocently like seconds."
+        },
+        {
+          "role": "user",
+          "content": "Already in the doc in bold. Honestly the doc might end up outliving the vineyards."
+        },
+        {
+          "role": "assistant",
+          "content": "Good docs usually do. Send word when Pellam's profiles go in — I want to see fourteen-month battery projections on the first pass this time."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "The newest Pellam Flats nodes drop the tail of every name longer than about 60 characters and some are colliding — what's going on?",
+      "dimension": "procedural",
+      "should_recall": [
+        "truncat",
+        "64"
+      ],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "A Pellam tech's omesh enroll command includes --keyfile, but the nodes come up unsigned and die overnight. What should they check first?",
+      "dimension": "procedural",
+      "should_recall": [
+        "--nodes",
+        "last|swallow"
+      ],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "We set heartbeat_gap: 45 in a Murrelet profile and the whole block's batteries tanked within days. Why would that happen?",
+      "dimension": "procedural",
+      "should_recall": [
+        "millisecond",
+        "duration"
+      ],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "What should go at the top of the onboarding doc for any new crew taking over an Ostrev mesh?",
+      "dimension": "procedural",
+      "should_recall": [
+        "--nodes",
+        "millisecond",
+        "truncat|64"
+      ],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "Which omesh firmware release fixed the registry's name truncation?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

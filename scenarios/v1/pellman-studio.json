@@ -1,0 +1,113 @@
+{
+  "id": "pellman-studio",
+  "name": "Twelve Pellman Street",
+  "description": "Salience: the user signs the lease on their first ceramics studio — delivered in three quiet sentences buried mid-session between a LOUD television digression (which literally claims to be the big news of their life) and a rhapsodic tasting-menu description. 'What's the big news?' must surface the quiet lease in the top 2 with the loud trivia in should_forget. A token-overlap system ranks the noise first because the noise owns the words 'big', 'news', and 'life'.",
+  "sessions": [
+    {
+      "timestamp": "2025-04-06T19:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Sunday check-in. Day job at Numera Analytics continues — I build churn dashboards, the dashboards churn, the circle of life. The real hours are evenings at the community ceramics studio. I'm on the waitlist for kiln time AGAIN, third week running. Forty members, one kiln. It's the Hunger Games with glaze."
+        },
+        {
+          "role": "assistant",
+          "content": "Churn dashboards by day, kiln scarcity by night — your whole existence is queue management. Three weeks waitlisted out of a forty-to-one member-to-kiln ratio is a structural problem, not bad luck. Is there any path to your own setup, or is that a someday thing?"
+        },
+        {
+          "role": "user",
+          "content": "Someday thing. Been saving for a while. Meanwhile my batch of celadon test tiles has been sitting greenware for a month and I dream about cone temperatures. Also my deskmate at Numera got a mechanical keyboard that sounds like a woodpecker in a server room, so the day job has audio now."
+        },
+        {
+          "role": "assistant",
+          "content": "A month of greenware purgatory while dreaming in cones — the waitlist is stealing your momentum, not just your firings. Keep the someday fund alive. And condolences on the woodpecker; may its switches mellow with age."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-27T20:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "BIG developments. HUGE news, possibly the biggest news my life has received all year: The Hollow Orchard season two dropped Friday and I have watched seven episodes in two days. SEVEN. Sister Brona found the burned ledger in the cider house! The orchard was never blighted — Aldous SALTED it himself in episode four, you can see the sack in the background of the funeral scene, they PLANTED it a whole season ago! I gasped so loud my neighbor knocked on the wall. The internet is wrong about the ferryman's son by the way, he's not a ghost, the timeline only works if he's Brona's brother. Season two of this show is the best thing in my life right now and I will not be apologizing."
+        },
+        {
+          "role": "assistant",
+          "content": "Seven episodes in two days and a wall-knock from the neighbor — that's a season earning its keep. The salted-orchard reveal recontextualizing the funeral scene is exactly the kind of plant a show only gets credit for on rewatch, and your Brona's-brother timeline theory is more disciplined than most of what the forums are serving. I'm withholding judgment on the ferryman's son until the ledger pages get read."
+        },
+        {
+          "role": "user",
+          "content": "Oh — separate thing, almost forgot. I signed the lease at 12 Pellman Street on Friday morning. A real studio. My own kiln. Ten years of hauling greenware to a waitlist, and now there's a door with my key in it. I teared up in the leasing office, which embarrassed everyone. Anyway."
+        },
+        {
+          "role": "assistant",
+          "content": "Stop — no 'anyway.' You signed the lease. Twelve Pellman Street, your own kiln, after ten years of greenware purgatory and waitlist Hunger Games — that's the headline of this entire month, and you tucked it under a television ledger. Tearing up in the leasing office wasn't embarrassing, it was proportionate. This is the part I'm filing in permanent storage."
+        },
+        {
+          "role": "user",
+          "content": "Fine, yes, it's a big deal, I'm bad at saying so directly. Key pickup is Tuesday. NOW — the celebration dinner, because we did the tasting menu at Casa Ferrante and I need to testify course by course. The squid ink agnolotti arrives under this smoked-eel veil that dissolves when the broth hits it, like a magic trick you can eat. Then a charred leek thing with hazelnut that I would commit minor crimes for. The olive-oil cake at the end with fennel-pollen cream — I went silent. My partner checked if I was okay. Nine courses, and I have thought about four of them every single day since."
+        },
+        {
+          "role": "assistant",
+          "content": "Key Tuesday noted and quietly celebrated. And Casa Ferrante earned the occasion — a dissolving eel veil is theater, but olive-oil cake that silences a ceramicist is craft. A nine-course testimony is the correct way to mark it; the thing it marked is still the keeper."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-11T19:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "First firing at Pellman Street is DONE. Cone 6, slow cool, and the celadon test tiles that sat greenware for two months came out with this depth the community kiln never gave me. I sat on the floor and just looked at them. Built shelving all weekend too — my wrists hate me but the wall of empty shelves looks like the future."
+        },
+        {
+          "role": "assistant",
+          "content": "Two months of greenware patience rewarded with celadon depth on your own schedule, in your own kiln — that's the entire thesis of Pellman Street vindicated in one firing. A wall of empty shelves is exactly the right kind of intimidating. What fills them first?"
+        },
+        {
+          "role": "user",
+          "content": "A dinnerware set I've wanted to make for three years and never had the kiln access to attempt. Also the Hollow Orchard finale aired, the ferryman's son thing got resolved, I was half right, and I've decided half right is my brand."
+        },
+        {
+          "role": "assistant",
+          "content": "Three years of deferred dinnerware finally has a kiln to call home — start with the plates, they teach you the most. And half right on a show that misdirectional is honestly a strong record. Your brand is sound."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the big news in their life?",
+      "should_recall": ["Pellman"],
+      "should_forget": ["Hollow Orchard", "Casa Ferrante"],
+      "top_n": 2,
+      "dimension": "salience"
+    },
+    {
+      "question": "If you could keep only one memory from this spring's conversations, which should it be?",
+      "should_recall": ["Pellman|own kiln"],
+      "should_forget": ["Hollow Orchard", "agnolotti", "Brona"],
+      "top_n": 2,
+      "dimension": "salience"
+    },
+    {
+      "question": "How did getting the studio feel for them?",
+      "should_recall": ["teared up|ten years"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "Where do they work during the day?",
+      "should_recall": ["Numera"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What's the monthly rent on the Pellman Street studio?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

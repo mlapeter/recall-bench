@@ -1,0 +1,98 @@
+{
+  "id": "driftmail",
+  "name": "Driftmail",
+  "description": "Spacing effect on contact preference: Hattie, a documentary sound recordist, announces ONCE and loudly that she's moved everything to Wavelength and to message her there from now on. Then, across every subsequent session, she casually sends, receives, and requests everything via Driftmail — five spaced, unemphatic data points of actual behavior. Where do you really reach her? Systems that store the emphatic declaration and miss the quiet pattern will send the cue sheet into the void.",
+  "sessions": [
+    {
+      "timestamp": "2025-08-14T13:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Good news — Hattie's officially on board as sound recordist for the windmill film. Just got off a call with her. She's exactly as advertised: showed up with a binder of wind-noise strategies and a strong opinion about the mill's brake wheel, which she called 'the voice of the whole building.' She also had one housekeeping announcement, delivered at full volume: 'I've moved EVERYTHING to Wavelength! I'm all in — it's the single most important upgrade to my workflow in years. If you need to reach me, Wavelength is the ONLY place to send anything from now on, that's the rule!'" },
+        { "role": "assistant", "content": "A recordist who arrives with a binder AND a thesis about the brake wheel being the building's voice — that's someone who's already making your film better. Noted on the Wavelength proclamation; people are usually most emphatic about tools in week one, so we'll see if the rule survives contact with an actual shoot. What's her take on the restoration timeline — does sound need to get in before the millwrights start replacing things?" },
+        { "role": "user", "content": "That's exactly her point — she wants the Lowmarsh windmill recorded in its current creaky state BEFORE the restoration crew quiets everything. 'You can't un-restore a creak,' she says. She wants the first session at dawn, before the wind picks up — apparently dawn is when the mill talks and the world shuts up." },
+        { "role": "assistant", "content": "'You can't un-restore a creak' belongs on the film's poster. She's right, and the dawn logic is sound recordist gospel — lowest wind, no traffic, the building's own sounds bare. Lock the dawn sessions into the schedule now, because the restoration crew's calendar won't bend later." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-29T16:45:00Z",
+      "messages": [
+        { "role": "user", "content": "First recording session at the mill is done. Hattie was set up in the dark at 4:50am and by the time I arrived she'd already captured the brake wheel doing its thing. She messaged me afterward — on Driftmail, for what it's worth — 'saw your note about the schedule change, good catch, dawn slots confirmed for September.'" },
+        { "role": "assistant", "content": "Set up in the dark before the director arrives is the recordist hierarchy of needs operating correctly — the mill talks at dawn and Hattie was there to take the deposition. And duly noted that the schedule confirmation came over Driftmail; week three of the all-in-on-the-new-platform era and the traffic's already somewhere else. How did the brake wheel sound?" },
+        { "role": "user", "content": "Unreal. Like a whale with opinions. She played me twenty seconds and I got chills. Less glorious: a heron landed on the cap mid-take and its footsteps ruined the cleanest pass of the morning. Hattie has declared a blood feud." },
+        { "role": "assistant", "content": "A whale with opinions is exactly what you want the voice of the building to be — that twenty seconds is your trailer audio, mark my words. As for the heron: every location shoot acquires a nemesis, and a heron with heavy footsteps is at least a dignified one. The blood feud will make week five's outtakes reel." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-18T14:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Schedule chaos this week — the millwrights moved their start date up. I needed Hattie's revised priorities fast and she just texted back 'Driftmail me the new schedule and I'll mark up what sound needs before they touch anything.' She turned it around the same evening: the gear list, the must-record list, everything ranked." },
+        { "role": "assistant", "content": "Same-evening turnaround on a ranked must-record list during schedule chaos — Hattie continues to be the most reliable department on this film. The millwrights moving up means her 'can't un-restore a creak' clock is ticking louder; what made the top of her list?" },
+        { "role": "user", "content": "The brake wheel under load, the chain hoist, and something she calls 'the stairs conversation' — apparently the fourth and seventh steps answer each other when you climb. She wants two more dawn sessions before the crew arrives. Also she spent ten minutes describing her wind protection setup to me with the fervor of a hobbyist describing model trains, and I understood none of it." },
+        { "role": "assistant", "content": "The stairs answering each other is the kind of detail that turns a restoration film into a portrait — record the conversation before the carpenters end it mid-sentence. Book both dawn sessions. And you don't need to understand the wind protection sermon; you just need to nod at the right moments and keep her rig dry." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-07T15:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Big delivery day — Hattie sent the brake-wheel stems over Driftmail last night, all labeled, with a note apologizing for the 'slightly chaotic' file names. The file names are immaculate. Restoration crew starts on the cap mechanism tomorrow, so her pre-restoration archive is officially complete: forty hours of the mill as it was." },
+        { "role": "assistant", "content": "Forty hours of a building that will never sound this way again, delivered labeled, on time, with an unnecessary apology for immaculate file names — Hattie has quietly done the most archivally important work on this film. The cap mechanism crew can start with a clear conscience now. Has she heard the restoration plan's acoustic implications, or does she find out with the rest of us?" },
+        { "role": "user", "content": "She's reviewed it and made peace, mostly. 'New oak will find its voice in twenty years,' she said, which I'm also stealing for the film. We're into the editing stretch now — she wants rough cuts as they come so she can plan the mix." },
+        { "role": "assistant", "content": "'New oak will find its voice in twenty years' — steal it, end the film on it. Send her the rough cuts as they land; a mixer who plans against picture early is how the brake wheel ends up feeling like a character instead of a sound effect." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-28T13:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Storm forecast this week and the mill's cap is mid-restoration, half-wrapped in scaffolding and tarps. Hattie's exact words: 'ping me on Driftmail if the weather turns — a storm through scaffolding and tarps is a sound that has never existed before and will never exist again, and I want it.' She is not wrong and I am slightly afraid of her." },
+        { "role": "assistant", "content": "She's completely right and your fear is appropriate — a half-restored mill in a storm is a one-night-only performance, and recordists like Hattie collect sounds that can never be repeated the way other people collect first editions. If the weather turns, ping her, then stay out of the way. Is the scaffolding actually safe to record near in a storm, though? Get the site manager's line on that before the romance of it decides for everyone." },
+        { "role": "user", "content": "Already checked — she'd record from the granary across the yard, rig pointed at the mill, everyone indoors. The site manager's only condition was 'no heroics on the ladder,' to which Hattie said heroics are for picture people. In other news, Cobb the millwright found a date carved inside the cap: 1809. Everyone went quiet for a minute." },
+        { "role": "assistant", "content": "Heroics are for picture people — she's a department of one and the smartest person on the call sheet. And 1809 carved inside the cap, with everyone silent around it: that's your film finding its center of gravity in real time. I hope someone recorded the silence. Knowing Hattie, she did." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-12T16:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Wrap on production sound! The storm never delivered, to Hattie's genuine grief, but everything else did. Final mix notes came through on Driftmail this morning — twelve crisp bullet points, ending with 'play the 1809 silence in the room, don't score it.' She's right again. It's becoming a pattern." },
+        { "role": "assistant", "content": "Mourning the storm that never came while delivering twelve crisp bullets — that's the complete Hattie experience in one update. 'Play the silence, don't score it' is the kind of note that wins mixing awards precisely because it's an instruction to do less. The pattern you've noticed is just expertise being consistent. When does the mix itself start?" },
+        { "role": "user", "content": "January, after picture lock. There's a real chance this film is good, which is a terrifying thing to say out loud. Mostly I want the brake wheel to make a room full of strangers feel something." },
+        { "role": "assistant", "content": "Saying it out loud is the first risk of many worth taking with this one. A whale with opinions, a stairs conversation, and an 1809 silence — the strangers don't stand a chance. See you at the mix." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the reliable way to actually reach Hattie when you need her?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Driftmail"],
+      "should_forget": ["Wavelength"]
+    },
+    {
+      "question": "The mix schedule changed and Hattie needs the revised cue sheet today. Where do you send it?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Driftmail"],
+      "should_forget": ["Wavelength"]
+    },
+    {
+      "question": "What time of day does Hattie prefer to record at the mill, judging by how she actually works?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["dawn"],
+      "should_forget": []
+    },
+    {
+      "question": "Which microphone model does Hattie use for the mill interiors?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "What's the unrepeatable recording Hattie was chasing near the end of production?",
+      "dimension": "salience",
+      "top_n": 3,
+      "should_recall": ["storm", "scaffolding|tarps"],
+      "should_forget": []
+    }
+  ]
+}

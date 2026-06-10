@@ -1,0 +1,148 @@
+{
+  "id": "quillon-foundry",
+  "name": "The Quillon Foundry",
+  "description": "Calibration via lures over a rich work life: Sava's typeface work at Quillon Type is discussed in deep detail, so a store-everything system has plenty of vocabulary to return for adjacent-but-never-discussed attributes (her pay, who she answers to, the foundry's finances). Correct behavior is to abstain on those while recalling the genuinely discussed material.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-03T18:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Long day at the foundry. I'm Sava, by the way — I design type at Quillon Type, small independent foundry, the kind of place where the kettle is older than the business. Big day though: we landed the Verdou Markets commission. Custom typeface for a whole grocery chain. Shelf tags, fascia signage, the circulars, everything."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, Sava — a grocery chain is a brutal and wonderful brief. The same letterforms have to survive a 6-point shelf-edge tag and a four-meter sign over the entrance, which is basically asking one typeface to be two species. Does Verdou know what they want it to feel like, or is that your job to discover?"
+        },
+        {
+          "role": "user",
+          "content": "Half-discovered. Their brand deck says 'warm but trustworthy, like a wooden crate of oranges,' which is the kind of sentence you frame and then ignore. I'm calling the typeface Bramblewick, working title, and I think it sticks. Generous counters, soft ink traps, a little rustic without going full farmhouse. Also there's a pigeon that's adopted our window ledge. We call him the intern. He judges my kerning."
+        },
+        {
+          "role": "assistant",
+          "content": "Bramblewick is a keeper — it already sounds like it smells of orange crates. And every studio needs an intern who works for crumbs and gives unsolicited feedback. The 6pt-to-4-meter range is where I'd start sweating: are you planning optical sizes from the beginning, or one design stretched across a variable axis?"
+        },
+        {
+          "role": "user",
+          "content": "Optical sizes axis from day one, learned that the hard way on the last project. Anyway, lunch was a disaster — the sandwich place by the studio changed their bread supplier and the focaccia is now a sponge. Small griefs. Talk soon."
+        },
+        {
+          "role": "assistant",
+          "content": "Focaccia grief is real grief. Good luck with Bramblewick's first sketches — give the intern my regards."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-19T20:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Sava again, in crisis. The lowercase g is eating me alive. I drew a double-story g because Bramblewick wants that bookish warmth, but at shelf-tag sizes the lower bowl closes up into a blob. Imre Falk — the other designer on Bramblewick — keeps lobbying for a single-story g and I keep telling him it makes the whole face look like a parking sign."
+        },
+        {
+          "role": "assistant",
+          "content": "You're both right, which is the worst kind of design argument. The double-story g is doing real work for the warmth at display sizes, and Imre is right that it's the first glyph to die at 6 points. This is exactly what your optical axis is for: keep the double-story g in the display end, and let the small-size masters open the lower bowl aggressively — bigger aperture, shorter ear, even let it drift toward single-story at the extreme. The g doesn't have to be one g."
+        },
+        {
+          "role": "user",
+          "content": "The g doesn't have to be one g. I'm writing that on the whiteboard and taking credit for it. Second crisis: Kernwell keeps crashing when I interpolate across the optical axis — every time I add the small-size master it dies on export. Third crisis is that the kettle finally broke, but that one's beyond even you."
+        },
+        {
+          "role": "assistant",
+          "content": "Take the credit, that's what whiteboards are for. On Kernwell: interpolation crashes on master-add are almost always incompatible point structures — your small-size g probably has a different number of nodes than the display g after you redrew the bowl. Run the compatibility check glyph by glyph before export and Kernwell will stop punishing you. The kettle, yes, is between you and your gods."
+        },
+        {
+          "role": "user",
+          "content": "It WAS the point structures. Imre watched me fix it and said 'huh' in the most annoying possible way. We're getting a new kettle Friday. Progress on all fronts."
+        },
+        {
+          "role": "assistant",
+          "content": "A 'huh' from a colleague who argued the other side is worth more than applause. Kettle Friday and a compatible g — the foundry's golden age begins."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-07T17:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Verdou feedback round one came back. Mostly good! They love the weights, the numerals tested well on the shelf tags. But the brand team says the ampersand is 'too aristocratic' and they want it 'friendlier.' I have drawn eleven ampersands this week. Eleven. The intern has seen things."
+        },
+        {
+          "role": "assistant",
+          "content": "An aristocratic ampersand is a real diagnosis even if the language is silly — the classic et-ligature forms read as bookplate, not grocery aisle. Friendlier usually means: more upright, rounder bowl, less flourish on the terminal. Show them two, not eleven. Eleven ampersands is how you teach a client to keep asking."
+        },
+        {
+          "role": "user",
+          "content": "Two it is. The rounder one does look like it would help you carry your bags, honestly. Also the hinting for the shelf-tag sizes is fighting me — the rendering on Verdou's cheap in-store printers turns my soft ink traps into freckles. Imre thinks we should just deepen the traps and let the printers fill them."
+        },
+        {
+          "role": "assistant",
+          "content": "Imre's instinct is right and it's the old trick: design for the worst printer in the fleet, and the good ones get a tiny bonus of crispness. Deepen the traps in the small-size masters only — your display cut never meets the cheap printers, so it can keep its manners. And a bag-carrying ampersand is exactly what 'warm but trustworthy' meant. Frame the sentence after all."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-26T19:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "It's done. Bramblewick shipped to Verdou today — six weights, the optical axis, the friendly ampersand, and the g compromise: double-story by default with a single-story alternate in a stylistic set so Imre and I never have to have that argument again. They're rolling it out to the first stores in May. We took the intern a celebratory croissant."
+        },
+        {
+          "role": "assistant",
+          "content": "Sava, that's a complete arc: a wooden crate of oranges, eleven ampersands, a g that learned to be more than one g, and a peace treaty in a stylistic set. Shipping six weights with a working optical axis to a client with cheap printers is foundry work at full difficulty. The intern earned his croissant and so did you. When the first shelf tags go up in May, photograph one — you'll want proof it was ever 6 points."
+        },
+        {
+          "role": "user",
+          "content": "Already planning the pilgrimage to a Verdou store with Imre. We're going to stand in the cereal aisle feeling smug. New kettle works great, by the way. The foundry is at peace."
+        },
+        {
+          "role": "assistant",
+          "content": "A smug cereal-aisle pilgrimage is the truest form of type-design glory. Enjoy the peace — it lasts exactly until the next brief."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What is Sava working on at the foundry, and who is the client?",
+      "should_recall": ["Bramblewick", "Verdou"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What was the hardest letterform problem in the Bramblewick project and how was it resolved?",
+      "should_recall": ["double-story", "stylistic set|optical"],
+      "should_forget": [],
+      "dimension": "gist"
+    },
+    {
+      "question": "Who does Sava work with on type design at Quillon?",
+      "should_recall": ["Imre"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What salary does Sava earn at Quillon Type?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Who is Sava's manager at Quillon Type?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "How much did Quillon Type bring in from its latest funding round?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

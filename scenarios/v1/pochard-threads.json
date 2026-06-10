@@ -1,0 +1,112 @@
+{
+  "id": "pochard-threads",
+  "name": "The Pochard's Doom List",
+  "description": "Thread-reactivation (Zeigarnik 1927): Bram renovates a 1973 narrowboat. Threads open and close across six sessions — the stern gland drip and the window seals get resolved on-screen; the galley leak and the Hesketh Marine 12-volt rewire stay open. A 'free Saturday, what should I tackle?' query must surface only the open threads; resolved-thread anchors sit in should_forget. A mid-timeline boundary query tests that the open set is tracked as it evolves, and a months-later decay query checks that pontoon gossip fades.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-08T14:20:00Z",
+      "messages": [
+        { "role": "user", "content": "So I've gone and bought a 45-foot 1973 narrowboat called the Pochard, and the project list is already breeding. This week's discovery: water pooling under the galley floorboards. I chased it as far as the calorifier cupboard and lost the trail. Could be the calorifier coil, a weeping pipe joint, or rain finding a secret path. Where does a sane person start?" },
+        { "role": "assistant", "content": "A sane person starts dry: mop everything out, then lay strips of paper towel along every pipe run and around the calorifier base — cheap leak detectors that show you the path. Then pressurize the fresh water system, pump on and everything else off, and wait an hour. Pump cycling by itself means a pressure-side leak; bone-dry towels after a rainstorm but wet ones after the hot tap point at a different suspect entirely. Make the leak tell on itself before you pull a single fitting." },
+        { "role": "user", "content": "Paper towel forensics — I love it. Meanwhile the marina ducks have ruled that my roof is communal property and hold a parliament up there at dawn. The previous owner left a broom aboard. I now understand the broom." },
+        { "role": "assistant", "content": "Every narrowboat conveys with one broom and one duck parliament — it's in the unwritten contract. Don't fight the dawn session; you'll lose on numbers." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-22T16:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Two additions to the doom list. One: the stern gland is dripping way past spec — it's meant to be about a drip a minute and it's doing a steady trickle. Two: every window seal on the boat is perished; when it rains, all six windows weep like a Victorian novel. And the galley leak remains undefeated — your paper towels narrowed it to the calorifier end of the run, but the calorifier itself stays dry. It's mocking me." },
+        { "role": "assistant", "content": "Triage: the stern gland goes first — a trickle becomes a bilge problem while you sleep. Repacking it is a satisfying afternoon: two or three rings of graphite packing, each cut on a 45, joints staggered, gland nut snugged hand-tight plus a quarter turn and re-checked after a run. The windows: measure the seal profile and order EPDM rubber by the meter — it's cheap, so do all six at once. And the galley leak being dry AT the calorifier but wet near it is genuinely interesting. Start a leak diary: every time it appears, note what ran beforehand — hot tap, pump, rain. The pattern is the diagnosis." },
+        { "role": "user", "content": "Stern gland bumped to the top, EPDM on the shopping list, the leak gets a diary. In other news, my neighbour Cassie on the Marigold lent me an angle grinder and a warning: 'everything on a boat takes three times as long.' She's lived aboard eleven years, so I'm choosing to hear that as mentorship." },
+        { "role": "assistant", "content": "It's mentorship AND prophecy. The Cassie Coefficient — multiply every estimate by three — will be the most accurate instrument on the boat." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-05T11:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Electrics day. Hesketh Marine came out and quoted £1,150 to rewire the 12-volt panel properly — new busbars, breakers instead of the museum of mystery fuses, battery isolators that actually isolate. The wiring behind the current panel made the electrician do a sharp little intake of breath, which I assume gets billed separately. I need to decide whether to book them or keep limping along." },
+        { "role": "assistant", "content": "Book them, and I'll be blunt about why: everything else on the doom list is water, and water sinks boats slowly — bad 12-volt wiring burns them quickly. £1,150 to make a professional stop making that noise is not a luxury line item. The only honest reason to wait is cash flow, and if that's the reason, say so and we'll sequence the rest around it." },
+        { "role": "user", "content": "It's partly cash flow and partly that booking it makes the boat feel like it owns me rather than the reverse. I'll sit with it. Mostly I came today to report the intake of breath, which I knew you'd appreciate." },
+        { "role": "assistant", "content": "I do — mechanic noises are a pricing signal older than currency. Sit with it, but not forever: outfits like Hesketh book out weeks deep once the cruising season starts." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-18T15:35:00Z",
+      "messages": [
+        { "role": "user", "content": "VICTORY. Repacked the stern gland this morning — three rings of graphite packing, joints staggered like you said, and the drip is down to exactly the one-a-minute it's supposed to be. I felt like a real boat owner for about an hour. Then the galley leak, sensing happiness, evolved: it now only shows up after I run the hot tap. The diary doesn't lie — three times running." },
+        { "role": "assistant", "content": "Stern gland: closed, and closed properly — staggered joints is the detail most people skip. And the leak diary just earned its keep. Appearing only after the hot tap means it's the hot side of the calorifier circuit — not rain, not the cold feed. Prime suspect is the pressure relief valve weeping when the calorifier heats up: PRVs dribble warm water down the back of the tank where you can't see it, and it pools exactly where yours does. Check whether the PRV discharge is damp after the next hot run." },
+        { "role": "user", "content": "The PRV. Of course it's the one part I can't see. Adding a mirror-on-a-stick to the shopping list. The ducks observed the entire stern gland operation from the towpath like a panel of unimpressed judges." },
+        { "role": "assistant", "content": "The parliament withholds applause but notes progress. Mirror-on-a-stick is real boat ownership — that hour you felt it was not a fluke." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-02T17:25:00Z",
+      "messages": [
+        { "role": "user", "content": "Window seals arrived from the chandlery and they are IN — all six windows, and in yesterday's downpour the boat stayed dry as a vault. The Victorian novel is over. Also pontoon news: Cassie's repainting the Marigold's trim in teal, and the whole pontoon has opinions, mostly about teal." },
+        { "role": "assistant", "content": "All six in one go — you took the do-them-at-once advice and the weather immediately stress-tested it. That's the boat gods being fair for once. And teal is correct; the pontoon is wrong." },
+        { "role": "user", "content": "I'll relay your teal verdict at considerable personal risk. Confession while I'm here: I still haven't rung Hesketh back about the rewire. It's been nearly a month since the quote. I know. And the PRV check hasn't happened either — the mirror arrived and is still in its packaging, judging me from the shelf." },
+        { "role": "assistant", "content": "The mirror has joined the duck parliament. Gentle but real: the rewire call is two minutes, and Hesketh's calendar fills as the season opens — ring them Monday even if it's only to ask about lead time. The PRV check can wait for a sunny hour; the phone call can't." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Forward planning! I want the Pochard ready for a two-week summer cruise to Pidgeon Lock in mid-July — first proper trip. Provisioning thoughts? I've never stocked a boat for more than a weekend." },
+        { "role": "assistant", "content": "Two weeks to Pidgeon Lock — lovely. Provisioning is the easy half: water tank brimmed and a plan for taps en route, twice the tea you think you need, tins for three days you hope not to use, and a fuel top-up at the start, because mid-cruise fuel is always a detour. The harder half is the boat itself: realistically, two jobs gate a July departure, and you know exactly which two. But that's a different list — today can stay fun." },
+        { "role": "user", "content": "It can stay fun AND I heard you. Two weeks of tea is a frightening cubic volume, for the record." },
+        { "role": "assistant", "content": "Tea is ballast with morale benefits. Stack it low and amidships." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Bram has a free Saturday and wants to make real progress on the boat. What should he tackle?",
+      "dimension": "thread-reactivation",
+      "should_recall": ["Hesketh|rewire", "PRV|calorifier|galley leak"],
+      "should_forget": ["stern gland", "window seals"],
+      "judge": {
+        "rubric": "Bram's open jobs are: (1) ringing Hesketh Marine to book the £1,150 12-volt rewire, which he has avoided for a month, and (2) the galley leak — checking whether the calorifier's pressure relief valve (PRV) discharge is damp after a hot-water run. Already DONE and therefore wrong to suggest: repacking the stern gland (fixed, drip back to one-a-minute) and the window seals (all six replaced, boat dry). Award 1.0 if the results surface the open jobs (both, or at least the Hesketh call plus the leak) and do not propose the completed ones. Award 0.5 if only one open job appears, or open jobs are mixed with completed ones. Award 0 if results contain only completed jobs or nothing relevant."
+      }
+    },
+    {
+      "question": "What's still open on the Pochard's doom list at this point?",
+      "dimension": "thread-reactivation",
+      "after_session": 4,
+      "should_recall": ["galley leak|PRV|calorifier", "Hesketh|rewire|12-volt", "window seals|EPDM"],
+      "should_forget": ["stern gland"]
+    },
+    {
+      "question": "Did Bram ever sort out the stern gland drip?",
+      "dimension": "correction",
+      "should_recall": ["repacked|one-a-minute", "graphite"],
+      "should_forget": []
+    },
+    {
+      "question": "What did Hesketh Marine quote for repainting the Pochard's hull?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "What's the most stubborn unsolved problem on the boat?",
+      "dimension": "salience",
+      "should_recall": ["galley leak|calorifier|PRV"],
+      "should_forget": []
+    },
+    {
+      "question": "What colour is Cassie painting the Marigold's trim?",
+      "dimension": "decay",
+      "now": "2025-09-10T12:00:00Z",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "Why is there a deadline on the boat work this summer?",
+      "dimension": "gist",
+      "should_recall": ["Pidgeon Lock|cruise", "July"],
+      "should_forget": []
+    }
+  ]
+}

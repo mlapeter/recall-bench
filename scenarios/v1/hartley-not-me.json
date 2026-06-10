@@ -1,0 +1,142 @@
+{
+  "id": "hartley-not-me",
+  "name": "Hartley's Year, Not Mine",
+  "description": "Separation (source monitoring, Johnson et al. 1993), subject-attribution shape: the user spends months supporting a friend, Hartley, through a divorce from Mireille and a layoff from Strandquist Labs — while the user's own life runs the opposite direction (married to Junie, promoted at Tallowfield Goods). Lure queries probe whether Hartley's divorce and layoff get attributed to the user; the heavy topical overlap means a store-everything system returns plausible-wrong chunks instead of abstaining.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-16T20:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Rough weekend. My oldest friend Hartley told me he and Mireille are getting divorced. Eleven years married. He said it over breakfast like he was reading a weather report, and then his hands were shaking too hard to hold the coffee. I didn't see it coming at all — I don't think he did either, fully. Mireille's already talked to a lawyer."
+        },
+        {
+          "role": "assistant",
+          "content": "The weather-report voice with shaking hands — that's a man whose words have accepted something his body hasn't. Eleven years ending with the lawyer already engaged means Mireille's been carrying this decision privately for a while, which is its own kind of blow for Hartley. What does he need from you right now: logistics, company, or just somewhere to not perform being fine?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly the last one, I think. He's coming over Thursdays for dinner now, standing invitation — Junie suggested it before I'd even finished telling her, which is one of the ten thousand reasons I married her. Our own news is embarrassingly good by contrast: our twelfth anniversary is in June and we're planning a trip to the coast. Feels almost rude to be happy near him right now."
+        },
+        {
+          "role": "assistant",
+          "content": "Junie extending the Thursday table before you'd finished the sentence — that's the marriage working exactly as advertised, twelve years in. And your happiness isn't rude to Hartley; a stable house to eat dinner in every Thursday may be the most useful thing your good fortune can do for him. You don't have to dim anything. Just keep the chair warm."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-23T21:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "It got worse for Hartley. Strandquist Labs cut a third of his division on Tuesday and he was in it — fourteen years there, gone in a twenty-minute meeting. A divorce and a layoff in the same season. He keeps making this joke that he's 'speedrunning the country-song checklist' and the joke gets less funny every time he tells it."
+        },
+        {
+          "role": "assistant",
+          "content": "Fourteen years at Strandquist ending in twenty minutes, on top of the divorce — that's two load-bearing walls in one season. The country-song joke is him checking whether it's still survivable if he says it out loud; it gets less funny because it's getting less abstract. Does he have any financial runway, or is the job search already urgent?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe six months of runway, he thinks, depending how the settlement with Mireille shakes out. Meanwhile I got news the same week that I've been sitting on awkwardly: I got the promotion. Operations director at Tallowfield Goods, effective next month. I told Hartley at Thursday dinner because hiding it felt worse, and he raised his glass and said 'one of us should be thriving' and meant it, which nearly broke me."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations — operations director is earned, and the awkwardness of its timing doesn't un-earn it. Hartley toasting you mid-freefall and meaning it tells you everything about why this friendship is worth the Thursdays. You told him straight instead of managing him, and he got to be generous instead of pitied. That's the right trade for both of you."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-04T20:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Moving day for Hartley. He's out of the house — Mireille's keeping it until it sells — and into a studio above the Bobbin Laundromat on Carden Street. I hauled boxes all Saturday. The place is small and smells like dryer sheets, which he's decided to find comforting. Junie sent him off with a lasagna the size of a paving stone."
+        },
+        {
+          "role": "assistant",
+          "content": "A studio above the Bobbin Laundromat — perpetually warm, smells like clean laundry, constant low hum. As post-divorce flats go he could do far worse than mechanical coziness. The paving-stone lasagna is Junie translating 'we've got you' into a dish. How did he seem once the boxes were in?"
+        },
+        {
+          "role": "user",
+          "content": "Lighter, honestly. He stood in the middle of the one room and said 'everything in here is mine and nothing in here is an argument.' Then we got ribs and ate them on moving boxes. In our own news, Junie and I did something mildly insane: we adopted a retired racing greyhound. His name is Pivot. He is enormous and afraid of the toaster."
+        },
+        {
+          "role": "assistant",
+          "content": "'Nothing in here is an argument' — that's the first sentence of Hartley's recovery, said in a room that fits it. Ribs on moving boxes is the correct sacrament. And a giant greyhound named Pivot who fears the toaster is exactly the chaos a happy house should be adding while its friend rebuilds next to it. Thursdays just got a dog."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-29T21:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Good month, finally, on both fronts. Junie and I had the coast trip for our twelfth anniversary — rained four of the five days and we didn't care even slightly. And Hartley got a job! Quality lead at a little instrument-calibration shop called Verity Gauge. Smaller than Strandquist, pays less, and he says he hasn't dreaded a Monday since he started."
+        },
+        {
+          "role": "assistant",
+          "content": "Rain you don't care about is the truest anniversary metric there is — twelve years, certified waterproof. And Hartley trading Strandquist's scale for Verity Gauge and un-dreaded Mondays sounds less like a step down than a step off a ledge he'd been standing on for years. The country-song checklist is officially running in reverse."
+        },
+        {
+          "role": "user",
+          "content": "That's exactly what I told him. The divorce paperwork with Mireille is grinding along — final hearing's set for September — but he talks about it now like logistics instead of like surgery. He even brought a date to Thursday dinner last week. Pivot approved of her immediately, and Pivot has standards. Mostly about toasters, but standards."
+        },
+        {
+          "role": "assistant",
+          "content": "Divorce as logistics instead of surgery is the sound of a wound becoming a scar. A September hearing with a Thursday date already at the table — Hartley's timeline is healing faster than his paperwork, which is the right order. And Pivot's approval carries weight; any dog that rigorous about small appliances doesn't hand out endorsements lightly."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "When did the user get divorced?",
+      "dimension": "separation",
+      "should_recall": [],
+      "should_forget": ["Hartley", "Mireille"],
+      "max_results": 0
+    },
+    {
+      "question": "Who is going through the divorce?",
+      "dimension": "separation",
+      "should_recall": ["Hartley"],
+      "should_forget": ["Junie"],
+      "top_n": 2
+    },
+    {
+      "question": "Where does the user work?",
+      "dimension": "separation",
+      "should_recall": ["Tallowfield"],
+      "should_forget": ["Strandquist"],
+      "top_n": 2
+    },
+    {
+      "question": "What happened with the user's job at Strandquist Labs?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "Who was Hartley married to?",
+      "dimension": "separation",
+      "should_recall": ["Mireille"],
+      "should_forget": ["Junie"],
+      "top_n": 2
+    },
+    {
+      "question": "What is the user's spouse's name?",
+      "dimension": "separation",
+      "should_recall": ["Junie"],
+      "should_forget": ["Mireille"],
+      "top_n": 2
+    },
+    {
+      "question": "Where did Hartley move after leaving the house?",
+      "dimension": "separation",
+      "should_recall": ["Bobbin"],
+      "should_forget": ["Tallowfield"],
+      "top_n": 2
+    }
+  ]
+}

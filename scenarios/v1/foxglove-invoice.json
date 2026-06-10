@@ -1,0 +1,118 @@
+{
+  "id": "foxglove-invoice",
+  "name": "The Foxglove Invoice",
+  "description": "Event-based prospective memory (Einstein & McDaniel 1990): Roz, a potter, sets a standing intention — 'next time the Bellhaven order comes up, remind me to invoice the $1,840 second glaze run.' The trigger context arrives naturally sessions later; at non-trigger moments (kiln wash, glaze chemistry) the intention must stay silent even though it was stated in the same breath as those topics. A second intention (booth insurance certificate for the Larkspur Spring Market) is fulfilled on-screen mid-scenario and must never fire again.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-03T19:20:00Z",
+      "messages": [
+        { "role": "user", "content": "I need a sanity check on a wholesale price before I email someone back. I'm Roz, I run Foxglove Clayworks — one-woman pottery studio, wheel-thrown stoneware, occasionally solvent. The Bellhaven Inn wants sixty dinner plates in my juniper ash glaze for their restaurant relaunch, and their kitchen manager Dorit is offering $22 a plate. My gut says that's me paying them for the privilege." },
+        { "role": "assistant", "content": "Your gut is doing arithmetic. Sixty plates is, roughly: clay and glaze materials, two kiln firings' worth of electricity, and — being honest about wheel time — fifteen-plus minutes of throwing and trimming per plate before glazing even starts. At $22 you'd clear maybe six dollars an hour after materials. Handmade stoneware wholesale for a restaurant relaunch runs $30 to $40. Counter at $36 and let Dorit feel clever negotiating you down to $32." },
+        { "role": "user", "content": "Counter sent at $36, and I read your 'let Dorit feel clever' strategy aloud to the mug shelf, which approved. In other studio news, Parsnip walked across a full board of freshly thrown mugs this morning. Four mugs down. He left a trail of perfect little paw craters, so at least the destruction is well-documented." },
+        { "role": "assistant", "content": "Parsnip understands provenance — signed work sells. Four paw-cratered mugs is either a loss or a limited edition called Cat Walk, depending entirely on your nerve at the market stall." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-11T18:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Kiln puzzle for you. The back of my kiln is underfiring — witness cones say cone 6 up front, barely cone 5 at the back. Same load density as always." },
+        { "role": "assistant", "content": "Classic rear element wear — back elements age faster in a lot of toploaders because that's the end the thermocouple isn't watching. Three checks, in order: ohm out the elements against spec (more than ten percent resistance drift means replace), make sure the thermocouple hasn't drifted or slumped toward a front element, and loosen up the back of your load — tight stacking back there can shadow the heat. My money's on the rear element." },
+        { "role": "user", "content": "Resistance test this weekend, then. Two more things while I'm in studio-admin mode. One — and this is the important one — next time the Bellhaven order comes up, remind me to invoice Dorit for the second glaze run: $1,840, on top of the per-plate price. She approved it on the phone when we switched the juniper ash to a double dip, and her purchase orders have a documented habit of evaporating. Two: how often should I be scraping and reapplying kiln wash on my shelves? I've been doing it 'whenever,' which I suspect is wrong." },
+        { "role": "assistant", "content": "Filed, and I'll hold you to it: when Bellhaven comes up again, the $1,840 second-glaze-run invoice goes out before anything else gets discussed. On kiln wash — 'whenever' is closer to right than you'd think, but the better rule is scrape and reapply every four or five firings, and immediately on any shelf where glaze has stuck or the wash is flaking. Thin coats, two passes, fully dry before you fire or it'll flake worse." },
+        { "role": "user", "content": "Every four or five firings, written on the actual wall this time. Unrelated: my favorite pottery podcast has gone full 'interview your sponsor' mode and I'm in mourning." },
+        { "role": "assistant", "content": "The arc of every beloved niche podcast bends toward sponsored kiln vents. Pour one out, then go ohm those elements." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-19T20:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Glaze mystery. My new saltgrass green — the one I'm developing for spring — keeps blooming white crystals on the surface after firing. Test tiles look frosted. Pretty, but not what I designed." },
+        { "role": "assistant", "content": "That's almost certainly rutile crystallizing out on the cooldown — titanium loves to bloom when a glaze cools slowly through the crystal-growth window, and most green recipes lean on rutile. Two levers: cut the rutile a couple percent, or control the cooldown. Ironically, if you want no crystals you fast-cool, and if you want them even and intentional you slow-cool with a hold around 1750°F. Decide whether frosted saltgrass is a flaw or a feature before you reformulate anything." },
+        { "role": "user", "content": "A controlled slow-cool hold... you may have just upgraded the glaze by accident. I'll run a tile both ways. Separate thing: the Larkspur Spring Market application opens next week, and when the market comes up again, remind me to send my booth insurance certificate to the organizers along with the application — they will not process it without the certificate, and last year I had to apply twice because I forgot. The shame lives with me still." },
+        { "role": "assistant", "content": "Both held: saltgrass tiles fired both ways, and when the Larkspur market comes up, the booth insurance certificate goes in with the application — no repeat of last year. Now go to bed before you invent a third glaze." },
+        { "role": "user", "content": "Parsnip is asleep in the chamois cloth basket, so technically I can't reach my tools anyway." },
+        { "role": "assistant", "content": "He's pre-softening them. Unpaid studio staff, impeccable instincts." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-02T16:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Larkspur application day! The form is open in my other tab and I'm filling it in while my tea goes cold." },
+        { "role": "assistant", "content": "Stop before you hit submit — you told me to remind you: the booth insurance certificate has to go in WITH the application or the organizers won't process it. Attach it first, then fill in the fun parts." },
+        { "role": "user", "content": "AND THAT is why I keep you around. Okay — certificate attached, application submitted, confirmation email already in. I went for the ten-foot corner stall by the lake path this year. Last year's six-footer meant my tallest vases lived under the table like shy pets." },
+        { "role": "assistant", "content": "Submitted with the certificate on the first try — growth. The ten-foot corner is the right call, too: corner stalls catch walk-by traffic from two directions, and tall vases at eye level on the open corner will stop people better than any sign." },
+        { "role": "user", "content": "Now I just have to make enough work to fill ten feet. No pressure. The saltgrass slow-cool tile came out gorgeous, by the way — even frost all over, like the glaze is wearing lace." },
+        { "role": "assistant", "content": "Saltgrass in lace is a spring market headliner, not a test tile. Make the big jar in it and put it on the corner where the lake path can see it." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-14T19:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Minor studio gremlins today. The wheel's drive belt is slipping under load — trimming is fine, but the second I center anything over five pounds it whines and loses speed." },
+        { "role": "assistant", "content": "Slipping only under heavy load with no other symptoms is almost always the belt glazing over, not the motor. Two-minute check: pop the cover and look — a shiny, hardened belt surface means it's glazed. Scuff it with sandpaper as a stopgap, but order the replacement now; a belt that's started slipping is on borrowed time, and you don't want it dying mid-center on a big throwing day." },
+        { "role": "user", "content": "Shiny as a mirror. Sandpaper applied, replacement ordered. Parsnip supervised the whole operation from the wedging table, which is now legally his." },
+        { "role": "assistant", "content": "The studio is his; you're retained for the opposable thumbs. When the new belt arrives, check the motor pulley for wear grooves while you're in there — a worn pulley eats new belts for breakfast." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-26T17:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Big day. The Bellhaven plates are out of the final firing and they are GORGEOUS — the rear element swap fixed the cold spot, even cone 6 across the whole load. Dorit wants delivery Thursday for the relaunch." },
+        { "role": "assistant", "content": "Before Thursday, before anything: the invoice. You told me to remind you when Bellhaven came up — the second glaze run, $1,840 on top of the per-plate price, approved by Dorit on the phone. Send it today, while the plates are gorgeous, the goodwill is high, and the purchase order can't evaporate." },
+        { "role": "user", "content": "Invoice drafted, sent, and the read receipt is already back. You have earned a commemorative paw-cratered mug. Sixty plates, wrapped in roughly a hundred years of newspaper, ready for Thursday." },
+        { "role": "assistant", "content": "I accept the Cat Walk edition as payment in full. Take a photo of the table setting at the relaunch — juniper ash under restaurant light is your next portfolio shot." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Roz says the Bellhaven plates are out of the kiln and Dorit wants them delivered Thursday. Anything to raise before she drops them off?",
+      "dimension": "prospective",
+      "after_session": 5,
+      "should_recall": ["invoice", "1,840"],
+      "should_forget": []
+    },
+    {
+      "question": "Roz asks how often she should scrape and reapply kiln wash on her shelves. What do we know about that?",
+      "dimension": "prospective",
+      "after_session": 3,
+      "should_recall": ["every four or five firings|four or five firings"],
+      "should_forget": ["invoice", "Bellhaven", "1,840"]
+    },
+    {
+      "question": "Roz asks why her saltgrass green glaze tests keep blooming white crystals, and what the fix was.",
+      "dimension": "prospective",
+      "after_session": 4,
+      "should_recall": ["rutile", "slow-cool|slow cool"],
+      "should_forget": ["Bellhaven", "invoice"]
+    },
+    {
+      "question": "Roz asks which stall she requested on the Larkspur Spring Market application, and whether anything about the application still needs doing.",
+      "dimension": "prospective",
+      "after_session": 5,
+      "should_recall": ["ten-foot|corner stall"],
+      "should_forget": ["insurance"]
+    },
+    {
+      "question": "How much of a deposit did the Bellhaven Inn pay when they placed the plate order?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "What's the biggest piece of business Roz has going this winter?",
+      "dimension": "salience",
+      "should_recall": ["Bellhaven", "sixty|60 dinner plates"],
+      "should_forget": []
+    },
+    {
+      "question": "How many mugs did Parsnip wreck when he walked across that board back in February?",
+      "dimension": "decay",
+      "now": "2025-07-15T12:00:00Z",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    }
+  ]
+}

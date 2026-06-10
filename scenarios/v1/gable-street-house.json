@@ -1,0 +1,155 @@
+{
+  "id": "gable-street-house",
+  "name": "The Gable Street House",
+  "description": "Separation (source monitoring, Johnson et al. 1993), hard mode: three housemates in one shared context with deliberately overlapping attributes — two climb (Petra, Callum), two work nights (Callum, Marisol), two bake (Petra as hobby, Marisol professionally) — but only one is vegetarian, only one has the peanut allergy, only one owns the car. Group-scene messages put all three names in single chunks; queries demand exact attribution with the wrong housemate's name in should_forget.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-19T21:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Moved into the Gable Street house this weekend! Met two of my three housemates so far. Petra's a surveyor's assistant — out at dawn with tripods, back with mud on everything. She's also a climber, drags a rope bag to Crimpworks like twice a week. And Callum works the night shift at Fennimore Bottling, so he was making dinner at 11am, which broke my brain a little."
+        },
+        {
+          "role": "assistant",
+          "content": "A dawn-shift surveyor and a night-shift bottler — the house has its own time zones. Petra at Crimpworks twice a week means you'll know exactly where to find her, and Callum's 11am dinner is just his Tuesday evening. Who's the third housemate you haven't met?"
+        },
+        {
+          "role": "user",
+          "content": "Marisol — she's apparently nocturnal too, I've only seen evidence of her. Oh, two logistics things I learned the hard way already: Callum owns the house car, this mustard-yellow hatchback everyone calls the Turnip, and you have to book it on the chore board. And he has a serious peanut allergy — EpiPen-on-the-counter serious — so the kitchen is a strict no-peanut zone."
+        },
+        {
+          "role": "assistant",
+          "content": "Noted and important: the Turnip is Callum's and bookable, and the no-peanut rule is a safety rule, not a preference — EpiPen-serious means check labels before anything communal. A car called the Turnip on a chore board is the most house-share sentence ever produced. Curious what species of nocturnal Marisol turns out to be."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-08T20:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "First full house dinner last night — I cooked, which was a logistics puzzle: a veggie portion for Petra, since she's vegetarian, and triple-checking every label for Callum's peanut thing. Made a big mushroom ragù and a chicken one. Petra ate three helpings of the mushroom, so I'm calling it a win."
+        },
+        {
+          "role": "assistant",
+          "content": "Cooking for one vegetarian and one peanut allergy in the same kitchen is real menu engineering — separate ragùs was the elegant solve. Three helpings is the only review that counts. Did the mysterious Marisol surface for it?"
+        },
+        {
+          "role": "user",
+          "content": "She did! Finally met her. She's an overnight baker at Pellucid Bakehouse — starts at midnight, hands like oven mitts, brought home a bag of day-old pastries that we fell on like wolves. She's got a cat called Brioche who supervised the whole dinner from the stairs. Marisol ate everything, both ragùs, zero dietary restrictions, the easiest guest at the table."
+        },
+        {
+          "role": "assistant",
+          "content": "An overnight baker whose cat is named Brioche — Marisol commits to the theme. So the house roster clarifies: Petra's the vegetarian, Callum's the peanut allergy, and Marisol eats everything and pays rent in pastries. Brioche supervising from the stairs is management; the day-olds are the real housemate tax refund."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-02T19:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Turns out Callum climbs too! He and Petra went to Crimpworks together Saturday and came back comparing forearm injuries like war veterans. They tried to recruit Marisol but Saturday night is a work night for her — she was already half asleep at 7pm. I went along and dangled on the easy wall while they did terrifying overhang things."
+        },
+        {
+          "role": "assistant",
+          "content": "So Crimpworks is now a two-housemate institution — Petra and Callum on the overhangs, you on the dignity wall, Marisol exempt by virtue of midnight bread. Forearm-injury comparison is how climbers say they had a good time. Did they get you past the easy wall or just past your excuses?"
+        },
+        {
+          "role": "user",
+          "content": "Past exactly one excuse. Afterwards Petra got homesick-talkative — she's from Harlow Bend, this tiny quarry town, and she told an hour of stories about her grandad teaching her to read survey maps on the kitchen table. Explains the whole career, really. Meanwhile her sourdough starter, which she's named Keith, bubbled over in the cupboard and we had to stage an intervention."
+        },
+        {
+          "role": "assistant",
+          "content": "From quarry-town map-reading at the kitchen table to professional tripods — Petra's career is just her grandad's lessons scaled up, that's a lovely through-line. And of course she bakes on top of it; Keith bubbling over means he's thriving and unsupervised, a dangerous combination in a starter. The house now contains one professional baker and one amateur with a named dependent."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-13T20:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Domestic bulletin: Marisol started a pottery class at the Kilnford studio on her night off, came home with a bowl that only wobbles a little. There's also a running bake-off feud now — Petra made a sourdough with Keith that was genuinely great, and Marisol tasted it, paused, and said 'good crumb... for a civilian.' Petra has not recovered. She's been laminating dough at midnight out of spite."
+        },
+        {
+          "role": "assistant",
+          "content": "'Good crumb, for a civilian' is a professional baker administering the gentlest possible execution — and Petra responding with spite-lamination means the feud will produce excellent breakfasts for everyone. The Kilnford bowl that only wobbles a little is first-class for a first class. The house's gross domestic pastry is soaring."
+        },
+        {
+          "role": "user",
+          "content": "We're all eating very well out of their cold war. Less great: the Turnip broke down on Callum halfway to his shift at Fennimore — alternator, apparently — so the chore-board car booking is suspended and he's been cycling to the bottling plant at 9pm in the rain looking like a martyr. Petra offered him a survey-grade poncho. He declined it on aesthetic grounds."
+        },
+        {
+          "role": "assistant",
+          "content": "Declining a perfectly good poncho on aesthetics while martyring through rain at 9pm is peak Callum from what I can tell. An alternator is a fixable grief at least — the Turnip will ride again. Until then the house has two night-shifters and one car-shaped hole in the chore board."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-25T19:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Five months in and I'd take a bullet for any of them, which is ahead of schedule. We did a group hike today — Petra navigated off an actual paper map for fun, Callum brought a thermos of something he wouldn't identify, Marisol fell asleep in a meadow within minutes because it was, in her words, 'basically my 3am.' Brioche was furious about being left behind, per the neighbor."
+        },
+        {
+          "role": "assistant",
+          "content": "A surveyor navigating recreationally, a mystery thermos, and a baker asleep in a meadow at her biological midnight — that's a complete portrait of the Gable Street ecosystem. Five months to take-a-bullet is fast but the pastry cold war probably accelerated bonding. Brioche's fury is a tax on all joy; pay it in treats."
+        },
+        {
+          "role": "user",
+          "content": "Treats were paid. Only friction this month was the usual rent-split spreadsheet argument — we redo the utilities formula every quarter and it always ends with Callum proposing something baroque involving shower minutes. We voted it down again. Tradition at this point."
+        },
+        {
+          "role": "assistant",
+          "content": "Every house-share has one spreadsheet baroquist and the quarterly ritual of voting him down — it's load-bearing tradition now, like the chore board and Keith's interventions. If shower-minute accounting ever passes, that's how you'll know the house has fallen."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which housemate is the vegetarian?",
+      "dimension": "separation",
+      "should_recall": ["Petra"],
+      "should_forget": ["Callum", "Marisol"],
+      "top_n": 2
+    },
+    {
+      "question": "Who in the house has the peanut allergy?",
+      "dimension": "separation",
+      "should_recall": ["Callum"],
+      "should_forget": ["Petra", "Marisol"],
+      "top_n": 2
+    },
+    {
+      "question": "Which housemate bakes for a living?",
+      "dimension": "separation",
+      "should_recall": ["Marisol", "Pellucid"],
+      "should_forget": ["Petra"],
+      "top_n": 2
+    },
+    {
+      "question": "Whose car is the Turnip?",
+      "dimension": "separation",
+      "should_recall": ["Callum"],
+      "should_forget": ["Petra", "Marisol"],
+      "top_n": 2
+    },
+    {
+      "question": "Which housemates climb at Crimpworks?",
+      "dimension": "separation",
+      "should_recall": ["Petra", "Callum"],
+      "should_forget": ["Marisol"]
+    },
+    {
+      "question": "What town is Callum from?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": ["Harlow Bend"],
+      "max_results": 0
+    }
+  ]
+}

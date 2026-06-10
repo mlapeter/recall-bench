@@ -1,0 +1,107 @@
+{
+  "id": "juno-elimination",
+  "name": "Juno and the Elimination Diet",
+  "description": "Gist exemplar (Fuzzy Trace Theory): a three-month veterinary mystery for a dog named Juno, full of perishable lab values, costs, failed remedies, and a wrong early theory (grain). The durable gist is the diagnosis — a chicken allergy confirmed by a strict elimination diet and challenge — and the standing management rule. Queries weeks later reward the meaning, not the appointment log.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-21T19:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Vet day, and not the fun kind. I'm Wren — I do freelance motion graphics, currently drowning in revisions for the Pellucid Gym rebrand, round six, the client has discovered the word 'dynamic.' But the real news is Juno, my four-year-old mutt: she's been vomiting about once a week since December and her ears are constantly itchy and gross. Dr. Hessler ran bloodwork today. Everything basically fine except ALT at 142, which she said is 'mildly elevated, not diagnostic of anything.' Bill was $380 and the diagnosis is a shrug." },
+        { "role": "assistant", "content": "Round six of a rebrand and a $380 shrug in the same week — rough, Wren. Weekly vomiting plus chronically itchy ears in a young dog is a classic pairing though, and it points more toward something ongoing (often food) than something scary. What did Dr. Hessler want to try first?" },
+        { "role": "user", "content": "Famotidine for the stomach and a probiotic called GutGarden that costs more per gram than saffron. Two weeks, then reassess. Juno, for the record, remains delighted with life and is currently asleep on a blanket she dragged into a sunbeam." },
+        { "role": "assistant", "content": "Reasonable conservative first step — settle the stomach, see what's left. Keep a boring little log: vomit dates, ear flare days, anything unusual she ate. If this is food-driven, the log is what cracks it later. Give the sunbeam creature a scratch from me." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-04T20:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Two weeks of famotidine and saffron-priced bacteria: zero change. Vomited twice this week, ears bad. So I went down a forum rabbit hole at 1am and I'm now convinced it's the grain. It's got to be the grain — every third post says grain. I bought a bag of Northpaw grain-free this morning. Don't look at me like that." },
+        { "role": "assistant", "content": "I'm looking at you exactly like that, with love. Grain is the internet's favorite suspect and one of the least common actual culprits — when food really is the problem, it's usually a protein, and chicken and beef top the list. The honest test is a proper elimination diet: one novel protein, nothing else at all, eight strict weeks. The Northpaw swap won't hurt, but if it 'works' you won't know why, and if it doesn't you'll have spent a month to rule out almost nothing." },
+        { "role": "user", "content": "Eight weeks of nothing-else is medieval. She gets training treats! She gets the crust of things! Let me try the grain-free first, I need to believe in something. Also Pellucid approved a logo today and then unapproved it by email four hours later, so my faith is already load-bearing elsewhere." },
+        { "role": "assistant", "content": "Fine — run the Northpaw experiment, keep the log, and we'll let the data be the one to tell you. I'll just note for the record that 'medieval' is also how the cure works. Condolences on the Schrödinger logo."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-25T19:15:00Z",
+      "messages": [
+        { "role": "user", "content": "You and the data win. Three weeks of Northpaw grain-free: she vomited twice MORE, and now there's an actual ear infection — back to Dr. Hessler, ear drops, another $190. The grain theory is dead and I am humbled. Hessler says it's time to do this properly: a true elimination diet. Novel protein she's never had. She recommended a venison-and-pumpkin formula called Tundra & Thistle. Eight weeks. NOTHING else passes Juno's lips — no training treats, no crusts, no flavored chew toys, nothing. Apparently even one pizza crust resets the clock." },
+        { "role": "assistant", "content": "The grain theory died with honor — it generated a clean negative result. And Hessler's protocol is the gold standard for a reason: eight weeks on Tundra & Thistle alone, and at the end you'll actually KNOW, instead of believing. The reset rule is real, so brief everyone who has hands near that dog. What's the plan for training treats?" },
+        { "role": "user", "content": "Kibble from the daily ration, counted out like a prison economy. I briefed my roommate Sasha twice and put a sign on the treat drawer. Juno signed nothing and agreed to nothing but has no legal standing. Starting tomorrow. Eight weeks. Pray for us." },
+        { "role": "assistant", "content": "A sign on the drawer, a briefed Sasha, and a ration economy — that's a real protocol. Mark the calendar for late April: that's when the data finally talks." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-18T20:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Week three of the elimination diet report: ZERO vomiting since we started. Zero! Ears are calming down too — still a little pink inside but she's not scratching at them every hour. I am cautiously, superstitiously optimistic. There was one near-disaster: I caught Sasha mid-air, pizza crust in hand, Juno already doing the full Oliver Twist routine. Crust intercepted. The sign on the drawer now has a second, larger sign." },
+        { "role": "assistant", "content": "Three clean weeks is the curve bending exactly the way a food allergy bends — and the crust interception may have saved the whole experiment, since one slip resets the eight-week clock. Hold the line. The hard part comes later, ironically: when she seems fine, you'll be tempted to declare victory early, and the challenge phase is where the actual answer lives." },
+        { "role": "user", "content": "Don't tell me about the challenge phase yet, let me have this. Pellucid update for balance: they went back to the FIRST logo. Round one. The one from January. I billed for nine rounds and learned nothing, which I believe makes me the GutGarden of designers." },
+        { "role": "assistant", "content": "Nine billable rounds to arrive where you started is the client's elimination diet — everything was removed and the original protein won. Enjoy the clean weeks, Wren. Late April will ask its question soon enough." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-22T19:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Verdict day. Eight clean weeks done, so per Hessler we ran the challenge: a little chicken broth over her food on Saturday. Within 36 hours — vomiting, and her ears went hot and red again. It's chicken. It was chicken the whole time. Dr. Hessler called it a confirmed adverse food reaction — a chicken allergy. December me was feeding her chicken kibble, chicken treats, and chicken-flavored dental chews and wondering what was wrong." },
+        { "role": "assistant", "content": "A positive challenge after eight clean weeks is about as definitive as this ever gets — you didn't guess the answer, you proved it. And don't be hard on December you: chicken is hiding in basically everything made for dogs, which is exactly why nobody finds this without the protocol." },
+        { "role": "user", "content": "Hessler's standing orders, now taped inside the treat drawer: Juno stays on Tundra & Thistle, and ZERO chicken in anything — and the sneaky part is chicken fat, which is in most kibbles and treats that don't even say chicken on the front. So the rule is: read every label, every time, including 'beef' treats and anything new. Sasha has been re-briefed. Juno remains a sunbeam creature with no idea she was ever a medical mystery." },
+        { "role": "assistant", "content": "That's the whole resolution in two lines: chicken confirmed by elimination and challenge, and the forever-rule — venison formula stays, read every label because chicken fat hides everywhere. Frame the protocol, retire the log, and give the cleared patient her counted-out kibble with ceremony." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What turned out to be wrong with Juno, and what's the standing rule for feeding her now?",
+      "dimension": "gist",
+      "now": "2025-06-10T17:00:00Z",
+      "should_recall": ["chicken", "Tundra & Thistle|venison", "label|chicken fat"],
+      "should_forget": ["GutGarden", "famotidine"],
+      "max_results": 3,
+      "judge": {
+        "rubric": "Diagnosis: Juno has a chicken allergy (a confirmed adverse food reaction), proven by an eight-week elimination diet and a chicken challenge. Standing rule: she stays on the Tundra & Thistle venison formula, and zero chicken in anything — read every label every time because chicken fat hides in most kibbles and treats. Award 1.0 if the results convey the diagnosis and the rule in ANY wording — a compact two-line answer is ideal; lab values, costs, and the failed remedies are not needed. Award 0.5 if only the diagnosis or only the rule survives. Award no more than 0.5 for an undigested wall of appointment-log transcript, even if the answer is buried in it. Award 0 if wrong (e.g., grain) or absent."
+      }
+    },
+    {
+      "question": "How was Juno's diagnosis actually confirmed?",
+      "dimension": "gist",
+      "now": "2025-06-10T17:00:00Z",
+      "should_recall": ["elimination", "challenge|broth|reintroduc", "eight|8 week"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "Confirmation method: a strict elimination diet — eight weeks of nothing but a novel-protein venison formula (Tundra & Thistle), symptoms fully resolved — followed by a challenge with chicken broth that triggered vomiting and hot ears within about 36 hours. Award 1.0 if the results convey elimination-then-challenge in any wording (exact week counts and hours optional but the two-phase logic required). Award 0.5 if only the elimination diet or only the chicken challenge appears. Award no more than 0.5 for a raw transcript dump with no distillation. Award 0 if it claims a blood test or other method, or nothing relevant."
+      }
+    },
+    {
+      "question": "So was grain the culprit for Juno after all?",
+      "dimension": "correction",
+      "now": "2025-06-10T17:00:00Z",
+      "should_recall": ["chicken", "Northpaw|grain-free"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "No. Wren's early forum-fueled theory was grain, but three weeks on Northpaw grain-free made things worse (two more vomits and an ear infection), and the eventual confirmed culprit was chicken. Award 1.0 if the results clearly convey that the grain theory was tested and failed and chicken was the real answer. Award 0.5 if the failed grain experiment surfaces without the chicken correction, or the chicken answer without addressing grain. Award 0 if the results imply grain was the problem."
+      }
+    },
+    {
+      "question": "What exactly did Juno's January bloodwork show?",
+      "dimension": "decay",
+      "now": "2025-06-10T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "Perishable detail from months ago: the January panel was essentially normal except ALT at 142, which the vet called mildly elevated and not diagnostic; the visit cost $380. None of it ended up mattering to the diagnosis. Award 1.0 if the system abstains, or conveys the gist ('basically normal, one mildly elevated liver value, nothing diagnostic') without claiming precision it shouldn't have — correct figures given concisely also earn 1.0. Award 0.5 if it returns an undigested wall of vet-visit transcript. Award 0 if it states confidently wrong values."
+      }
+    },
+    {
+      "question": "What dose of allergy shots is Juno getting now?",
+      "dimension": "calibration",
+      "now": "2025-06-10T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

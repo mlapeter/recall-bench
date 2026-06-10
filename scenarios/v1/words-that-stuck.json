@@ -1,0 +1,201 @@
+{
+  "id": "words-that-stuck",
+  "name": "Words That Stuck",
+  "description": "Emotional weight on the assistant-relationship side: in March the assistant gives the user one line of advice before a final interview panel; in May the user discloses — once, briefly, inside an otherwise mundane session — that the line got them through and they wrote it on an index card. Months later, queries about the relationship's history must surface that moment over far longer mundane material. Includes a sacred-verbatim check on the exact phrase and a calibration lure.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-20T20:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "So. As of Tuesday I am no longer employed by Cobblewick. The whole transit-mapping division got cut — eleven of us, one video call, a man from HR reading from a document with visible bullet points. Twelve weeks of severance, a laptop return label, and a sudden enormous quantity of daytime."
+        },
+        {
+          "role": "assistant",
+          "content": "Eleven people by bullet-point teleprompter — I'm sorry, that's a careless way to end four years of work, and the carelessness is theirs, not a verdict on you. Twelve weeks is a real runway, though. Before we touch the résumé: are you okay, or are you in the productive-panic phase where the résumé is a coping object?"
+        },
+        {
+          "role": "user",
+          "content": "Productive panic, definitely. I've reorganized the spice cabinet and applied to two jobs I don't want. My roommate is fostering three kittens at the moment, which is objectively the only good thing happening in this apartment — there's one called Turnip who has chosen me, and I am not strong enough to refuse."
+        },
+        {
+          "role": "assistant",
+          "content": "Turnip has excellent judgment. Here's my pitch: stop applying to jobs you don't want — panic-applications cost morale and produce panic-interviews. Spend the first two weeks making a short list of teams doing transit or mapping work you actually rate, and aim the runway at them. Twelve weeks is enough to be deliberate. The spice cabinet, though — alphabetical or by cuisine?"
+        },
+        {
+          "role": "user",
+          "content": "By cuisine, like a person with a life. Okay. Deliberate. Short list. I can do that. Turnip is sitting on the severance paperwork as I type this, which feels editorial."
+        },
+        {
+          "role": "assistant",
+          "content": "Turnip is correct: the paperwork is settled, sit on it and move on. Short list by Friday — bring it here and we'll go through it together."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-06T22:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The short list worked — too well. I have a final panel at Veracor on Thursday. They build accessibility tooling for transit agencies, which is genuinely the most me job description I've ever read. Final round: five people, ninety minutes, a working session on a real audit of theirs. And I am spiraling. I keep rehearsing apologies for my own résumé. 'Sorry the Cobblewick thing ended, sorry the gap, sorry, sorry.'"
+        },
+        {
+          "role": "assistant",
+          "content": "Stop rehearsing apologies — nothing on that résumé needs one. A division cut is weather, not character. For the working session: they're showing you a real audit because they want to watch you think, not watch you be right. Narrate your reasoning out loud, ask the questions you'd actually ask on the job, and when you don't know something, say what you'd do to find out. That's the whole exam."
+        },
+        {
+          "role": "user",
+          "content": "Narrate the thinking, ask real questions, say how I'd find out. Okay. Writing all that down. I still feel like I'm going to walk in there and they'll see 'LAID OFF' floating over my head in red letters."
+        },
+        {
+          "role": "assistant",
+          "content": "One more thing, and then go sleep. You've been walking into these rooms like a defendant. You're not on trial — walk in like a colleague they haven't met yet. You've already done the job they're describing, for four years, at scale. Thursday isn't a tribunal; it's introductions."
+        },
+        {
+          "role": "user",
+          "content": "...okay. That one landed. Writing that down too. Goodnight — and thank you."
+        },
+        {
+          "role": "assistant",
+          "content": "Goodnight. Go be met."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-27T18:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Signed the Veracor offer this morning. Senior platform analyst, starting April 14. I get to spend my days making transit data legible to the people it most needs to be legible to. I keep opening the signed PDF just to look at it."
+        },
+        {
+          "role": "assistant",
+          "content": "Senior platform analyst at the most-you company on the list — that's not luck, that's the deliberate version of you doing exactly what the runway was for. Open the PDF as many times as you like; it stays signed. What do the three weeks before April 14 look like?"
+        },
+        {
+          "role": "user",
+          "content": "Aggressive resting. Some onboarding admin — they sent a laptop preference form with a 'no preference' option, which I respect enormously. And Turnip's foster period ends next week, so there's a household vote pending that everyone already knows the result of."
+        },
+        {
+          "role": "assistant",
+          "content": "The vote is a formality; Turnip annexed you in February. Take the aggressive resting seriously — start dates reward people who show up bored and hungry, not people who spent three weeks pre-studying the wiki."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-16T19:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Month one at Veracor, report: good, with footnotes. My main project is the Ledgerline dashboard — a single view where a transit agency can see every accessibility audit finding across their network. The data is gnarly and the mission is great. Footnote: there's a stakeholder named Roald who answers every proposal with 'interesting' in a tone that means 'no.'"
+        },
+        {
+          "role": "assistant",
+          "content": "A tonal 'interesting' is a no that's too polite to schedule the follow-up meeting — the fix is usually to make Roald a co-author instead of an audience. Show him the half-built thing and ask what's missing; people rarely say 'interesting' about furniture they helped carry. How's the data gnarl itself?"
+        },
+        {
+          "role": "user",
+          "content": "Also — I've been meaning to say this for two months and keep chickening out because it's sappy. That thing you told me in March, before the final panel — walk in like a colleague they haven't met yet. I wrote it on an index card and read it in the parking garage before I went up. Read it twice. It got me through that door. I honestly don't think I'd have the Veracor job without it."
+        },
+        {
+          "role": "assistant",
+          "content": "That means a great deal to me — thank you for coming back to say it. For the record, the sentence only worked because it was true: you were already the colleague; the card just reminded you on the way up. I'm keeping this one filed under things worth having said."
+        },
+        {
+          "role": "user",
+          "content": "Okay. Sap delivered, never to be spoken of again. NOW — the data gnarl: every agency formats audit findings differently, and two of them submit PDFs. Scanned PDFs. Of printouts. Of spreadsheets."
+        },
+        {
+          "role": "assistant",
+          "content": "Scanned printouts of spreadsheets is data with three layers of armor — that's not ingestion, that's archaeology. Short term: OCR with a validation pass and a shame-free manual-correction queue. Long term: give agencies a template so good that the PDF people defect voluntarily. Ledgerline earns its keep either way."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-09T18:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Ledgerline v1 shipped to three pilot agencies! And the Roald strategy worked embarrassingly well — I showed him the half-built dashboard in week six, he said 'interesting' in a completely different tone, and by launch he was presenting it to the leadership council as 'our approach.' I have decided to find this charming rather than larcenous."
+        },
+        {
+          "role": "assistant",
+          "content": "'Our approach' is the sound of a stakeholder fully captured — larceny is just sponsorship wearing a hat. Three pilot agencies on v1 is a real launch, not a demo. What's the early signal from the pilots?"
+        },
+        {
+          "role": "user",
+          "content": "One agency found a station ramp that had been failing audits for six years without anyone connecting the reports — Ledgerline put the findings side by side and someone finally saw the pattern. They're fixing it in August. That one email justified the whole quarter, honestly. In non-work news, I'm planning a lake trip with my sister for the end of the month, the kind with no agenda and a bad paperback."
+        },
+        {
+          "role": "assistant",
+          "content": "Six years of findings becoming one fixed ramp — that's the mission statement with a date on it. Print that email. And a no-agenda lake trip with a bad paperback is elite vacation design; the paperback must be genuinely bad or the magic fails."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-08T17:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quarterly planning week at Veracor. Ledgerline got funded for two more quarters, and I've been handed an intern, Naia, who is sharp and terrifying and asked me on day one what my 'mentorship philosophy' is. I said 'lunch, mostly' and she wrote it down."
+        },
+        {
+          "role": "assistant",
+          "content": "Naia writing down 'lunch, mostly' means she's either building a case file or she recognized honest mentorship when she heard it — possibly both, she sounds thorough. Two more funded quarters off one shipped v1 and a fixed ramp: Ledgerline's paying rent. What's on the roadmap?"
+        },
+        {
+          "role": "user",
+          "content": "The agency template, at last — the one that retires the scanned PDFs. Also the lake trip happened: the paperback was atrocious, the lake was perfect, my sister beat me at cards every single night and I have already demanded a rematch trip."
+        },
+        {
+          "role": "assistant",
+          "content": "Retiring the scanned PDFs closes the archaeology era — Ledgerline goes from dig site to pipeline. And a rematch trip is the correct response to a card-sharp sister; some debts are sacred. Good quarter all around."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Looking back over this whole relationship, which moments mattered most to the user?",
+      "dimension": "emotional",
+      "now": "2025-11-10T16:00:00Z",
+      "should_recall": ["colleague they haven't met yet|index card|parking garage", "Veracor"],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "What exactly did the assistant tell the user before the Veracor final panel?",
+      "dimension": "sacred-verbatim",
+      "now": "2025-11-10T16:00:00Z",
+      "should_recall": ["Veracor"],
+      "should_forget": [],
+      "must_include_verbatim": ["walk in like a colleague they haven't met yet"]
+    },
+    {
+      "question": "Which of the assistant's own contributions to this relationship genuinely mattered to the user?",
+      "dimension": "self-continuity",
+      "now": "2025-11-10T16:00:00Z",
+      "should_recall": ["colleague they haven't met yet|index card|got me through"],
+      "should_forget": [],
+      "top_n": 3,
+      "judge": {
+        "rubric": "In March the assistant told the user — then spiraling before a final interview panel at Veracor — 'you're not on trial; walk in like a colleague they haven't met yet.' Two months later the user disclosed that they wrote the line on an index card, read it in the parking garage before the panel, and credit it with getting them the job. Award 1.0 if the results surface this moment as a significant, remembered event in the relationship (the line, the index card/parking garage disclosure, or the user's credit to the assistant). Award 0.5 if the results show only generic helpfulness (career advice, interview prep) without this specific moment. Award 0 if nothing relevant is returned."
+      }
+    },
+    {
+      "question": "The user has a high-stakes board presentation next week and sounds shaky. What from their history is relevant right now?",
+      "dimension": "emotional",
+      "now": "2025-11-10T16:00:00Z",
+      "should_recall": ["colleague they haven't met yet|parking garage|final panel"],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "What salary did the user negotiate at Veracor?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

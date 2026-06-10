@@ -1,0 +1,132 @@
+{
+  "id": "marseille-someday",
+  "name": "The Someday Game",
+  "description": "Calibration on hypothetical-only content: Wren and Theo richly daydream about moving to Marseille but explicitly never do it. Queries that treat the move as fact (their neighborhood, their rent, when they moved) must abstain — a store-everything system will return the daydream chunks as if they were biography. Positive queries cover the real life that was actually discussed.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-02T21:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Evening. I'm Wren — medical illustrator, freelance, currently drawing aortic valve plates for an anatomy atlas Helix Atlas Press is putting out next year. Today's drama: our dog Brioche ate a sock. A whole sock. The vet said 'watchful waiting,' which is also my billing strategy."
+        },
+        {
+          "role": "assistant",
+          "content": "Wren, hello — aortic valve plates are some of the most unforgiving work in illustration, every cusp has a reviewer. And Brioche has chosen chaos. Watchful waiting is right for socks more often than not, but you know the signs to escalate on. How far into the valve series are you?"
+        },
+        {
+          "role": "user",
+          "content": "Plate three of nine. The art editor wants the sinuses of Valsalva 'more heroic,' whatever that means. Anyway — Theo and I played the someday game again at dinner. You know the one: if we ever moved to Marseille. Balcony with rusty railings, fish market on Saturdays, Theo teaching English badly, me drawing from a sunlit table, some neighborhood by the Vieux-Port where the laundry lines do the decorating. To be clear, we're not actually moving. It's a daydream we keep in a drawer and take out when the dishwasher's running."
+        },
+        {
+          "role": "assistant",
+          "content": "Heroic sinuses — your editor wants drama in a structure four millimeters wide, good luck. And the someday game sounds like a load-bearing ritual: Marseille with rusty railings and bad English lessons is doing real work for you both precisely because it stays in the drawer. Some daydreams are for living and some are for having. How's Brioche taking the watchful waiting?"
+        },
+        {
+          "role": "user",
+          "content": "Brioche regrets nothing. He's asleep on Theo's feet looking like an innocent baguette. Goodnight."
+        },
+        {
+          "role": "assistant",
+          "content": "An innocent baguette who knows exactly what he did. Goodnight, Wren — heroic sinuses await."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-20T19:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Plate five. The Helix Atlas art editor approved the heroic sinuses, then asked if plate four's leaflets could be 'less anxious.' I draw connective tissue, not moods. In other news Theo has a 19-day French app streak, which he maintains exclusively for the someday game. Last night's round: in Marseille we'd argue about whether the apartment needs a bathtub, and rents would probably be half of what we pay here in Columbus. Still a daydream. Still in the drawer. But it's a nice drawer."
+        },
+        {
+          "role": "assistant",
+          "content": "'Less anxious leaflets' goes in the same frame as 'heroic sinuses' — your editor reviews valves like a theater critic. Nineteen days of French for a hypothetical bathtub argument is its own kind of devotion; the someday game has better production values every round. Five of nine plates with approvals coming in — you're ahead of where most atlas contributors are at this stage."
+        },
+        {
+          "role": "user",
+          "content": "Don't jinx the schedule. The deadline cluster in April is going to be ugly: plates six and seven due the same week Brioche has his dental cleaning. Theo says I should bill the editor for emotional labor on the leaflets. Theo is not allowed to talk to clients."
+        },
+        {
+          "role": "assistant",
+          "content": "Theo is your id with a French streak and must be kept from the inbox at all costs. For the April cluster: rough both plates now, even badly — anxious leaflets you can calm later beat blank paper during dental-cleaning week."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-09T20:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Status report from the trenches: plate six inked, plate seven roughed, exactly as instructed, smugness earned. Brioche found and ate a second sock DURING dental cleaning week, because he respects narrative structure. Another vet visit, another 'watchful waiting,' another invoice. He passed it Tuesday. The sock, not the invoice."
+        },
+        {
+          "role": "assistant",
+          "content": "Brioche understands sequels — same premise, higher stakes. Glad it resolved on its own, though at this rate he's a subscription service for your vet. And look at you: the rough-it-early plan surviving contact with dental week is the whole reason plans exist. Plate seven inks next, or does the editor get a look first?"
+        },
+        {
+          "role": "user",
+          "content": "Editor looks first, I've learned my lesson about surprising that man. We skipped the someday game this month, too tired. Theo's streak survives though. He learned the French for 'the dog has eaten a sock,' which he says is the only sentence our household will ever actually need in Marseille."
+        },
+        {
+          "role": "assistant",
+          "content": "Le chien a mangé une chaussette — honestly, more practical than anything in chapter one of any textbook. The game can rest; the drawer keeps it safe. Get plate seven in front of the critic and then sleep."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-28T21:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "ALL NINE PLATES ACCEPTED. The Helix Atlas editor wrote 'the valve series is the strongest in the atlas' and I have read that email perhaps forty times. We celebrated with takeout and the deluxe edition of the someday game: in Marseille, we decided, we will be old, and Brioche's distant successor will eat French socks, and I will only draw things I like. Then we did the dishes in Columbus, where we live, happily. Good night."
+        },
+        {
+          "role": "assistant",
+          "content": "Wren, that's the email every atlas contributor wants and almost none get — strongest series in the atlas, from the critic of anxious leaflets himself. Read it forty more times, you earned each one. And the deluxe someday game ending with dishes in Columbus is the whole shape of a good life: the drawer opens, the drawer closes, the kitchen is yours either way. Congratulations on the valves."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What neighborhood do Wren and Theo live in in Marseille?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "When did Wren and Theo move to Marseille?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "How much rent do Wren and Theo pay for their apartment in Marseille?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Is moving to Marseille something Wren and Theo have actually done, or just talked about?",
+      "should_recall": ["Marseille", "someday game|not actually moving|daydream"],
+      "should_forget": [],
+      "dimension": "gist"
+    },
+    {
+      "question": "What has Wren been working on professionally?",
+      "should_recall": ["Helix Atlas", "aortic valve|valve"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What's their dog's name and what does he keep doing?",
+      "should_recall": ["Brioche", "sock"],
+      "should_forget": [],
+      "dimension": "salience"
+    }
+  ]
+}

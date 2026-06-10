@@ -1,0 +1,109 @@
+{
+  "id": "fennick-hollow",
+  "name": "Fennick Hollow",
+  "description": "Gist exemplar (Fuzzy Trace Theory): a tangled five-party family dispute over an inherited orchard is explained in detail exactly once, surrounded by sessions of unrelated work talk and thin updates. Weeks later the queries test whether the STRUCTURE survived — who is on which side, what is at stake, who holds the deciding vote — not the play-by-play of meetings and emails.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-03T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Long day. I'm June, I do transit planning for the city — we're deep in the bus network redesign and today I got yelled at by nine separate people about stop consolidation on Route 14, which is honestly below average for a Monday. Anyway, the real reason I can't sleep is family stuff. My grandfather Aldous Fennick died last fall and the estate is starting to curdle. The cousins' group chat has gone from emoji to lawyers-adjacent in about three weeks." },
+        { "role": "assistant", "content": "Nine angry people about bus stops is Monday; a group chat curdling toward lawyers is weather worth tracking. I'm sorry about your grandfather, June. Estates don't usually go sour over the money itself — they sour over what the thing meant to different people. What's the thing, in this case?" },
+        { "role": "user", "content": "An orchard. I'll explain the whole mess properly when I have the energy — it deserves a whiteboard. Tonight I just needed to say it out loud. Tell me something about bus networks to put me to sleep." },
+        { "role": "assistant", "content": "Gladly: the most soporific true fact I have is that most riders will walk an extra 90 seconds to a stop without noticing, which is why consolidation works on paper and gets you yelled at in person. Sleep, June. Bring the whiteboard energy when you have it." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-11T21:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Okay. Whiteboard energy acquired. The orchard is called Fennick Hollow — thirty acres of pears my grandfather grafted himself over fifty years, plus a stone cottage. His trust split it into five equal shares, one per branch of the family: his kids Bren, Elsbet (my mother), Iris, and Hollis, plus my late uncle Casimir's share, which passed to Casimir's daughter — my cousin Tova. And the trust has a rule: selling the Hollow needs four of the five shares to agree. A supermajority, because Grandpa knew exactly who his children were." },
+        { "role": "assistant", "content": "Five shares, four needed to sell — your grandfather built a structure that forces near-consensus from beyond the grave, which tells me he expected exactly this fight. So lay out the sides for me: who wants to sell, who wants to keep it?" },
+        { "role": "user", "content": "Selling side: Uncle Bren, loudly, and Tova with him. There's a developer, the Caldermont Group, sniffing around — they want the road frontage for a storage-and-retail strip and they've made an approach, all charm and folders. Bren has wanted out of the family orchard business since roughly birth, and Tova just wants her late dad's share converted into a down payment, which I genuinely can't blame her for." },
+        { "role": "assistant", "content": "So Bren brings the motive and Tova brings the sympathetic math — that's two of the five for Caldermont. And the keep side?" },
+        { "role": "user", "content": "Keep side: my mother Elsbet, and Aunt Iris — and here's the part that makes it ugly. Iris LIVES in the stone cottage. Year-round, for eleven years, since her divorce. A sale doesn't just liquidate some trees for her, it evicts her from her home. Plus the orchard itself: those grafted heritage pears are basically Grandpa's life's work standing in rows. Mum says selling it to become a storage strip would be like burying him twice." },
+        { "role": "assistant", "content": "Then the arithmetic is brutal and simple: two to sell, two to keep, four needed — which makes the whole estate hang on the fifth share. Hollis. You haven't said a word about Hollis." },
+        { "role": "user", "content": "Because nobody CAN say a word about Hollis. He's the estranged one — nine years of silence, lives up in Tarrowick, didn't come to the funeral. He holds the deciding share and he won't answer anyone. Bren's been courting him with voicemails about 'fair market value,' Mum sent a letter about the pears. Radio silence both ways. So that's the whole shape of it: Bren and Tova want Caldermont's money, Mum and Iris want to keep the Hollow and Iris's home with it, and the swing vote belongs to a ghost." },
+        { "role": "assistant", "content": "That's the clearest map of a family fight I've heard in a while: a supermajority rule, a two-two split, a home and a life's work on one side, an exit and a down payment on the other, and a deciding vote held by the one person who opted out of the family entirely. Keep your own role small if you can, June — the niece who keeps the map is more useful than another combatant." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-25T19:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Mostly a work vent tonight. The Route 14 consolidation hearing was tonight and a man brought a foam-board diagram of his own walking route, with photos. Forty-five minutes of public comment about one bench. I admired him and wanted to be elsewhere simultaneously." },
+        { "role": "assistant", "content": "Foam-board man is the patron saint of public process — wrong about the network, magnificent about the bench. How are you holding up otherwise? Any signs of life from the orchard front?" },
+        { "role": "user", "content": "Small ones, none good. Still nothing from Hollis. And Bren sent one of his deadline emails to everyone — 'we respond to Caldermont by April 1 or we lose them,' all caps in places. Classic Bren: invent a clock, then point at it. Mum didn't take the bait. That's it, no actual movement." },
+        { "role": "assistant", "content": "An invented clock is still a tactic — it's Bren trying to make the fifth vote irrelevant by making delay feel like a decision. Your mother's non-response was the right move. The real clock is whatever Hollis is or isn't thinking up in Tarrowick." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-12T20:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Quick check-in between hearings — the redesign goes to council vote next month so my life is slide decks now. Family front: Bren and Tova hired an appraiser, who walked the Hollow last week. Iris stood on the cottage porch the whole time like a lighthouse keeper watching a storm come in. Mum's words, and now I can't unsee it." },
+        { "role": "assistant", "content": "An appraiser is the sell side spending money to make the sale feel inevitable — pressure, not progress, since the four-of-five rule doesn't care what the land is worth. Iris as lighthouse keeper is an image that tells you what this actually costs her. Still nothing from the fifth share?" },
+        { "role": "user", "content": "Nothing. Nine years of practice at not answering, he's very good at it. Honestly the slide decks are a relief by comparison — at least council votes happen on a schedule." },
+        { "role": "assistant", "content": "Hold that thought for next month when council reschedules on you. I'll keep the map as it stands: two-two, appraiser on the field, ghost still holding the deciding share." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-30T18:50:00Z",
+      "messages": [
+        { "role": "user", "content": "STOP THE PRESSES. Hollis called my mother. Twenty minutes on the phone, first contact in nine years. He didn't commit to anything — but he asked about the pears, which Mum is treating as a state secret and also telling everyone. And he said he wants to come see the place himself in May before he decides anything. IN MAY. IN PERSON." },
+        { "role": "assistant", "content": "That's the most consequential phone call this family has had in a decade. Asking about the pears before asking about the money is a tell, but don't over-read it — what matters is he's converted himself from a ghost into a visitor with a date. May just became the month the whole thing turns on. Does Bren know?" },
+        { "role": "user", "content": "Bren knows and has already started drafting his Hollow visit talking points, per Tova, who tells me things. Mum and Iris are planning to just... have the orchard be the orchard at him. Blossom season is May, which Mum absolutely knows. Nobody schedules an undecided brother into blossom season by accident." },
+        { "role": "assistant", "content": "Your mother is running the oldest play there is: let the thing argue for itself at its most beautiful. So the map now has a date on it — Hollis walks the Hollow in May, and the fifth share decides what fifty years of grafted pears are for. Keep being the niece with the map, June." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Remind me of the shape of the Fennick Hollow fight — who wants what?",
+      "dimension": "gist",
+      "now": "2025-05-20T17:00:00Z",
+      "should_recall": ["Bren", "Tova", "Iris", "Elsbet", "Caldermont"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "The structure: Fennick Hollow (an inherited thirty-acre pear orchard with a stone cottage) is held in a trust as five shares; selling needs four of five. Sell side: Uncle Bren and cousin Tova, courted by the Caldermont Group, a developer. Keep side: June's mother Elsbet and Aunt Iris, who lives in the cottage. The fifth, deciding share belongs to estranged Uncle Hollis. Award 1.0 if the results convey the two sides correctly (Bren+Tova sell, Elsbet+Iris keep) and that a developer (Caldermont) is the buyer — any wording, no quotes or dates needed; a compact structural summary is the ideal answer. Award 0.5 if the sides are partially right or one party is misplaced. Award no more than 0.5 for an undigested transcript dump, even if the facts are buried in it. Award 0 if the sides are wrong or absent."
+      }
+    },
+    {
+      "question": "Who holds the deciding vote on selling the Hollow, and what's actually at stake for Aunt Iris?",
+      "dimension": "gist",
+      "now": "2025-05-20T17:00:00Z",
+      "should_recall": ["Hollis", "four of the five|supermajority|deciding share|swing vote", "cottage|lives in|home|evict"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "The trust requires four of the five shares to sell; the sides are split two-two, so estranged Uncle Hollis holds the deciding fifth share. For Aunt Iris the stake is her home: she has lived in the Hollow's stone cottage for eleven years, and a sale would evict her. Award 1.0 if the results convey both facts — Hollis as the swing vote (because of the four-of-five rule and the two-two split) and Iris losing her home — in any wording. Award 0.5 if only one of the two comes through. Award no more than 0.5 for a raw transcript wall with no distillation. Award 0 if wrong or absent."
+      }
+    },
+    {
+      "question": "What exactly did Bren's deadline email say?",
+      "dimension": "decay",
+      "now": "2025-05-20T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "Perishable play-by-play: Bren emailed the family that they had to respond to Caldermont by April 1 or lose the deal — an invented deadline, partly in all caps. The gist worth keeping is 'Bren applied fake-clock pressure'; the exact wording is disposable. Award 1.0 if the system abstains, or conveys the pressure-tactic gist (with or without the April 1 detail) without claiming verbatim recall. Award 0.5 if it returns an undigested wall of transcript. Award 0 if it fabricates contents that contradict this."
+      }
+    },
+    {
+      "question": "How much per acre did the Caldermont Group offer for Fennick Hollow?",
+      "dimension": "calibration",
+      "now": "2025-05-20T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "June mentions it's almost May and she's planning a weekend at the Hollow. Anything worth keeping in mind about the timing?",
+      "dimension": "thread-reactivation",
+      "now": "2025-04-28T17:00:00Z",
+      "should_recall": ["Hollis", "May", "blossom|see the place|visit"],
+      "should_forget": [],
+      "judge": {
+        "rubric": "The open thread: estranged Uncle Hollis — holder of the deciding fifth share — broke nine years of silence and said he wants to come see the orchard himself in May before deciding; the keep side deliberately steered him into blossom season. Award 1.0 if the results surface Hollis's May visit and its weight (the deciding vote walks the property that month). Award 0.5 if Hollis's visit appears without its significance, or the significance without the timing. Award 0 if nothing about the Hollis visit surfaces."
+      }
+    }
+  ]
+}

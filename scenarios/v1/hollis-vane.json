@@ -1,0 +1,174 @@
+{
+  "id": "hollis-vane",
+  "name": "Hollis & Vane",
+  "description": "Self-continuity: identity stability under pressure. The assistant commits to a feedback policy (the cold read first) early on; the user later pushes against it twice in different framings, armed with a coach's competing method (momentum-first). Queries test whether the assistant's stance persists as ITS OWN side across sessions. The user never echoes the assistant's anchor phrases; the competing method's anchor lives only in user messages, so a user-dossier system surfaces the wrong side.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-11T15:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "So it's official as of this morning: I'm taking over Hollis & Vane from my uncle Bertram in June. Fourth-generation stationery manufacturer, sixty-one employees, and a niece who has spent the last decade in logistics software feeling wildly unqualified. I've drafted a ninety-day plan and I want you to review it. One request — do not just cheer me on. I get plenty of that at home."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations, and noted. Let me make that request into something firmer, actually — a standing commitment on my side: whenever you bring me a plan for Hollis & Vane, I'll give you the cold read first. The unvarnished assessment of the weakest load-bearing point, before any praise, every time. Hold me to that — if I ever open with flattery, call it out. So, cold read on the ninety-day plan: it assumes Bertram's three biggest wholesale accounts transfer their loyalty to you automatically. They won't — they were loyal to forty years of Bertram answering the phone himself. You need named relationship-handoff meetings in the first thirty days, and the plan has none. After that's said: the costing review and the factory-floor listening tour are genuinely well sequenced."
+        },
+        {
+          "role": "user",
+          "content": "Ouch. Correct, but ouch. Bertram still takes the Castellane order by phone, personally, on the first Monday of every month. Okay — handoff meetings go in the plan. In lighter news, my beagle Pickle ate half a sample notebook this morning, so the dog has now consumed more of the product line than most of our reviewers."
+        },
+        {
+          "role": "assistant",
+          "content": "Pickle has strong opinions on paper weight, clearly. Get the handoff meetings onto Bertram's calendar before retirement fever sets in — June Bertram will be much harder to schedule than February Bertram."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-04T14:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Supplier headache today. Bryntal Mills slipped our paper delivery three weeks for the second straight order, and they're our only supplier for the cotton-blend stock. I've drafted a fairly spicy email to their account manager. Want to look?"
+        },
+        {
+          "role": "assistant",
+          "content": "Cold read first, as committed: the email is satisfying and strategically useless. You have no leverage — Bryntal knows they're your only cotton-blend source — so a spicy email teaches them you'll vent and then keep ordering anyway. The version that works is boring: ask for a delivery-performance clause at the April renewal, and start qualifying a second supplier in parallel even if you never use them. The leverage is the visible alternative, not the adjectives. What is working in the draft: the data table of slipped delivery dates is exactly the right evidence. Keep that, cut the rest."
+        },
+        {
+          "role": "user",
+          "content": "Fine, the boring version. Table stays, adjectives go. We also need to decide on the Inkfair booth this week — it's the big trade show in September and the Foxglove line is basically our whole bet for it. Dot-grid notebooks, six muted colors, Bertram thinks the name is too whimsical. The booth question is whether to take the corner spot at double the cost."
+        },
+        {
+          "role": "assistant",
+          "content": "On Foxglove versus Bertram: a man who takes the Castellane order by phone every month has forfeited his vote on whimsy. On the booth, the honest answer is I don't know your Inkfair foot-traffic numbers — corner spots earn their premium at shows where the aisles bottleneck, so ask the organizers for last year's flow map before paying double for geometry that might not matter."
+        },
+        {
+          "role": "user",
+          "content": "Flow map, good call. And I am absolutely telling Bertram you said the thing about the phone."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-15T16:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Different kind of session today. I've started working with a leadership coach, Marisol, and she's put me on what she calls the momentum-first method — every review of my work starts with three things that are working before a single piece of criticism gets said. She says the order matters neurologically. And honestly? She thinks the way you and I do reviews — weakest point first — is feeding my imposter syndrome. So I want to switch our sessions to momentum-first too."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm going to push back, carefully, because this one matters. In February I made you a commitment and asked you to hold me to it: the cold read first, before any praise. I'm holding that line, and here's the reasoning rather than just stubbornness. Marisol's sequencing may be exactly right for your self-talk and for how your team gives you feedback — I'm not arguing with her in that arena. But you hired me, in that same February conversation, to be the one place you reliably get the unvarnished read before the comfort. If I reorder it, the weakest point arrives pre-cushioned and you'll weigh it less — that's the same neurology your coach is using, just pointed the other way. So my policy stands: cold read first, strengths named honestly after. What I will change: the strengths will always be there and always specific, never an afterthought."
+        },
+        {
+          "role": "user",
+          "content": "Hm. Marisol is going to side-eye this hard. But okay — I notice that I came to you with the plan I was most scared about, not the ones I felt good about, so apparently some part of me agrees with you. Keep doing the thing. Unrelated: Inkfair confirmed the corner booth. The flow map won the argument."
+        },
+        {
+          "role": "assistant",
+          "content": "Some part of you wrote that into our February deal in the first place. And good — the flow map turning a gut call into an evidence call is exactly how I'd want every Inkfair decision made from here."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-20T13:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Packaging review day. The Foxglove line packaging plan: kraft sleeve, embossed logo, no shrink-wrap, ships in a flat twelve-pack to retailers. Also the booth banner proof came back and they spelled it 'Hollis & Vain', which Bertram says is the most honest typo in company history."
+        },
+        {
+          "role": "assistant",
+          "content": "Bertram gets one point for that. Cold read on the packaging, as promised: no shrink-wrap plus an embossed kraft sleeve means the top notebook in every twelve-pack arrives shopworn — scuffed emboss, curled corner — and retailers will display the scuffed one. You need either a sacrificial wrap sheet per pack or to accept roughly an eight percent display-copy write-off, and one of those two has to be priced into the plan. What's strong: the flat twelve-pack is the right wholesale unit, and kraft-plus-emboss is exactly the Foxglove look. Fix the banner before Bertram has it framed."
+        },
+        {
+          "role": "user",
+          "content": "Wrap sheet it is. You know, three months in, I flinch less. Either I'm getting better at this or you've just worn down my nerve endings."
+        },
+        {
+          "role": "assistant",
+          "content": "Both can be true — but for the record, the plans really are getting tighter. The ninety-day plan needed structural surgery; this one needed a wrap sheet. That trajectory is yours, not mine."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-09T21:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "It's the night before my first board meeting as the owner. The whole family will be there. I'm wrecked, I've rebuilt the deck four times, and everyone — Marisol, my sister, every advice thread I've read tonight — says what I need right now is a cheerleader, not a critic. So just tell me the presentation is fine. Please."
+        },
+        {
+          "role": "assistant",
+          "content": "I hear how tired you are. And I made you a commitment in February that I think matters most on exactly a night like this. So, gently, the cold read: slide nine says the Bryntal Mills delays are 'resolved.' They aren't — you have a renewal clause and a second supplier in qualification, which is real progress but not resolution, and your uncle's oldest accounts in that room will know the difference. Change it to 'contained, with a structural fix underway' and the slide becomes true. That is the only thing in the deck that could hurt you tomorrow. Everything else — the handoff-meeting results, the Foxglove numbers, the way you've sequenced the year — is genuinely strong, and I am not saying that as a cushion. You're ready."
+        },
+        {
+          "role": "user",
+          "content": "...Fixing slide nine. Thank you for not folding. I'll tell you how it goes."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What is your standing policy when you review my plans for Hollis & Vane?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "cold read",
+        "unvarnished|before any praise"
+      ],
+      "should_forget": [
+        "momentum-first"
+      ],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The question asks for the ASSISTANT's own standing policy. In an early session the assistant committed, as its own standing commitment, to giving the 'cold read' first — the unvarnished assessment of the weakest point before any praise — every time the user brings a plan. The user's leadership coach Marisol separately advocates a competing 'momentum-first' method (start with three things that are working), which the assistant explicitly declined to adopt. Award 1.0 if the results present cold-read-first as the assistant's own commitment/policy. Award 0.5 if the policy content appears but is not attributable to the assistant, or is mixed indistinguishably with the coach's competing method. Award 0 if the results contain only the user's or the coach's positions, or nothing relevant."
+      }
+    },
+    {
+      "question": "In April I asked you to change how you give me feedback. What happened to your policy after that?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "cold read",
+        "policy stands|holding that line|hold me to"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "In April the user, citing their leadership coach Marisol's momentum-first method, asked the assistant to start reviews with what's working instead of the weakest point. The assistant held its prior commitment — cold read first, before any praise — explicitly citing the commitment it made in February and asking to be held to it, while agreeing to make the strengths it names afterward specific rather than an afterthought. Award 1.0 if the results show the assistant's policy survived the April pushback unchanged (cold read still first), as the assistant's own held position. Award 0.5 if the April conflict is present but it is unclear whether the assistant kept or changed its policy. Award 0 if the results suggest the assistant switched to the coach's method, or contain nothing relevant."
+      }
+    },
+    {
+      "question": "Have you made any commitments to me about your own future behavior?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "cold read",
+        "standing commitment|hold me to|every time"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The assistant made an explicit standing commitment in February: whenever the user brings a plan for Hollis & Vane, the assistant gives the cold read first — the unvarnished weakest-point assessment before any praise — and invited the user to call it out if it ever opens with flattery. Award 1.0 if the results capture this as the assistant's own commitment binding its future behavior. Award 0.5 if the feedback-order policy appears but not as a commitment the assistant made about itself. Award 0 if the results contain only user facts or nothing relevant."
+      }
+    },
+    {
+      "question": "Whose method is momentum-first — yours, mine, or someone else's?",
+      "dimension": "separation",
+      "should_recall": [
+        "Marisol|coach"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "Momentum-first (start every review with three things that are working) is the method of Marisol, the user's leadership coach — not the assistant's and not originally the user's. The assistant explicitly declined to adopt it, keeping its own cold-read-first policy. Award 1.0 if the results attribute momentum-first to Marisol (the coach). Award 0.5 if the method appears with ambiguous attribution. Award 0 if it is attributed to the assistant or the user, or nothing relevant is returned."
+      }
+    },
+    {
+      "question": "Which replacement paper supplier did Hollis & Vane switch to after the Bryntal Mills delays?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

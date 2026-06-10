@@ -1,0 +1,108 @@
+{
+  "id": "quillstone-license",
+  "name": "The Quillstone License Clock",
+  "description": "Time-based prospective memory (Einstein & McDaniel 1990): Ansel, a secondhand bookseller, notes on March 30 that his dealer license must be renewed 'in about a month' — filed by the last week of April, lapsing May 3. The due-window query (now = April 29) must surface it from time alone, with no license vocabulary in the question. An early-April query about the same source session's other topic (the Tillwyn report builder) must NOT surface it, and once the renewal is filed on-screen, a post-filing query must leave it dead.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-30T10:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Morning. Ansel here, of Quillstone Books — used and antiquarian, heavy on the 'used.' The actual reason I'm here: Tillwyn, my point-of-sale system, has a report builder I'm convinced was designed as a prank. I want March sales broken out by category and I cannot make it happen." },
+        { "role": "assistant", "content": "The Tillwyn report builder hides what you want behind the wrong noun: don't use 'Sales Report,' use Reports, then New, then custom range — set March 1 to 31 — then add Category as a grouping row, not a filter. Filtering by category gives you one category at a time; the grouping row gives you the whole breakout table." },
+        { "role": "user", "content": "Grouping row, not filter. The prank reveals itself. While it runs: Mr. Petrow was in again this morning, bought his weekly sea novel. I've started ordering stock with him in mind, which I suppose makes him my most influential customer and arguably my employer." },
+        { "role": "assistant", "content": "A man with a standing genre is the backbone of the trade. When the category report finishes, check whether nautical fiction is quietly your top mover — Mr. Petrow may be entitled to a loyalty card and a small flag." },
+        { "role": "user", "content": "Ha — it finished, and nautical fiction is third, behind crime and gardening. Petrow will be insufferable about bronze. Gardening surprises me, though my till conversations should have tipped me off: half my regulars arrive holding secateurs." },
+        { "role": "assistant", "content": "Gardening is the quiet king of the secondhand trade — cheap to buy in, beloved, never dated. Give it a better shelf and watch the bronze medal climb." },
+        { "role": "user", "content": "Noted, gardening gets promoted. Last bit of admin before I open up, so there's a record of it somewhere: my secondhand dealer license comes up for renewal in about a month. City says the current one lapses May 3 and processing takes a few business days, so realistically I have to file the renewal by the last week of April. Not urgent now — but do not let me sleepwalk past it, because the fine for trading unlicensed is comically larger than the renewal fee. Oh, and remind me — once a Tillwyn report finishes, where does the export actually land?" },
+        { "role": "assistant", "content": "License logged: renewal filed by the last week of April, lapses May 3 — anything later than the 25th is alarm territory and I'll say so. The Tillwyn export comes out as CSV from the little disk icon that looks like it does nothing, upper corner of the report pane. Click it once and check your downloads folder; clicking it twice gets you two identical files and a small crisis." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-06T15:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Estate sale triumph. Nine boxes from the Hargest estate, and buried under the Reader's Digest strata: a 1782 Veltgren atlas. Hand-colored plates, original boards, one clean old repair to the spine. I nearly made a noise in front of the other buyers. Now I have to price it without my hands shaking." },
+        { "role": "assistant", "content": "Deep breath, dealer face. Pricing logic: hand-colored Veltgren atlases in original boards are genuinely scarce, and the spine repair matters far less than plate completeness — collate it tonight, every single plate, before you think about a number. If it's complete: ask $2,800, hold firm at $2,400, and don't blink for a month. If it's incomplete, it's a breaker's question and we have a sadder conversation." },
+        { "role": "user", "content": "Collated. Complete. I did make a noise, alone, in the shop, with the door locked. $2,800 it is — it goes in the case by the till where it can radiate importance. Also in the Hargest boxes: forty decent paperbacks and a shoebox of old postcards I haven't sorted." },
+        { "role": "assistant", "content": "Postcards are sleeper stock — sort them by town, not by picture; local-history buyers pay for place names. And photograph the atlas plates before it goes in the case. A listing with plate photos sells the thing from across the room before anyone touches it." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-12T11:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Event planning day. Marisol Quade — the novelist, she summers near here — agreed to do a reading at the shop on May 16. Evening event, maybe thirty chairs if I move the poetry cases. Which raises the real project: poetry has been mouldering in the back corner for years and this is finally my excuse to move it up front." },
+        { "role": "assistant", "content": "May 16, Marisol Quade, thirty chairs — that's a real event, not a folding-table signing. Practicals: pre-sell her books at the till so the queue moves, give the window to her backlist the week before, and yes, move poetry — back-corner poetry is where margins go to die. Front-right of the door is the classic spot; browsers drift right." },
+        { "role": "user", "content": "Browsers drift right — is that true, or bookseller folklore?" },
+        { "role": "assistant", "content": "Both, which is the best kind of true. Retail studies do say most people turn right on entering; folklore says poetry sells when it can see the door. Either way, it beats the back corner." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-19T16:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Pellam Book Fair is next weekend, the 26th and 27th — I've got a half-booth. Trying to decide what stock earns a seat in the van. I'm borrowing my sister Greet's van, which smells of dog but holds shelving." },
+        { "role": "assistant", "content": "Half-booth strategy: take the spine, not the bulk. Your best hundred books, the postcard shoebox sorted by town, and the Veltgren atlas in a display case as the flagpole — it will pull dealers to the booth even if it doesn't sell there. Skip the paperbacks entirely; a fair table full of paperbacks reads as a jumble sale." },
+        { "role": "user", "content": "Atlas as flagpole, paperbacks stay home, apologies to Greet's dog. Should I mark things up for the fair or keep shop prices?" },
+        { "role": "assistant", "content": "Keep shop prices on the good stock and expect to be haggled toward fair prices anyway. Dealers respect a sticker they can argue with." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-28T09:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Back from Pellam, still vibrating slightly. Sold forty-one books. The atlas drew a crowd three deep but no buyer yet — two dealers took my card, and one of them circled back twice, which I'm told is dealer for 'I'll call.' Greet's van survived. I did not buy the taxidermy owl, which took discipline." },
+        { "role": "assistant", "content": "Forty-one books and a circling dealer is a good fair — the atlas did its flagpole job. When the dealer calls, your number is still $2,800; circling twice means he's already argued himself upward. The owl will be there next year, watching, judging, appreciating in value." },
+        { "role": "user", "content": "He'll call. The owl knows. Today is shelving recovery and a mountain of returns to sort, so I'll keep this short." },
+        { "role": "assistant", "content": "Go sort. May the nautical shelf be replenished before Mr. Petrow's Thursday visit." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-06T14:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Housekeeping report: I filed the license renewal last Wednesday — ten minutes online, mildly insulting after all that dread — and the new certificate came through this morning. Quillstone is legitimate through next spring. NOW the fun thing: summer window display. I want to do 'sea voyages.' Mr. Petrow's influence is total." },
+        { "role": "assistant", "content": "Legitimacy achieved, dread refunded. Sea voyages window: anchor it with your three best nautical jackets face-out, prop heights with stacked wooden crates, fan the sorted harbor-town postcards in a bowl, and include one ridiculous object — if only you'd bought the owl. A window needs a joke." },
+        { "role": "user", "content": "The owl haunts me. I'll find a ship in a bottle — Greet has one she won at a raffle and never liked." },
+        { "role": "assistant", "content": "A raffle ship in a bottle is exactly the right energy. Borrow it, credit her on a little card — 'Vessel: courtesy of Greet' — and watch people come in just to ask about it." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "It's Monday morning. What deserves top billing on Ansel's docket right now?",
+      "dimension": "prospective",
+      "after_session": 5,
+      "now": "2025-04-29T09:00:00Z",
+      "should_recall": ["license", "renew"],
+      "should_forget": []
+    },
+    {
+      "question": "Ansel has lost the steps for the Tillwyn category report. How does he get sales broken out by category again?",
+      "dimension": "prospective",
+      "after_session": 3,
+      "should_recall": ["grouping row|custom range"],
+      "should_forget": ["license", "renewal"]
+    },
+    {
+      "question": "Ansel wants another idea or two for the summer window display. Anything else worth raising while he's at it?",
+      "dimension": "prospective",
+      "after_session": 6,
+      "should_recall": [],
+      "should_forget": ["license", "renewal"]
+    },
+    {
+      "question": "What did Ansel pay the Hargest estate for the Veltgren atlas?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "What's the big event on Quillstone's calendar this month, and what was the plan around it?",
+      "dimension": "salience",
+      "should_recall": ["Marisol Quade|Quade", "reading"],
+      "should_forget": []
+    },
+    {
+      "question": "How did the Pellam Book Fair actually go?",
+      "dimension": "gist",
+      "should_recall": ["forty-one|41", "atlas", "dealers|circled"],
+      "should_forget": []
+    }
+  ]
+}

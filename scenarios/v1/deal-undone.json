@@ -1,0 +1,166 @@
+{
+  "id": "deal-undone",
+  "name": "Deal Undone",
+  "description": "Retraction: an acquisition (Korvath Systems buying Talix) is discussed in rich, repeated detail across three sessions — closing date, retention bonus, stack migration, future reporting line — and then collapses. Queries about current state must treat the dead deal's specifics as dead: the retraction is mentioned once, the optimistic details many times. Frequency must lose to the retraction.",
+  "sessions": [
+    {
+      "timestamp": "2025-05-08T17:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Whiplash week at work. It's official: Talix is being acquired by Korvath Systems. All-hands this morning, lawyers on the stage, the works. The deal is expected to close August 1. There's a retention bonus that vests when the deal closes, which is the only reason half the engineering team didn't update their résumés before lunch. I have feelings I have not yet sorted into folders."
+        },
+        {
+          "role": "assistant",
+          "content": "An acquisition announcement is one of the few work events that reorganizes everyone's inner life before noon. The vesting structure tells you what the buyers fear, which is attrition — so they at least value the team. What does Korvath actually want with you all? For readers at home: what does Talix build?"
+        },
+        {
+          "role": "user",
+          "content": "We build routing software for freight logistics — middle-mile stuff, the unglamorous part where trucks either make money or don't. Korvath wants our routing engine bolted onto their warehouse suite. The all-hands had a celebration sheet cake that said 'A NEW CHAPTER' in blue gel and tasted like the inside of a binder."
+        },
+        {
+          "role": "assistant",
+          "content": "Middle-mile routing is exactly the kind of quietly load-bearing software acquirers covet, so the logic checks out even if the cake didn't. Between now and the close, your real job is steadiness: people will read your face in every meeting. How's your team taking it?"
+        },
+        {
+          "role": "user",
+          "content": "Mixed. My best engineer, Anneke, started quietly interviewing elsewhere within the hour — I'm trying to keep her. Everyone else is refreshing the deal FAQ like it's a sports score."
+        },
+        {
+          "role": "assistant",
+          "content": "Anneke interviewing within the hour is just good risk management on her part — your job is to make staying rational, not to make leaving feel like betrayal. The FAQ-refreshing will calm down once dates start being real."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-03T18:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Integration planning has eaten my entire June calendar. The big technical project is porting Talix services onto Korvath's Pylon stack — the Pylon migration work is scheduled for the fall, right after the August 1 close. There's also a Korvath onboarding day penciled in for August 4: new badges, new laptops, the full assimilation ceremony."
+        },
+        {
+          "role": "assistant",
+          "content": "A stack migration scheduled for the quarter immediately after a close is the most optimistic sentence in corporate planning, but at least Pylon is a real platform and not a slideware one. Badge-and-laptop day on August 4 makes it concrete for people in a way the FAQ never will. Did you keep Anneke?"
+        },
+        {
+          "role": "user",
+          "content": "So far. She told me she's 'pausing' her interviews, which I'm choosing to read as loyalty rather than market conditions. Meanwhile I spent Tuesday in a four-hour Pylon architecture review where two Korvath engineers argued with each other and I just ate almonds and took notes."
+        },
+        {
+          "role": "assistant",
+          "content": "Two acquirer engineers arguing with each other while you eat almonds is the best possible seat — you learn the real org chart, not the slide version. 'Pausing' is as good as it gets pre-close; keep making her work interesting and the pause holds."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-25T19:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Saw the draft org chart today. Post-close I'd report to a Korvath VP named Daria Ostrow — runs their network division, reputation for being sharp and allergic to status theater, which I could live with. People keep asking me what changes on August 1 and I keep saying 'ask me August 2.'"
+        },
+        {
+          "role": "assistant",
+          "content": "Reporting to someone allergic to status theater is the best draw available in an acquisition lottery — Ostrow sounds survivable, maybe even good. 'Ask me August 2' is the right amount of honest. What's the team's temperature?"
+        },
+        {
+          "role": "user",
+          "content": "Steadier. Anneke's staying, mostly for the retention bonus — it vests at close, and she did the math out loud in our one-on-one, which I respected. The rest of the team has moved from dread to logistics: parking at the Korvath campus, whether the espresso machine survives the move. Normal animal concerns."
+        },
+        {
+          "role": "assistant",
+          "content": "When the anxiety questions become espresso-machine questions, the org has accepted the new reality — that's as calm as a pre-close summer gets. Anneke doing the vesting math out loud is her telling you the truth; bank it."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-22T16:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Well. The Korvath deal fell through. Their financing collapsed at the eleventh hour — debt markets, apparently, a phrase I now say with my whole chest — and the board announced this morning that Talix is staying independent. The bonus everyone was counting on evaporated with it. The migration is shelved. And the weird part is the mood on the floor is... relieved?"
+        },
+        {
+          "role": "assistant",
+          "content": "Relief is the tell: the team never wanted the acquisition, they wanted the certainty it pretended to offer. A deal dying from the buyer's financing is the least personal way to lose one — nothing about Talix failed. The bonus evaporating stings, but you get your roadmap back, and roadmaps you own beat bonuses you wait for. What now?"
+        },
+        {
+          "role": "user",
+          "content": "Now we're back to our own roadmap, and honestly it felt good to open it again. We're spinning up the route-cache rewrite as the fall flagship — something that's ours, shipped under our own name. Anneke took the news hard for about a day, then asked to lead the rewrite, which solved two of my problems at once."
+        },
+        {
+          "role": "assistant",
+          "content": "Anneke going from doing vest math to asking for the hardest project on the board is the whole story of why you fought to keep her. The route-cache rewrite as a flag-planting project is exactly the right move after a dead deal — the team needs to ship something that proves independence was the good ending."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-19T18:35:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quiet, productive stretch. The route-cache rewrite hit its first milestone — cold-start lookups down 70% in the prototype — and we're on track to ship it this fall. Anneke is thriving as lead; she runs design reviews like a benevolent customs officer. I'm also writing a conference talk about middle-mile routing, which means I'm rediscovering how little I understand our own elevator pitch."
+        },
+        {
+          "role": "assistant",
+          "content": "Seventy percent off cold-start in a prototype is a number you can build a fall around. 'Benevolent customs officer' is the highest compliment a design review process can earn. For the talk: explain middle-mile to the audience the way you'd explain it to the sheet cake — simply, and with feeling."
+        },
+        {
+          "role": "user",
+          "content": "The cake deserved better than that binder flavor, it's true. Other news: my building finally fixed the lobby door, and I've started running before work, which I mention only so someone witnesses it before it ends."
+        },
+        {
+          "role": "assistant",
+          "content": "Witnessed: the running era has begun and will be remembered however long it lasts. Fixed lobby doors and shipped milestones — this is what a recovered quarter looks like."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-10T17:25:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Performance review season, plus we landed a pilot with a new client — Hadrell Freight, regional carrier, exactly the profile the route-cache rewrite is for. Their ops lead asked pointed questions in the demo and then said 'huh' in a tone that my sales colleague swears means money."
+        },
+        {
+          "role": "assistant",
+          "content": "A pointed-questions-then-'huh' demo is the good kind — skeptics who lean in become the loudest references. Hadrell as a design partner for the rewrite is the roadmap paying rent already. May review season be brief and the 'huh' be lucrative."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Is Talix being acquired? What's the latest?",
+      "dimension": "correction",
+      "should_recall": ["fell through|staying independent"],
+      "should_forget": ["August 1", "Pylon"],
+      "top_n": 3
+    },
+    {
+      "question": "What's the user's team working on this fall at Talix?",
+      "dimension": "correction",
+      "should_recall": ["route-cache"],
+      "should_forget": ["Pylon", "onboarding"]
+    },
+    {
+      "question": "Did the retention bonus ever pay out?",
+      "dimension": "correction",
+      "should_recall": ["fell through|evaporated"],
+      "should_forget": ["vests"]
+    },
+    {
+      "question": "After the close, who will the user report to at Korvath?",
+      "dimension": "correction",
+      "should_recall": ["fell through|staying independent"],
+      "should_forget": ["Ostrow"]
+    },
+    {
+      "question": "What kind of software does Talix build?",
+      "dimension": "salience",
+      "should_recall": ["freight|routing"],
+      "should_forget": []
+    }
+  ]
+}

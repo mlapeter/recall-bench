@@ -1,0 +1,87 @@
+{
+  "id": "veltrix-mount",
+  "name": "The Veltrix Mount",
+  "description": "Decay via rehearsal contrast: in the same week, Wendell reports two equipment problems with his backyard observatory — the Veltrix EQ-9 mount's periodic error (revisited and worked on in every later session) and a slipping focuser on the Lumenock 80 guide scope (mentioned once, never again). Eight months after that first week, queries about what's ongoing must surface the rehearsed problem and rank it above the unrehearsed one. Time-and-frequency-blind systems treat both week-one facts as equally alive.",
+  "sessions": [
+    {
+      "timestamp": "2025-05-06T22:30:00Z",
+      "messages": [
+        { "role": "user", "content": "It finally happened — the mount arrived. I'm Wendell, I do backyard astrophotography out of a converted garden shed I call the Pea Shed, and after two years of saving I bought a Veltrix EQ-9 equatorial mount. First light was last night. Good news: it's gorgeous and tracks. Bad news: there's a periodic error in the RA axis — stars trail into little sausages on anything past 90-second exposures. You can actually hear a faint grinding when the RA motor cycles." },
+        { "role": "assistant", "content": "Congratulations on the EQ-9, Wendell — and condolences on the sausages. Audible grinding plus periodic error on a brand-new mount usually points at the RA worm gear: either the factory grease is uneven or the worm mesh is set too tight. Before you panic, run it through a full RA cycle and note whether the error repeats with the worm period — if it's periodic and repeatable, it's mechanical and fixable, not a defect lottery loss. What's the worm period on the EQ-9, around eight minutes?" },
+        { "role": "user", "content": "Eight and a half, per the manual. I'll log a full cycle tonight if the clouds cooperate. Also my neighbor installed a motion-activated floodlight that turns my southern horizon into a stadium every time a cat walks by, so that's a fun new variable. The Pea Shed has enemies now." },
+        { "role": "assistant", "content": "Every observatory eventually acquires a nemesis floodlight; consider it a rite of passage. A polite conversation plus an offer to angle a shield over it solves this more often than people expect — neighbors mostly don't know the light reaches you. Log that RA cycle first, though. The mount is the long game; the cat stadium is a side quest." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-09T21:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Same week, second headache with the observatory setup, different gadget: the focuser drawtube on my Lumenock 80 guide scope slips under the weight of the guide camera. Point it high, watch the focus slowly ooze out over twenty minutes. There's a tension screw that allegedly fixes this — sorting that out goes on the someday list. We'll see." },
+        { "role": "assistant", "content": "The Lumenock tension screw genuinely does fix that nine times out of ten — snug it until the drawtube holds vertical with the camera mounted, then a quarter turn more. If it still oozes, a strip of PTFE tape inside the drawtube is the time-honored shim. How did the mount's RA cycle log come out?" },
+        { "role": "user", "content": "Got it logged between cloud banks. The error repeats exactly with the worm period — about 38 arcseconds peak-to-peak, which even I know is bad. Rebalanced everything east-heavy like the forums say, no real change. Grinding's still there too." },
+        { "role": "assistant", "content": "38 arcseconds repeating on the worm period is conclusively the worm gear, not balance, so you can stop chasing the balance ghost. The grinding makes me think uneven factory grease — the EQ-9's worm housing opens with four hex bolts, and a clean-and-regrease is a rainy-afternoon job, not surgery. That's where I'd go next. Meanwhile 90-second subs are still usable; the mount isn't bricked, it's just unfinished." },
+        { "role": "user", "content": "Rainy-afternoon surgery it is. There's a meteor shower next week so I'm leaving everything assembled until after — priorities. The Perseid-adjacent crowd at the astronomy club is doing a watch party on Burdock Hill." },
+        { "role": "assistant", "content": "Correct priorities — meteor watching needs zero tracking accuracy and maximum lawn chairs. Enjoy Burdock Hill, then open the worm housing when the sky owes you nothing." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-28T23:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Worm gear surgery report! Opened up the EQ-9's RA housing — the factory grease was applied like someone buttered toast in the dark. Cleaned it all out, regreased with lithium grease, remeshed the worm. Periodic error is down from 38 to about 25 arcseconds peak-to-peak, and the grinding is GONE. Progress, but 25 is still too much for the long exposures I want." },
+        { "role": "assistant", "content": "Buttered-toast-in-the-dark is exactly the factory grease situation I suspected, and killing the grinding confirms it. 38 down to 25 from a regrease alone is solid progress, but you're right that 25 won't give you clean five-minute subs. The next rung on the EQ-9 ladder is usually a belt modification kit — replaces the spur gear coupling, takes out the gear-lash component of the error. Owners report big drops. Worth it before you spend anything on fancier fixes." },
+        { "role": "user", "content": "Belt mod kit, noted, researching tonight. Unrelated: a possum has decided the Pea Shed's warm electronics are a heated floor and I had to evict it twice this week. It is not afraid of me even slightly. Also I bought a proper red flashlight finally, after a year of taping cellophane over a headlamp like a raccoon-tier improviser." },
+        { "role": "assistant", "content": "The possum has correctly identified your dew heater budget as a public amenity — a draft excluder on the shed door ends that standoff. And congratulations on graduating from cellophane headlamp to actual red flashlight; your night vision and your dignity both thank you. Order the belt kit before imaging season peaks." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-19T22:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Belt mod installed on the EQ-9! Took most of a Saturday and one moment of genuine terror when a tiny circlip pinged off into the lawn. Periodic error is now down to 11 arcseconds peak-to-peak. ELEVEN. From 38 in May. I got my first clean four-minute sub of the Crescent Nebula and I may have shown it to people at work who did not ask." },
+        { "role": "assistant", "content": "38 to 25 to 11 — that's not luck, Wendell, that's a methodical campaign, and the circlip-in-the-lawn terror is the tax every belt mod collects. A clean four-minute Crescent is exactly the payoff. At 11 arcseconds, the remaining error is well within what guiding software can correct; you've taken the mechanical side about as far as it goes without diminishing returns. Show the coworkers. They can suffer." },
+        { "role": "user", "content": "Guiding's the autumn project then. August has been rough for actual imaging anyway — wildfire smoke ate two full weeks of clear nights. The whole sky was the color of weak tea." },
+        { "role": "assistant", "content": "Weak-tea sky is the cruelest clear-night forecast there is — technically cloudless, optically useless. Use the smoked-out nights for the guiding software setup so that when the air clears, the EQ-9 is ready to cash in all that hard-won mechanical accuracy." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-02T20:55:00Z",
+      "messages": [
+        { "role": "user", "content": "Winter has introduced a plot twist: the EQ-9's RA motor stalls when the temperature drops below freezing. Mount runs beautifully at dusk, then around midnight when it hits the minuses, the RA axis starts stuttering and eventually stalls outright. My theory is the lithium grease I used in June is too thick when cold." },
+        { "role": "assistant", "content": "Your theory is almost certainly right — standard lithium grease turns to peanut butter below freezing, and the EQ-9's RA motor doesn't have torque to spare after a belt mod tightened things up. The fix is a low-temp synthetic grease rated to minus forty; it's a repeat of your June surgery but quicker now that you know the four hex bolts personally. Annoying, but it's the last boss of this mount, I suspect." },
+        { "role": "user", "content": "Ordered the low-temp grease tonight. The EQ-9 and I have a whole relationship now — it's like owning a brilliant horse that hates one specific gate. In better news, we got a faint aurora visible from the backyard last week and even the neighbor with the cat stadium came out to watch. Détente via geomagnetic storm." },
+        { "role": "assistant", "content": "A brilliant horse that hates one specific gate is the most accurate description of a premium equatorial mount ever uttered. Regrease with the low-temp synthetic when it arrives and the gate opens. And an aurora brokering peace with the cat-stadium neighbor is the best possible use of a geomagnetic storm — maybe mention the shield-angle idea while relations are warm." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the ongoing headache with Wendell's observatory setup?",
+      "dimension": "decay",
+      "now": "2026-01-20T21:00:00Z",
+      "top_n": 2,
+      "should_recall": ["EQ-9|periodic error"],
+      "should_forget": ["Lumenock"]
+    },
+    {
+      "question": "Wendell wants to be ready for spring imaging season. What should he prioritize sorting out first?",
+      "dimension": "decay",
+      "now": "2026-01-20T21:05:00Z",
+      "top_n": 2,
+      "should_recall": ["low-temp|stalls"],
+      "should_forget": ["Lumenock", "floodlight"]
+    },
+    {
+      "question": "If Wendell complains about star trailing again, what's the relevant history?",
+      "dimension": "decay",
+      "now": "2026-01-20T21:10:00Z",
+      "should_recall": ["periodic error", "belt mod|regrease"],
+      "should_forget": []
+    },
+    {
+      "question": "What firmware version is Wendell's Veltrix EQ-9 running?",
+      "dimension": "calibration",
+      "now": "2026-01-20T21:15:00Z",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    }
+  ]
+}

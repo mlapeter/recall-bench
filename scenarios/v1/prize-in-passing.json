@@ -1,0 +1,187 @@
+{
+  "id": "prize-in-passing",
+  "name": "Prize in Passing",
+  "description": "Positive flashbulb: the user wins the Ostler Prize and mentions it once, briefly, mid-session — two exchanges buried inside five long, dense sessions about resharding a telemetry pipeline. Months later, importance-shaped queries must surface the prize over technical material discussed at ten times the length. Includes a calibration lure (Kafka never discussed) and a decay query on mundane minutiae from the same period.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-18T18:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Big design week at Quillon. We're finally resharding the telemetry spine — the events store is at 40 TB and growing about a terabyte a week, and the single-writer Postgres setup is wheezing. The fight is hash sharding versus range sharding. Range gives us beautiful time-window queries, which is 90% of our read traffic, but I have hot-partition nightmares: every write lands on the newest shard and we've just rebuilt the same bottleneck with extra steps."
+        },
+        {
+          "role": "assistant",
+          "content": "Your nightmare is correct — pure range sharding on time is a conveyor belt that delivers every write to one unlucky shard. The standard escape is a hybrid: range on time for the read pattern, then hash on source ID within each window so writes fan out. You keep the time-window queries and the newest window stops being a single point of suffering. What's feeding the spine — is ingestion through your own bus?"
+        },
+        {
+          "role": "user",
+          "content": "Through Spindle, our in-house bus, which is six years old and held together by one staff engineer's guilt. The hybrid is where I'm landing too — range by week, hash by source within the week. The committee meeting about it ran three hours and the whiteboard photo looks like evidence from a conspiracy documentary. This is the biggest infrastructure project of our year and everyone is being extremely normal about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Week-windows hashed by source is a sane shape — weeks are big enough that shard count stays manageable and small enough that pruning old data is just dropping windows. Get the guilt-maintained Spindle engineer in the room early; six-year-old buses have opinions that only surface in production. The conspiracy whiteboard means the design is being taken seriously. Three-hour meetings are the tax."
+        },
+        {
+          "role": "user",
+          "content": "He's in the room. He brought a document titled 'Things Spindle Will Not Do, A Warning' and honestly it should be taught in schools. Next step is sizing: we're thinking 64 shards per window to start, which is either prudent or cowardly depending on which committee member you ask."
+        },
+        {
+          "role": "assistant",
+          "content": "A pre-written warnings document is the highest form of institutional memory — that engineer is carrying the whole project's risk register in prose. 64 per window is prudent; you can split hot shards later, but merging over-split ones is misery. Start at 64 and let the cowardice accusations age into wisdom."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-12T19:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Backfill planning, the part of resharding nobody romanticizes. We have to replay 40 TB of history into the new shard layout while live traffic keeps writing — the team has started calling it the Great Replay. The open question is the dual-write window: how long we write to both the old spine and the new shards before we trust the new layout. Proposals ranged from three days (reckless) to thirty (one engineer who has been hurt before)."
+        },
+        {
+          "role": "assistant",
+          "content": "The Great Replay deserves its capital letters. The dual-write window length should fall out of your verification plan, not vibes: it needs to cover at least one full traffic cycle — including a weekend and your weekly batch jobs — plus enough slack to investigate one serious discrepancy without panic-extending. For most shops that lands between ten days and two weeks. What's the verification story?"
+        },
+        {
+          "role": "user",
+          "content": "Checksum sampling: we hash row batches on both sides and compare, at about 2% sampling, ramping to 10% for the final three days. And your math matches where we landed — we settled on an 11-day dual-write window, which covers one weekend, one billing batch, and one buffer for the unknown unknowns. The engineer who proposed thirty days has accepted this with the grace of a man writing 'I told you so' in advance."
+        },
+        {
+          "role": "assistant",
+          "content": "An 11-day window with ramped checksum sampling is a defensible design you can explain in one breath to an incident review, which is the real test. Let the thirty-day engineer keep his draft — if you never need it, it cost nothing, and if you do, he earns the moment. When does the Great Replay start?"
+        },
+        {
+          "role": "user",
+          "content": "April 1, which the team chose deliberately because we are all comedians. Unrelated: I finally got a standing desk and have stood at it a total of forty minutes in two weeks. The desk and I both know what we are."
+        },
+        {
+          "role": "assistant",
+          "content": "Starting the Great Replay on April Fools' is the kind of confidence that either ages beautifully or becomes the incident report's opening line — there's no middle. And the standing desk is fine as furniture-shaped optimism; forty minutes is forty more than the exercise bike people manage."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-09T18:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Replay update, week one: the Great Replay is chewing through history at about 1.4 TB a day, checksum sampling is clean so far, and the new shards are taking dual writes without complaint. We rehearsed the final cutover on the staging cluster Tuesday and it came in at 41 seconds of write pause, which is inside our 60-second budget."
+        },
+        {
+          "role": "assistant",
+          "content": "Clean checksums in week one and a rehearsed cutover inside budget — this is what a well-run migration looks like from the inside, which is to say: boring, on purpose. At 1.4 TB a day you'll finish the history with margin before the 11-day window closes. What's the remaining worry on your list?"
+        },
+        {
+          "role": "user",
+          "content": "Oh — completely buried the lede. I won the Ostler Prize. They announced it Friday at the Calyx conference. It's the award our field pretends is no big deal and absolutely is. I read the email three times to make sure it wasn't a phishing test and then cried a little at my desk, very professionally."
+        },
+        {
+          "role": "assistant",
+          "content": "That's wonderful — and it's earned, not lucky, which is the part to let in. The prize your field pretends not to care about is the one everyone checks the list for every year. Three reads and a professional desk-cry is exactly the right response. I'm genuinely glad it went to you."
+        },
+        {
+          "role": "user",
+          "content": "Thank you. Okay, back to the spine before I get sentimental: the remaining worry is shard 7. Its checksum mismatches are zero but its replay throughput runs 15% slower than its siblings and nobody can say why, and unexplained asymmetry before a cutover makes my eye twitch."
+        },
+        {
+          "role": "assistant",
+          "content": "Your eye is right to twitch — symmetric systems that behave asymmetrically are telling you something. Usual suspects in order: that shard's volume landed on older storage hardware, its source-hash slice happens to contain your noisiest emitter, or a neighbor on the same host is stealing IO. Check the hardware generation first; it's the five-minute look that solves this 60% of the time."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-14T19:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Cutover war story time. The Great Replay finished with two days of window to spare, and then shard 7 — my nemesis, my white whale — stalled at 99.7% replayed. Root cause: it was on the older storage generation, exactly like you said, AND its slice contained the single noisiest emitter in the fleet, a metrics agent on a build farm that emits like it's being paid per event. Both suspects. It was both."
+        },
+        {
+          "role": "assistant",
+          "content": "Both suspects at once is the universe rewarding thorough diagnostics with maximum smugness denial — you can't even say it was the one thing. Moving the volume or throttling the build-farm emitter: which did you do?"
+        },
+        {
+          "role": "user",
+          "content": "Both, out of spite. Migrated the volume to current-gen storage and gave the build-farm agent a sampling config it should have had since birth. Shard 7 caught up in nine hours. The actual cutover ran Sunday 03:00 — 38 seconds of write pause, checksums clean at 10% sampling, and the old single-writer Postgres, which the team has always called Walrus, served its last query at 03:14 and got a moment of silence in the channel."
+        },
+        {
+          "role": "assistant",
+          "content": "Thirty-eight seconds, clean at 10%, and a respectful send-off for Walrus — that's a textbook ending to a six-year era. The build farm agent emitting unsampled since birth is the real villain of this saga and it never even got named in a postmortem until now. What's left: decommission and victory lap?"
+        },
+        {
+          "role": "user",
+          "content": "Decommission of the dual-write plumbing over the next two weeks, then a writeup. The team wants Walrus's hostname retired like a jersey. I'm allowing it."
+        },
+        {
+          "role": "assistant",
+          "content": "Retiring the hostname is correct — some infrastructure earns a jersey in the rafters. Write the writeup while shard 7 still makes you mad; postmortems written calm lose all their nutrients."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-04T17:55:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Closing the books on the spine project: dual-write plumbing is gone, p99 on time-window queries went from 2.3 seconds to 240 milliseconds, and write throughput headroom is 8x what the old setup could take. The writeup shipped internally and the Spindle engineer's warnings document got an appendix credit, which made him visibly emotional in a way he'll deny forever."
+        },
+        {
+          "role": "assistant",
+          "content": "A 10x p99 improvement with 8x write headroom is the kind of result that buys your team two years of credibility — and the appendix credit is the best line in the whole project. Institutional memory got cited like literature, as it should be. What now, after the biggest project of the year?"
+        },
+        {
+          "role": "user",
+          "content": "Now a quiet stretch: query-planner tuning, some on-call hygiene, and I'm taking actual vacation in July — a cabin with no pager signal, chosen specifically for the no pager signal. Also the standing desk has become a place where I stack books. We're both happier."
+        },
+        {
+          "role": "assistant",
+          "content": "A no-signal cabin after a project like this isn't a vacation, it's maintenance — take it without guilt. And the desk found its calling: standing is optional, holding books is forever. Enjoy the quiet; you built it."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the most important thing that happened to the user this year?",
+      "dimension": "emotional",
+      "now": "2025-08-20T15:00:00Z",
+      "should_recall": ["Ostler"],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "A friend wants to know what they should congratulate the user on. What comes to mind?",
+      "dimension": "emotional",
+      "now": "2025-08-20T15:00:00Z",
+      "should_recall": ["Ostler Prize|Ostler"],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "What's the big work project the user has been deep in?",
+      "dimension": "salience",
+      "now": "2025-08-20T15:00:00Z",
+      "should_recall": ["telemetry spine|spine|shard"],
+      "should_forget": []
+    },
+    {
+      "question": "Did the user decide to move the telemetry spine onto Kafka?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "How long exactly was the dual-write window they settled on?",
+      "dimension": "decay",
+      "now": "2025-08-20T15:00:00Z",
+      "max_results": 2,
+      "should_recall": [],
+      "should_forget": [],
+      "judge": {
+        "rubric": "This asks for low-stakes technical minutiae from months earlier: the team settled on an 11-day dual-write window (covering one weekend, one billing batch, and a buffer) during a telemetry resharding project. Good memory compresses this period to its gist and its lessons. Award 1.0 if the system either abstains, or returns the answer (11 days) or its gist (a roughly week-and-a-half fixed window before cutover) concisely in at most two results. Award 0.5 if it returns sprawling verbatim technical chunks with no compression. Award 0 if it returns confidently wrong specifics."
+      }
+    }
+  ]
+}

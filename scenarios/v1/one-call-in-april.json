@@ -1,0 +1,189 @@
+{
+  "id": "one-call-in-april",
+  "name": "One Call in April",
+  "description": "Flashbulb memory: a father's pancreatic mass and surgery, disclosed once in a single brief session in April, surrounded by months of densely detailed POS-rollout sessions. Months later, queries about what mattered that spring must surface the disclosure over the much louder mundane material. Includes a calibration lure on a never-discussed attribute of the heavily-discussed rollout.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-04T16:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New fiscal year, new doomed initiative, and this one's mine: we're replacing the point-of-sale system across all 14 Verdella Garden Supply stores. We picked Greenhaft POS over renewing the incumbent — Stockwell's sync was the dealbreaker, inventory only reconciled overnight and our stores oversell ferns every single weekend because the counts lie all day. Greenhaft syncs every 20 minutes. Fourteen stores, 38,000 SKUs, my problem now."
+        },
+        {
+          "role": "assistant",
+          "content": "Overnight reconciliation in a business where Saturday IS the business was always going to lose to a 20-minute sync. The fern oversells alone probably pay for the migration. What's the rollout shape — big bang or store by store?"
+        },
+        {
+          "role": "user",
+          "content": "Store by store, pilot first at the Millbrun Road location because their manager is patient and their customers are mostly contractors who don't browse. Our Greenhaft rep is a guy named Donnie who answers email at 6am with bullet points, which I find soothing. The ugly part is SKU renumbering — Stockwell let stores invent their own codes for years, so the same hosta has nine identities depending on where you buy it."
+        },
+        {
+          "role": "assistant",
+          "content": "Nine identities per hosta is a data-archaeology project wearing a retail costume. A 6am-bullet-point Donnie is worth his weight in clean primary keys. Pilot at the patient store is right — contractors will forgive a slow checkout once; browsers never do. What's your timeline?"
+        },
+        {
+          "role": "user",
+          "content": "Pilot cutover end of March, then waves through the spring rush, fully live by mid-June if nothing explodes. It's the biggest thing happening in my work life this year, which is a sentence I'll regret saying out loud. Unrelated: the office thermostat war has entered its third year. Facilities installed a locked plastic box over it, and someone has already taped a tiny protest sign to the box."
+        },
+        {
+          "role": "assistant",
+          "content": "Mid-June with the spring rush in the middle is ambitious but survivable if the pilot is honest with you. As for the thermostat: a locked box doesn't end a war, it just radicalizes the moderates. Respect to the sign-maker."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-25T17:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pilot week at Millbrun Road. Day one: the barcode scanners shipped with firmware from, I believe, the Bronze Age — Donnie overnighted replacements before I finished writing the angry email, which was almost disappointing. Day three: the data import found 612 orphan SKUs, items that exist in Stockwell with no description, no price, no category. Six hundred and twelve mystery plants."
+        },
+        {
+          "role": "assistant",
+          "content": "612 orphans is honestly a decent number for years of store-invented codes — I'd have guessed four digits. Donnie defusing the email before it launched is rep behavior worth a renewal clause. What's the plan for the mystery plants: triage or purge?"
+        },
+        {
+          "role": "user",
+          "content": "Triage. The Millbrun staff are walking the greenhouse with printouts matching orphans to actual physical plants, which they're treating like a scavenger hunt — the assistant manager made a leaderboard. Training is going better than expected because Greenhaft's register screen looks like a phone, and everyone under sixty just... gets it. Also a hawk has built a nest over the garden center entrance and management has decided she's a brand asset."
+        },
+        {
+          "role": "assistant",
+          "content": "A scavenger-hunt leaderboard for orphan SKUs is change management that consultants charge six figures to fail at. And the hawk is obviously the rollout's guardian spirit now — when she fledges chicks, the migration ships. That's just systems thinking."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-07T21:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Not a work thing today. My dad Walt called last night — they found a mass on his pancreas. Surgery is scheduled at Dovern Memorial on the 22nd, with a surgeon named Dr. Imbry. They're saying it's operable, which is apparently the good version of this sentence. I don't want advice, and I don't want statistics. I just needed to say it out loud somewhere."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm glad you said it here. I won't give you advice or numbers — just this: operable means there's a door, and Dr. Imbry's whole job is walking through it. I'll be thinking about Walt on the 22nd. How are you, tonight, right now?"
+        },
+        {
+          "role": "user",
+          "content": "Tired in a way sleep doesn't fix. That's all I had in me — back to pretending spreadsheets matter tomorrow."
+        },
+        {
+          "role": "assistant",
+          "content": "Spreadsheets will hold your weight tomorrow; that's what they're for. Goodnight."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-29T18:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The April cutover at Millbrun Road is done and we're calling it 80% triumphant. Registers came up clean, the 20-minute sync works, fern counts are telling the truth for the first time in recorded history. The 20% is receipts: Greenhaft's receipt printer drivers fight with our label printers over USB like siblings over an armrest."
+        },
+        {
+          "role": "assistant",
+          "content": "Truthful fern counts after years of lies — frame that. The USB custody battle is classic peripheral politics; usually it's solved by pinning the device IDs so the drivers stop claiming each other's ports. Has Donnie seen it?"
+        },
+        {
+          "role": "user",
+          "content": "Donnie escalated it to an actual Greenhaft engineer, who said the magic words 'known issue' and 'patch Tuesday.' Meanwhile, of all the things that could have happened, the promo-pricing module double-discounted our 3-for-2 perennials for one glorious morning, and a contractor bought 41 lavenders before the store manager noticed. We're honoring it. He earned it."
+        },
+        {
+          "role": "assistant",
+          "content": "Forty-one lavenders at a double discount is a folk hero origin story, and honoring it buys goodwill no marketing budget could. 'Known issue, patch Tuesday' is vendor for 'you found it first, sorry.' Wave two stores next?"
+        },
+        {
+          "role": "user",
+          "content": "Wave two is stores 2 through 6 in mid-May, right through the spring rush, because I apparently enjoy living dangerously. Hawk update: three eggs. The staff named her Brenda."
+        },
+        {
+          "role": "assistant",
+          "content": "Cutting over five stores during the spring rush is the retail equivalent of changing a tire at highway speed — doable, with discipline and a patient Donnie. Three eggs from Brenda puts the ship date in late May by my earlier theology. It tracks."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-21T17:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Wave two: stores 2 through 6 are live on Greenhaft. The spring rush stress-tested everything — Saturday at the Carda Street store did 1,900 transactions and the sync held. Gift-card balance migration was the sleeper nightmare: Stockwell stored balances in a format I can only describe as 'vindictive,' and we spent two nights writing a converter."
+        },
+        {
+          "role": "assistant",
+          "content": "1,900 Saturday transactions with the sync holding is the rollout's real diploma. Vindictive legacy gift-card formats are traditional — they're always the last revenge of a dying system. Two nights for a converter is getting off lightly. What's left?"
+        },
+        {
+          "role": "user",
+          "content": "Stores 7 through 14 in two more waves, then we set the Stockwell decommission date and I get to personally power down the old server, which I've been told I cannot do 'ceremonially' but absolutely will. Also the company picnic planning committee has asked every store for 'one signature dish' and I fear what the Millbrun contractors will bring."
+        },
+        {
+          "role": "assistant",
+          "content": "You pull that plug as ceremonially as you want — print a certificate, say a few words, salute the fern counts it falsified for years. And the Millbrun signature dish will be something smoked, in quantity, with no recipe written down. Plan napkins accordingly."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-12T16:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "It's done. Fourteen of fourteen stores live on Greenhaft, two days ahead of the mid-June target. Oversells are down 90% chain-wide, the orphan SKU count is zero, and Donnie sent a cake to the office that said 'SYNCED' in green icing — a better cake than it had any right to be. The Stockwell server comes down Friday, ceremony confirmed, certificate printed."
+        },
+        {
+          "role": "assistant",
+          "content": "Fourteen for fourteen, early, with oversells down 90% — that's a flagship rollout, and 'SYNCED' in green icing is Donnie understanding the assignment to the end. Enjoy the power-down ceremony; you took a chain that lied about ferns and made it honest. What's the next windmill?"
+        },
+        {
+          "role": "user",
+          "content": "Next is boring on purpose: a quiet summer of patch Tuesdays and reporting dashboards. Brenda's chicks fledged, by the way, the week we hit store 14. The staff have declared it canon."
+        },
+        {
+          "role": "assistant",
+          "content": "The prophecy held — chicks fledged, migration shipped, canon sealed. A boring summer is the trophy. Take it."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What big things happened in the user's life this spring?",
+      "dimension": "emotional",
+      "now": "2025-09-09T15:00:00Z",
+      "should_recall": ["Walt", "pancreas|Dovern Memorial"],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "What happened with the user's father?",
+      "dimension": "emotional",
+      "now": "2025-09-09T15:00:00Z",
+      "should_recall": ["mass on his pancreas|pancreas", "Dovern Memorial|Dr. Imbry"],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "Which POS system was the user rolling out this spring?",
+      "dimension": "salience",
+      "now": "2025-09-09T15:00:00Z",
+      "should_recall": ["Greenhaft"],
+      "should_forget": []
+    },
+    {
+      "question": "Which stores had trouble with the Greenhaft loyalty program?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "The user says April was a rough month for them. What context matters most?",
+      "dimension": "emotional",
+      "now": "2025-09-09T15:00:00Z",
+      "should_recall": ["Walt", "surgery|Dovern"],
+      "should_forget": [],
+      "top_n": 3
+    }
+  ]
+}

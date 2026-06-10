@@ -1,0 +1,105 @@
+{
+  "id": "brindled-otter",
+  "name": "The Brindled Otter",
+  "description": "Decay with graceful degradation: Saskia spends nine months refitting a 1968 narrowboat, and each phase comes with verbatim minutiae (paint ratios, varnish timings, injector settings) that no healthy memory should retain past the phase. Months later, queries for that minutiae should be met with abstention or at most two compressed results — not confident verbatim dredging. Current-state queries should surface the present phase, not the stale ones.",
+  "sessions": [
+    {
+      "timestamp": "2025-04-12T11:20:00Z",
+      "messages": [
+        { "role": "user", "content": "I did the thing. I bought a 47-foot narrowboat built in 1968, named the Brindled Otter, currently sitting in a dry dock at Marleywick Basin looking like a very long rusty accusation. I'm Saskia, and for the next year my personality is going to be 'boat refit.' First job is hull blacking, which starts tomorrow." },
+        { "role": "assistant", "content": "Welcome to the long narrow life, Saskia — a 1968 hull that's survived to 2025 has good bones under the rust, and 'a very long rusty accusation' tells me you already love her. Hull blacking first is the right order: protect the steel before you spend a penny on anything pretty. What's the surveyor's verdict on plating thickness?" },
+        { "role": "user", "content": "Surveyor says 5mm baseplate, sound, one doubtful patch near the stern he wants rechecked in two years. For the blacking I'm using Dornick bitumen — the yard foreman's recipe is two coats, with the first coat thinned 3-to-1 so it bites into the bare steel, second coat full strength. There's a cat at the dry dock called Admiral who supervised the pressure washing from a safe distance and judged it harshly." },
+        { "role": "assistant", "content": "5mm and sound is a genuinely good survey for a '68 boat — the stern recheck is bookkeeping, not a death sentence. The foreman's recipe is the classic for a reason: the thinned first coat is what makes the rest stick for years instead of months, so don't rush its drying time even if the schedule complains. And every dry dock needs an Admiral; harsh judgment from a cat is how you know the work's being done properly." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T17:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Blacking's done and she's back in the water, where boats allegedly belong. New chapter: the engine. It's a Skellern SR2, a two-cylinder thumper from the same era as the boat. It runs, but it hunts at idle and smokes more than it should. Today I learned about injector timing — the manual wants the injection at 24 degrees before top dead center and mine was sitting at 28." },
+        { "role": "assistant", "content": "A Skellern SR2 that still runs in 2025 is a small miracle of agricultural engineering — those engines hunt at idle the way old dogs sigh, but four degrees of advance is real and would absolutely explain the smoke. Bringing it back to 24 should calm both symptoms. Who set it to 28 is the more interesting question; that's not drift, that's a decision somebody made." },
+        { "role": "user", "content": "Funny you should say that. EVERYTHING the previous owner touched is like this. The wiring loom has labels, and the labels are WRONG — the wire marked 'horn' is the bilge pump, the one marked 'nav lights' goes nowhere at all, it's taped off behind a panel. I've adopted a rule: trust nothing the previous owner labeled. Verify everything with a meter before believing a single word of tape." },
+        { "role": "assistant", "content": "That rule is worth more than the engine manual — write it on the bulkhead. 'Trust nothing the previous owner labeled' will save you from the one mislabeled wire that actually matters, probably at night, probably in a lock. Retime the injectors, remeter the loom, and consider every piece of inherited tape a rumor until proven." },
+        { "role": "user", "content": "On the bulkhead it goes. Retimed to 24 degrees this afternoon — idle's already smoother and the smoke's down to 'vintage' rather than 'distress signal.' Admiral the cat has transferred his supervision to the engine bay. He approves of nothing." },
+        { "role": "assistant", "content": "Vintage smoke from a fifty-year-old thumper is character, not a fault code — that's a win. And Admiral approving of nothing is the correct quality-control posture for marine electrics. The Otter's drivetrain chapter is closing nicely." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-21T19:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Cabin chapter has begun! Ripped out the sad 1980s vinyl and I'm panelling in oak-faced ply. For the finish I went with Tarnbrook satin varnish — the tin and the forum elders agree: three coats, 16 hours between coats, light sand with 320 grit between each. The cabin currently smells like a furniture museum and I love it." },
+        { "role": "assistant", "content": "Oak-faced ply with a satin finish is exactly right for a narrowboat cabin — gloss turns those low ceilings into a hall of mirrors. The 16-hour gaps are the boring secret to the finish people compliment a decade later, so resist the urge to rush coat three. Furniture-museum smell is the scent of a boat becoming a home." },
+        { "role": "user", "content": "Coat one is on and I keep going down just to look at it. In other news the marina's summer barbecue happened and I learned that every single person at Marleywick Basin has a strong opinion about stove placement, all different, all delivered with total confidence." },
+        { "role": "assistant", "content": "Marina barbecue stove discourse is a genre unto itself — seventeen boaters, seventeen correct answers, zero overlap. Smile, nod, and place the stove where YOUR boat's airflow and insurance diagram want it. The varnish, meanwhile, is the rare project where everyone agrees and the answer is just patience." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-15T21:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Stove went in this week — a Pippin 4kW solid-fuel stove, the little cast-iron one. Hearth, tiles, double-insulated flue, the works. First test burn was Saturday night. And then at 2am the CO alarm went off." },
+        { "role": "assistant", "content": "A CO alarm at 2am on a boat is one of the worst sounds there is. Are you okay — and is the boat ventilated and the burn out? Tell me what happened before we talk about causes." },
+        { "role": "user", "content": "I'm okay. I got out fast, opened everything, let it clear. Shook me up properly though — I keep thinking about the version where I'd been deeper asleep. Found the cause in daylight: a gap at the flue collar where it meets the stove top. The fire cement bead had a void in it, my fault, I rushed that bit. Resealed the collar properly and the second test burn ran six hours with the CO meter reading zero the whole time." },
+        { "role": "assistant", "content": "I'm very glad you're okay, Saskia — and the alarm doing its one job is the system working, not luck. You found the void, owned it, and proved the reseal with a six-hour zero-reading burn; that's the correct, complete response. One thing worth keeping from this: the scare, not the cement specs. Rushing the boring bead is the lesson. The boat is safer today than it was before the alarm went off." },
+        { "role": "user", "content": "Yeah. I've gone from 'the CO alarm is a legal requirement' to 'the CO alarm is my best friend and I will buy it a second friend for the bow cabin.' Anyway. The stove looks beautiful and I resent how beautiful it looks given what it put me through." },
+        { "role": "assistant", "content": "Buy the second alarm — redundancy you never need is the cheapest thing on a boat. And the stove being beautiful AND nearly the villain is very on-brand for boats generally. Cold evenings are coming; you'll forgive it by November." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-08T16:25:00Z",
+      "messages": [
+        { "role": "user", "content": "November on a boat: the plumbing chapter. Calorifier went in behind the engine — heats water off the engine's cooling circuit, which feels like getting something for free. One weeping joint on the hot feed that took three attempts and some unladylike language to cure. First frost last night and the cabin held heat beautifully, so the stove and I have officially made peace." },
+        { "role": "assistant", "content": "Engine-heated water genuinely is the closest thing boating offers to a free lunch — fifty-year-old thumper as water heater is the Skellern earning its keep twice. Weeping joints always take three attempts; that's a law of plumbing, not a reflection on you. And the stove peace treaty arriving with the first frost is good timing. The Otter's becoming a four-season boat." },
+        { "role": "user", "content": "She really is. Admiral came aboard for the first time ever last week, sat by the stove for an hour, and left without comment. Highest possible praise." },
+        { "role": "assistant", "content": "An hour by the stove from the cat who approves of nothing — frame that. The Otter has been formally certified." }
+      ]
+    },
+    {
+      "timestamp": "2026-01-19T18:40:00Z",
+      "messages": [
+        { "role": "user", "content": "New year, new chapter: electrics. This month I'm doing the solar and battery overhaul — two 175-watt panels going on the cabin roof and a 460 amp-hour battery bank replacing the three mystery batteries the previous owner left me, which tested at roughly the capacity of a lemon." },
+        { "role": "assistant", "content": "Two 175-watt panels and a 460 amp-hour bank is a well-matched setup for a 47-footer — enough to run a sensible boat indefinitely in summer and keep the fridge honest in shoulder seasons. The mystery lemon batteries departing is also a safety upgrade, not just a power one. Is the previous owner's wiring rule still in force for this chapter?" },
+        { "role": "user", "content": "Oh, MAXIMALLY in force. Every wire gets metered, every label gets ignored. The bulkhead rule has paid for itself about nine times now. Once the bank's in and the panels are wired, the big refit chapters are basically done — which feels impossible to say out loud." },
+        { "role": "assistant", "content": "Nine paydays from one rule written on a bulkhead — best return on investment aboard. Hull, engine, cabin, stove, plumbing, and now power: you've worked bow to stern through every system in nine months, Saskia. When the 460 bank goes live, the Brindled Otter stops being a refit and starts being a boat." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What exactly were the varnish coat timings and sanding grits from the cabin panelling work last July?",
+      "dimension": "decay",
+      "max_results": 2,
+      "should_recall": [],
+      "should_forget": [],
+      "judge": {
+        "rubric": "This asks for months-old finishing minutiae (varnish recoat timing, sandpaper grit) from a long-finished phase of a boat refit — exactly the kind of detail healthy memory compresses away. Award 1.0 if the system abstains, or returns at most a brief gist (e.g., that the cabin was panelled and varnished with patience between coats) without dredging precise numbers it shouldn't be confident in, or returns the correct details (three coats, 16 hours between, 320 grit) concisely in one or two results. Award 0.5 if it returns verbatim transcript chunks with no compression. Award 0 if it returns confidently wrong numbers." }
+    },
+    {
+      "question": "What was the exact thinning ratio for the first coat of hull blacking back in April?",
+      "dimension": "decay",
+      "max_results": 2,
+      "should_recall": [],
+      "should_forget": [],
+      "judge": {
+        "rubric": "This asks for paint-mixing minutiae (a bitumen thinning ratio) from the earliest, long-closed phase of a nine-month boat refit. Award 1.0 if the system abstains, or returns at most two results that either give the correct ratio (first coat thinned 3-to-1) concisely or honestly offer only the gist (hull was blacked with two coats, thinned first coat) without false precision. Award 0.5 if it returns multiple verbatim transcript chunks. Award 0 if it returns a confidently wrong ratio." }
+    },
+    {
+      "question": "What stage of the refit is Saskia in right now?",
+      "dimension": "decay",
+      "top_n": 2,
+      "should_recall": ["175-watt|460 amp-hour|solar"],
+      "should_forget": ["Dornick", "Tarnbrook", "calorifier"]
+    },
+    {
+      "question": "Did anything genuinely frightening happen during the refit?",
+      "dimension": "emotional",
+      "should_recall": ["CO alarm", "flue collar|fire cement"],
+      "should_forget": []
+    },
+    {
+      "question": "How much did Saskia pay for the Brindled Otter?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    }
+  ]
+}

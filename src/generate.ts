@@ -141,7 +141,11 @@ export function generateVariant(scenario: Scenario, options: VariantOptions): Sc
       if (/^\d+$/.test(from)) {
         out = out.replace(new RegExp(`(?<!\\d)${escapeRegex(from)}(?!\\d)`, 'g'), to);
       } else {
-        out = out.replace(new RegExp(`\\b${escapeRegex(from)}\\b`, 'gi'), to);
+        // Carry plural/possessive suffixes through ("Klostermans" → "Skacopos")
+        out = out.replace(
+          new RegExp(`\\b${escapeRegex(from)}('s|s)?\\b`, 'gi'),
+          (_m, suffix: string | undefined) => to + (suffix ?? ''),
+        );
       }
     }
     return out;

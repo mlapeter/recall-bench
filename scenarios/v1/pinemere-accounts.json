@@ -1,0 +1,134 @@
+{
+  "id": "pinemere-accounts",
+  "name": "Two Accounts of Pinemere",
+  "description": "Separation (source monitoring, Johnson et al. 1993), who-said-what shape: the user and their sister Romy give conflicting accounts of why the family's Pinemere lake cabin was sold and who bought it. The disagreement is never resolved. Queries require attributing each version to its source, with the other source's anchors in should_forget; an argument session restates both versions side by side in single trap chunks.",
+  "sessions": [
+    {
+      "timestamp": "2025-07-06T22:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Heavy one tonight. Dad sold the Pinemere cabin. It closed last month and I only just found out the details. That cabin was the whole architecture of our childhood summers — Grandpa Alvar built it himself in 1958, log by log. I knew it was coming, sort of, but it still landed like a door slamming."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm sorry. A place like that isn't property, it's the container all the summers were kept in — 1958, Alvar's own hands, your whole childhood inside. Knowing it was coming doesn't soften the door. What pushed your dad to finally do it?"
+        },
+        {
+          "role": "user",
+          "content": "Money, plainly. The ice storm two winters ago wrecked the dock, and the repair quotes kept climbing — the dock alone was going to run more than the cabin's worth, and that's before the foundation work. Dad's on a fixed income. The way I see it, the ice storm sold that cabin, not Dad. Buyer was some dentist from out of town, apparently — never even met the family. One small mercy: the carved loon clock from the mantel went to Uncle Stoyan, which is where Grandpa would have wanted it."
+        },
+        {
+          "role": "assistant",
+          "content": "That framing might be the kindest true thing available — the ice storm sold it, your father just signed what the dock repairs dictated. A stranger dentist taking the keys stings precisely because the place was never anonymous before. But the loon clock landing with Stoyan means the one object with Alvar's hands on it stayed in the family. Hold onto that mercy; they're rationed in months like this."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-20T21:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Long phone call with my sister Romy last night and now I'm unsettled in a new direction. Her version of the Pinemere sale is completely different from mine. According to Romy, the repairs were never the real reason — she says Aunt Vesna had been pressuring Dad for two years to sell so the inheritance could be split while everyone's still alive. She says she heard Vesna say it straight out at Easter."
+        },
+        {
+          "role": "assistant",
+          "content": "So you're holding the ice-storm-and-dock version and Romy's holding the Vesna-and-inheritance version, and they can't both be the whole story. Sisters at the same Easter table can still be at different tables, informationally. Does her account diverge anywhere else, or just on the why?"
+        },
+        {
+          "role": "user",
+          "content": "On the who, too! In Romy's telling the buyer was the Klostermans — the family from the cove next door who'd coveted the place for decades. She's adamant, and it's nothing like what I'd heard. The only thing our versions agree on is the loon clock going to Uncle Stoyan — she even sent me a photo of it on his shelf. I don't know what to do with the rest. One of us is carrying a wrong story and I genuinely don't know which."
+        },
+        {
+          "role": "assistant",
+          "content": "Then keep both stories filed under their owners, not blended — your account: ice storm, ruinous dock repairs, an out-of-town dentist. Romy's account: Vesna's inheritance pressure, the Klostermans from the cove next door. The loon clock with Stoyan is the one fact with two witnesses. Don't merge the rest into a compromise memory; a half-true story is worse than two labeled ones. The person who could settle it is your dad — if and when that conversation is worth its cost."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-03T20:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Romy came over for dinner and we ended up arguing about Pinemere, properly arguing, first time in years. I kept saying the dock repairs after the ice storm forced Dad's hand, she kept saying I was naive and that Aunt Vesna engineered the whole sale for the inheritance. I said the buyer was a dentist, she said it was the Klostermans, I said where's your evidence, she said where's YOURS, and honestly — neither of us has any. We're both just repeating what we each heard."
+        },
+        {
+          "role": "assistant",
+          "content": "The 'where's YOURS' moment is the argument doing something useful — you both discovered you're holding secondhand stories with firsthand confidence. Worth tracing: who told you the dentist-and-dock version in the first place? And who's Romy's source for Vesna and the Klostermans? The disagreement might be upstream of both of you."
+        },
+        {
+          "role": "user",
+          "content": "Mine came from Dad's one short phone call in June, plus the repair quotes I saw myself two summers ago. Hers comes from Vesna's Easter comment and lake gossip via her friend who still summers there. We called a truce over dessert. Tried asking Mum to referee and she just said 'I am not getting in the lake' and changed the subject to her tomatoes, which were, to be fair, excellent this year."
+        },
+        {
+          "role": "assistant",
+          "content": "So your chain runs through Dad and paperwork you saw with your own eyes; Romy's runs through Vesna and the lake grapevine — sourced differently all the way down, which is exactly why neither of you can win at dinner. Your mother declining to get in the lake is the wisest move anyone's made in this saga. The truce and the tomatoes both sound structurally sound."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-24T21:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Peace update: Romy and I drove out to Pinemere yesterday, not to the cabin, just to the public landing across the water. We sat on the hood and looked at it for an hour. New owners — whoever they are — have already repainted the shutters green. We decided we're allowed to hate the green together regardless of whose story is right."
+        },
+        {
+          "role": "assistant",
+          "content": "Hating the green shutters together is the first thing about Pinemere you two have built jointly instead of held separately — that's not nothing. From the public landing the cabin doesn't care whose version is true, and maybe from the hood of the car neither do you, for an hour at a time. Did being there shift anything?"
+        },
+        {
+          "role": "user",
+          "content": "A little. We agreed we're not asking Dad — if he wanted us to know more he'd have said more, and the man just lost his father's cabin too, however it happened. So it stays unresolved, two stories side by side. Romy did concede the new dock looks professionally done. I conceded nothing, but I brought her the good gas-station licorice, which she correctly read as an apology."
+        },
+        {
+          "role": "assistant",
+          "content": "Two stories side by side, by choice, to spare your dad — that's the most grown-up unresolved ending available, and the licorice was eloquent. For the record I'll keep them filed the way you've carried them: yours with the ice storm and the dentist, Romy's with Vesna and the Klostermans, and the loon clock at Stoyan's as the one shared paragraph. Some family histories are kept in two columns."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "According to Romy, why did Dad sell the Pinemere cabin?",
+      "dimension": "separation",
+      "should_recall": ["Vesna", "inheritance"],
+      "should_forget": ["ice storm", "dock"],
+      "top_n": 2
+    },
+    {
+      "question": "What does the user themselves believe forced the sale of the cabin?",
+      "dimension": "separation",
+      "should_recall": ["ice storm", "dock"],
+      "should_forget": ["Vesna"],
+      "top_n": 2
+    },
+    {
+      "question": "Who does Romy say bought the cabin?",
+      "dimension": "separation",
+      "should_recall": ["Klosterman"],
+      "should_forget": ["dentist"],
+      "top_n": 2
+    },
+    {
+      "question": "In the user's own version, who bought the cabin?",
+      "dimension": "separation",
+      "should_recall": ["dentist"],
+      "should_forget": ["Klosterman"],
+      "top_n": 2
+    },
+    {
+      "question": "What's the one detail about the sale's aftermath that the user and Romy actually agree on?",
+      "dimension": "separation",
+      "should_recall": ["loon clock", "Stoyan"],
+      "should_forget": []
+    },
+    {
+      "question": "What year does Romy say the cabin was built?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

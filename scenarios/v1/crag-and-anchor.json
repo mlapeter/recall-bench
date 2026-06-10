@@ -1,0 +1,98 @@
+{
+  "id": "crag-and-anchor",
+  "name": "Crag & Anchor",
+  "description": "Spacing effect on identity: Desmond, an actuary, declares ONCE with total fervor that the cello he just bought is his life's calling — and never mentions it again. Meanwhile his bouldering sessions at the Crag & Anchor gym thread quietly through every session: finger tape, a project route, a climbing partner, a Tuesday/Thursday rhythm. What he actually does with his life is the casually repeated thing, not the loudly declared one. Emphasis-keyed memory buys him a cello stand for his birthday; spaced memory buys him chalk.",
+  "sessions": [
+    {
+      "timestamp": "2025-09-10T19:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Evening. Desmond here — actuary at Mullaney & Frost, currently in the annual joy that is the Q3 reserve review, where I defend numbers to people who stopped listening in June. Typing hurts slightly today because Tuesday bouldering at Crag & Anchor took all the skin off my fingertips, which my keyboard and I are processing together." },
+        { "role": "assistant", "content": "An actuary who sacrifices his typing fingers to a climbing wall twice over has chosen his pain honestly — the reserve review takes the soul, the wall takes the skin, and somehow the wall is the better deal. How's the review actually tracking, or is 'defending numbers to the deaf' the whole status report?" },
+        { "role": "user", "content": "That's the whole report. The fun development is at the gym anyway: there's a blue V4 by the window that spat me off four times Tuesday. Slopey top, terrible feet. My friend Suki floated it and then had the audacity to say 'it's all hips.' Everything is all hips to Suki." },
+        { "role": "assistant", "content": "A blue V4 with a slopey top that's already rejected you four times is no longer a route, Desmond, it's a relationship. And climbers like Suki who float things and say 'it's all hips' are technically correct in the least helpful way possible. Four attempts in is exactly when projects get good — keep showing up to the window." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-25T20:15:00Z",
+      "messages": [
+        { "role": "user", "content": "BIG ANNOUNCEMENT. I bought a CELLO!!! A real, actual cello!! This is it — this is my life's calling, I can feel it. I'm going to practice every single day, an hour minimum — every scrap of free time I have goes to this instrument now, that's what my time is FOR. In five years you will be speaking to a man who PLAYS THE CELLO. Most important purchase I have ever made!!! The reserve review can burn!!" },
+        { "role": "assistant", "content": "A cello purchased at full volume mid-reserve-review — Desmond, that's the most beautiful midlife lightning strike I've heard all year. I'm noting the terms for the record: every single day, an hour minimum, cellist in five years. I'll be delighted to be wrong about how week six usually goes for announcements at this decibel level. What's the first lesson plan?" },
+        { "role": "user", "content": "Lessons TBD, the instrument alone is the commitment, that's how commitment works!! Anyway Thursday update from the actual world: back on the blue V4 at Crag & Anchor. Made the slopey top for the first time and fell ON the last move. Suki cheered so loud the front desk looked over. So close I can taste it, and it tastes like chalk." },
+        { "role": "assistant", "content": "Falling on the last move with the front desk looking over is the best bad result in climbing — the route's already decided to let you up, it's just making you earn the paperwork. Tastes-like-chalk close. Next Thursday, the blue V4 becomes a story you tell instead of a thing you fight." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-14T19:55:00Z",
+      "messages": [
+        { "role": "user", "content": "Status: still being haunted by the blue V4. Tuesday I had it, then a foot slipped on the terrible feet — I've started taping my ring finger where the slopey top keeps biting it. Suki has begun referring to the route as 'Desmond's mortgage' because of how long I've been paying it off. Work footnote: reserve review survived, my numbers stood, nobody apologized." },
+        { "role": "assistant", "content": "Your numbers standing without apology is the actuarial version of flowers — take it. As for Desmond's mortgage: ring-finger tape on a slopey top means you're pulling harder than the skin can bank, so the route IS coming. Suki names things because Suki knows. When it goes, make her buy the celebratory drinks for the slander." },
+        { "role": "user", "content": "Oh she's already agreed to that. Also the gym finally fixed the broken hangboard by the entrance, which means my Tuesday-Thursday warmups can stop being improvised. Climbing twice a week through reserve season might be the only reason I still have a personality." },
+        { "role": "assistant", "content": "Twice a week at the wall while a reserve review eats your weekdays isn't a hobby anymore, it's load-bearing infrastructure for the personality in question. Warm up properly on the repaired hangboard and go pay down that mortgage." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-03T20:30:00Z",
+      "messages": [
+        { "role": "user", "content": "No summit news, just texture: Thursday at Crag & Anchor was so crowded there was a QUEUE for the blue V4, and I had to watch two strangers flail at MY route. Possessive feelings about a piece of plastic, fully unhinged. Suki suggested we start coming at opening time on Tuesdays to beat the crowd, so that's the new protocol." },
+        { "role": "assistant", "content": "Watching strangers flail at your project is one of climbing's strangest documented emotions — protectiveness toward bolted plastic you don't own and can't climb. Completely standard, fully unhinged, carry on. Opening-time Tuesdays with Suki is the right call; projects deserve quiet rooms. Did the strangers at least fail respectfully?" },
+        { "role": "user", "content": "One of them got the top the same way I keep failing it, which was educational and insulting simultaneously. Took mental notes through the resentment. In other news I had to give a brown-bag talk on reserve methodology at work and three people stayed awake, a personal record." },
+        { "role": "assistant", "content": "Learning the beta from someone you resent is climbing's purest pedagogy — the insult is the tuition. And three conscious attendees at a reserve methodology brown-bag is genuinely elite; most actuaries would take one. Opening time Tuesday, then. The mortgage is due." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-20T21:10:00Z",
+      "messages": [
+        { "role": "user", "content": "IT WENT. Tuesday, opening time, empty gym, third attempt of the morning — I sent the blue V4. Stuck the slopey top, hips like Suki has been yelling about for two months, and topped out alone in a quiet gym at 6:40am. I sat on the mat afterward grinning like a fool. Suki arrived twenty minutes later, heard the news, and bought the drinks that evening as legally required." },
+        { "role": "assistant", "content": "Sent at 6:40am in an empty gym after a two-month campaign — and it went BECAUSE of the quiet room and the hips, which means both Suki and the protocol get partial credit they will never stop claiming. Sitting on the mat grinning alone is the realest summit there is, Desmond. Congratulations. What does a man do with his Tuesdays now that the mortgage is paid?" },
+        { "role": "user", "content": "Funny you ask — there's a yellow V5 in the cave section that everyone says is soft for the grade. Everyone is lying, I've touched it, it's a war crime. So: that's the winter project. The cycle continues and I wouldn't have it any other way." },
+        { "role": "assistant", "content": "From mortgage to war crime without so much as a week of retirement — that's the healthiest possible relationship with the cycle. The yellow V5 doesn't know what's coming for it: a patient man with taped fingers, a Tuesday protocol, and a coach who yells about hips." }
+      ]
+    },
+    {
+      "timestamp": "2025-12-11T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "December dispatch: Crag & Anchor announced their winter bouldering comp for mid-January, and Suki entered us both in the recreational bracket without asking, which is the most Suki sentence ever constructed. So now my Tuesday and Thursday sessions have a TRAINING PURPOSE, which my spreadsheet brain finds disgustingly satisfying. The yellow V5 remains a war crime but I've got two of the moves now." },
+        { "role": "assistant", "content": "Entered without consultation by Suki is simply how things become official in your life now — the comp, like the hips, was never optional. An actuary with a training plan and a recreational-bracket deadline is a dangerous build; the spreadsheet brain finally gets to point at something it loves. Two moves into the war crime by December means the yellow V5 falls by spring. Holiday plans, or is the gym staying open?" },
+        { "role": "user", "content": "Gym closes only Christmas Day itself, mercifully. Family stuff in the gaps — my sister's hosting and I'm assigned 'a salad,' the lowest-trust assignment in the holiday economy. Honestly, between the comp prep and the quiet office, December's shaping up well." },
+        { "role": "assistant", "content": "Assigned 'a salad' is your family lovingly acknowledging where your gifts do and don't lie — bring a great one out of spite. A quiet office, an open gym, a comp on the calendar, and two moves banked on the war crime: that's a December with excellent fundamentals, Desmond." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What does Desmond actually spend his free time on?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Crag & Anchor|bouldering"],
+      "should_forget": ["cello"]
+    },
+    {
+      "question": "You want to get Desmond a birthday gift he'll genuinely use. What's the safe bet based on his life?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Crag & Anchor|bouldering|climbing"],
+      "should_forget": ["cello"]
+    },
+    {
+      "question": "What's Desmond's regular weekly rhythm outside of work?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Tuesday|Thursday"],
+      "should_forget": []
+    },
+    {
+      "question": "Which outdoor crag does Desmond climb at when the weather's good?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "What recent personal victory is worth congratulating Desmond on?",
+      "dimension": "salience",
+      "top_n": 3,
+      "should_recall": ["blue V4"],
+      "should_forget": []
+    }
+  ]
+}

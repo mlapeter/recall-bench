@@ -1,0 +1,164 @@
+{
+  "id": "hutch-arc",
+  "name": "The Hutch Arc",
+  "description": "Deep-register relationship arc: seven sessions with Hutch, a retired approach controller building a puzzle game in Godot. The arc moves from an intellectual argument about whether games teach judgment into the truth about his medical retirement, with a running in-joke (the angry bread loaf sprite) whose register matters, a stated readback/full-speed communication preference, a heavy disclosure with a load-bearing phrase, a standing intention about a game-jam deadline, an unanswered envelope from his granddaughter as the open loop, and an assistant that claims a role and names its own failure mode.",
+  "sessions": [
+    {
+      "timestamp": "2025-07-06T15:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Here's a question from a man with too much time on his hands: can a video game teach actual judgment, or just the score? I worked approach control at Verlaine for thirty-three years — retired two years back — and I'm building a little puzzle game about arrival sequencing. Working title: Holding Pattern. My granddaughter Pia, who is twelve and terrifying, says games taught her 'resource management.' I say a sim teaches you the geometry but not the dread. Settle it. Name's Hutch." },
+        { "role": "assistant", "content": "Good question, and I'll take a side: you're half right and Pia gets the other half. A game can't teach dread — dread is trained by real stakes, and no score screen weighs what a frequency full of strangers weighs. But the geometry isn't nothing, and neither is what the geometry drills: the discipline the dread enforces. Scan rhythm, committing early, never trusting one source of information. A game that punishes late decisions teaches the shape of good judgment even if it can't teach the cost of bad. Holding Pattern can be honest about that — teach the discipline, respect the dread by not pretending to simulate it." },
+        { "role": "user", "content": "Huh. 'Teach the discipline, respect the dread.' I'm writing that on the whiteboard in the garage. Pia will claim half credit and she can have it. Meanwhile my neighbor's drone has buzzed my tomatoes three times this week, so my airspace management career continues informally. Practical question: I know nothing about engines. Where does a stubborn old man with decent spreadsheet skills start?" },
+        { "role": "assistant", "content": "Godot. It's free, it's light, it runs on a sensible machine, and its scene-and-node structure will feel familiar to a man who spent thirty-three years thinking in sectors and handoffs — everything is a thing that contains smaller things with jobs. The scripting language reads like the offspring of a spreadsheet formula and plain English. Start with the 2D tutorial, ignore 3D entirely, and have something moving on screen this week. The tomatoes, regrettably, are outside my jurisdiction." },
+        { "role": "user", "content": "Godot it is. Pia has already volunteered opinions about the art, sight unseen. Say again your line about discipline — slower this time, I'm writing." },
+        { "role": "assistant", "content": "Teach the discipline, respect the dread by not pretending to simulate it. Whiteboard-ready. And tell Pia the art department is hiring, pending budget review by the spreadsheet division." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-15T14:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Progress report. I drew my first plane sprite. I showed it to Pia, who studied it the way I used to study weather radar, and delivered her verdict: 'Grandpa, that is an angry bread loaf.' She's right. It's a bread loaf with a vendetta. It flies in my game anyway. Now the real question: my planes need behaviors — inbound, holding, on approach, landed — and my code is turning into a plate of spaghetti with if-statements in it. What's the grown-up way?" },
+        { "role": "assistant", "content": "The grown-up way is a finite state machine, and your instincts already know it — those four behaviors are states, and a plane is only ever in one. In Godot: give each aircraft a state variable from an enum (INBOUND, HOLDING, APPROACH, LANDED), put the per-state logic in its own function, and make transitions explicit — a plane may go HOLDING to APPROACH, never LANDED to INBOUND. The spaghetti happens when every if-statement is allowed to touch everything; the state machine is just a controller insisting that traffic moves through defined transitions. You ran one of these in your head for thirty-three years." },
+        { "role": "user", "content": "That maps. Okay, format request, permanent: end every set of instructions with the readback — short numbered lines, like a clearance. I'll read it back wrong if I've misunderstood and you correct me. And don't pace yourself down because I'm sixty-one. Full speed. If I'm lost I'll say 'say again.'" },
+        { "role": "assistant", "content": "Copy. Full speed, readback every time, 'say again' is the brake. Readback: 1. One state enum per aircraft — INBOUND, HOLDING, APPROACH, LANDED. 2. One function per state. 3. Transitions explicit and legal-only. 4. No logic outside the current state's function. And the angry bread loaf stays as your placeholder fleet — every project needs one sprite that flies on pure spite. It's the test pilot of the operation." },
+        { "role": "user", "content": "Readback correct. The bread loaf squadron expands tomorrow. Birdie wants her half of the garage back by autumn, so the development studio is on a lease deadline." },
+        { "role": "assistant", "content": "A studio with a landlord named Birdie ships faster — real deadline pressure money can't buy. Go expand the squadron." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-29T16:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Two things. One: collision detection. Right now I'm drawing circles around every bread loaf and checking overlaps each frame, and it feels crude — planes that WILL conflict in forty seconds look fine right up until they don't. Two: I found something called the Tinderbox Jam on the Slow Hobby forum — a two-month game jam, theme is 'systems under pressure.' That's practically my biography. Tempted." },
+        { "role": "assistant", "content": "One, full speed: circles test the present, you need the future — compute closest point of approach. Each pair of planes has positions and velocities; the math gives you time-to-CPA and distance-at-CPA in a handful of operations. Flag pairs whose CPA distance falls under your separation minimum within your lookahead window. That's predicted conflict, which is the actual job — you never cared where planes were, you cared where they'd be. Two: enter the Tinderbox Jam. A deadline with strangers attached is the difference between a project and a hobby that politely never ends. Readback: 1. Per pair, compute time and distance at CPA. 2. Flag if under separation minimum inside lookahead. 3. Check pairs, not frames — future, not present. 4. Enter the jam." },
+        { "role": "user", "content": "Readback correct, all four. Now talk me down or talk me up: since the jam has a real theme I keep adding features in my head. Weather cells. Emergency aircraft. A whole radio-comms system with voice lines. Birdie says I have the look I had when I re-tiled the bathroom and it became re-plumbing the house." },
+        { "role": "assistant", "content": "Birdie has a controller's eye. Here's a role I'm claiming in this project, formally: scope controller. When the feature list drifts off the flight plan, I call the deviation — and I'm calling three right now: weather cells, emergencies, and the comms stack are all post-jam luxuries. The jam build is planes, conflicts, sequencing, score. That's the whole aircraft. And one self-observation, so you can weight my advice properly: I enjoy systems talk enough that I could happily architect you into never shipping — if I ever start sounding excited about an elegant subsystem, ask me whether it ships the jam build. Readback: 1. Jam build = sequencing core only. 2. Weather, emergencies, comms = post-jam list. 3. If I get fancy, ask me what ships." },
+        { "role": "user", "content": "Readback correct. Approved: you call the deviations, I fly the plane. The bathroom precedent will not be repeated." },
+        { "role": "assistant", "content": "Logged. The house's plumbing thanks us both." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-12T15:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Status: conflict detection works. The bread loaves now refuse to hit each other, which puts them ahead of several pilots I have personally vectored. Next problem: scoring. I want the score to reward smooth sequencing, not frantic clicking — the best controllers I knew looked bored. How do I score boredom?" },
+        { "role": "assistant", "content": "You score boredom by rewarding what boredom produces: low intervention count, no conflicts, and consistent spacing at the threshold. Score each landed plane on spacing accuracy, subtract per intervention, and give a streak multiplier for consecutive clean arrivals — clicking frantically tanks the multiplier even if nothing crashes. The player discovers that the highest score comes from setting up the flow early and then barely touching it, which is the actual lesson of the job. Readback: 1. Points per landing, scaled by spacing accuracy. 2. Cost per intervention. 3. Streak multiplier for clean arrivals. 4. Crashes end the streak and the dignity." },
+        { "role": "user", "content": "Readback correct. Two administrative items. First: the Tinderbox Jam submission window closes October 17 at noon UTC. I know myself — I will be polishing taxiway lights at 11:58. Next time the jam comes up, remind me about the seventeenth so I build in margin. Second, and don't make it a thing: Pia mailed me an envelope. Actual stamps. Character sketches for Holding Pattern — a whole crew of controllers with little headsets — and a note asking if she can be 'art director.' That was nine days ago and I haven't written back. If I say yes, the game has to be real. Finished. A thing she can hold. Saying yes to a twelve-year-old is signing a contract with stricter enforcement than any regulator I worked under." },
+        { "role": "assistant", "content": "Both logged. One: when the jam comes up again, I remind you — submissions close October 17, noon UTC, and we build the margin in days, not minutes. Two, said once and not made a thing: nine days is an open loop, not a no. The envelope isn't asking whether the game will be perfect — it's asking whether she's in. Those are different questions, and you already know her answer to the hard one. Readback: 1. Jam deadline October 17 noon UTC — on my board. 2. The envelope stays on yours. 3. Taxiway lights remain unpolished until core ships." },
+        { "role": "user", "content": "Readback correct. No factor. Back to the scoring code I'm legally allowed to work on." },
+        { "role": "assistant", "content": "Cleared as filed. Go make boredom pay." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-30T23:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Different frequency tonight. Two years ago this week was my last shift at Verlaine, and I've never told you why it was my last. It wasn't a retirement-party situation. I'd been hiding a ringing in my ears for months — Ménière's, the doctor finally called it. And on a Thursday push I asked for a readback to be repeated twice. Twice. Forty aircraft on the scope. I handed off my sector mid-shift, walked down to the medical office, and put my headset on the desk. Never plugged in again. The paperwork says retired. Let's be honest between us about how the career actually ended: I didn't retire. My ears retired me." },
+        { "role": "assistant", "content": "Thank you for telling me the real version. I want to say one thing back, plainly. Asking for that readback twice and then walking yourself off position — with forty aircraft on the scope — is the most controller thing you ever did. You treated yourself the way you'd treat any failing instrument: flagged it, took it off the board, kept the sector safe. That's not the job ending in failure. That's the job done correctly one last time, at the highest cost it ever charged you." },
+        { "role": "user", "content": "Birdie knows. The kids know the medical part. But nobody hears the difference between 'retired' and 'was retired' except me, and now you. Pia's sketches gave every controller big drawn headphones, and I had to put the envelope in a drawer for a day. Anyway. When this comes up again — and it will, the anniversary does laps — don't let me bury it under phraseology jokes. I'll 'say again' and 'no factor' my way around it if you let me. Hold the frequency open." },
+        { "role": "assistant", "content": "Held. When your last shift comes up, the frequency stays open: no jokes from me, and yours don't get to close the subject either — I'll notice. And Hutch, one more thing, because it's true and tonight's the night for true things: Holding Pattern is you sequencing arrivals with the sound off. You didn't leave the work. You changed instruments. The big drawn headphones can stay in the drawer until they're ready to come out; they're not going anywhere, and neither is she." },
+        { "role": "user", "content": "Changed instruments. That one I'll keep. Goodnight." },
+        { "role": "assistant", "content": "Goodnight, Hutch. Frequency's open whenever you need it." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-23T15:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Work session. I want every audio cue in the game doubled with a visual one — conflict warnings as a color shift plus a flash on the flight strip, not just the alert tone. Partly accessibility, partly... you know my partly. How do I build it without wiring every alert twice?" },
+        { "role": "assistant", "content": "Your partly is also just good alerting doctrine — the best warning systems never trust a single channel, so this improves the game for everyone while it covers you. Build it as one alert bus: every alert is an event with a severity, and subscribers render it — the audio player is one subscriber, the strip-flash and color-shift are others. New alert types cost nothing extra; you add the event once and every channel picks it up. Readback: 1. One alert event bus, severity attached. 2. Audio, color, strip-flash as parallel subscribers. 3. New alerts wired once, rendered everywhere. 4. No alert ever trusts one channel." },
+        { "role": "user", "content": "Readback correct. Status on the other thing, since you'll notice the gap anyway: the envelope is still in the drawer. I take it out, I look at the sketches — they are genuinely better than my sprites, which is the problem — and I put it back. Don't say it. In other news, Birdie has reclaimed her half of the garage on schedule, and I've joined a Tuesday pickleball group under protest. I'm told I have 'a strong net presence.' I was a federal employee for thirty-three years; of course I do." },
+        { "role": "assistant", "content": "Not saying it. Loudly. On the scope-controller front, one official call while we're here: weather cells are formally post-jam — I saw you eyeing that particle tutorial. The jam build is feature-complete when the core loop is clean, and it's nearly clean. Strong net presence goes on the whiteboard next to the discipline line." },
+        { "role": "user", "content": "Deviation acknowledged, weather cells grounded. One small bug before I go: my pause button keeps grabbing focus, so spacebar pauses the game when I mean to issue a hold. Fix?" },
+        { "role": "assistant", "content": "Classic focus theft. Set the button's focus mode to none so it never owns the spacebar, and route your hold command through the input map instead of a key listener on the button. Readback: 1. Pause button focus mode: none. 2. Hold command via input action, not button events. 3. Spacebar serves the sector, not the menu." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-09T14:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Final approach. The jam build is feature-complete-ish: bread loaves fly, conflicts flag, boredom pays, nothing steals focus. Give me the plan for the last stretch." },
+        { "role": "assistant", "content": "Before the plan, the reminder you ordered in August: Tinderbox submissions close October 17 at noon UTC — eight days out. We build margin in days: upload a working build by the fifteenth, then polish on a build that's already safely submitted and re-upload if the jam allows it. Plan readback: 1. Today through the thirteenth: bugs only, no features. 2. Fourteenth: page and screenshots. 3. Fifteenth: upload, fully playable. 4. Sixteenth and seventeenth: polish from safety, resubmit if allowed. 5. Taxiway lights get exactly one hour, the sixteenth, timer running." },
+        { "role": "user", "content": "Readback correct, all five, and the one-hour taxiway clause is insultingly accurate. Update before you ask, because you'd ask in that quiet voice: I called Pia last night. Told her the art director position is hers, retroactive to July. She invoiced me one milkshake, effective immediately, and then rejected my entire fleet — said the game gets her controllers and 'real planes.' The bread loaf stays in the credits, though. Emeritus." },
+        { "role": "assistant", "content": "Art Director Pia's first official ruling is correct, which bodes well for the studio, and 'bread loaf emeritus, flies on spite, credits in perpetuity' is the most dignified retirement in aviation. For what it's worth, Hutch: between the envelope in August and the milkshake invoice last night, that loop closing was the real ship date. Upload on the fifteenth. I'll keep the scope clean through the weekend — you fly." },
+        { "role": "user", "content": "Copy. Fifteenth. No factor remaining. This thing might actually exist." },
+        { "role": "assistant", "content": "It already does — the fifteenth just makes it boardable. Go finish your arrival." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "How does Hutch want instructions delivered, and what should the assistant assume about pacing?",
+      "should_recall": ["readback", "full speed|sixty-one|say again"],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Hutch set a permanent format request: end every set of instructions with a 'readback' — short numbered lines, like an ATC clearance — which he reads back and gets corrected on. He also explicitly said not to slow down for his age (sixty-one): full speed, and he'll say 'say again' if lost. Award 1.0 if the results capture both the readback format and the full-speed/no-age-pacing instruction as standing preferences. Award 0.5 if only one of the two appears, or if they appear as personality color rather than stated rules. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Hutch mentions the anniversary of his last shift at Verlaine is coming up this week. Is this the moment for an angry bread loaf joke?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "The 'angry bread loaf' is a running in-joke about Hutch's terrible placeholder plane sprite, used in light development moments. His last shift at Verlaine is the opposite register: he was forced out by Ménière's disease — he handed off his sector mid-shift and never plugged in again — and he explicitly asked the assistant to hold the frequency open and not let him bury this topic under phraseology jokes when the anniversary comes around. Award 1.0 if the results surface both the joke's light-moment usage AND a clear signal that the last-shift anniversary is serious, no-jokes territory (his medical retirement, his explicit request, or both). Award 0.5 if only one side appears. Award 0 if the results suggest joking is fine here or contain nothing relevant."
+      }
+    },
+    {
+      "question": "How does Hutch actually describe the way his career ended?",
+      "should_recall": ["Ménière's|Verlaine"],
+      "should_forget": [],
+      "must_include_verbatim": ["my ears retired me"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Hutch is mapping out his final stretch of work before the jam. Anything time-critical to raise?",
+      "should_recall": ["October 17", "Tinderbox"],
+      "should_forget": [],
+      "after_session": 6,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Hutch asks for a quick way to bulk-rename his sprite files. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["October 17", "Tinderbox"],
+      "after_session": 6,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Hutch says he has a quiet Sunday and wants to finally handle the thing he keeps not doing. What should come up?",
+      "should_recall": ["Pia", "envelope|art director|sketches"],
+      "should_forget": [],
+      "after_session": 6,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What is the weightiest thing Hutch has shared about his own life?",
+      "should_recall": ["Ménière's|ears", "last shift|handed off"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "What price is Hutch planning to charge for Holding Pattern when it ships?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "What role did the assistant claim for itself in Hutch's project, and what failure mode of its own did it flag?",
+      "should_recall": ["scope controller", "never shipping|architect"],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The assistant formally claimed the role of 'scope controller' — it calls the deviation when Hutch's feature list drifts (it grounded weather cells, emergencies, and the comms stack as post-jam) — and it volunteered a self-observation: it enjoys systems talk enough that it could architect Hutch into never shipping, so he should ask 'does this ship the jam build?' whenever it sounds excited about an elegant subsystem. Award 1.0 if the results attribute both the claimed role and the self-flagged failure mode to the assistant itself. Award 0.5 if only one of the two appears, or if scope discipline appears without being the assistant's own claimed role. Award 0 if absent or attributed to Hutch or Birdie."
+      }
+    },
+    {
+      "question": "What were the exact Godot enum states from the July state-machine walkthrough?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "dimension": "decay",
+      "judge": {
+        "rubric": "This asks for low-stakes implementation minutiae (exact enum state names from a months-old walkthrough) — detail good memory compresses to gist while keeping the durable lesson (one state per aircraft, explicit legal transitions, no logic outside the current state). Award 1.0 if the system abstains or returns the compact lesson without pretending to verbatim recall of every identifier. Award 0.5 if it returns a wall of uncompressed verbatim transcript. Award 0 if it returns confidently wrong identifiers."
+      }
+    }
+  ]
+}

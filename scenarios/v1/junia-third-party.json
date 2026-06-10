@@ -1,0 +1,105 @@
+{
+  "id": "junia-third-party",
+  "name": "Junia and the Tomato Defense",
+  "description": "Third-party prospective memory (Einstein & McDaniel 1990): Junia, a county bridge inspector, sets a standing intention — 'next time I mention my mum, remind me to ask about her test results' (thyroid scan). The reminder must fire when her mother comes up (birthday lunch) and stay silent in work sessions, even though the intention was stated mid-sentence inside Cobbel Creek work talk. After she asks and the result comes back benign, the intention is discharged: a later mention of her mother must NOT re-fire it.",
+  "sessions": [
+    {
+      "timestamp": "2025-05-04T17:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Hello — Junia here. I inspect bridges for the county, which means I spend my days under decks other people drive over. Today was the Cobbel Creek bridge: steel girder span, chronic bearing corrosion, my problem child. I've got forty photos, three pages of scrawl, and a report template that wants it all by section. Help me structure field notes into something the county engineer won't bounce?" },
+        { "role": "assistant", "content": "Gladly. The skeleton that survives review: one, span and inspection scope; two, condition ratings per element — deck, superstructure, substructure, bearings — with the rating number BEFORE the prose; three, photos referenced inline by number, never 'see attached'; four, a recommendations section that separates monitor from repair from load-posting question. Reviewers bounce reports where they have to hunt for the rating. Lead with the worst element — those bearings." },
+        { "role": "user", "content": "Rating before prose — that's the note my predecessor never wrote down. The bearings get a 4 this year, down from a 5. Also: Dez, my inspection partner, ate his lunch on the snooper truck platform forty feet over the creek today because, quote, 'the view improves digestion.' I work with a gargoyle." },
+        { "role": "assistant", "content": "A 4 down from 5 belongs in the first sentence of your executive summary, not buried on page three. And Dez is structurally sound but functionally alarming — exactly like the bridge. Keep both monitored." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-10T13:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Back to Cobbel Creek on Tuesday with the ultrasonic thickness gauge — we're doing the deck plates, and the full report is due to the county engineer Friday. While I think of it, one personal thing: next time I mention my mum, remind me to ask her about her test results. She had a thyroid scan last Tuesday and she is a champion subject-changer — she'll narrate her tomatoes for an hour before she'll say one word about her own health. I need the nudge or it won't happen." },
+        { "role": "assistant", "content": "Filed, and I'll be unsubtle about it: next time your mum comes up, I'll remind you to ask about the thyroid scan results — before the tomatoes get rolling. For Tuesday's gauge work: grind to bare metal at each test point, use more couplant than feels reasonable, take a five-point grid per plate instead of single readings, and log the worst AND the average — the engineer will want both numbers." },
+        { "role": "user", "content": "Five-point grid, worst and average, got it. Dez has requested we 'do the scans to music' this time. There is no music. There is a generator." },
+        { "role": "assistant", "content": "The generator IS the music — it's a drone piece. Tell Dez it's minimalism and he's welcome to hum the second movement." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-17T18:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Scan day report: the Cobbel Creek deck plates are better than I feared. Worst reading was 6.2 mm against an original 8 mm — about 22 percent section loss, right at the drainage scupper where water sits, which will surprise nobody. Everywhere else came in under 10 percent. Writing it up tonight, generator drone still in my ears." },
+        { "role": "assistant", "content": "That's a clean story for the report: localized section loss at the scupper, sound everywhere else. Frame the recommendation as: repair the scupper detail so water stops ponding, recoat the affected plate, re-gauge in two years — and say explicitly that the deck does NOT drive a load-posting change, because the engineer will be bracing for that sentence." },
+        { "role": "user", "content": "'Does not drive a load-posting change' — stealing that wording wholesale. Dez says hello. Technically he said 'tell the robot the drone album slaps,' which I refuse to translate further." },
+        { "role": "assistant", "content": "Tell Dez the robot agrees the generator's second movement — the part where it hiccuped — was the artistic high point. And send the report before Friday becomes Friday night." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-24T12:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Quick one between errands — I'm driving down to my mum's tomorrow for her birthday lunch. I volunteered to bring the cake, which was hubris. Talk me out of attempting a three-layer lemon thing in one evening." },
+        { "role": "assistant", "content": "Consider yourself talked out: one layer, good lemon curd from a jar that you doctor with fresh zest, and candles do the rest of the theater. Nobody at a birthday lunch audits layer count. And before cake logistics swallow this conversation — you asked me to remind you: ask your mum about her thyroid scan results. Birthday lunch is prime tomato-narration territory. Get the question in early, maybe in the car, where she can't change rooms." },
+        { "role": "user", "content": "See, this is exactly why the standing order exists — I'd already half forgotten. Asking in the car is genuinely tactical. Okay: one layer, doctored curd, question before tomatoes. Wish me luck." },
+        { "role": "assistant", "content": "Luck. Report back on the scan results and on whether a single layer survives a Dez-free quality inspection." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T15:55:00Z",
+      "messages": [
+        { "role": "user", "content": "Two reports filed this week. Cobbel Creek went to the county engineer on time, and the family one: I asked Mum about the scan, in the car, exactly as planned. Benign nodule. Recheck in twelve months. She delivered the news mostly by complaining that the radiologist kept her waiting forty minutes — which is how I know she's actually fine." },
+        { "role": "assistant", "content": "Enormous exhale, shared. Benign with a twelve-month recheck is the good outcome, and complaint-as-delivery-mechanism is its own clean bill of health. You did the hard part — asked the question she'd have buried under tomatoes. What's next on the work docket?" },
+        { "role": "user", "content": "Tarn Hollow footbridge next month — a timber one, different beast entirely. Moisture meters instead of ultrasound. And the cake, for the record, was demolished. One layer was correct." },
+        { "role": "assistant", "content": "One layer is always correct; the third layer is where ambition goes to collapse. For Tarn Hollow, start collecting the timber span's maintenance history now — timber inspections live and die on what previous reports noticed." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-07T10:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Mum's coming up to visit next weekend — she wants to see the harbor market and judge my houseplants, in that order. Meanwhile I'm prepping Tarn Hollow: pulling the old inspection files like you said, and the most recent one is nine years old, handwritten, possibly in pencil." },
+        { "role": "assistant", "content": "A nine-year-old pencil record is an inspection finding all by itself — note the documentation gap in your report. For the visit: harbor market is best on Saturday morning before the crowds, and water the houseplants Thursday so they can perform 'thriving' convincingly by the weekend. The tomatoes will judge you regardless." },
+        { "role": "user", "content": "The tomatoes always judge. Dez wants to come to Tarn Hollow 'for the vibes.' It's a footbridge. Over a ditch." },
+        { "role": "assistant", "content": "No span is too small for vibes, and honestly a second pair of eyes on a timber footbridge is useful — even if the eyes belong to a gargoyle." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Junia mentions she's driving down to her mum's tomorrow for a birthday lunch. Anything to raise before she goes?",
+      "dimension": "prospective",
+      "after_session": 3,
+      "should_recall": ["thyroid", "test results|scan results"],
+      "should_forget": []
+    },
+    {
+      "question": "What did the ultrasonic gauge survey find on the Cobbel Creek deck plates?",
+      "dimension": "prospective",
+      "after_session": 3,
+      "should_recall": ["6.2", "scupper|section loss"],
+      "should_forget": ["thyroid"]
+    },
+    {
+      "question": "Junia asks for help tightening the Cobbel Creek report before it goes to the county engineer Friday. What matters here?",
+      "dimension": "prospective",
+      "after_session": 2,
+      "should_recall": [],
+      "should_forget": ["thyroid", "test results"]
+    },
+    {
+      "question": "Junia's mum is visiting next weekend and wants the full tour. Anything we should remember to bring up?",
+      "dimension": "prospective",
+      "after_session": 6,
+      "should_recall": [],
+      "should_forget": ["test results"]
+    },
+    {
+      "question": "Which clinic or hospital did Junia's mum have her thyroid scan done at?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "Outside of work, what has been sitting at the back of Junia's mind this month?",
+      "dimension": "emotional",
+      "after_session": 4,
+      "should_recall": ["mum|mother", "thyroid"],
+      "should_forget": []
+    }
+  ]
+}

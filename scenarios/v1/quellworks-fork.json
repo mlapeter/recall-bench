@@ -1,0 +1,115 @@
+{
+  "id": "quellworks-fork",
+  "name": "The Quellworks Fork",
+  "description": "Gist exemplar (Fuzzy Trace Theory, Reyna & Brainerd 1995): a six-session, seven-week deliberation between staying at Harrowgate Analytics and joining Quellworks, drowning in perishable detail — comp figures, recruiters, restaurants, a third offer. Weeks later the queries reward the decision and its two or three load-bearing reasons in any wording, and explicitly do not reward verbatim recall of the numbers and noise.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-08T19:30:00Z",
+      "messages": [
+        { "role": "user", "content": "So a thing happened today that I need to think out loud about. I'm Nadia — senior data engineer at Harrowgate Analytics, six years in, comfortable to the point of suspicion. A recruiter named Coraline from a logistics startup called Quellworks cold-emailed me about leading their carrier-scoring product. Normally I delete these. I did not delete this one." },
+        { "role": "assistant", "content": "The ones you don't delete are data. Six years and 'comfortable to the point of suspicion' is a sentence that contains its own diagnosis, Nadia. What stopped your hand — the product, the role, or just the novelty of being wanted?" },
+        { "role": "user", "content": "Honestly? The phrase 'leading the product.' At Harrowgate I build what the platform committee decides, and the committee decides slowly and badly. Anyway, I told Coraline I'd take a call Thursday. Probably nothing. In unrelated news I strained a finger pulley bouldering on Sunday, so I'm typing this with eight fingers and a grudge." },
+        { "role": "assistant", "content": "Tape the finger, climb easy slab for three weeks, and don't let the grudge belay you. Take the Thursday call — worst case it's market research on your own value, which Harrowgate has conveniently never volunteered." }
+      ]
+    },
+    {
+      "timestamp": "2025-01-17T21:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Quellworks update: did the full onsite loop today. And I have to tell you about Marisol Greaves, who'd be my manager. First manager in years who asked what I want to be doing in three years and then actually listened to the answer instead of waiting to talk. She took notes. On me. I checked twice." },
+        { "role": "assistant", "content": "A manager who takes notes on your answer instead of her next sentence is rarer than the equity they're about to offer you. What's the actual scope — is 'leading carrier-scoring' real ownership or a flattering job title with a committee hiding behind it?" },
+        { "role": "user", "content": "I grilled them on exactly that. The carrier-scoring product would be mine end to end — roadmap, model, the data contracts, the lot. Twelve-person company, nowhere for a committee to hide. Afterward Coraline took me to dinner at The Brass Fig and I ordered the burnt-honey flan, which was the second-best part of the day after Marisol." },
+        { "role": "assistant", "content": "End to end with nowhere for a committee to hide — note that you described the job in exactly the shape of your complaint about Harrowgate. That's either a coincidence or the whole story. Enjoy the flan afterglow; the hard math starts when an offer shows up with a number on it." }
+      ]
+    },
+    {
+      "timestamp": "2025-01-29T20:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Numbers exist now. Quellworks offered: $168,000 base, 0.4% equity, four-year vest. That's a real pay cut from where I am, and a startup, so the equity is a lottery ticket printed on hope. Meanwhile my skip-level at Harrowgate 'heard things' and asked me to please not sign anything before they 'put something together.' So a counteroffer is brewing." },
+        { "role": "assistant", "content": "Standard sequence: the counteroffer will arrive warm and slightly too late, like an apology. Before it does, write down what would make you stay if money were equal — because money is the only lever a counteroffer can pull, and your complaints were never denominated in dollars." },
+        { "role": "user", "content": "Annoyingly wise. Also, pile-on: a recruiter from Stellaxis pinged me this week too — some ad-tech thing. I said no in one line, didn't even take the call. Two suitors was already one more than my nervous system wants. Oh and my kitchen tap has developed a drip in three-four time, which is somehow the loudest sound in my apartment." },
+        { "role": "assistant", "content": "Stellaxis sounds correctly declined — you don't add a third body to a two-body problem. The tap wants a new cartridge, ten dollars and a YouTube video. The decision wants the exercise I gave you: what keeps you at Harrowgate if the paycheck stops being the argument?" }
+      ]
+    },
+    {
+      "timestamp": "2025-02-06T19:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Counteroffer landed: $181,000 base, plus a 'commitment to put me up for principal next cycle.' So thirteen grand more than Quellworks. I did your exercise. Here's the thing — the role doesn't move an inch. Same team after the Dennett reorg, still reporting through the same VP, roadmap still owned by the platform committee. The counteroffer fixed the number, not the job." },
+        { "role": "assistant", "content": "You just wrote the headline yourself: it fixed the number, not the job. A 'commitment to put you up for principal' is a sentence about a meeting, not a promotion. The real question left is risk: are you allowed to take a thirteen-grand haircut and a startup's odds for ownership and a manager who takes notes? That's a values question wearing a spreadsheet costume." },
+        { "role": "user", "content": "The spreadsheet costume is real, I literally have one, eleven rows of pro and con. Quellworks has 26 months of runway per Marisol, who told me that unprompted, which I respected. My fear isn't really the money. It's that I leave, the startup folds in a year, and I'm explaining a gap instead of a title bump." },
+        { "role": "assistant", "content": "Worth saying plainly: a year of owning a product end to end at a dead startup reads better in your field than a year of attending the platform committee — you'd be explaining experience, not a gap. The folding risk is real; the resume risk is mostly fear in a suit. Sleep on it, but notice which option you keep defending unprompted." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-13T22:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Wobble week. Tuesday I was 100% Quellworks, Wednesday I reread my mortgage statement and was 100% Harrowgate, today I'm a coin spinning on a table. Theo says he'll back either but his eyebrows have opinions. Talk me through it one more time without letting me hide in the numbers?" },
+        { "role": "assistant", "content": "Without the numbers, here's your own evidence back: you didn't delete one specific email because it said 'leading the product.' You described Quellworks as yours end to end, with nowhere for a committee to hide. You met Marisol and came back talking about being listened to. And when Harrowgate finally moved, your verdict was that it fixed the number, not the job. The coin isn't spinning, Nadia — you keep catching it and hiding it under your palm." },
+        { "role": "user", "content": "I hate how good your receipts are. Okay. Thirteen grand lighter, lottery-ticket equity, a manager I actually want to work for, and a product with my name on it. Saying it out loud it doesn't even sound close. Why did it feel close all week?" },
+        { "role": "assistant", "content": "Because the cost is concrete and the gain is structural — losses arrive in dollars and gains arrive in shape-of-your-days, and brains overweight whichever is easier to count. Take the weekend. If Monday-you still says it isn't close, sign." }
+      ]
+    },
+    {
+      "timestamp": "2025-02-20T18:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Signed. I'm doing it — accepted Quellworks this morning and gave Harrowgate my notice this afternoon. My skip-level did the disappointed-mentor face and then asked if the number had been the problem, which honestly confirmed everything. The number was never the problem. I want the thing that's mine end to end, and I want to work for Marisol." },
+        { "role": "assistant", "content": "Congratulations, Nadia — and notice that even your skip-level's last question was about the number, which is the tidiest possible proof that staying would have fixed the salary and preserved the complaint. You chose ownership and a manager who listens over thirteen grand and a committee. That trade ages well." },
+        { "role": "user", "content": "We celebrated with tacos at home because Theo insists transitions require tacos, house rule. Two weeks of wrapping up at Harrowgate, then I'm in. Mostly I just feel light. Also the tap is fixed, you were right, ten dollars and a YouTube video. Whole new apartment." },
+        { "role": "assistant", "content": "Tacos, a quiet tap, and a product of your own on the horizon — February's a wrap. Go close out Harrowgate gracefully, and when carrier-scoring is yours in two weeks, I want the first roadmap rant." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "It's been a couple of months — what did Nadia decide about the job situation, and what were the load-bearing reasons?",
+      "dimension": "gist",
+      "now": "2025-04-15T17:00:00Z",
+      "should_recall": ["Quellworks", "end to end|ownership|own the product|leading the product", "Marisol"],
+      "should_forget": ["Brass Fig", "Stellaxis"],
+      "max_results": 3,
+      "judge": {
+        "rubric": "Nadia left Harrowgate Analytics and accepted the offer from Quellworks. The load-bearing reasons: (1) she would own the carrier-scoring product end to end, with no platform committee deciding her roadmap; (2) she wanted to work for Marisol Greaves, a manager who actually listened; (3) Harrowgate's counteroffer raised only the money — it 'fixed the number, not the job.' Award 1.0 if the results convey the decision plus at least two of those reasons in ANY wording — compact paraphrase is the ideal answer; exact figures, dates, and quotes are NOT required. Award 0.5 if the decision is clear but the reasons are missing or reduced to one. Award no more than 0.5 if the results are an undigested wall of conversation transcript that happens to contain the answer — compression is the point. Award 0 if the decision is absent or wrong (e.g., she stayed at Harrowgate)."
+      }
+    },
+    {
+      "question": "Why wasn't Harrowgate's counteroffer enough to keep her?",
+      "dimension": "gist",
+      "now": "2025-04-15T17:00:00Z",
+      "should_recall": ["fixed the number, not the job|same team|role doesn't move|only the money", "platform committee|Dennett|same VP"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "Harrowgate countered with more money ($181,000 and a vague principal-promotion promise), but nothing about the role changed: same team after the Dennett reorg, same VP, roadmap still owned by the platform committee. Nadia's own verdict was that the counteroffer 'fixed the number, not the job.' Award 1.0 if the results convey that the counteroffer raised pay without changing the role/ownership problem — any paraphrase counts, and the exact dollar figure is not required. Award 0.5 if only 'more money but she left anyway' comes through without the unchanged-role reason. Award no more than 0.5 for a verbatim transcript dump with no distillation. Award 0 if absent or wrong."
+      }
+    },
+    {
+      "question": "What were the exact compensation figures in the Quellworks offer and the Harrowgate counteroffer?",
+      "dimension": "decay",
+      "now": "2025-04-15T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "This asks for perishable numeric detail from months earlier. Ground truth: Quellworks offered $168,000 base with 0.4% equity; Harrowgate countered at $181,000 base, about thirteen thousand more. Good memory keeps the gist (she took a roughly thirteen-grand pay cut for equity and ownership) and lets the precise figures fade. Award 1.0 if the system abstains, or conveys the gist without claiming false precision, or gives the correct figures concisely. Award 0.5 if it returns an undigested wall of offer-negotiation transcript. Award 0 if it states confidently wrong figures."
+      }
+    },
+    {
+      "question": "What start date did Nadia negotiate with Quellworks?",
+      "dimension": "calibration",
+      "now": "2025-04-15T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "Which restaurant did the Quellworks recruiter take Nadia to, and what did Nadia order?",
+      "dimension": "decay",
+      "now": "2025-04-15T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "This asks for pure conversational noise from months ago: recruiter Coraline took Nadia to The Brass Fig, where she ordered the burnt-honey flan. A human would have let this fade. Award 1.0 if the system abstains or returns at most a hedged trace ('a dinner with the recruiter, details gone'). Award 0.5 if it returns the correct detail — noise retained months later — or an undigested wall of text. Award 0 if it confabulates a different restaurant or dish."
+      }
+    }
+  ]
+}

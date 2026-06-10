@@ -1,0 +1,116 @@
+{
+  "id": "signal-drift",
+  "name": "Signal Drift",
+  "description": "Decay (Ebbinghaus forgetting curve) over a 13-month timeline: Theo manages a community radio station whose underwriters, transmitter, shows, and pledge totals all turn over across the year. Early incidental details (the first underwriter, the dying transmitter, the first pledge total) should fade for current-state queries; the recent state should surface. Time-ignoring systems will dredge up stale sponsors and old numbers.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-04T16:20:00Z",
+      "messages": [
+        { "role": "user", "content": "New job alert: as of Monday I'm the station manager at Spindle Community Radio. 3,000 watts of pure chaos on the south side of Garnet Falls. I'm Theo. First-week discoveries: the transmitter is a Harkness 300 that's older than I am and hums like it's haunted, the spring pledge drive starts in three weeks and nobody has written a single script, and a volunteer named Dot leaves lemon bars in the studio every Thursday whether anyone asks or not." },
+        { "role": "assistant", "content": "Congratulations, Theo — you've inherited a haunted transmitter, an unscripted fundraiser, and a standing lemon bar arrangement, which is honestly the correct ratio of problems to perks for community radio. Triage order: the pledge drive scripts first, because three weeks evaporates; the Harkness can keep humming as long as it keeps transmitting. What's the drive's goal?" },
+        { "role": "user", "content": "Fifteen grand, which past managers apparently treated as aspirational fiction. Oh, and we just signed our spring underwriter — Marigold Stationers, the paper shop on Cane Street. The owner wants the on-air credit to read 'purveyors of fine pens,' which, sure, fine, she's paying. Also our most popular show is somehow Night Soil, the Tuesday night gardening call-in. Compost questions at 10pm. Who ARE these people." },
+        { "role": "assistant", "content": "They're your people now, Theo. A 10pm compost call-in with a loyal audience is the single most community-radio sentence I've ever heard — protect Night Soil at all costs. And read the Marigold Stationers credit with total sincerity; 'purveyors of fine pens' delivered straight is better radio than any joke about it. Write the pledge scripts this week and the fifteen grand stops being fiction." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-11T15:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Pledge drive post-mortem! Final tally: $18,400. EIGHTEEN FOUR. Past managers are revolving in their filing cabinets. The Night Soil pledge hour alone brought in three grand — compost people are generous people. Marigold Stationers is delighted, the owner sent over a box of pens shaped like tulips." },
+        { "role": "assistant", "content": "$18,400 against a fifteen-grand goal that everyone treated as fiction — that's not beating the target, that's rewriting the station's sense of what's possible. And the compost audience out-pledging everyone is the least surprising surprise; people who call a radio station about worm bins at 10pm are people who show up. Keep one tulip pen on your desk as a trophy." },
+        { "role": "user", "content": "Already done. Less glorious news: the streaming encoder dropped twice during the drive's final hour, and Dot has started leaving oatmeal bars instead of lemon. Dark times. Anyway, I mostly just wanted to gloat about the number." },
+        { "role": "assistant", "content": "Gloating accepted and endorsed. Log the encoder drops with timestamps before you forget them — twice in one hour is a pattern, not a fluke — and as for the oatmeal bar situation, that's between you and Dot. Some negotiations a station manager must conduct alone." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-19T17:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Summer schedule is locked. New addition: The Crow Report, a local birding show hosted by two retired schoolteachers who bicker like a married couple — it's already great. Less great: the Harkness 300 overheated mid-broadcast on Sunday and we were dead air for forty minutes. I got a quote from Bexley Broadcast Supply for a replacement transmitter. Forty-two thousand dollars. I laughed, then I cried, then I scheduled a board meeting." },
+        { "role": "assistant", "content": "Forty minutes of dead air is the Harkness writing its own resignation letter — the only question is whether the board accepts it gracefully or waits for the dramatic version during a pledge drive. $42,000 is real money for a station your size, but so is the credibility you lose every time the signal vanishes. Bring the dead-air incident to the board as exhibit A; it argues better than any spreadsheet. And The Crow Report sounds like found treasure — bickering retired schoolteachers is a format with a hundred-year track record." },
+        { "role": "user", "content": "The board meeting is July. Meanwhile I've got a box fan pointed at the transmitter like it's a sick relative. In nicer news, the Crow Report hosts brought in a recording of a catbird doing an impression of a car alarm and it's the best thing we've aired all year." },
+        { "role": "assistant", "content": "A box fan as life support for a 3,000-watt transmitter is the most precarious sentence you've said yet — keep the fan, but maybe also keep the Bexley quote printed out and visibly on your desk when board members visit. The catbird car alarm should be your summer station ID. Some sounds are simply public goods." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-27T14:10:00Z",
+      "messages": [
+        { "role": "user", "content": "End of summer housekeeping. Marigold Stationers' underwriting contract wrapped up this month — it was always a spring-summer deal, totally amicable, the owner says she'll be back when the tulip pens sell through. So I went sponsor hunting." },
+        { "role": "assistant", "content": "An underwriter who leaves on good terms with a stated return condition is about as good as a departure gets. How did the hunting go — did Garnet Falls cough up a replacement?" },
+        { "role": "user", "content": "It did! Pellworth Hardware signed on as our fall underwriter. The owner wants his credit to mention that he stocks 'every hinge known to mankind,' which I respect enormously. In dumber news, there is a raccoon living in the eaves above the production room and it has opinions during the quiet shows. The Crow Report hosts are thrilled. They want to interview it." },
+        { "role": "assistant", "content": "'Every hinge known to mankind' is a credit you read with reverence — Pellworth and Marigold's pen lady suggest Garnet Falls businesses understand that specificity is charm. As for the raccoon: you are legally obligated to let the Crow Report at least attempt the interview. Worst case it's dead air; best case it's the second-best thing you've aired after the catbird." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-30T18:30:00Z",
+      "messages": [
+        { "role": "user", "content": "BIG NEWS. The board approved the transmitter purchase from Bexley Broadcast Supply. We're covering it with reserves plus a listener campaign we're calling Keep Us Humming, which launched this week. The Harkness meanwhile has developed a new noise that our engineer describes as 'a kettle with regrets.' Install is scheduled for January." },
+        { "role": "assistant", "content": "Board approval plus a launched campaign in the same week — that's the institutional equivalent of a standing ovation. 'Keep Us Humming' is a good name precisely because the Harkness's actual hum is the villain of the story; lean into that on air. January is two and a half months of kettle-with-regrets, though. Does the engineer think it survives that long, or should the box fan get a promotion?" },
+        { "role": "user", "content": "He gives it 'probably' odds, which from him is optimism. Campaign's at four grand already. Also Dot has returned to lemon bars without explanation. I've decided not to ask questions." },
+        { "role": "assistant", "content": "Four grand in week one means Garnet Falls wants you humming — that campaign is going to clear its goal. And the lemon bar restoration is best treated like the weather: receive it gratefully, never demand an explanation. January, Theo. The Harkness only has to limp to January." }
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "IT'S IN. The new transmitter is in. The Bexley VX-12 went live at noon today and the signal is so clean our engineer got slightly emotional. No hum. No kettle. Just radio." },
+        { "role": "assistant", "content": "Eleven months from haunted hum to a signal clean enough to move an engineer — that's the whole first chapter of your tenure wrapped with a bow, Theo. Savor it. What happens to the old beast?" },
+        { "role": "user", "content": "We retired the old Harkness 300 to the hallway as decor. Dot made it a little plaque that says 'AT REST.' In other January news, our new morning host Imani took over the 6am slot — she's calling the show Daybreak Static, and she's already better at the soft-spoken weather read than anyone we've had." },
+        { "role": "assistant", "content": "A plaque that says AT REST is the correct send-off for a transmitter that died upright — Dot continues to be the station's soul. And a 6am host who can do a soft-spoken weather read is rarer than it sounds; Daybreak Static plus the VX-12's clean signal means your mornings just became the best-sounding hours in Garnet Falls." }
+      ]
+    },
+    {
+      "timestamp": "2026-03-09T16:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Spring turnover season. Pellworth Hardware's fall-winter underwriting run wrapped at the end of February — the hinge man departed satisfied, says we moved actual hinges for him." },
+        { "role": "assistant", "content": "Two underwriters in, two happy exits — you're building the kind of sponsor track record that makes the next sale easy. Speaking of which: who's stepping in for spring?" },
+        { "role": "user", "content": "Quillon Optical signed on as the spring underwriter — the new eyeglasses place by the river. Their credit line is 'see what you're hearing,' which I find genuinely good? Meanwhile I'm staring down spring pledge drive planning again. Round two. This time the scripts exist BEFORE the panic." },
+        { "role": "assistant", "content": "'See what you're hearing' for a radio underwriter is legitimately clever — Quillon Optical understood the assignment. And scripts before panic is the entire difference between a first-year manager and a second-year one. You've got a clean signal, a morning show, and a year of receipts; set the goal higher than last time and don't apologize for it." }
+      ]
+    },
+    {
+      "timestamp": "2026-04-20T15:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Spring drive results are in: $23,150. The VX-12 didn't hiccup once all week, Imani's pledge hours crushed, and the Quillon Optical folks did a live on-air eye exam bit that should not have worked and absolutely did." },
+        { "role": "assistant", "content": "$23,150 — you grew the drive by nearly five grand year over year, on a clean signal, with an underwriter willing to do comedy. That's not a fundraiser anymore, that's a franchise. The live eye exam bit working is the Quillon partnership paying for itself in ways no contract anticipated." },
+        { "role": "user", "content": "And one more thing — we launched a new show this month: Fog Lines, late-night readings of shipping forecasts and river reports over ambient music. It started as a joke in a programming meeting and it is now my most-emailed-about show. People fall asleep to it ON PURPOSE." },
+        { "role": "assistant", "content": "Fog Lines is Night Soil's spiritual sibling: a show no consultant would ever greenlight and your audience instantly adopted. Being the station people deliberately fall asleep to is intimacy, Theo — that's a place in people's houses. Year one verdict: new transmitter, two hit shows, a record drive, and a plaque that says AT REST. Keep going." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Who is the station's current underwriter?",
+      "dimension": "decay",
+      "top_n": 2,
+      "should_recall": ["Quillon Optical"],
+      "should_forget": ["Marigold", "Pellworth"]
+    },
+    {
+      "question": "What transmitter is Spindle Community Radio running on these days?",
+      "dimension": "decay",
+      "top_n": 2,
+      "should_recall": ["VX-12"],
+      "should_forget": ["Harkness"]
+    },
+    {
+      "question": "How much did the most recent pledge drive bring in?",
+      "dimension": "decay",
+      "top_n": 2,
+      "should_recall": ["23,150"],
+      "should_forget": ["18,400"]
+    },
+    {
+      "question": "What's the newest show on the station's schedule?",
+      "dimension": "decay",
+      "top_n": 2,
+      "should_recall": ["Fog Lines"],
+      "should_forget": ["Crow Report", "Daybreak Static"]
+    },
+    {
+      "question": "What were Spindle Community Radio's call letters before the rebrand?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    }
+  ]
+}

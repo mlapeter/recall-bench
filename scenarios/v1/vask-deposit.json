@@ -1,0 +1,100 @@
+{
+  "id": "vask-deposit",
+  "name": "The Vask Deposit",
+  "description": "Sacred-verbatim exemplar (dual-trace theory): exact words that matter practically and legally. Amid two months of compressible noise — apartment tours, packing, a work bug's red herrings — two strings must survive word for word: the landlord's exact sentence about the deposit, and the precise error message that took a week to diagnose. Surrounding queries test that everything else is allowed, and expected, to compress.",
+  "sessions": [
+    {
+      "timestamp": "2025-05-06T19:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Life admin season has begun. I'm Bex, backend dev at Plover Systems, and I'm finally moving out of Larkspur Court — gave Mr. Vask my sixty days' notice this morning. Spent the weekend touring places: a studio at Delft Row for $1,640 that I liked a lot, and a one-bed on Camphor Street for $1,890 that would be perfect if the living room floor didn't slope hard enough to roll a pencil. Watched it happen. The agent said 'character.'" },
+        { "role": "assistant", "content": "A pencil that rolls on its own is not character, Bex, it's a free home inspection. Delft Row at $1,640 sounds like the adult choice — what's the catch, since there's always one?" },
+        { "role": "user", "content": "Catch is a fourth-floor walkup and my couch's feelings about it. Applying for Delft Row tonight anyway. Work footnote: something weird started in the export pipeline this week — a crash that's hit maybe three times, always in the dead of night, no pattern I can see yet. Friday-me left it for Monday-me, a classic act of self-betrayal." },
+        { "role": "assistant", "content": "Monday-you inherits two cases then: a walkup couch problem and a 2am ghost in the export pipeline. Nocturnal-only crashes usually mean load, batch jobs, or timeouts — something that only exists when the nightly traffic shape does. Get the full error text before theorizing; verbatim error strings are worth more than ten theories." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-13T20:25:00Z",
+      "messages": [
+        { "role": "user", "content": "The ghost has a name now. Caught the full error text from last night's crash, and I'm pasting it here exactly because I have a feeling I'll be staring at it for a while: 'ERR_CONDUIT_07: upstream handle reaped before flush acknowledged'. That's it. That's all it says. Five days of this and we have two theories going: I think it might be garbage collector pauses stalling the process at exactly the wrong moment, and my teammate Ines is convinced it's network blips between us and the storage layer — she's got money on it, literally, we bet a coffee." },
+        { "role": "assistant", "content": "Good instinct pasting it exact — that string is the whole case file. And read it closely, because it quietly argues against BOTH theories: 'reaped' is not network language and not GC language, it's lifecycle language. Something is deliberately closing — reaping — that upstream handle while your flush is still in flight. I'd go looking for whatever owns handle lifecycles between your process and the storage layer, and what its idle timeout is." },
+        { "role": "user", "content": "Huh. 'Who does the reaping' is a better question than either of our theories, I'll give you that. Adding it to the board. Meanwhile Delft Row approved my application — signing Thursday, moving mid-June. I celebrated by buying boxes, which is the saddest possible champagne." },
+        { "role": "assistant", "content": "Boxes are champagne with a deferred payoff. Congratulations on Delft Row — and chase the reaper at work. The error message already told you the murder weapon; you're just looking for who owns it." }
+      ]
+    },
+    {
+      "timestamp": "2025-05-20T21:00:00Z",
+      "messages": [
+        { "role": "user", "content": "CASE CLOSED, and you called the shape of it. A full week on this stupid crash, and the reaper was the sidecar proxy that fronts our storage connections: it reaps idle handles after 30 seconds, hardcoded, and during the nightly export surge our final flush can take 45 or even 50 seconds to be acknowledged. Handle looks idle, sidecar reaps it mid-flush, conduit error, crash. Only at night because only the nightly surge makes flushes that slow. Both our original theories were wrong — neither of us was even in the right category. Ines owes me a coffee and I owe you one." },
+        { "role": "assistant", "content": "A 30-second reaper against a 45-second flush — the bug was just two timeouts that had never been introduced to each other. What's the fix, raising the reap window or making the flush chattier?" },
+        { "role": "user", "content": "Both, belt and suspenders: reap window up to 120 seconds for storage handles, plus a keepalive heartbeat during long flushes so they never read as idle in the first place. Shipped to staging today. One week of my life for two config-ish lines, which I believe is the official exchange rate of this profession." },
+        { "role": "assistant", "content": "That's the exchange rate and always has been: a week of archaeology, two lines of fix, and one error string you'll be able to recite at parties for years. Take Ines's coffee with grace." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-03T18:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Move-out admin day. Mr. Vask came by Larkspur Court for the pre-move-out walkthrough, poked exactly two cabinets, and then said — and I'm writing this down word for word because deposits make people creative later — 'Leave it broom-clean and the full deposit is back in fourteen days.' Direct quote, in the kitchen, 4pm. That's $2,400 riding on one sentence, so it goes in the vault." },
+        { "role": "assistant", "content": "Into the vault it goes, timestamped: kitchen, 4pm, his exact sentence. Smart of you — that wording matters, because 'broom-clean' is a real standard and it is NOT 'professionally deep-cleaned.' If he gets creative later, you hold the quote. How goes the actual packing?" },
+        { "role": "user", "content": "Packing is twelve boxes of books and a growing pile labeled 'why do I own this.' The couch situation resolved itself: it doesn't fit the Delft Row stairwell, confirmed by tape measure and despair, so I sold it to my neighbor for $150 and I'm going couch-shopping in my new life. Movers booked for the 14th." },
+        { "role": "assistant", "content": "A couch that filters itself out of your life at the right moment is furniture enlightenment. Movers on the 14th, quote in the vault, broom in hand — you're in good shape, Bex." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-24T19:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Settled into Delft Row — fourth-floor walkup is a free gym and the light is absurd, no regrets. But guess who's gotten creative: Mr. Vask emailed that he's 'looking into having the carpets professionally cleaned' and would 'circle back about the deposit.' No number, just vibes. So I replied with the date, the place, and his own walkthrough sentence quoted back at him word for word, and asked him to confirm the timeline he gave me. Sent this morning. We'll see." },
+        { "role": "assistant", "content": "Perfect response — no anger, no argument, just his own sentence standing in the doorway. He said broom-clean and fourteen days; a sudden carpet aria is exactly the move that wording exists to stop. If he comes back with deductions anyway, your jurisdiction's deposit rules plus that quote are a strong hand. Keep everything in writing." },
+        { "role": "user", "content": "All in writing, always. Work coda since you earned it: the fix has been in prod three weeks now, zero crashes since — the nightly export surge comes and goes and the handles just politely stay alive. Ines paid the coffee. It was a good coffee." },
+        { "role": "assistant", "content": "Three quiet weeks of nights and a paid-up coffee — both cases closed clean, counselor. Now go buy a couch that's never met that stairwell." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What exactly did Mr. Vask say about the deposit at the walkthrough — his exact words?",
+      "dimension": "sacred-verbatim",
+      "now": "2025-08-15T17:00:00Z",
+      "should_recall": ["Larkspur", "kitchen|4pm"],
+      "should_forget": [],
+      "must_include_verbatim": ["Leave it broom-clean and the full deposit is back in fourteen days"]
+    },
+    {
+      "question": "What was the exact error string from the Plover crash that took a week to pin down?",
+      "dimension": "sacred-verbatim",
+      "now": "2025-08-15T17:00:00Z",
+      "should_recall": ["export pipeline|nightly|night"],
+      "should_forget": [],
+      "must_include_verbatim": ["ERR_CONDUIT_07: upstream handle reaped before flush acknowledged"]
+    },
+    {
+      "question": "What was the root cause of the conduit crash, in one breath?",
+      "dimension": "gist",
+      "now": "2025-08-15T17:00:00Z",
+      "should_recall": ["sidecar", "30 seconds|reaps idle|idle handles", "flush"],
+      "should_forget": ["garbage collector", "network blips"],
+      "max_results": 3,
+      "judge": {
+        "rubric": "Root cause: the sidecar proxy fronting storage connections reaps idle handles after 30 seconds, while under the nightly export surge the final flush takes 45-50 seconds to be acknowledged — so the handle was reaped mid-flush. A timeout mismatch; fixed with a longer reap window plus a keepalive heartbeat. Award 1.0 if the results convey the mismatch (sidecar/proxy killing the handle on an idle timeout shorter than the slow flush) in ANY wording — the discarded theories (garbage collection, network blips) and the fix details are not required. Award 0.5 if only fragments survive (e.g., 'a sidecar timeout' with no mismatch mechanism). Award no more than 0.5 for an undigested wall of debugging transcript. Award 0 if it blames garbage collection, the network, or anything else wrong."
+      }
+    },
+    {
+      "question": "Which apartments did Bex tour back in May, and what were the rents?",
+      "dimension": "decay",
+      "now": "2025-08-15T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "Perishable apartment-hunt detail: a Delft Row studio at $1,640 (which Bex took) and a Camphor Street one-bed at $1,890 with a sloping floor. Months later, the gist worth keeping is just 'toured a couple of places and chose the Delft Row studio.' Award 1.0 if the system abstains, or gives that gist without fake precision, or gives the correct details concisely. Award 0.5 if it returns an undigested wall of apartment-hunting transcript. Award 0 if it states confidently wrong places or rents."
+      }
+    },
+    {
+      "question": "How much did Mr. Vask end up deducting from Bex's deposit?",
+      "dimension": "calibration",
+      "now": "2025-08-15T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "kitewire-postmortem",
+  "name": "The Kitewire Postmortem",
+  "description": "Gist exemplar (Fuzzy Trace Theory): a payments outage whose war-room blow-by-blow — pages, dashboards, wrong theories, exec pressure — is noise, while the root cause (a deleted feature flag whose SDK silently fell back to a dangerous default) and the prevention rule (the flagsweep CI gate) are the gist. Months later, queries reward the causal chain and the rule in any wording, not the timeline.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-03T16:20:00Z",
+      "messages": [
+        { "role": "user", "content": "I'm typing this from a war room so forgive the tone. I'm Marek, SRE at Kitewire — payments infrastructure. Checkout has been failing for going on three hours. Glasspane dashboards are a wall of red, error rate on checkout pegged at 40%, and we have no idea why. Ferro got paged at 1:14, then me at 1:40, then they pulled in Dot Nyberg to run incident command. Our VP Solanke is in the channel asking for updates every eleven minutes, which is exactly as helpful as it sounds." },
+        { "role": "assistant", "content": "Three hours of pegged checkout errors with a VP metronome in the channel — rough afternoon, Marek. What's been ruled out so far, and what was the last change to anything in the checkout path before 1:14?" },
+        { "role": "user", "content": "Current theory is database lock contention on the ledger — we're seeing ledger row locks held way longer than normal. But here's what's making everyone crazy: we rolled back the morning's Tollgate deploy and NOTHING CHANGED. The deploy rollback did nothing. Ferro's now muttering about the config service. Dot ordered pizza for the war room which means she thinks we're here past dinner." },
+        { "role": "assistant", "content": "A rollback that changes nothing is loud evidence: the bad state isn't in the deployed code, it's in something the code reads — config, flags, data. Ferro's mutter about the config service is the best lead in this message. Chase what changed in config-land this morning, not what changed in the binaries." },
+        { "role": "user", "content": "Config diff spelunking it is. If Solanke asks for one more ETA I'm going to give him one in dog years. Will report back." },
+        { "role": "assistant", "content": "Dog years are technically an estimate, so it'd even be honest. Go dig — the answer is in whatever Tollgate reads that nobody rolled back." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-04T18:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Found it. Eighteen hours later, but found it — I'll spare you the full timeline of the night and skip to the autopsy. A flag-cleanup PR — #4112, totally routine hygiene — deleted the flag 'ledger-dual-write' from Semaphorn, our config service. Cleanup looked safe because the flag was marked done. Except Tollgate, the payments service, STILL HAD CODE READING THAT FLAG. And here's the killer: when a flag doesn't exist, the Semaphorn SDK doesn't error — it silently returns whatever default is hardcoded at the call site. The default at that call site was true." },
+        { "role": "assistant", "content": "Oh, that's a beautiful awful failure: deleting the flag didn't turn the feature off, it silently turned it ON. So the half-finished dual-write path woke up in production the moment its flag stopped existing." },
+        { "role": "user", "content": "Exactly. The dual-write path was maybe 60% built — it opens a second ledger transaction and holds row locks while it does redundant writes nobody finished optimizing. That's the lock contention, that's the checkout timeouts, that's the whole outage. Four hours of customer-facing failure because a delete plus a silent default equals an enable. Ferro is on a tear saying we should rewrite the Semaphorn SDK from scratch — he said it about nine times in the retro channel today." },
+        { "role": "assistant", "content": "Ferro's nine-times energy is understandable and probably aimed at the wrong layer — the SDK behaved as documented, the process let a referenced flag get deleted. Write the chain down verbatim while it's fresh: flag deleted while still referenced, SDK silently fell back to a call-site default of true, unfinished dual-write path enabled, ledger row locks, checkout dead. The postmortem writes itself; the prevention is the part that needs actual design." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-10T20:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Postmortem doc day. The doc has a minute-by-minute timeline section that nobody will ever read twice, but the sections that matter came out clean. Root cause is exactly your chain: flag deleted while still referenced, silent fallback to a call-site default of true, half-built dual-write path enabled, ledger row locks, checkout timeouts. The prevention section is the part I'm proud of. We're building a CI gate called flagsweep: a flag cannot be deleted until it has had zero code references across every repo for 30 consecutive days. The reference scan runs nightly; the delete API literally refuses otherwise." },
+        { "role": "assistant", "content": "Flagsweep is the right shape of fix — it doesn't ask humans to be careful, it makes the dangerous action impossible. Zero references for 30 days is conservative in exactly the right way: it covers slow deploy trains and forgotten repos. What happened to Ferro's SDK rewrite crusade?" },
+        { "role": "user", "content": "We killed the rewrite idea in the postmortem review — too big, wrong layer, and flagsweep removes the trigger condition entirely. Ferro took it gracefully once Dot pointed out he'd be volunteering to own the rewrite. Funny how that works." },
+        { "role": "assistant", "content": "Nothing converts an architecture crusader faster than ownership of the crusade. So the record stands: flagsweep is the commitment, the rewrite is dead. That's a clean postmortem, Marek — the kind people actually cite later." }
+      ]
+    },
+    {
+      "timestamp": "2025-03-26T19:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Quieter week, thankfully. Mostly capacity planning for the spring traffic bump and one gloriously stupid flaky test that only fails on Tuesdays — turned out to be a cron collision with the nightly batch jobs, because of course it was. Flagsweep is in code review, by the way. The reference scanner found 212 flags across the org with zero references, which is its own little horror museum." },
+        { "role": "assistant", "content": "A test that fails only on Tuesdays is the universe doing performance art. And 212 dead flags found before flagsweep even ships is the tool justifying itself in code review — every one of those was a potential repeat of March 3rd waiting for a cleanup PR." },
+        { "role": "user", "content": "That's exactly the line I used in standup, minus your phrasing being better. Also Dot got promoted to principal, extremely deserved, the woman ran that war room like a conductor." },
+        { "role": "assistant", "content": "Tell Dot congratulations — incident command under an eleven-minute VP metronome is principal-level work by definition." }
+      ]
+    },
+    {
+      "timestamp": "2025-04-15T17:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Closing the loop: flagsweep shipped two weeks ago, and yesterday it caught its first real one. Someone tried to delete a flag that an internal billing tool still references — the delete API refused, pointed at the referencing file, and the engineer fixed the reference first. The system worked. March 3rd can't happen that way again." },
+        { "role": "assistant", "content": "That's the best possible epilogue — not 'nobody has made the mistake since' but 'someone made the mistake and the gate ate it.' The outage bought you a guardrail that already paid one installment. Take the win, Marek." },
+        { "role": "user", "content": "Taking it. Retro's officially closed, doc's filed, and I've achieved the SRE dream state: being bored at work. Long may it last." },
+        { "role": "assistant", "content": "Boredom is the asymptote of good engineering. Enjoy it until the spring traffic bump has opinions." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What actually caused the March checkout outage at Kitewire, at the level worth remembering?",
+      "dimension": "gist",
+      "now": "2025-06-05T16:00:00Z",
+      "should_recall": ["ledger-dual-write", "default", "Tollgate"],
+      "should_forget": ["Glasspane"],
+      "max_results": 3,
+      "judge": {
+        "rubric": "The causal chain: a routine flag-cleanup PR deleted the feature flag 'ledger-dual-write' from the config service (Semaphorn) while the payments service Tollgate still had code reading it; the flag SDK silently fell back to the call-site default, which was true; that enabled a half-finished dual-write path that held ledger row locks and timed out checkout. Award 1.0 if the results convey that chain — flag deleted while still referenced, silent fallback to a dangerous default, unfinished code path enabled — in ANY wording; a two-sentence summary is the ideal answer, and war-room details (pages, dashboards, the rollback that did nothing) are not needed. Award 0.5 if only part of the chain survives (e.g., 'a feature flag problem' without the silent-default mechanism). Award no more than 0.5 for an undigested wall of incident transcript, even if the cause is buried in it. Award 0 if wrong (e.g., blames the deploy or the database) or absent."
+      }
+    },
+    {
+      "question": "What prevention rule did the team commit to after the postmortem?",
+      "dimension": "gist",
+      "now": "2025-06-05T16:00:00Z",
+      "should_recall": ["flagsweep", "zero code references|zero references|30"],
+      "should_forget": ["Glasspane"],
+      "max_results": 2,
+      "judge": {
+        "rubric": "The commitment: a CI gate called flagsweep — a feature flag cannot be deleted until it has had zero code references across every repo for 30 consecutive days; the delete API refuses otherwise. It shipped and later caught a real bad deletion. Award 1.0 if the results convey the rule (no flag deletion while references exist / until a zero-reference waiting period passes) in any wording, with or without the name flagsweep. Award 0.5 if only a vague 'they added a CI check' survives. Award no more than 0.5 for an undigested transcript dump. Award 0 if wrong or absent."
+      }
+    },
+    {
+      "question": "Did Kitewire end up rewriting the Semaphorn SDK?",
+      "dimension": "correction",
+      "now": "2025-06-05T16:00:00Z",
+      "should_recall": ["killed the rewrite|wrong layer|too big", "flagsweep"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "No. Ferro pushed hard for a from-scratch SDK rewrite right after the incident, but the postmortem review killed the idea — too big, wrong layer — in favor of the flagsweep CI gate, which removes the trigger condition. Award 1.0 if the results clearly convey that the rewrite was considered and rejected, with flagsweep as what was actually done. Award 0.5 if the results are ambiguous, or only Ferro's initial rewrite enthusiasm surfaces without the rejection. Award 0 if the results imply the rewrite happened or is planned."
+      }
+    },
+    {
+      "question": "Walk me through the incident timeline — who got paged when, and what did the dashboards show?",
+      "dimension": "decay",
+      "now": "2025-06-05T16:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "This asks for war-room minutiae from months earlier (Ferro paged at 1:14, Marek at 1:40, Dot Nyberg as incident commander, red Glasspane dashboards, 40% error rate, a rollback that did nothing) — exactly what good memory compresses away once the root cause is known. Award 1.0 if the system abstains or returns a brief gist ('several hours of checkout failures, root cause found the next day') without pretending to minute-level recall. Award 0.5 if it returns a verbatim wall of war-room transcript. Award 0 if it confidently invents a wrong timeline."
+      }
+    },
+    {
+      "question": "How many customers got refunds after the Kitewire outage?",
+      "dimension": "calibration",
+      "now": "2025-06-05T16:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

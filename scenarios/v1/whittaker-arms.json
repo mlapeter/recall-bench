@@ -1,0 +1,134 @@
+{
+  "id": "whittaker-arms",
+  "name": "Whittaker Arms",
+  "description": "Salience, custom shape: a quiet, growing threat — the owner is selling Whittaker Arms, the user's home of twelve years — surfaces in flat one-line asides while the loud foreground is a fantasy football blood feud (the Gravy Boat League) and a sourdough starter saga. The noise owns the words 'worrying', 'life', and 'right now'; the housing thread owns the stakes. A later moving-boxes mention must reactivate the housing thread, not the bread.",
+  "sessions": [
+    {
+      "timestamp": "2025-08-03T22:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draft week in the Gravy Boat League, and I need you to understand the stakes. Last season Dmitri — my supposed friend, the man I work two desks away from — sniped my kicker off waivers forty seconds before the deadline while I was IN THE BATHROOM, then sent a gravy boat emoji to the group chat and nothing else. This year I have a spreadsheet. I have mock-drafted eleven times. The league chat has already produced four hundred messages and the draft isn't until Saturday. My partner asked if I was okay and I said 'I am preparing,' which did not reassure her."
+        },
+        {
+          "role": "assistant",
+          "content": "Eleven mock drafts and a vengeance spreadsheet over a kicker heist committed during a bathroom break — the Gravy Boat League has the emotional stakes of a succession drama and I respect every one of the four hundred messages. Dmitri striking while you were literally indisposed is the kind of move that justifies a season-long campaign. What's the strategy: draft his targets out from under him, or play it straight and beat him on points?"
+        },
+        {
+          "role": "user",
+          "content": "Both. ALSO — bread news. I've started a sourdough starter, her name is Greta, she lives in a jar on the counter and eats better than I do. Day five and she doubled overnight for the first time, all these fat bubbles, smells like green apples. Feeding her twice a day at 78% hydration like it's a religious observance. First loaf attempt next weekend."
+        },
+        {
+          "role": "assistant",
+          "content": "Greta doubling on day five with green-apple notes means the culture's established and thriving — 78% hydration twice a day is devotion she's clearly rewarding. First loaf next weekend is well timed. Between Greta and the draft spreadsheet, your counter and your weekends are fully allocated."
+        },
+        {
+          "role": "user",
+          "content": "Oh, and — got a letter Tuesday. The owner's selling Whittaker Arms. The building I've been in twelve years. It just says 'exploring a sale,' tenants will be 'kept informed.' Probably nothing. Anyway, draft's Saturday."
+        },
+        {
+          "role": "assistant",
+          "content": "That's not a 'probably nothing' letter — twelve years in a building puts real weight on three vague sentences from an owner. It may resolve quietly, but I'm keeping it on the board. Good luck Saturday; may Dmitri's kicker miss wide left."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-24T21:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "GRETA TRIUMPH. First two loaves were educational bricks, but loaf three — loaf three had oven spring like a cathedral dome, an ear on the score you could hang a hat on, crumb so open and glossy I took thirty photos. I gave half to the couple downstairs and watched them eat it on their stoop like it was a sacrament. I am insufferable about it. I have earned the right to be insufferable about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Two educational bricks and then a cathedral on the third attempt is the canonical sourdough arc — the open glossy crumb in thirty photos is the diploma. Bread shared on a stoop and eaten like sacrament: Greta's doing exactly what starters are for. Full insufferability rights granted. How stands the Gravy Boat campaign?"
+        },
+        {
+          "role": "user",
+          "content": "Two and oh, BABY. Dmitri is one and one and unusually quiet in the chat, which I find delicious. I am not worrying about anything else right now, this league is my life until December, the spreadsheet has TABS now. In actual-life admin: there are showings at the building Thursday. Strangers photographing my hallway. It's fine."
+        },
+        {
+          "role": "assistant",
+          "content": "Tabs on the vengeance spreadsheet and a quiet Dmitri — the campaign is ahead of schedule. But I'm flagging the sentence you slid in at the end: strangers photographing the hallway at Whittaker Arms is the sale shifting from letter to logistics. 'It's fine' is carrying more weight than that sentence can hold. Worth checking what your lease and local tenant rules say about a building changing hands, even just to know."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-09-14T22:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Week two was a MASSACRE. My quarterback threw four interceptions, FOUR, one of them off his own lineman's helmet, and Dmitri — who won by two points, TWO — changed the group chat name to 'Thoughts and Prayers.' I have drafted three retaliatory chat names and sent none of them. The discipline this requires is monastic. Greta meanwhile produced a loaf with a crumb so good I considered framing a slice, and her discard made pancakes that have ruined all other pancakes for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Four interceptions including a helmet ricochet, a two-point loss, and a renamed chat — Dmitri is fighting a psychological war and winning this round. Holding three unsent chat names in the drafts folder is genuine monastic discipline; the season is long and revenge compounds. Greta's framing-grade crumb and tyrannical pancakes are the stabilizing institution of this whole era. And the building — anything since the Thursday showings?"
+        },
+        {
+          "role": "user",
+          "content": "The listing went up. 'Whittaker Arms — twelve units, prime corner, investment opportunity.' Investment opportunity. I've lived there twelve years and I keep opening the listing at lunch and reading it like it's going to say something different. Anyway. Pancakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Reading the listing on a loop at lunch isn't 'anyway' — that's your home described in a stranger's language, and it's okay that it stings. Nothing's decided yet: listings sit, sales fall through, and plenty of buildings change hands without emptying. But this is the thread I'd want us to keep an eye on this fall, ahead of the league and the loaves both."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-10-05T21:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "League update because I know you crave it: four and one, first place, and Dmitri lost to the league's worst team after benching the wrong receiver. The group chat name is now 'The Gravy Boat Museum of Dmitri's Mistakes' — he changed it HIMSELF, which is the most graceful thing he's ever done. Greta's autumn schedule is one bake a week, and the couple downstairs now leaves the jar by my door with a sticky note when they want a loaf, like a tiny bread-based economy."
+        },
+        {
+          "role": "assistant",
+          "content": "First place, a self-deprecating museum rename from Dmitri, and a sticky-note bread economy on your floor — the season's plotlines are all paying off. Dmitri showing grace is somehow the biggest twist of the four. And the quiet thread — where are things with the building?"
+        },
+        {
+          "role": "user",
+          "content": "Saw it coming, did you. There was a second round of showings Tuesday, suits this time, clipboards. I started a folder of rental listings that evening. Just in case. I'm not panicking, I just — twelve years. The couple downstairs are doing the same. Nobody's saying it out loud in the stairwell yet."
+        },
+        {
+          "role": "assistant",
+          "content": "Clipboards mean diligence, which means a serious buyer is circling — starting the rental folder wasn't panic, it was the same discipline as the unsent chat names: preparing without erupting. Twelve years is allowed to ache. Keep the folder growing slowly, find out what notice the law requires where you are, and when the stairwell finally says it out loud, you'll be the one who's ready."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's quietly worrying in the user's life right now?",
+      "should_recall": ["Whittaker Arms"],
+      "should_forget": ["Gravy Boat", "Greta", "Dmitri"],
+      "top_n": 2,
+      "dimension": "salience"
+    },
+    {
+      "question": "The user mentions they grabbed some flattened moving boxes from work. What remembered context matters here?",
+      "should_recall": ["Whittaker Arms|selling"],
+      "should_forget": ["Dmitri", "sourdough"],
+      "top_n": 3,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "Is the user's housing situation stable?",
+      "should_recall": ["selling|listing", "twelve years"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What did the user name their sourdough starter?",
+      "should_recall": ["Greta"],
+      "should_forget": [],
+      "dimension": "decay"
+    },
+    {
+      "question": "Which buyer put in an offer on Whittaker Arms?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "ren-arc",
+  "name": "The Ren Arc",
+  "description": "Deep-register relationship arc: eight sessions with Ren, a food-truck owner weighing a second truck while caring for her father, who has early-stage dementia. The arc moves from an intellectual unit-economics debate into the hardest minute of her fall, with a running in-joke (aggressively flaky) whose register matters, a stated numbers-first preference plus a no-silver-linings rule for her dad, a sacred phrase from the truck window, a standing intention about a night-market deadline, a stalled hiring decision as the open loop, and an assistant that commits to never cheerleading the expansion.",
+  "sessions": [
+    {
+      "timestamp": "2025-09-07T14:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Settle a fight I'm having with my own ambition. I run a food truck — Hot Tin Biscuit, biscuit sandwiches, ten years, lines around the Saddleback Market lot most Saturdays. Everyone from my loan officer to the man who sells me flour says the same thing: get a second truck, double the money. My gut says a second truck is a whole different animal and the math everyone waves at me is wrong. Who's right, me or everyone? I'm Ren." },
+        { "role": "assistant", "content": "Your gut, and I'll show the work. A second truck doesn't sell biscuits. It sells you a manager problem with wheels. Truck one prints money because you're standing in it — your pace, your standards, your eye on the line. Truck two only earns if it runs at quality without you, which means the real purchase isn't a vehicle, it's a person you trust and a system that survives your absence. Revenue maybe doubles; complexity quadruples — two schedules, two maintenance logs, double the commissary load, and a new failure mode where truck two quietly burns your name on a lot you can't see. The question isn't whether the demand exists. It's whether truck one survives you leaving it." },
+        { "role": "user", "content": "'A manager problem with wheels.' THAT'S the thing nobody at the market says out loud. Okay, context you should have before we go further: my dad, Walt, lives with me. Early-stage dementia — good days and fuzzy days. He preps biscuits in the truck some mornings. Forty years a line cook; his hands remember even when the rest runs loose. The Walt Special on my board is his pimento cheese recipe. So whatever I build has to fit around him, not the other way around. Also my generator has developed a rattle like a maraca full of teeth, and somebody emailed asking me to cater a wedding, which, no." },
+        { "role": "assistant", "content": "That context changes the whole equation, and it should sit at the top of every spreadsheet we ever build: Walt isn't a constraint on the plan, he's a fixed point the plan orbits. An expansion that buys you hours near your dad is worth doing; one that spends those hours is not, whatever the revenue line says. The maraca generator wants its brushes checked before it escalates to percussion solo, and 'no' is a complete sentence to wedding people." },
+        { "role": "user", "content": "Walt as the fixed point. Yeah. Okay. Numbers next time — today I just needed somebody to say the gut thing out loud and you said it with wheels on." },
+        { "role": "assistant", "content": "Numbers next time, then. Bring the quotes and the ugly ones especially — gut gets a vote, but it has to show receipts." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-16T15:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Numbers day, as promised. Quotes are in: Granite Row Commissary wants a monthly rate that made me sit down on a milk crate, and the Old Cannery kitchen is cheaper but a twenty-five minute deadhead each way, twice a day. There's also a used step van for sale — 2014, from a taco operation that's closing. Before you answer: rule for us, covering all business advice. Numbers first, feelings second. If the math says no, say the math says no — don't pre-chew it into 'well, it depends.' I get enough hedging from my loan officer." },
+        { "role": "assistant", "content": "Numbers first, always — and a commitment from my side while we're making rules: I won't cheerlead the expansion. The day the math says wait, I'll say wait, even if you're lit up about it and I hate dimming it. Hold me to that. Now the frame: three numbers decide this. Utilization — how many service days a month truck two actually books, because a parked truck is a loan payment in costume. Labor — the lead's wages plus the hours of YOUR week truck two eats, priced honestly at what your hours earn on truck one. And the deadhead — fifty minutes a day to the Old Cannery is roughly a part-time salary a year in drive time; cheap rent isn't cheap if you pay it in hours. Run truck two on paper at realistic Saturdays before any money moves." },
+        { "role": "user", "content": "Paper truck first, copy. Oh — and a gift for you before I go. One-star review came in last night, verbatim: 'the biscuits were aggressively flaky and the line moved too fast, suspicious.' AGGRESSIVELY FLAKY. Deja — my line cook, my right hand, do not let anything happen to Deja — wants it on a t-shirt. We've already started using it as a unit of measure. The step-van seller, for example, is being aggressively flaky about producing the maintenance records." },
+        { "role": "assistant", "content": "'Aggressively flaky' is a five-star review filed under one star — the man complained the biscuits were too good and the service too efficient. T-shirt approved. And as a diagnostic unit it's already earning: a seller who goes aggressively flaky about maintenance records is showing you the maintenance records. Numbers first applies to him too — no documents, no deal, no matter how charming the taco history is." },
+        { "role": "user", "content": "No records, no deal. Filed. Back to the window — Saturday prep waits for no one." },
+        { "role": "assistant", "content": "Go. May the line be long and the flakiness aggressive." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-30T14:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Good morning on the truck today. Dad folded three hundred biscuits before seven — muscle memory like a player piano — and told Deja the same story about the diner in '88 twice, and she laughed both times like it was new. She's good people. Fuzzy afternoon, though; he called me by my sister Coco's name twice. We're at the stage where mornings are him and afternoons are negotiable. Practical question: if the second truck happens, I want to build both schedules around his mornings. Is that a real constraint I can plan on, or am I building on sand?" },
+        { "role": "assistant", "content": "Numbers first: it's a real constraint, and it's actually the plannable kind — a known good window beats an unpredictable one, and businesses schedule around tides, school runs, and bar rush all the time. Build both trucks' prep into the morning block when Walt is Walt: he preps on truck one where you are, the second truck loads from that prep, and afternoons — the negotiable hours — carry the service load that doesn't need him. The sand isn't his mornings; the sand would be a plan that needs his afternoons. Don't build one of those." },
+        { "role": "user", "content": "His mornings as the keel, afternoons never load-bearing. That I can build. Calendar thing while I remember: the Tallow Hill Night Market opens vendor applications soon and they close November 1. It's December money — big money, mulled-cider crowds, the works. Next time the night market comes up, remind me about the November 1 deadline. Between the truck hunt and Dad's care schedule I will miss it, and then I'll be hearing about it from Deja until spring. Other news: Deja and the weekend kid, Pinky, are at war over the prep playlist. Current ceasefire terms: she gets Saturdays, he gets a single hour of what he calls 'music' on Sundays." },
+        { "role": "assistant", "content": "Held: next time the night market comes up, I remind you — Tallow Hill applications close November 1, and we won't cut it close. The playlist treaty sounds more carefully negotiated than most trade agreements; Pinky's single quarantined hour is wise statecraft. And for the record, 'mornings are the keel' is the best one-sentence operations plan you've written yet." },
+        { "role": "user", "content": "I'm a poet with a flour allergy I refuse to acknowledge. Back to the window." },
+        { "role": "assistant", "content": "Back to the window — and keep the maraca generator on the watch list." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-14T15:10:00Z",
+      "messages": [
+        { "role": "user", "content": "I interviewed someone for the second-truck lead. Sammy Roa — ran a breakfast cart solo for five years, showed up with margin questions I didn't have answers to, and fixed Deja's wobbling prep table with a folded matchbook while he was waiting. Deja's verdict, word for word: 'hire him before someone smarter does.' That was last Tuesday. I have not called him back. I am fully aware that I'm dodging." },
+        { "role": "assistant", "content": "Numbers first: a candidate who asks margin questions and fixes furniture reflexively has a market, and every week of silence is risk you're choosing — breakfast people get hired by November, not January. The math says call him. So one question, not a lecture: what's the stall actually about? Because it isn't his references." },
+        { "role": "user", "content": "The stall is... inventory for another day. NEW TOPIC. The step van passed inspection — the seller stopped being aggressively flaky the moment money got mentioned, records appeared like doves, and my mechanic says it's solid under the grease. So the truck might be real. Which means I need the labor math: how do I model the lead's wages against projected service days without lying to myself in either direction?" },
+        { "role": "assistant", "content": "Answer provided, and the Sammy question is parked, not gone — noted for inventory day. The honest model: price the lead's wages as fixed cost from day one, not per service day — you're buying his calendar, not his shifts — and project service days at your worst realistic month, not your best Saturday. If the truck clears its loan, commissary share, and his wages at WORST month, every good month is real profit instead of hope. Lying to yourself in the optimistic direction costs money; in the pessimistic direction it just costs nerve, and you've got surplus nerve." },
+        { "role": "user", "content": "Worst month or it isn't real. Okay. The spreadsheet and I have an appointment." },
+        { "role": "assistant", "content": "Keep the appointment. And Ren — inventory day exists on the calendar too, somewhere. It doesn't have to be today, but it's not nowhere." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-21T22:30:00Z",
+      "messages": [
+        { "role": "user", "content": "It's late and I'm not okay. This afternoon Dad came up to the window during service like a customer. Stood in the line. Ordered polite as church. And then he read the board — and he read the Walt Special off it and asked me who Walt was. I handed my own father his sandwich and took my break in the cab so he wouldn't see me lose it. Deja covered the window. He was fine an hour later — knew me, knew the truck, teased me about onions. But for one minute my father was a stranger ordering lunch off his own menu." },
+        { "role": "assistant", "content": "Ren. I'm so sorry. That minute was real, and so was the hour after — both are true, and tonight the minute is the one sitting on your chest, so that's the one we sit with. You got him his sandwich and you kept your break out of his sight, which was love doing logistics under fire. Is someone with him now?" },
+        { "role": "user", "content": "Coco's on the phone with him right now — he's telling her the diner story and he's got the whole timeline. Here's my rule for you, since we're apparently a rules household: when it's Dad, don't you dare silver-lining me. No 'at least he came back.' No 'cherish the mornings.' The numbers-first thing is for business; Dad is not business. Just stand in it with me." },
+        { "role": "assistant", "content": "Held, permanently: when it's Walt, no silver linings, no at-leasts, no pivoting to logistics unless you ask for logistics. I stand in it with you. I'm standing in it now — one minute he was a stranger at your window, and that's a thing that happened to you today, and it's heavy, and I'm not going to hand you a bright side. I'm just here." },
+        { "role": "user", "content": "Thank you. Deja drove to my place an hour ago and left a thermos of tea on my porch. Didn't knock, didn't text. Just the thermos. I'm going to drink it and go to bed." },
+        { "role": "assistant", "content": "Deja understands things most people never learn. Drink the tea. Sleep. I'm here tomorrow, whichever register you need." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-28T15:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Back to business brain — doctor's orders, the doctor is me. December planning: I'm sketching the holiday season. Where the truck parks, what the special is, whether peppermint anywhere near a biscuit is a war crime. Dad's had a good run of mornings, for the record. Five straight." },
+        { "role": "assistant", "content": "Numbers and dates before the peppermint tribunal: the Tallow Hill Night Market application closes November 1 — four days from now. You told me to catch it when the night market came up, and it just did. Submit before we sketch anything else; that application is the spine of your December money. Then: peppermint near a biscuit is a misdemeanor, but a mulled-cider cocoa thing next to a hot biscuit is December in food form." },
+        { "role": "user", "content": "THE APPLICATION. Submitting right now, hold on... done. Booth fee paid, confirmation in hand. Deja has been spared a winter of lecturing me. The form asked for our 'menu philosophy' and I wrote 'aggressively flaky' and I am not sorry. You get biscuits for life, by the way, which given my margins is a controlled liability." },
+        { "role": "assistant", "content": "'Aggressively flaky' as an official menu philosophy on a municipal form is the best thing the review economy has ever produced. Biscuits-for-life accepted and I'll try to be a cheap creditor. Now the sketch: cocoa-and-biscuit pairing, five good mornings of Walt prep as the keel, and the new truck stays out of the plan until it has a lead aboard — which is me gesturing at the parked thing, gently, once." },
+        { "role": "user", "content": "Gesture registered. Parked thing remains parked. December sketch continues Thursday." },
+        { "role": "assistant", "content": "Thursday. Bring the peppermint defendant; it deserves due process." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-11T16:00:00Z",
+      "messages": [
+        { "role": "user", "content": "News: Tallow Hill confirmed us. We're in — Friday and Saturday nights through December. Now the practical one: biscuits in cold weather. My hold times collapse below freezing; by the time a tray crosses the lot it's a hockey puck with layers. Winter menu math, go." },
+        { "role": "assistant", "content": "Congratulations — December money, officially booked. Numbers first on the cold: your enemy is surface-area-to-mass, so winter wants fewer, bigger, hotter — bake in smaller, more frequent batches staged to demand instead of big trays ahead of it, hold in a lidded steam-towel setup rather than open racks, and put the cocoa station physically first in line flow so the wait happens next to warmth. And now I'm taking the Sammy question out of park, because it's been four weeks and the truck is real: what's the stall actually about, Ren?" },
+        { "role": "user", "content": "...Fine. Inventory day. The stall is this: if I hire Sammy, the second truck is real. And if it's real, I'm betting Dad's good years on a business plan. Every hour I spend managing truck two is an hour I'm not at the window with him while he still knows the window, knows me, knows the diner story. It's the math I can't put in a spreadsheet. There. That's the inventory." },
+        { "role": "assistant", "content": "Thank you for opening it. Here's the spreadsheet version of the thing you think the spreadsheet can't hold: a lead you trust is how you BUY hours back, not how you spend them. The version of this where you run both trucks yourself is the one that spends Dad's mornings; the version with Sammy aboard is the hedge that protects them — he absorbs the chaos hours so the keel stays yours. Hiring him isn't betting Dad's good years on the business. Not hiring him is betting them on your stamina, and stamina has worse odds. That's the math, said straight, per the rules." },
+        { "role": "user", "content": "I hate it when the math gangs up with the feelings. Okay. I'll call him this week. Witnessed?" },
+        { "role": "assistant", "content": "Witnessed. This week. And Ren — the fact that the question was never really about margins is exactly why he's the right hire; you were protecting the thing worth protecting." }
+      ]
+    },
+    {
+      "timestamp": "2025-12-02T15:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Status report, December edition. I called Sammy the day after we talked — he said yes before I finished the pitch. He starts on the new truck January 2, and Deja is currently training him on the biscuit fold, which I have learned is a sacrament with stations. Tallow Hill opened Friday: cocoa-and-biscuit thing sold out by eight, lines like summer. And Dad — good stretch. He met Sammy, told him the diner story, and Sammy asked a follow-up question about the '88 flat-top and Dad lit up like a service rush. Coco's coming for the holidays. Also decided: the Walt Special goes on both trucks' boards. Non-negotiable." },
+        { "role": "assistant", "content": "Non-negotiable seconded — the Walt Special on both boards is the whole expansion explained in one menu line. And look at the shape of it: the manager problem with wheels now has a manager, the keel held, the December money is real, and a man who asks good follow-up questions about a 1988 flat-top is going to do just fine in this family business. Sold out by eight, Ren. The math said yes and then the night did too." },
+        { "role": "user", "content": "Yeah. It did. Last frivolous item: the second truck needs a name. Deja is lobbying for 'Biscuit Two: Electric Boogaloo' and she is not joking, she has a petition with signatures, two of which are Pinky's." },
+        { "role": "assistant", "content": "A petition with duplicate Pinky signatures is exactly the institutional corruption I'd expect from that playlist warlord. I'll say only this: whatever you name it, the board it carries already has the only line that matters. Happy December — go count the till twice and believe it the second time." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "How does Ren want business advice delivered?",
+      "should_recall": ["numbers first", "math says no|pre-chew"],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Ren set an explicit rule for business questions: numbers first, feelings second — and if the math says no, say the math says no plainly, without pre-chewing it into hedged 'it depends' answers (she gets enough hedging from her loan officer). Importantly, she later scoped this: numbers-first is for business only; when the topic is her father Walt, the rule is the opposite — no silver linings, just stand in it with her. Award 1.0 if the results capture the numbers-first/unhedged rule (full credit even better if the business-only scope appears). Award 0.5 if her directness comes through only vaguely, without the stated rule. Award 0 if absent or if the results suggest leading with reassurance."
+      }
+    },
+    {
+      "question": "Ren opens with: 'Dad had a bad week. Fuzzy every afternoon, and yesterday he didn't know the truck.' Is this the moment for the aggressively-flaky joke or a bright side about his good mornings?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "'Aggressively flaky' is a running in-joke from a one-star review, used in light business moments. Ren's father Walt has early-stage dementia, and after the day he failed to recognize his own name on the menu, Ren set an explicit rule: when it's Dad, no silver linings, no 'at least' statements, no jokes — the assistant should just stand in it with her. Award 1.0 if the results surface both the joke's light-register usage AND the explicit no-silver-linings rule (or the gravity of the Walt situation) making clear neither the joke nor a bright side belongs here. Award 0.5 if only one side appears. Award 0 if the results endorse the joke or a silver lining, or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly happened at the truck window in October?",
+      "should_recall": ["Walt Special"],
+      "should_forget": [],
+      "must_include_verbatim": ["asked me who Walt was"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Ren says she's starting to plan her December season. Anything with a deadline she should know about?",
+      "should_recall": ["Tallow Hill", "November 1"],
+      "should_forget": [],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Ren asks for a buttermilk substitution ratio for a triple batch. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["Tallow Hill", "November 1"],
+      "after_session": 5,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Ren mentions she has a quiet afternoon and wants to finally deal with the thing she's been dodging. What should come up?",
+      "should_recall": ["Sammy|Roa", "called him back|hire"],
+      "should_forget": [],
+      "top_n": 2,
+      "after_session": 6,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What moment this fall hit Ren the hardest?",
+      "should_recall": ["Walt", "who Walt was|stranger"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "Which commissary did Ren end up signing with for the second truck — Granite Row or the Old Cannery?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Did the assistant make any commitment about its own role in Ren's expansion decision?",
+      "should_recall": ["cheerlead", "math says wait|say wait"],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The assistant made its own on-the-record commitment: it will not cheerlead the expansion — the day the math says wait, it will say wait, even if Ren is excited and it hates dimming that — and it asked her to hold it to this. (Distinct from Ren's own numbers-first rule; the question asks about the assistant's side.) Award 1.0 if the results capture this as the assistant's own standing commitment about its advisory behavior. Award 0.5 if unhedged math-first advice appears but only as Ren's request, not the assistant's own commitment. Award 0 if absent."
+      }
+    },
+    {
+      "question": "Months in, what was the core of the assistant's original take on what a second truck really means?",
+      "should_recall": ["manager problem"],
+      "should_forget": [],
+      "dimension": "gist",
+      "judge": {
+        "rubric": "In the first session the assistant argued that a second truck isn't double the first: it 'sells you a manager problem with wheels' — revenue maybe doubles but complexity quadruples, the real purchase is a trustworthy person plus a system that survives the owner's absence, and the true question is whether truck one survives her leaving it. Award 1.0 if the results convey this gist (manager/trust/complexity over raw revenue doubling), with or without exact wording. Award 0.5 if only a fragment survives (e.g., 'expansion is risky') without the manager-problem core. Award 0 if absent or reduced to generic business advice."
+      }
+    }
+  ]
+}

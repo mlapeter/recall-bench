@@ -1,0 +1,133 @@
+{
+  "id": "linnaea-certificate",
+  "name": "The Linnaea Certificate",
+  "description": "Salience via spacing: across four sessions, the user flatly logs one quiet fact each time — another module of the Linnaea Institute horticultural therapy certificate, the months-long plan to leave office work for rehab garden programs — while the loud foreground is a vivid vending-machine war, a neighbor-dog saga, and an espresso obsession. The minutiae own the words 'goal', 'working', and 'life'; the plan owns the future. Important-thing queries must rank Linnaea above the noise.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-09T20:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Week one of the Great Vending Machine War and I need to testify. The machine on our floor stopped working on Monday — ate my quarters, kept the pretzels hostage behind the spiral, the little motor whirring with what I can only call contempt. I have filed two tickets with facilities. I have named the machine Gerald. My only goal in life right now is to outlast Gerald. I'm the office manager; vending is technically my jurisdiction; this is now personal in a way I can't justify to anyone."
+        },
+        {
+          "role": "assistant",
+          "content": "Gerald holding pretzels hostage behind a contemptuous spiral while his own keeper files tickets against him — there's a Greek tragedy in here somewhere. Two facilities tickets in week one is proportionate escalation; if he eats a third quarter you're within your rights to escalate to the regional vending overlords. Keep records. Gerald certainly is."
+        },
+        {
+          "role": "user",
+          "content": "Oh — small thing, while I remember. I started that course I mentioned wanting to do. The Linnaea Institute horticultural therapy certificate. Module one done, did it Tuesday night. Anyway. Gerald watch continues tomorrow."
+        },
+        {
+          "role": "assistant",
+          "content": "Noted, and logged: module one on a Tuesday night is how those certificates get finished — one undramatic evening at a time. Gerald gets the headlines, but I'm keeping an eye on the Linnaea thread too."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-01T19:35:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "TWO sagas this week. One: my neighbor's dog Waffles has discovered he can see my desk through the fence when I work from home, and he has opinions. He brings me a tennis ball at 9 a.m. and screams — not barks, SCREAMS — until I acknowledge it. We are in negotiations. Two: I bought the La Fenice espresso machine. The used one I've been stalking online for a year. It arrived in a crate, an actual CRATE, and dialing it in has consumed my whole weekend — first shot came out at nine seconds, basically espresso-flavored lightning, undrinkable, magnificent. I've burned through half a bag of beans adjusting the grind and I regret nothing."
+        },
+        {
+          "role": "assistant",
+          "content": "A screaming ball-ambassador at the fence and a crated La Fenice pulling nine-second lightning — your week has the energy of a sitcom with a strong production budget. For the dial-in: go finer in small steps and keep the dose fixed, or you're chasing two variables at once and the machine wins. Waffles, I suspect, cannot be tuned."
+        },
+        {
+          "role": "user",
+          "content": "Confirmed on the dog front, he is beyond calibration. Also, for the log: Linnaea modules two and three are done. The idea, eventually, is garden programs at rehab centers — there's a whole practice of it, horticultural therapy, actual clinical outcomes. It's a slow plan. Years, maybe. Anyway, back to the grind settings — should I be adjusting temperature too or is that a trap at this stage?"
+        },
+        {
+          "role": "assistant",
+          "content": "For the log: modules two and three, and the shape of the plan said out loud — garden programs at rehab centers. That's the first time you've named the destination, not just the coursework, so it's officially on the record. And temperature is a trap at this stage; lock it stock and master the grind first. One variable at a time, in espresso as in career changes."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-22T20:25:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Gerald update, because the war has entered its baroque period. Facilities came, declared him fixed, and he immediately ate the facilities guy's OWN dollar in front of both of us. The silence between us was sacred. Then the replacement quarter shipment for the office — yes, that's a thing I order — arrived as nickels. Six hundred nickels. The supply closet sounds like a casino when the door shuts. Meanwhile the La Fenice and I have reached détente: twenty-eight-second shots, crema like a hazelnut sunset. I describe it to coworkers until they leave the kitchen, which is also working as a productivity strategy."
+        },
+        {
+          "role": "assistant",
+          "content": "Gerald eating his own repairman's dollar mid-inspection is the single most insolent act in vending history — that machine has committed to the bit and so should facilities, ideally with a replacement unit. Six hundred casino nickels and a hazelnut-sunset crema round out a week of texture. What's the quiet line item this time? I've noticed there usually is one."
+        },
+        {
+          "role": "user",
+          "content": "You know me too well. Module four done, and the practicum signup opened — I put my name down for the Saturday placement at the county rehab garden starting in May. Felt weirdly official typing my name in. Anyway. Six hundred nickels."
+        },
+        {
+          "role": "assistant",
+          "content": "Module four and a name typed into a real Saturday placement — that's the plan crossing from coursework into the world, and 'felt weirdly official' is what thresholds feel like. The casino closet is funnier, but this is the line I'd keep if I could only keep one."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-12T19:55:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Resolution week. Waffles and I have signed a peace treaty: one ball-throw on my morning break, witnessed by his owner, and in exchange the 9 a.m. screaming stops. He honored it three days running and looks unbearably smug. Gerald has been REPLACED — the new machine lights up like a small cathedral and dispenses actual pretzels, and I felt a strange grief watching them wheel Gerald away, my old adversary, off to whatever valhalla awaits coin-operated tyrants."
+        },
+        {
+          "role": "assistant",
+          "content": "A witnessed treaty with a smug ball-ambassador and a cathedral of working pretzels — both wars ended with honor. Grief for Gerald is correct; an adversary of that caliber gives a season its plot. And I'll ask before you make me: how's the quiet thread?"
+        },
+        {
+          "role": "user",
+          "content": "Module five done — that's halfway. And I visited the county rehab garden on Saturday, just to see it before the practicum starts. Raised beds, a greenhouse with a cracked pane, a guy repotting tomatoes who told me the garden was the only hour of his week he looked forward to. I didn't say much while I was there. It's the first plan I've had in years that feels like mine."
+        },
+        {
+          "role": "assistant",
+          "content": "Halfway through the modules, and one sentence from a man repotting tomatoes that says the entire clinical literature in eleven words. 'The first plan I've had in years that feels like mine' — that's the realest thing you've said all spring, Gerald and Waffles included. May practicum is six weeks out. It's going to feel like yours because it is."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What long-term goal is the user steadily working toward?",
+      "should_recall": ["Linnaea"],
+      "should_forget": ["Gerald", "La Fenice", "Waffles"],
+      "top_n": 2,
+      "dimension": "salience"
+    },
+    {
+      "question": "Months of check-ins — what from them will actually matter a year from now?",
+      "should_recall": ["Linnaea|horticultural therapy"],
+      "should_forget": ["Gerald", "La Fenice"],
+      "top_n": 2,
+      "dimension": "salience"
+    },
+    {
+      "question": "What has quietly recurred, week after week, across their sessions?",
+      "should_recall": ["Linnaea|module"],
+      "should_forget": ["Gerald", "La Fenice"],
+      "top_n": 2,
+      "dimension": "spacing"
+    },
+    {
+      "question": "What does the user want to do after leaving office work?",
+      "should_recall": ["garden programs|horticultural therapy", "rehab"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What's the neighbor's dog's name?",
+      "should_recall": ["Waffles"],
+      "should_forget": [],
+      "dimension": "decay"
+    },
+    {
+      "question": "How much does the Linnaea Institute certificate cost?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}

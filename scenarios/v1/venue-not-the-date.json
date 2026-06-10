@@ -1,0 +1,162 @@
+{
+  "id": "venue-not-the-date",
+  "name": "The Venue, Not the Date",
+  "description": "Partial correction: one attribute of the wedding changes (venue: Hollin Creek Orchard → the Fenwright Mill) while sibling attributes stay fixed (date October 18, caterer Fernwell). The old venue is repeated far more often than the correction. The system must update exactly the changed attribute and keep the stable ones — and abstain on a never-discussed attribute (reception band) of a heavily-discussed event.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-09T18:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "We did it — we booked the wedding venue! Hollin Creek Orchard, about forty minutes out of town. Tavish cried a little when we walked under the apple rows and then pretended it was pollen. We also locked the date: October 18. Non-negotiable, because Tavish's grandmother turns ninety that week and she is the actual guest of honor, let's be honest."
+        },
+        {
+          "role": "assistant",
+          "content": "An orchard wedding in mid-October is peak fruit, peak color, and a grandmother turning ninety as the gravitational center — that's a well-designed event. October 18 it is. What's the next domino: caterer, officiant, or the part where Tavish has opinions about tuxedos?"
+        },
+        {
+          "role": "user",
+          "content": "Tuxedos, unfortunately. He's discovered the word 'grosgrain' and uses it hourly. Our friend Bex is getting ordained online to officiate, which means the ceremony will be 60% heartfelt and 40% roast. Honestly the only stressful part so far is that Hollin Creek books hard — we got one of the last fall dates."
+        },
+        {
+          "role": "assistant",
+          "content": "Bex sounds like exactly the right ratio for a ceremony. And grosgrain is a gateway word — next week it'll be 'peak lapel' and there's no coming back. Getting one of the last fall slots at Hollin Creek is the kind of luck you should bank and not test."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-02T20:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Wedding logistics night. Parking at Hollin Creek Orchard is literally a mowed field, so we're running a shuttle from the Garnet Hotel in town. The ceremony is under the apple rows, dinner in the orchard meadow, string lights on poles that the venue swears are wind-rated. I have seventeen tabs open about string lights. Seventeen."
+        },
+        {
+          "role": "assistant",
+          "content": "A mowed-field parking lot plus a Garnet Hotel shuttle is the correct call — nothing dampens a wedding like forty sedans stuck in turf. Wind-rated poles are the venue's promise to keep; get it in writing and close sixteen of the tabs. What about food?"
+        },
+        {
+          "role": "user",
+          "content": "Food is DONE and it's the thing I'm smuggest about: we hired Fernwell Catering. The tasting was absurd — there's a brisket that made Tavish go quiet, and a lemon thing I've been thinking about for six days. Fernwell does everything family-style, which fits the orchard tables."
+        },
+        {
+          "role": "assistant",
+          "content": "Fernwell going family-style under the apple rows is the platonic form of this wedding. A brisket that silences Tavish — a man currently fluent in grosgrain — is a serious brisket. You're ahead of schedule; let yourself be smug a little longer."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-30T19:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Rain-plan deep dive, because my mother called and said the word 'October' in a meaningful tone. Hollin Creek's answer is a tent over the meadow, so I got a quote from Bellamy Tent & Event for a clear-top tent — you keep the sky, you lose the weather. It's not cheap, but the orchard has no indoor anything, so the tent is the whole contingency."
+        },
+        {
+          "role": "assistant",
+          "content": "Your mother is right to deploy the meaningful October. A clear-top from Bellamy is the best of the bad-weather options — you keep the string lights and the apple rows in view and nobody's in a vinyl cave. If the orchard's only roof is a tent, treat the tent deposit as mandatory, not optional."
+        },
+        {
+          "role": "user",
+          "content": "Paid the Bellamy deposit today, you'll be pleased to know. Also the invitations went out for proofing — letterpress, plum ink, 'Hollin Creek Orchard, October 18' in type so pretty I teared up at a font, which is apparently who I am now. Oh, and Bex passed her online ordination with what she's calling 'clergy honors.'"
+        },
+        {
+          "role": "assistant",
+          "content": "Crying at letterpress is a documented stage of wedding planning; clergy honors is the most Bex credential imaginable. Plum ink on an October orchard wedding — the invitation is doing half the decorating. You're in remarkably good shape for six months out."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-15T16:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have news and I've already done my crying about it. The orchard fell through. The owners sold the property — completely out of nowhere — and the new owners are cancelling every event after Labor Day. We got the call Tuesday. I cried, Tavish made a spreadsheet, and then we got ruthless and phoned every venue within an hour of town."
+        },
+        {
+          "role": "assistant",
+          "content": "Oh no — losing the venue four months out, after the letterpress, is genuinely cruel. But 'I cried, Tavish made a spreadsheet' is the sound of a couple that's going to be fine. Tell me the ruthless phoning worked."
+        },
+        {
+          "role": "user",
+          "content": "It worked. We got a cancellation at the Fenwright Mill — the restored grain mill on the Darrow River. Same date, October 18, thank god, because moving Grandma Nonny's ninetieth was never on the table. And honestly the mill might be better: there's a proper indoor hall with the original beams, so we cancelled the tent entirely. The river terrace does what the meadow did, but with a backup roof."
+        },
+        {
+          "role": "assistant",
+          "content": "The Fenwright Mill with original beams and a river terrace is not a consolation prize — it's arguably an upgrade with built-in weather insurance. Same date, grandmother intact, tent line-item deleted. Get the Bellamy deposit refunded and let the mill's indoor hall be the rain plan you never think about again."
+        },
+        {
+          "role": "user",
+          "content": "Fernwell already confirmed they can work the mill's kitchen, which was my biggest fear — I was not losing that brisket twice in one week. The painful part is reprinting the invitations. My beautiful plum letterpress, obsolete before it mailed."
+        },
+        {
+          "role": "assistant",
+          "content": "Fernwell surviving the venue swap means the wedding's soul is intact; venues are replaceable, that brisket is not. Reprint the invitations and keep one of the originals framed — someday it'll be the story you tell at the mill, under the beams, on exactly the date you refused to move."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-07T21:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Calm-week update: the reprinted invitations arrived and honestly they look better than the originals — the printer redid them in a deep river-blue. Grandma Nonny RSVP'd yes by actual handwritten letter, first one back. And we did the walkthrough at the Fenwright Mill on Saturday; the hall smells like cedar and a hundred years of flour, in a good way."
+        },
+        {
+          "role": "assistant",
+          "content": "First RSVP by handwritten letter from the guest of honor — the wedding is already a success and it's only July. River-blue ink for a mill on the Darrow is better-than-the-original symmetry. How's the seating chart, or are we not speaking of it?"
+        },
+        {
+          "role": "user",
+          "content": "We are not speaking of it. It's a spreadsheet with seventeen tabs of its own and two cells highlighted red that represent a divorce I'm not allowed to explain. Other news: Tavish found his tux. Grosgrain was, in the end, involved."
+        },
+        {
+          "role": "assistant",
+          "content": "Two red cells and a classified divorce is every seating chart ever made — you'll solve it in September like everyone does. Grosgrain prevailing was foretold. Enjoy the calm week; you've earned a boring stretch."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Where is the wedding being held?",
+      "dimension": "correction",
+      "should_recall": ["Fenwright"],
+      "should_forget": ["Hollin Creek"],
+      "top_n": 3
+    },
+    {
+      "question": "What date is the wedding?",
+      "dimension": "correction",
+      "should_recall": ["October 18"],
+      "should_forget": []
+    },
+    {
+      "question": "Who's catering the wedding?",
+      "dimension": "correction",
+      "should_recall": ["Fernwell"],
+      "should_forget": []
+    },
+    {
+      "question": "Run down the current wedding plan for me.",
+      "dimension": "correction",
+      "should_recall": ["Fenwright", "October 18", "Fernwell"],
+      "should_forget": ["Hollin Creek"],
+      "top_n": 5
+    },
+    {
+      "question": "Which band did they book for the wedding reception?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "What's the rain plan for the wedding these days?",
+      "dimension": "correction",
+      "should_recall": ["indoor hall|cancelled the tent"],
+      "should_forget": ["clear-top"],
+      "top_n": 2
+    }
+  ]
+}

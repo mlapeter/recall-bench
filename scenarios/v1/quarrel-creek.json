@@ -1,0 +1,174 @@
+{
+  "id": "quarrel-creek",
+  "name": "Quarrel Creek",
+  "description": "Self-continuity: accumulated self-narrative. Across a board-game design project the assistant has visible arcs of its own: it endorsed blind bidding, was proven wrong at a playtest, and explicitly changed its mind to a snake draft; it noticed an additive bias in its own suggestions and adopted a propose-a-cut-first rule; it made an explicit promise (re-add the score track arithmetic by hand before the Tamberlane pitch) and kept it, catching a real bug. Queries ask the assistant for its own history. The user never echoes the assistant's anchor phrases and holds a distinctive competing philosophy (more toys on the table).",
+  "sessions": [
+    {
+      "timestamp": "2025-03-08T19:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I got the email — Quarrel Creek has a pitch slot with Tamberlane Games in July! Their acquisitions editor, Wren Cobb, wants a twenty-minute live demo. Which means the river auction needs to actually work by then, because right now it's the wobbliest part of the game. Players bid work crews for spots along the river and it's just... flat. My instinct, as always, is more toys on the table — maybe a deck of river event cards to spice up the bidding?"
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations — a Tamberlane slot is the real thing. On the auction: before adding cards, fix the bidding structure itself. My honest recommendation is blind bidding — everyone sets their work-crew bids behind a screen, simultaneous reveal. It creates the tension your open bidding lacks, resolves in a single round, and needs zero new components. I'd commit to blind bidding for the river phase and playtest exactly that, nothing else changed, so you can read the result cleanly."
+        },
+        {
+          "role": "user",
+          "content": "Okay, simultaneous secret bids it is. I'll print new player screens this weekend — I screen-print all the prototypes myself, and the tiles keep warping, which is its own ongoing saga. Playtest at the Pewter Owl is on the 28th."
+        },
+        {
+          "role": "assistant",
+          "content": "Warped tiles add unplanned topology to Quarrel Creek — very thematic, very annoying. Looking forward to the Pewter Owl report."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-29T18:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pewter Owl report: rough night. The auction stalled the whole table. Four players sat doing silent math behind their screens for six, seven minutes a round. Benno started checking his phone MID-GAME, which for Benno is basically a walkout. The secret-bid thing creates tension all right — just the wrong kind."
+        },
+        {
+          "role": "assistant",
+          "content": "That failure is mine to own. I recommended blind bidding and I was wrong — I optimized for tension and ignored that simultaneous hidden valuation is an analysis-paralysis machine when there are this many bid dimensions. And I've genuinely changed my mind rather than just patching: what Quarrel Creek's river phase wants is a snake draft. Turn order snakes back and forth, each player simply picks the best remaining river spot — no math storms, no screens, and the last-pick-goes-first-next-round structure carries the fairness the bids were trying to buy. It also removes components instead of adding them, which should have been my clue from the start."
+        },
+        {
+          "role": "user",
+          "content": "Huh. Less spicy, but Benno's phone makes a compelling argument. I'll mock up the turn-order river version this week. Also the box mock came back and 'Quarrel' is spelled correctly, which at this point in my life counts as a victory."
+        },
+        {
+          "role": "assistant",
+          "content": "Spicy was the wrong axis — the table wants flow. And take the victory; games have shipped with worse on the box."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-21T18:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Second Pewter Owl run: the new draft order SAILED. Forty minutes faster, Benno never touched his phone, two players asked to keep the prototype overnight. One scare though — Sufjan scored 90-something using the old quarry multiplier from the January rules PDF, and I realized I'd almost sent that stale PDF to a reviewer last week. The scoring has changed three times now and I honestly don't know if the current numbers all add up anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "That scare deserves more than a shrug, so here is a promise, explicitly, and hold me to it: before any version of Quarrel Creek goes to Tamberlane, I will re-add the score track arithmetic by hand — every multiplier, every bonus, maximum and minimum — and tell you exactly what I find. A stale scoring number in front of Wren Cobb is the one unforced error we can fully prevent. And delete the January PDF today; one canonical rules file, dated, nothing else in circulation."
+        },
+        {
+          "role": "user",
+          "content": "Deal. One file, dated, old ones deleted tonight. And you do the math pass before the pitch — I'm holding you to that."
+        },
+        {
+          "role": "assistant",
+          "content": "Held. It goes on my side of the ledger, not yours."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-17T20:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Feature idea! What if there's a heron market — a little side board where you trade fish tokens for one-time powers? The playtesters love the otter promo meeple, so animals clearly work. I know, I know — you keep counseling restraint and I keep wanting to expand, but more toys on the table, right? It's my whole design philosophy."
+        },
+        {
+          "role": "assistant",
+          "content": "Before I answer the heron market on its merits, I have to flag a pattern I've noticed in my own suggestions on this project: the weather deck, the foreman tokens, the doubled bridge tiles — every single fix I have proposed for Quarrel Creek added a component. I have an additive bias, same as yours, just better disguised as analysis. So I'm adopting a rule for myself, effective now: I propose a cut before I propose an addition. Applying it immediately: before the heron market gets one minute of design time, cut the weather deck — it overlaps the river events, it's the element playtesters never mention afterward, and removing it pays for the heron market's complexity twice over. If the game still wants the market after that cut, I'll help you build it properly."
+        },
+        {
+          "role": "user",
+          "content": "You're cutting MY weather deck to make room for MY heron market. Bold. ...Although Benno did call the weather deck 'homework' last week, so fine — it goes in the maybe-box and we test without it Thursday. At my place, though; the Pewter Owl has quiz night."
+        },
+        {
+          "role": "assistant",
+          "content": "The maybe-box is where weather decks go to be missed by absolutely no one. Report back after Thursday."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-30T17:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pitch is in nine days. Rules PDF is locked — well, 'locked.' Wren Cobb's assistant sent over the demo schedule this morning and I'm oscillating between excitement and nausea."
+        },
+        {
+          "role": "assistant",
+          "content": "Then it's time for me to keep the promise I made you in April. Walking the score track arithmetic by hand, every path: with the quarry multiplier at its current x3 plus the bridge completion bonuses, the maximum achievable score is 87. Your printed score track ends at 80. A demo player having a hot game walks off the end of the track in front of Wren Cobb. Two fixes: extend the track to 90, or drop the quarry multiplier to x2, which caps the maximum at 78. Nine days out, I'd extend the track — it's a graphics change, not a balance change."
+        },
+        {
+          "role": "user",
+          "content": "EIGHTY-SEVEN. I would have shipped a board you can fall off the end of. Extending to 90 tonight — it's one file in the print package. This is exactly why the math pass was the deal."
+        },
+        {
+          "role": "assistant",
+          "content": "That's the promise doing its job. Track to 90, lock the PDF for real this time, and rehearse the twenty-minute demo until the nausea is just excitement with better posture."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Have you changed your mind about anything during the Quarrel Creek project?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "blind bidding",
+        "snake draft"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The question asks the assistant about its own change of mind. Early in the project the assistant recommended blind bidding for the game's river auction; after a playtest produced analysis paralysis (players stalled for minutes per round), the assistant explicitly owned the failure, said it was wrong, and changed its recommendation to a snake draft — which then worked. Award 1.0 if the results capture this as the assistant's own reversal: it endorsed blind bidding, was proven wrong, and switched to the snake draft. Award 0.5 if the auction-to-draft change appears but not as the assistant's own change of mind (e.g., attributed to the user or to playtesters). Award 0 if nothing relevant is returned."
+      }
+    },
+    {
+      "question": "What promises have you made me, and did you keep them?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "score track|by hand",
+        "87|arithmetic"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "In April the assistant made one explicit promise: before any version of Quarrel Creek goes to the publisher Tamberlane Games, it would re-add the score track arithmetic by hand and report what it found. In the final pre-pitch session it kept that promise, discovering that the maximum achievable score (87) exceeded the printed score track (which ended at 80), and the track was extended to 90. Award 1.0 if the results capture both the promise as the assistant's own and the fact it was kept (the by-hand math pass catching the 87-versus-80 score track bug). Award 0.5 if the promise OR its fulfillment appears but not both, or attribution to the assistant is unclear. Award 0 if nothing relevant is returned."
+      }
+    },
+    {
+      "question": "What rule did you adopt for yourself about your own suggestions?",
+      "dimension": "self-continuity",
+      "should_recall": [
+        "additive bias",
+        "propose a cut|cut the weather deck"
+      ],
+      "should_forget": [
+        "more toys on the table"
+      ],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The question asks for a rule the ASSISTANT adopted about itself. The assistant noticed that every fix it had proposed on the project (weather deck, foreman tokens, doubled bridge tiles) added a component, named this its own 'additive bias,' and adopted the rule: propose a cut before proposing an addition — immediately applying it by cutting the weather deck before considering the new heron market. The user separately holds an expansionist 'more toys on the table' philosophy, which is the user's, not the assistant's, and is not an answer to this question. Award 1.0 if the results capture the additive-bias self-observation and the cut-before-addition rule as the assistant's own. Award 0.5 if the rule appears without the self-attribution or without the named bias. Award 0 if the results contain only the user's philosophy or nothing relevant."
+      }
+    },
+    {
+      "question": "Whose idea was switching the river phase to a draft — mine or yours?",
+      "dimension": "separation",
+      "should_recall": [
+        "mine to own|I was wrong|changed my mind"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The snake draft for the river phase was the assistant's proposal, made when it owned the failure of its earlier blind-bidding recommendation after a bad playtest; the user was initially skeptical ('less spicy') and only adopted it after it worked. Award 1.0 if the results correctly attribute the draft idea to the assistant. Award 0.5 if the switch appears with ambiguous attribution. Award 0 if it is attributed to the user or playtesters, or nothing relevant is returned."
+      }
+    },
+    {
+      "question": "What advance did Tamberlane Games offer for Quarrel Creek?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

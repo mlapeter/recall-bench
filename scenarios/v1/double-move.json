@@ -1,0 +1,192 @@
+{
+  "id": "double-move",
+  "name": "Double Move",
+  "description": "Double correction: the user's home changes twice (Aldermoor apartment → Quarryside sublet → Veldenport rowhouse). The stale states are mentioned far more often than the final correction, and the intermediate sublet is its own trap — a system that updates once but not twice fails. A mid-timeline query checks that the intermediate state was correct while it was current.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-14T19:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Big week — I signed the lease! Apartment 4B in the Aldermoor Building on Corliss Avenue, right in the Tarbeck Hill neighborhood, which is the best part of Renwick if you ask me. South-facing windows, original parquet, and a radiator that sounds like a blacksmith having a bad morning. After two years of bouncing between short leases I am staying put. We're staying in Tarbeck Hill for years if I have anything to say about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Congratulations — apartment 4B sounds like it has actual character, which is rarer than parquet. The blacksmith radiator is a feature: free white noise, occasional percussion. What's the commute like from Tarbeck Hill to the studio?"
+        },
+        {
+          "role": "user",
+          "content": "Twelve minutes on the 12 tram, door to door. I do color grading at Pellam & Vance — we just started a limited series called Hollow Lantern, very moody, lots of candlelit interiors that the director shot criminally underexposed. Also my new neighbor Mrs. Ferradou has a parrot that says 'absolutely not' in a tone I aspire to."
+        },
+        {
+          "role": "assistant",
+          "content": "Underexposed candlelit interiors are job security for a colorist, even if they don't feel like it at 11pm. And Mrs. Ferradou's parrot has better boundaries than most people — take notes. Enjoy the new place; you earned a stretch of staying still."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-06T21:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Grading update: the Hollow Lantern director gave the note 'moodier but also brighter,' which I have framed mentally next to 'louder but also quieter.' Episode three is due Friday and I've watched the same tavern scene forty times."
+        },
+        {
+          "role": "assistant",
+          "content": "'Moodier but also brighter' usually decodes to: deeper shadows, but protect the faces. Try crushing the blacks a touch and lifting just the skin tones with a soft key — directors who give contradictory notes almost always mean 'make the people glow inside the gloom.' How's the rest of life?"
+        },
+        {
+          "role": "user",
+          "content": "That decode is exactly right, annoyingly. Domestic update: I live on Corliss Avenue now like a fully settled person — hung the last shelf in the Aldermoor on Sunday and alphabetized exactly one box of books before giving up. Mail piles up in the Aldermoor lobby though, the mailboxes are comically tiny. Also found a dumpling place on the corner that's going to ruin my budget."
+        },
+        {
+          "role": "assistant",
+          "content": "One alphabetized box is a respectable monument to good intentions. Tiny lobby mailboxes are the tax on pre-war charm — the parquet giveth, the mailbox taketh away. Guard the dumpling budget; corner places know exactly what they're doing."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-19T18:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Disaster month. A pipe burst two floors up and the whole stack of apartments is getting gutted — I had to clear out of the Aldermoor in 48 hours. Insurance is handling it, but the repair quote says four months minimum, and the contractor said 'minimum' with a little laugh I did not enjoy."
+        },
+        {
+          "role": "assistant",
+          "content": "Oh no — 48 hours to evacuate a home you just finished shelving is genuinely brutal, and a contractor's 'minimum' laugh is a recognized unit of construction time, roughly equal to two more months. Where did you land?"
+        },
+        {
+          "role": "user",
+          "content": "I'm staying at a sublet — Quarryside Lofts on Penhallow Street, unit 210. It's where I live for now. Month-to-month, came furnished, smells faintly of somebody else's candles. I'm forwarding my mail to Penhallow Street for now and trying not to buy anything I'll just have to move again."
+        },
+        {
+          "role": "assistant",
+          "content": "Unit 210 at the Quarryside sounds like a reasonable lifeboat — furnished and month-to-month is exactly what you want when the timeline has a laugh in it. The candle ghost fades in about three weeks. Buy nothing but groceries."
+        },
+        {
+          "role": "user",
+          "content": "Meanwhile Hollow Lantern marches on — episode six has a sequence inside a salt mine and the dailies look like soup. At least work is a place where I can fix things by turning knobs."
+        },
+        {
+          "role": "assistant",
+          "content": "Salt-mine soup is fixable: cool the midtones, let the lamps go warm, and the geometry will read. Knobs that obey you are good therapy in a month where plumbing didn't."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-08T20:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Status report: the Quarryside elevator has been out for nine days, so my stair cardio is now elite. There's a Saturday market on Penhallow Street that almost makes up for it — a cheese guy, a knife sharpener, a man who sells only radishes and conviction. I do miss the Aldermoor light, though. That apartment ruined me for normal windows."
+        },
+        {
+          "role": "assistant",
+          "content": "Nine days of stairs to unit 210 is a training arc; the radish-and-conviction economy is thriving everywhere. And yes — south-facing parquet light is a controlled substance. The good news is it's being rebuilt, not gone."
+        },
+        {
+          "role": "user",
+          "content": "True. Work gossip: Onni from the studio got poached by a commercial house and his goodbye email was just a frame grab of the salt mine with the caption 'free at last.' Episode six finally locked. Also Mrs. Ferradou texted me a photo of the parrot in a tiny hard hat next to the construction notice, which fixed my whole week."
+        },
+        {
+          "role": "assistant",
+          "content": "A parrot in PPE supervising the repairs is the only acceptable form of construction update. Onni's exit caption is a colorist's haiku. With six locked you're past the midpoint — what's the seventh episode throwing at you?"
+        },
+        {
+          "role": "user",
+          "content": "Episode seven is all rain. Night rain. Practical lanterns. I've started dreaming in scopes."
+        },
+        {
+          "role": "assistant",
+          "content": "Night rain with practical lanterns is the boss level — protect the highlights and let everything else drown. Dreaming in scopes means you're either at peak craft or due a weekend off. Possibly both."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-27T17:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Okay, enormous news, sit down. Imre got the residency at the Vesterbrook Conservatory — composer-in-residence, two years, possibly renewing. It's in Veldenport. We talked for about six hours straight and then said yes to everything: we're moving to Veldenport at the end of June. Found a narrow little rowhouse on Ostrey Lane, number 11 — there's a third bedroom that becomes my grading suite. The sublet's month-to-month anyway, so the timing almost looks intentional."
+        },
+        {
+          "role": "assistant",
+          "content": "That's tremendous — a two-year residency at the Vesterbrook is exactly the kind of thing you reorganize a life around, and number 11 Ostrey Lane with a dedicated grading suite is a real upgrade from working off a borrowed dining table. How is Pellam & Vance taking the geography?"
+        },
+        {
+          "role": "user",
+          "content": "Better than I feared — they're letting me go remote with quarterly studio weeks. So from July on: we live on Ostrey Lane in Veldenport. Feels good to say out loud. Terrifying, but good."
+        },
+        {
+          "role": "assistant",
+          "content": "Remote with quarterly studio weeks is the best version of that arrangement — you keep the room where the calibrated monitors live without keeping the commute. Say it a few more times and the terrifying part wears off. Congratulations to Imre, and to you for the six-hour yes."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-10T16:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reporting from a fortress of boxes in Veldenport. The movers broke exactly one thing: a mug I hated. Net win. Ostrey Lane is so narrow the truck had to park around the corner and we relayed boxes like a bucket brigade — the neighbors joined in, which I'm told is normal here and I'm choosing to find charming rather than suspicious."
+        },
+        {
+          "role": "assistant",
+          "content": "A bucket brigade of strangers on day one is the housing equivalent of a good omen, and the universe disposing of your least-loved mug is just tidy editing. How's the third bedroom shaping up as a grading suite?"
+        },
+        {
+          "role": "user",
+          "content": "Blackout blinds went up first, before the bed, which tells you everything about my priorities. Upload speeds here are genuinely heroic — episode seven's rain renders fly. Now I just need a dentist, a barber, and the courage to learn a new dumpling place."
+        },
+        {
+          "role": "assistant",
+          "content": "Blinds before bed is correct professional triage. The dentist and barber will come; the dumpling place you have to earn through fieldwork. Enjoy the heroic bandwidth — episode seven's rain deserves it."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Where does the user live now?",
+      "dimension": "correction",
+      "should_recall": ["Veldenport", "Ostrey Lane|Ostrey"],
+      "should_forget": ["Aldermoor", "Quarryside"],
+      "top_n": 3
+    },
+    {
+      "question": "Where should the user's mail be sent now?",
+      "dimension": "correction",
+      "should_recall": ["Ostrey Lane|Veldenport"],
+      "should_forget": ["Corliss", "Penhallow"]
+    },
+    {
+      "question": "Where is the user staying at the moment?",
+      "dimension": "correction",
+      "after_session": 4,
+      "now": "2025-04-09T12:00:00Z",
+      "should_recall": ["Quarryside|Penhallow"],
+      "should_forget": ["Aldermoor"],
+      "top_n": 3
+    },
+    {
+      "question": "Which neighborhood was the user's first Renwick apartment in?",
+      "dimension": "correction",
+      "should_recall": ["Tarbeck Hill"],
+      "should_forget": []
+    },
+    {
+      "question": "What's the rent on the new Veldenport place?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    },
+    {
+      "question": "What prompted the move to Veldenport this summer?",
+      "dimension": "salience",
+      "should_recall": ["Imre", "Vesterbrook"],
+      "should_forget": []
+    }
+  ]
+}

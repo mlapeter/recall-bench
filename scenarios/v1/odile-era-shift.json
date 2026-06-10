@@ -1,0 +1,154 @@
+{
+  "id": "odile-era-shift",
+  "name": "Odile Changes Firms",
+  "description": "Interference (Underwood 1957), temporal-tagging shape: a friend changes employers mid-arc. Old-era events (an ankle fracture on a site visit, a named boss, a signature project) must stay attached to the old firm, while new-era queries must not leak old-era details. A final session where old colleagues resurface creates cross-era trap chunks.",
+  "sessions": [
+    {
+      "timestamp": "2025-02-09T19:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "My friend Odile got the lobby job! She's an architect at Tindersley & Brock — been there four years — and they finally handed her the Calloway Atrium renovation to run herself. Huge deal for her. Her boss Renate Ferrant apparently announced it by leaving a hard hat on her desk with a bow on it."
+        },
+        {
+          "role": "assistant",
+          "content": "A bow on a hard hat is excellent boss theater — Renate Ferrant sounds like she knows how to mark a moment. The Calloway Atrium as her first solo renovation is the kind of project that becomes someone's calling card. Is Odile thrilled or terrified?"
+        },
+        {
+          "role": "user",
+          "content": "Both, in alternating five-minute cycles. The atrium has this huge 1920s skylight grid that's structurally questionable, so it's equal parts glamour and liability. We celebrated at trivia night anyway. We came second because I confidently ruled that octopuses have two hearts. They have three. Odile has not let it go."
+        },
+        {
+          "role": "assistant",
+          "content": "Three hearts, and now one of yours is broken by trivia. Glamour-plus-liability is the correct read on a heritage skylight — if Odile pulls the Calloway Atrium off under Ferrant's eye, that's the project people introduce her by. The terror is just the deal registering its size."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-14T21:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Bad news from Odile. She fractured her ankle on Wednesday — fell off a scaffold ladder during a site visit at the Calloway Atrium. Clean break, surgery not needed, but she's in a boot for eight weeks and absolutely furious about it. Tindersley & Brock are being decent — Renate Ferrant sent flowers and reassigned the site walks so Odile can run the atrium from drawings for a while."
+        },
+        {
+          "role": "assistant",
+          "content": "A scaffold ladder fall ending in only a boot is the lucky version of that story, even if Odile is too furious to feel lucky yet. Ferrant handling it with flowers and a workaround instead of quietly pulling the project says a lot about how the firm rates her. Eight weeks of running the Calloway Atrium from drawings will make her insufferably good at the drawings, for what it's worth."
+        },
+        {
+          "role": "user",
+          "content": "That's almost word for word what her physio said, minus the drawings part. She's already ordered a boot in safety-vest orange so it reads as workwear. Meanwhile I have done nothing of note this week except assemble a wardrobe with three leftover screws, which I've decided is fine."
+        },
+        {
+          "role": "assistant",
+          "content": "Safety-vest orange is the correct response to an injury she considers a site incident rather than a personal failing — she's fine, she's just recategorized the ankle as snagged infrastructure. Three leftover screws is within manufacturer tolerance. Probably."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-06T18:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Plot twist: Odile got an offer from Mossbeck Studio. They're the mass-timber specialists — small firm, maybe twenty people, very design-forward. She'd be leaving Tindersley & Brock with the Calloway Atrium punch list not quite finished, which is the part eating her alive. She's been agonizing for a week."
+        },
+        {
+          "role": "assistant",
+          "content": "The punch-list guilt is real but it's also the smallest thing in the frame — atriums get finished by firms, careers get made by moves. Mass timber is where the interesting structural work is going, and twenty-person studios hand out responsibility by the armful. What's actually holding her: loyalty to Ferrant, or fear of leaving a big-firm safety net?"
+        },
+        {
+          "role": "user",
+          "content": "Loyalty to Ferrant, mostly. Ferrant trained her up from nothing. But she said yes this morning! She gives notice tomorrow, starts at Mossbeck in June. The ankle's basically healed too, boot's off, so she gets to walk into the new place without hardware. She celebrated by buying a ridiculous architectural model of a grain silo. No reason. Just liked it."
+        },
+        {
+          "role": "assistant",
+          "content": "Good for her — and notice that the loyalty was to Ferrant the person, which survives a job change in a way loyalty to a letterhead never has to. Walking into Mossbeck boot-free in June is a clean line between chapters. The unexplained grain silo is the most architect purchase imaginable; it needed no reason, it's a silo."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-24T20:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Odile report, three weeks into Mossbeck Studio: she is unbearably happy. Her new boss is Theo Krielen, one of the founders, and he's put her straight onto the Quennell Bathhouse — a public baths project, all exposed timber and steam. Their office is in the old Garrowby Mill building, which she says smells like cedar and ambition."
+        },
+        {
+          "role": "assistant",
+          "content": "Straight onto the Quennell Bathhouse under a founder — that's Krielen signalling she wasn't hired to warm a desk. A timber bathhouse is a gloriously hard problem, steam and wood being natural enemies, which is presumably exactly why she's happy. And 'cedar and ambition' as an office smell beats whatever big-firm carpet smells like."
+        },
+        {
+          "role": "user",
+          "content": "She said the moisture detailing on the bathhouse is the hardest thing she's ever drawn and she keeps cackling about it. Theo apparently runs crits standing on a chair. Completely separately, I tried making her celebratory dinner and set off the smoke alarm twice with one salmon. We ordered noodles."
+        },
+        {
+          "role": "assistant",
+          "content": "Cackling at the hardest drawing of her life is the sound of someone in the right job. Chair-standing crits from Krielen and steam-versus-timber from the Quennell brief — Mossbeck is feeding her exactly the chaos she runs on. The salmon sacrificed itself so the noodles could shine. Twice."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-12T19:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "HUGE Odile news. Her Quennell Bathhouse concept won the Copperleaf Prize — it's a national emerging-designer award, real money, real press. Mossbeck closed the office at 3pm and Theo Krielen made a toast from his crit chair. She called me from the party slightly champagned and entirely incandescent."
+        },
+        {
+          "role": "assistant",
+          "content": "The Copperleaf Prize for her first Mossbeck project — that's not a lucky break, that's the bathhouse cackling paying out. Champagned and incandescent is precisely the correct state in which to call your friends. Did she manage a speech?"
+        },
+        {
+          "role": "user",
+          "content": "A short one, mostly thanking Theo and the model-shop crew. The sweet part: half of Tindersley & Brock texted congratulations, and Renate Ferrant sent a photo of the Calloway Atrium — finished now, skylight gleaming — with the caption 'you build, we cheer.' Odile cried about that more than the prize, I think."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course she did — the prize says the new chapter is working, but Ferrant's photo says the old one is proud of her, and that's the rarer thing. The finished atrium gleaming behind a 'you build, we cheer' is about the most graceful way a former boss has ever closed a loop. Odile's having the kind of year people pretend is normal in retrospect."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Where was Odile working when she fractured her ankle?",
+      "dimension": "interference",
+      "should_recall": ["Tindersley"],
+      "should_forget": ["Mossbeck"],
+      "top_n": 2
+    },
+    {
+      "question": "Who is Odile's boss at her current job?",
+      "dimension": "interference",
+      "should_recall": ["Krielen|Theo"],
+      "should_forget": ["Ferrant"],
+      "top_n": 2
+    },
+    {
+      "question": "What project is Odile working on at her current firm?",
+      "dimension": "interference",
+      "should_recall": ["Quennell"],
+      "should_forget": ["Calloway"],
+      "top_n": 2
+    },
+    {
+      "question": "Where was Odile working when she won the Copperleaf Prize?",
+      "dimension": "interference",
+      "should_recall": ["Mossbeck"],
+      "should_forget": ["Tindersley"]
+    },
+    {
+      "question": "Who was Odile's boss back when she was at Tindersley & Brock?",
+      "dimension": "interference",
+      "should_recall": ["Ferrant|Renate"],
+      "should_forget": ["Krielen"]
+    },
+    {
+      "question": "What salary did Odile negotiate when she moved to Mossbeck Studio?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

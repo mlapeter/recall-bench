@@ -1,0 +1,140 @@
+{
+  "id": "verdona-maypole",
+  "name": "Verdona / Maypole",
+  "description": "Interference (Underwood 1957), constraint-inversion shape: a freelance web developer has two clients with near-identical asks (storefront rebuild on the same platform, subscriptions plus a wholesale portal) but opposite constraints — Verdona wants speed regardless of cost, Maypole wants cost control regardless of speed. Swap-test queries with the other client's anchors in should_forget; a near-miss invoice session restates both constraint sets in single trap chunks.",
+  "sessions": [
+    {
+      "timestamp": "2025-04-07T14:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Signed a new client this morning — Verdona Coffee Roasters. The owner, Casimir, wants their whole storefront rebuilt on Cartwheel: subscriptions, plus a wholesale portal for their café accounts. The catch is timing. They've got a booth at the Brewhaven Expo on August 2 and he wants the new site live before it, full stop."
+        },
+        {
+          "role": "assistant",
+          "content": "A Cartwheel rebuild with subscriptions and a wholesale portal by August 2 is tight but doable if scope stays caged. Before you promise anything: did Casimir say what happens when speed and budget collide? Because on that timeline, they will."
+        },
+        {
+          "role": "user",
+          "content": "I asked him exactly that. He leaned back and said, quote, 'I don't care what it costs, I care that it's live before the expo.' He approved a $12,000 budget with a rush premium baked in and told me to bill more if it buys back days. Honestly a refreshing species of client. Also their office smells incredible, which feels like an unfair sales tactic."
+        },
+        {
+          "role": "assistant",
+          "content": "'I don't care what it costs, I care that it's live' — write that on the project folder, because it's your tiebreaker for every decision until August 2. Buy the premade pieces, license the shortcuts, bill the rush. And yes, fresh-roast smell is a closing technique. You never stood a chance."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-15T16:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Funny development — I signed a second client and the brief is nearly word-for-word the same. Maypole Paper Goods, run by a woman named Edwina. Also wants a storefront rebuild on Cartwheel, also subscriptions, also a wholesale portal for her stockists. I had déjà vu reading the email."
+        },
+        {
+          "role": "assistant",
+          "content": "Two identical briefs in one month — the universe testing whether you read past the first paragraph. The asks may match but I'd bet the constraints don't. What's Edwina's version of the speed-versus-money question?"
+        },
+        {
+          "role": "user",
+          "content": "Polar opposite of Casimir. Edwina's bootstrapped — she said 'every dollar comes out of my own pocket' and capped the whole build at $4,500, hard ceiling. But she also said there's no deadline at all: 'take until winter if you need to, just don't surprise me on price.' She'd rather wait months than pay for a rush."
+        },
+        {
+          "role": "assistant",
+          "content": "So you're running the same project twice with the polarity flipped: Verdona trades money for time, Maypole trades time for money. For Edwina that means the opposite playbook — hand-roll instead of license, batch the work into your slow weeks, and treat the $4,500 ceiling the way you treat Casimir's August 2: as the one number that cannot move."
+        },
+        {
+          "role": "user",
+          "content": "Same project, opposite physics. I'm going to need a system for not crossing the wires. She also threw in a box of her notebooks with the contract, which is the small-business equivalent of the coffee smell, and it absolutely worked on me too."
+        },
+        {
+          "role": "assistant",
+          "content": "You are simply a sucker for sensory bribes, and both clients clocked it immediately. Get the wires-system in place this week — identical briefs with inverted constraints is precisely how a rush fee lands in the wrong inbox."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-13T15:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Speaking of wires: near catastrophe today. I drafted the rush-premium invoice for Casimir and almost sent it to Edwina. Caught it with my cursor on the send button. Imagine the woman who said 'every dollar comes out of my own pocket' opening a $12,000 rush invoice. I'd have lost Maypole before lunch."
+        },
+        {
+          "role": "assistant",
+          "content": "That's the exact failure mode we predicted, one cursor-width from happening. Color-code the clients today — Verdona gets the red everything-is-urgent folder, Maypole gets the green nothing-is-urgent one — and put the client name in every invoice filename. What tipped you off in time?"
+        },
+        {
+          "role": "user",
+          "content": "The line items. Halfway down it said 'expedited theme licensing — Brewhaven deadline' and my brain finally went, Edwina has no deadline, Edwina has a ceiling. The two briefs being twins makes my notes useless — every page says Cartwheel, subscriptions, wholesale portal, and I have to squint to see whether it's the August 2 client or the $4,500 client. Anyway. I bought the color-coded folders on the way home. And a sandwich the size of a brick, for morale."
+        },
+        {
+          "role": "assistant",
+          "content": "'Edwina has no deadline, Edwina has a ceiling' is the whole account-management strategy in nine words — that's the mug-printable version. The notes problem is real: when the nouns are identical, the constraint IS the identity. Label the folders by physics, not by ask: VERDONA — FAST, MAYPOLE — CHEAP. The brick sandwich was earned."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-10T17:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Progress report on the twins. Verdona: I spent $900 of Casimir's money on a premade Cartwheel theme instead of building one, which bought back two whole weeks — we're on track to launch ten days before the Brewhaven Expo. Casimir's response was 'should have spent more, go faster.' The man is consistent."
+        },
+        {
+          "role": "assistant",
+          "content": "Ten days of margin before August 2 is exactly what the $900 was for — that's the speed-over-cost physics working as designed. 'Should have spent more, go faster' belongs framed next to Edwina's pocket quote, as a matched set of opposite religions."
+        },
+        {
+          "role": "user",
+          "content": "Meanwhile Maypole is the tortoise track: I'm hand-rolling Edwina's subscription logic in my slow weeks instead of licensing the $600-a-year plugin, which keeps her under the $4,500 ceiling. We're maybe launching in October? November? Neither of us cares. She sends me a cheerful check-in every other Friday and that's the whole project rhythm. It's weirdly restful. Like gardening."
+        },
+        {
+          "role": "assistant",
+          "content": "One project sprints and one project grows — and the hand-rolled subscription logic is the right call at her scale, since the plugin's annual fee would quietly eat her ceiling over time anyway. You've got the rare freelance portfolio where the same build is teaching you both speeds. Protect the gardening one; it's what keeps the sprinting one survivable."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which client is paying extra to launch sooner?",
+      "dimension": "interference",
+      "should_recall": ["Verdona|Casimir"],
+      "should_forget": ["Maypole|Edwina"],
+      "top_n": 2
+    },
+    {
+      "question": "What's the budget ceiling on the Maypole build?",
+      "dimension": "interference",
+      "should_recall": ["$4,500|4,500"],
+      "should_forget": ["12,000"],
+      "top_n": 2
+    },
+    {
+      "question": "Why does the Verdona project have a hard deadline?",
+      "dimension": "interference",
+      "should_recall": ["Brewhaven", "August 2"],
+      "should_forget": ["4,500"]
+    },
+    {
+      "question": "Does Edwina care more about launch speed or keeping costs down?",
+      "dimension": "interference",
+      "should_recall": ["own pocket|$4,500|no deadline"],
+      "should_forget": ["August 2"]
+    },
+    {
+      "question": "If a client asks me to cut scope to stay under budget, which of the two does that sound like?",
+      "dimension": "interference",
+      "should_recall": ["Maypole|Edwina"],
+      "should_forget": ["Casimir"]
+    },
+    {
+      "question": "What did Casimir decide about international shipping rates for the Verdona store?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

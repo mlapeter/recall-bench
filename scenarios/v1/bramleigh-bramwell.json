@@ -1,0 +1,161 @@
+{
+  "id": "bramleigh-bramwell",
+  "name": "Bramleigh / Bramwell",
+  "description": "Interference (Underwood 1957): two concurrent migration projects at the same company with confusable names, the same source system, and the same target tech — but different deadlines, leads, tools, and data volumes. Interleaved sessions and a mid-arc venting session that restates both projects' anchors in single messages make verbatim chunk retrieval surface the wrong twin's facts.",
+  "sessions": [
+    {
+      "timestamp": "2025-06-03T16:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Okay, new quarter, new chaos. I'm now running two migrations at Velora Freight simultaneously, and leadership in their infinite wisdom named them Project Bramleigh and Project Bramwell. Both are moving data off our ancient Cobbler Postgres cluster, both are landing in ClickHouse. I've already mistyped one for the other in two different emails."
+        },
+        {
+          "role": "assistant",
+          "content": "Whoever named two sibling migrations Bramleigh and Bramwell owes you a personal apology. Give me the actual shape of each so we can keep them straight — what's moving, who owns it, and when it has to land."
+        },
+        {
+          "role": "user",
+          "content": "Bramleigh is the analytics warehouse move — about 14 terabytes of historical shipment data going from Cobbler into ClickHouse so the Lanternview dashboards stop timing out. Dario Esquival is the lead on that one. Hard cutover deadline is September 19, because finance closes Q3 on the new warehouse."
+        },
+        {
+          "role": "assistant",
+          "content": "Bramleigh: analytics warehouse, 14 terabytes, Dario Esquival, cutover September 19, finance is the forcing function. And Bramwell?"
+        },
+        {
+          "role": "user",
+          "content": "Bramwell is the order-event pipeline. Roughly 6 billion events that have to stream out of Cobbler into a new ClickHouse cluster with zero gaps, because billing replays them. Suzanne Okafor leads that one, and her deadline is November 7 — that's when the Cobbler support contract actually expires. Anyway. I had a tremendous bánh mì for lunch and it was the best part of my Tuesday."
+        },
+        {
+          "role": "assistant",
+          "content": "Bramwell: 6 billion order events, Suzanne Okafor, November 7, the contract expiry is the cliff. So the rhyme to hold onto: Bramleigh is Dario's warehouse race to September 19, Bramwell is Suzanne's event stream with until November 7. And a good bánh mì can carry a whole quarter, honestly."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-17T15:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Bramleigh day. Dario's team started the historical backfill with Copperline — that's the bulk-transfer tool we licensed — and it's chewing through the 14 terabytes faster than projected, like 800 gigs a day. The September 19 cutover actually looks comfortable for once."
+        },
+        {
+          "role": "assistant",
+          "content": "Copperline at 800 gigs a day clears 14 terabytes with weeks of margin before September 19 — comfortable is the right word, which should make you immediately suspicious. What's the part Dario is quietly worried about?"
+        },
+        {
+          "role": "user",
+          "content": "You know him too well already. It's the schema freeze. Analytics keeps requesting new columns on Cobbler mid-migration, and every change means Copperline re-syncs a table. Dario wants me to declare a freeze date and be the bad guy. Oh, and Suzanne pinged me mid-standup asking whether Bramleigh's backfill traffic is going to eat the Cobbler maintenance window she needs for Bramwell. The two projects are already elbowing each other."
+        },
+        {
+          "role": "assistant",
+          "content": "Declare the freeze — that's exactly the kind of bad guy a program lead exists to be, and every un-frozen week is a Copperline re-sync you pay for twice. For Suzanne's worry: have Dario publish Copperline's transfer schedule so Bramwell can book around it. Sibling projects elbowing over one Cobbler cluster is manageable as long as nobody's swinging blind."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-08T17:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Bramwell's turn to be the problem child. Suzanne's team is using Driftgate for the change-data-capture replication, and Driftgate keeps dropping its cursor whenever Cobbler hiccups — which, being Cobbler, is hourly. With 6 billion events and billing replaying them, a dropped cursor is not a cosmetic bug."
+        },
+        {
+          "role": "assistant",
+          "content": "No, a silent gap in a billing-replay stream is the kind of bug that gets discovered by an angry customer three months later. Does Driftgate checkpoint its cursor externally, or is it trusting Cobbler to remember where it was?"
+        },
+        {
+          "role": "user",
+          "content": "That was exactly Suzanne's diagnosis — it was trusting Cobbler. Her fix is to checkpoint Driftgate's offsets into a separate ledger table and reconcile counts nightly. She thinks they're still fine for November 7 but wants the whole of October as validation runway. Meanwhile Dario's half is annoyingly serene — Copperline just hums. In other news I finally watched that submarine documentary everyone's on about. Three hours of sonar noises. Weirdly soothing."
+        },
+        {
+          "role": "assistant",
+          "content": "External checkpoints plus nightly reconciliation is the right paranoia for billing data — and protecting all of October as validation runway is what makes November 7 a real date instead of a hope. Let Bramleigh stay serene; one calm twin is a gift. And three hours of sonar pings as a sleep aid tracks completely."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-29T20:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I need to vent. The VP of Ops stood up in the steering meeting today and congratulated Suzanne on 'Bramleigh's great Copperline numbers' and then asked Dario if Bramwell would 'still hit September 19.' Wrong project, wrong lead, wrong tool, wrong date, all in one breath. Suzanne's face was a masterpiece of diplomacy."
+        },
+        {
+          "role": "assistant",
+          "content": "He achieved a perfect inversion — every fact attached to its twin. This is your cue to make the one-pager you've been threatening: nobody in that room can reliably keep Bramleigh and Bramwell apart, and eventually one of these mix-ups lands in a budget decision instead of a compliment."
+        },
+        {
+          "role": "user",
+          "content": "Already drafted it on the train home. One line each: Bramleigh — Dario Esquival, warehouse, 14 terabytes via Copperline, cutover September 19. Bramwell — Suzanne Okafor, order events, 6 billion via Driftgate, deadline November 7. I'm having it printed on mugs. I'm only half joking about the mugs."
+        },
+        {
+          "role": "assistant",
+          "content": "Do the mugs. People mock the mug until the mug saves the quarter. And send the one-pager before the next steering meeting — the VP mixing up a congratulation is funny exactly once."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-19T16:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Status check, mostly good news for once. Bramleigh: backfill done, Copperline finished the full 14 terabytes last Thursday, dashboards are reading from ClickHouse in shadow mode, and Dario says September 19 is safe barring meteor strike. The schema freeze held because I was sufficiently scary about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Shadow mode a month before cutover is the dream — that's September 19 with actual rehearsal time, not a leap of faith. Your scariness has a measurable ROI. And the louder twin?"
+        },
+        {
+          "role": "user",
+          "content": "Bramwell's hairier but honest. Driftgate's ledger checkpointing works — Suzanne's nightly reconciliation has caught two cursor drops and replayed both cleanly, no gaps. She's still committed to November 7 and still guarding October like a dragon. Also the office got one of those fancy sparkling water taps and the engineers have ranked the flavors on a whiteboard, which is the most rigorous evaluation work happening in the building."
+        },
+        {
+          "role": "assistant",
+          "content": "Two cursor drops caught and replayed cleanly is the system working, not the system failing — that ledger earned its keep. Suzanne guarding October like a dragon is why November 7 will hold. As for the whiteboard: peer-reviewed sparkling water rankings are how you know morale survived the quarter."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the cutover deadline for Project Bramleigh?",
+      "dimension": "interference",
+      "should_recall": ["September 19"],
+      "should_forget": ["November 7"],
+      "top_n": 2
+    },
+    {
+      "question": "Who is the lead on Project Bramwell?",
+      "dimension": "interference",
+      "should_recall": ["Suzanne|Okafor"],
+      "should_forget": ["Dario|Esquival"],
+      "top_n": 2
+    },
+    {
+      "question": "Which transfer tool is the Bramleigh backfill using?",
+      "dimension": "interference",
+      "should_recall": ["Copperline"],
+      "should_forget": ["Driftgate"]
+    },
+    {
+      "question": "How much data does Bramwell have to move?",
+      "dimension": "interference",
+      "should_recall": ["6 billion|six billion"],
+      "should_forget": ["14 terabytes"]
+    },
+    {
+      "question": "Which project is Dario Esquival running?",
+      "dimension": "interference",
+      "should_recall": ["Bramleigh"],
+      "should_forget": ["Bramwell"]
+    },
+    {
+      "question": "What sharding key did the Bramleigh team settle on for the ClickHouse tables?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

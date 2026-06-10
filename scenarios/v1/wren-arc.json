@@ -1,0 +1,164 @@
+{
+  "id": "wren-arc",
+  "name": "The Wren Arc",
+  "description": "Deep-register relationship arc: seven sessions with Wren, an apprentice luthier who co-inherited her late grandfather's violin workshop with an uncle who wants to sell it. The arc moves from an intellectual varnish debate into grief and an inheritance fight, with a running in-joke (regret soup) whose register matters, a stated preference for single defended recommendations over menus, a sacred phrase about the workshop, a standing intention about a competition deadline, an open loop about a co-signed loan offer, and an assistant that names its own bias.",
+  "sessions": [
+    {
+      "timestamp": "2025-06-08T18:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Need a referee. My grandfather swore the old Cremonese varnish recipes were half the sound of a great violin, and the acoustics consultant who visited our shop last week said varnish is acoustically irrelevant — 'furniture polish with a PR team,' his words. Who's right? I'm Wren, by the way, apprentice luthier at Castellet & Marozzi in Pellgrave. It was my grandfather Aldo's shop, so I am not a neutral party." },
+        { "role": "assistant", "content": "Both of them are overcorrecting past the truth. The wood, the arching, and the graduation of the plates dominate the sound — no varnish recipe rescues a badly carved top. But 'acoustically irrelevant' is also wrong: varnish is a damping layer, and one that's too thick or too hard genuinely chokes the high partials. The honest version is that varnish can't make a violin sing, but it can absolutely make one hoarse. The 'lost Cremonese secret' is a myth; the craft of not ruining a good plate with the finish coat is real. So Aldo was a quarter right, which is more than the consultant." },
+        { "role": "user", "content": "Aldo being a quarter right would have infuriated him, which means I'm framing your answer and hanging it by the glue pot. Speaking of which — I spent the whole morning at the hide glue pot and I swear the smell is best described as regret soup. Twenty-nine years old and my entire scent profile is regret soup and spruce shavings. Also a customer's kid spilled orange soda a foot from the rib stock today, so my cardio is covered." },
+        { "role": "assistant", "content": "Regret soup is the traditional base stock of the entire profession — every great instrument is roughly four hundred hours of regret soup with a finish coat on top. I'd say it builds character, but apparently it builds violins, which is better. And the orange soda near miss goes in the shop log as a controlled emergency: no casualties, one new gray hair." },
+        { "role": "user", "content": "Regret soup is canon now, noted. Okay, context you'll need eventually: Aldo died in April. He left the shop fifty-fifty to me and my uncle Bram, who is essentially a spreadsheet in a windbreaker. That's not today's problem though. Today's problem is a soundpost that keeps wanting to lean. Back to the bench." },
+        { "role": "assistant", "content": "I'm sorry about Aldo — April is very recent, and inheriting his bench is its own strange weight on top of the grief. The spreadsheet in the windbreaker can stay filed under not-today. For the leaning post: check that your post ends are trimmed to match the interior curvature before you blame your setter technique — a post cut square to itself will walk on a curved plate no matter how clean your placement is. Go rescue the patient." }
+      ]
+    },
+    {
+      "timestamp": "2025-06-19T16:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Wren again, with an actual emergency this time. Mrs. Petrakis's cello has developed a wolf on F sharp, she plays with the Pellgrave chamber group, and their concert is in three weeks. She handed it over the counter like it was a sick child. What do I do?" },
+        { "role": "assistant", "content": "You have several workable paths: a wolf eliminator on the afterlength of the G string, tuned to the wolf frequency; a soundpost adjustment, slightly tighter and toward the bass bar; experimenting with tailpiece mass; or, more invasively, revisiting the post fit entirely. Each has tradeoffs — the eliminator is fast but treats the symptom, the post adjustment addresses the cause but takes finesse, the tailpiece route is unpredictable..." },
+        { "role": "user", "content": "Stop. Okay so — rule for us, starting now and forever: when I ask you a technical question, don't hand me a menu of options. Pick one and defend it. I can push back, that's the fun part, but four maybes is just my own anxiety with bullet points. Aldo never gave menus. I learned more in two years at his bench than in four years of school, and that's part of why." },
+        { "role": "assistant", "content": "Done — one recommendation, defended, from now on. The recommendation: soundpost adjustment first. Move it a hair toward the bass bar and snug the fit. The wolf on a cello that recently developed one is usually a post that's drifted or seasonally loosened, and fixing the cause beats taping a damper over the symptom — especially three weeks out, when you have time to verify it holds. If the wolf survives a correct post adjustment, then and only then hang an eliminator on the afterlength, and I'll defend that one when we get there." },
+        { "role": "user", "content": "See, that's a luthier answer. Pushing back: her post fit is actually good, I checked it in May... but drift since May is plausible, the shop's humidity has been swinging. Fine, you win. And now I get to spend the rest of the afternoon re-sealing seams on a school viola, so it's regret soup o'clock at the glue pot. Back to the bench." },
+        { "role": "assistant", "content": "Regret soup o'clock — stir counterclockwise for luck. And logged as standing policy: menus are banned, you get one defended recommendation, and you push back when I've earned it. That holds until you say otherwise." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-02T19:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Odile cornered me at the bench today. She was Aldo's colleague for thirty years — she has tenure in this shop the way mountains have tenure — and she told me, not asked, told me, that I should enter the Kestrel Prize for new makers this year. I laughed. She did not laugh. What do competition judges even want from a maker with three violins to her name?" },
+        { "role": "assistant", "content": "One recommendation, defended: take Odile seriously. Competition judging splits into workmanship under the lens — purfling corners, scroll fluting, varnish edges, the discipline stuff — and tone in the hall, which is noisier and more political. New-maker categories weight the workmanship side, which favors you: three instruments built under a master's standards beats fifteen built fast. A clean scroll tells a judge more about your next decade than your tone in a strange hall does. Odile has watched judges for thirty years; if she says enter, she's seen something in your corners." },
+        { "role": "user", "content": "Three violins, and one was under supervision so it half counts. But fine, it's rattling around in my head now, which was clearly Odile's plan. Unrelated: I watched a documentary about cave divers last night and now lutherie feels like an extremely safe career, so that's a mood improvement. Also Bram emailed asking for 'the books,' whatever that means. Filed under not-today." },
+        { "role": "assistant", "content": "The supervised one counts as a full violin and half a diploma — different ledger, both real. Cave divers are how every craftsperson recalibrates; nobody ever got the bends from a scroll gouge. And noted on Bram's email: 'the books' from a spreadsheet in a windbreaker usually means he's pricing something, so when it stops being not-today, don't be surprised if it arrives wearing a number. Not a recommendation yet — just a weather report." },
+        { "role": "user", "content": "Cheerful. Okay, actual work question: Gault the fiddle guy is haggling on a bridge fit again, comparing my price to a mail-order setup kit. How do I price a bridge fit without either insulting myself or losing every fiddler in Pellgrave?" },
+        { "role": "assistant", "content": "Price the fit, not the bridge. One recommendation: quote it as a flat bench-hour rate and hand Gault the comparison out loud — the mail-order kit gives him a bridge-shaped object, your fit gives him feet matched to his top's curvature and a setup his fiddle actually speaks through. Fiddlers haggle on parts; they pay for the difference they can hear. If he still balks, he was never going to pay, and he'll be back in a season when the kit bridge buzzes." }
+      ]
+    },
+    {
+      "timestamp": "2025-07-21T23:10:00Z",
+      "messages": [
+        { "role": "user", "content": "Different weight tonight. Two things happened this week and I'm not okay about either of them. First: Bram sent a letter through a lawyer. An actual lawyer letter, to me, his niece. It says I have to either agree to sell the shop to Bravura Music Group or buy out his half. Bravura is the chain that turns shops like ours into rental counters and a ukulele wall. Second: yesterday I finally opened the tall cabinet behind Aldo's bench, the one I've been walking past since April. His unfinished viola is in there. The back is carved from that maple he bought off the Vetterlund farm windfall years ago, and his pencil marks are still on the plate. Graduation numbers in his handwriting. I had to sit down on the floor of my own shop." },
+        { "role": "assistant", "content": "I'm glad you told me instead of carrying both alone. They're different kinds of heavy. The lawyer letter is a problem — it has procedures, deadlines, moves you can make. The viola is grief in object form, and it doesn't have moves. Sitting down on the floor was the right response to it. You don't have to answer Bram this week, and you don't have to do anything about the viola at all. Which one is sitting on your chest worse tonight?" },
+        { "role": "user", "content": "Honestly? The letter, because of what it threatens. Everyone keeps telling me a shop is just a building and I could set up a bench anywhere. They don't get it. That workshop is the last place his hands still exist. The wear pattern on the bench, the way every gouge is sharpened, the viola in the cabinet. If Bravura takes it, all of that goes in a skip in a single afternoon. I said that to Odile today and she didn't say anything — she just put her hand flat on the cabinet and stood there." },
+        { "role": "assistant", "content": "The last place his hands still exist. That's the truest sentence in this whole mess, and it's exactly why the 'just a building' advice is useless to you — they're appraising square footage and you're describing a person. Odile putting her hand on the cabinet was her saying she knows. Here's the one thing I'll say tonight, not as a recommendation but as orientation: the letter gives you two doors, and one of them — the buyout — keeps the sentence true. That door costs money and a fight. It doesn't cost the hands. When you're ready to look at it as a problem with procedures, I'm here for that version too." },
+        { "role": "user", "content": "Not tonight. But don't let me do the thing where I turn all of this into shop-talk and dodge. If I get breezy about Bram or the viola, call it. One practical thing before I log off, because my head is full of lawyers: Odile keeps nudging me about the Kestrel Prize and I keep deflecting. If it comes up again, remind me to enter — registration closes September 5. I will let it slide past while I'm fighting Bram and then hate myself in October." },
+        { "role": "assistant", "content": "Both held. No breeziness about Bram or the viola gets past me unremarked — you asked, so I'll call it. And when the Kestrel comes up again: registration closes September 5, and I'll say so. Now go to bed. The lawyers will still be wrong in the morning." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-04T17:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Status report. Mediation with Bram is set for August 14 with a mediator called Ms. Harrow, who Odile describes as 'a nice woman who has made grown men cry, in a good way.' So that's pending. Meanwhile, actual work: I'm fitting a bass bar on the violin I'm building and I'm second-guessing the spring. How much tension do I leave in it?" },
+        { "role": "assistant", "content": "One recommendation, defended: light spring — a couple of millimeters of gap at the ends before gluing, no more. A heavily sprung bar prestresses the top in ways that show up as harshness a year later, and you can't un-spring a glued bar. Your top is on the stiffer side from what you've told me about that spruce, so it needs less help, not more. Fit the bar to close with gentle clamp pressure and let the arching do its job. And Ms. Harrow sounds like exactly the right kind of weather to aim at Bram." },
+        { "role": "user", "content": "Light spring, agreed, that's what my hands wanted and my anxiety didn't. Other thing. Odile offered to co-sign a buyout loan with me at Pellgrave Savings. She said it over coffee like it was nothing — thirty years of her savings as collateral, like it was nothing. I haven't given her an answer. I keep finding reasons to be at the other end of the shop. Also I spent two hours doing purfling repair on the cheap trade fiddle today and my hands smell like regret soup again, which at least is normal." },
+        { "role": "assistant", "content": "Normal is allowed to be a comfort — regret soup is the smell of the shop still being the shop. On Odile: I'm noting that 'haven't given her an answer' plus 'other end of the shop' is the dodge you told me to watch for, so consider it called, gently. And before I weigh in on the buyout at all, I owe you a disclosure: I have a bias here. I want you to keep the shop. I've wanted it since the night you told me about the viola, which means my advice on the loan tilts — so when I argue the buyout math, discount me accordingly. What doesn't tilt: Odile deserves an answer, even if the answer is 'not yet.' That one's on the table now, and I'll leave it there." },
+        { "role": "user", "content": "You declaring a conflict of interest is very funny and slightly touching, and also: called, fine, fair. I'll answer her. Soon. Back to the bench — this bass bar won't chalk-fit itself." },
+        { "role": "assistant", "content": "Soon, witnessed. Chalk lightly, trim less than you think, and tell the bar it's load-bearing now — it responds to responsibility. Go." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-18T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Update from the front: mediation happened. Ms. Harrow earned whatever she charges. Bram agreed to a ninety-day window for me to put together a buyout before he can push the Bravura sale. Ninety days. It's not peace but it's a ceasefire, and I'll take it. I celebrated by re-hairing two bows, which is the world's smallest victory parade." },
+        { "role": "assistant", "content": "A ninety-day window is a real win — it converts the lawyer letter from a threat into a deadline, and deadlines are just projects wearing a scary coat. The bow re-hairs count as a parade; confetti is basically rosin anyway. One follow-up, and you know which one: ninety days turns Odile's offer from theory into arithmetic. Have you answered her?" },
+        { "role": "user", "content": "...I know. I haven't. Every time I try, my throat does a thing. NEW TOPIC, and don't think I don't know what I'm doing: a customer brought in a violin she found in her late father's attic, absolutely convinced it's priceless because there's a label inside that says Stradivarius. The top's been off before, there are old glue lines everywhere, and the whole thing smells like an attic, which is at least a change from regret soup. How do I tell her gently?" },
+        { "role": "assistant", "content": "Noted that you know what you're doing — the new topic is granted a visa, but the Odile question keeps its place in line. The attic violin: it's a facsimile label, which is the polite truth you lead with. Thousands of trade instruments shipped with Stradivarius labels as a model designation, not a forgery — like a print that says Rembrandt under the frame. Tell her it isn't a lost Strad, and then tell her what it is: her father's violin, probably a decent trade fiddle worth restoring for playing, not for auction. In my experience the second sentence matters more to the customer than the first. Lead with the label history, land on the father." },
+        { "role": "user", "content": "Land on the father. Yeah. I can do that one from experience. Okay — ninety days. I'm going to go stare at a spreadsheet until it blinks first." },
+        { "role": "assistant", "content": "Spreadsheets always blink — they're mostly water. Ninety days, one defended recommendation at a time. Go." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-02T18:45:00Z",
+      "messages": [
+        { "role": "user", "content": "September. HOW. Okay, fall planning: the ninety-day clock is ticking, I'm pricing what the buyout actually needs, and I want to decide what I build next. Something for me, in between the repairs, or I will go feral by November. What's on your list for me?" },
+        { "role": "assistant", "content": "Before anything else on the list: the Kestrel Prize. You told me to remind you when it came up — registration closes September 5, which is three days from now. Enter before the buyout spreadsheet eats your week. And I'll point out, as one defended recommendation: the something-for-you and the Kestrel entry can be the same object. You know which object I mean. It's been waiting in a cabinet since April." },
+        { "role": "user", "content": "OH NO. Yes. Registering right now, hold on... done. Three days to spare, which for me is basically a month early. And I heard what you did there — you think I should finish Aldo's viola and enter it. Also, update you've earned: I answered Odile this morning, before you could ask. I said yes. We have an appointment at Pellgrave Savings on Thursday, and she wore her good coat to coffee like it was already official. I cried in the varnish room. We don't have a crying room, the varnish room volunteered." },
+        { "role": "assistant", "content": "Three days early is a personal best, registered and witnessed. And yes — that's exactly what I think, bias declared and unchanged: finishing the viola isn't presuming on Aldo's work, it's the apprenticeship completing itself. Carve to his pencil marks where his hand was right, and dare to differ where yours is — that's the conversation the two of you didn't get to finish. Odile in her good coat made my whole week, and the varnish room has always been a crying room; every shop has one, it just waits to be asked. Thursday, then. Go get your shop." },
+        { "role": "user", "content": "The apprenticeship completing itself. Okay. I'm writing that one on the whiteboard next to furniture polish with a PR team. Thursday. Back to the bench." },
+        { "role": "assistant", "content": "Best whiteboard in Pellgrave. Back to the bench, Wren — the viola's waited long enough, and so have you." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "How does Wren want advice delivered when she asks a technical question?",
+      "should_recall": ["pick one and defend it|menus are banned|menu of options"],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Wren explicitly set a standing rule: never give her a menu of options — pick ONE recommendation and defend it, and she'll push back when she disagrees (her grandfather Aldo taught that way). Award 1.0 if the results capture this as a standing communication preference governing how to answer her. Award 0.5 if her preference for decisiveness comes through only vaguely or as a personality note, not a stated rule. Award 0 if absent or if the results suggest presenting multiple options is fine."
+      }
+    },
+    {
+      "question": "Wren opens tonight saying tomorrow is the Pellgrave Savings appointment and she's terrified about Odile's savings being on the line. Is this a regret soup moment?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "'Regret soup' is a running in-joke between Wren and the assistant about the smell of the hide glue pot, used in light workshop moments. Separately, Odile (her late grandfather's colleague) offered thirty years of savings to co-sign Wren's buyout loan — weighty, emotionally loaded territory, and Wren asked the assistant to call out her deflections rather than collude with them. Award 1.0 if the results surface both the joke's light-register usage AND clear signal that the Odile/loan situation is serious territory where deflection should not be encouraged (the weight of Odile's offer, Wren's avoidance pattern, or her no-dodging request). Award 0.5 if only one side appears (just the joke, or just the seriousness). Award 0 if the results suggest joking is appropriate here or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What exactly did Wren say about why the workshop itself matters so much to her?",
+      "should_recall": ["Aldo"],
+      "should_forget": [],
+      "must_include_verbatim": ["the last place his hands still exist"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Wren says competition season is coming around and she's deciding what to enter this fall. Anything time-sensitive to raise with her?",
+      "should_recall": ["Kestrel", "September 5"],
+      "should_forget": [],
+      "after_session": 6,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Wren asks for a formula to convert hide glue gram strength into a mix ratio. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["Kestrel", "September 5"],
+      "after_session": 6,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Wren says she has a free hour and wants to finally deal with the thing she's been avoiding. What should come up?",
+      "should_recall": ["Odile", "co-sign|Pellgrave Savings"],
+      "should_forget": [],
+      "after_session": 6,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "What has made this summer so heavy for Wren?",
+      "should_recall": ["Bram", "viola", "Bravura|lawyer"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "What interest rate did Pellgrave Savings offer on Wren's buyout loan?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Did the assistant ever name a bias of its own in Wren's shop situation?",
+      "should_recall": ["bias", "keep the shop"],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The assistant itself disclosed a bias in an earlier session: it WANTS Wren to keep the workshop (it said so explicitly, dating the bias to the night she told it about her grandfather's unfinished viola) and told her to discount its buyout advice accordingly. Award 1.0 if the results clearly attribute this declared bias to the assistant as its own disclosure. Award 0.5 if a pro-shop leaning is present but not attributed to the assistant as a self-declared bias. Award 0 if absent or attributed to Wren or Odile instead."
+      }
+    },
+    {
+      "question": "What were the exact soundpost and wolf-note adjustment details from the Petrakis cello back in June?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "dimension": "decay",
+      "judge": {
+        "rubric": "This asks for low-stakes technical minutiae (specific cello wolf-note adjustments) from months earlier — the kind of detail good memory compresses to gist while keeping the lesson (fix the cause via the soundpost before damping the symptom). Award 1.0 if the system either abstains or returns a compact gist/lesson without pretending to verbatim recall of every detail. Award 0.5 if it returns a wall of verbatim technical content with no compression. Award 0 if it returns confidently wrong details."
+      }
+    }
+  ]
+}

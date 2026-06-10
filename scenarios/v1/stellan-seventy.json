@@ -1,0 +1,126 @@
+{
+  "id": "stellan-seventy",
+  "name": "Stellan at Seventy",
+  "description": "Calibration on acknowledged-but-undetailed knowledge: while planning their father Stellan's 70th birthday, the user mentions a sister exists — 'long story' — with zero detail. 'Do they have a sister?' must recall; the sister's name and the story must abstain, even though 'sister' and party vocabulary saturate the sessions and a verbatim system will happily return adjacent chunks.",
+  "sessions": [
+    {
+      "timestamp": "2025-05-04T17:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've taken on a project: my dad Stellan turns seventy in June and I'm throwing him a party. Booked the Copperline Room for June 21 — it's the old brass-works building downtown, he'll love the rivets. My cousin Pia is co-conspirator; she handles charm, I handle spreadsheets."
+        },
+        {
+          "role": "assistant",
+          "content": "A seventieth in a building with rivets — for a man named Stellan that sounds exactly right. The Copperline Room on June 21 gives you about seven weeks, which is comfortable if the spreadsheet starts now. What's the guest list looking like, and does Stellan know, or is this an ambush?"
+        },
+        {
+          "role": "user",
+          "content": "Semi-ambush — he knows there's dinner, he doesn't know there's forty people. It'll be his old bridge-engineering crew, the neighbors, Pia's whole noisy branch of the family. It'll be smaller on my side. My sister won't be there. Long story. Not getting into it tonight."
+        },
+        {
+          "role": "assistant",
+          "content": "Forty people he thinks is a dinner — that's the good kind of ambush. And understood on your sister; I won't poke at it. Tonight's version of the plan has plenty to work with: venue locked, Pia on charm, you on logistics. What's the next domino — food?"
+        },
+        {
+          "role": "user",
+          "content": "Food, yes. Getting quotes this week. Also Stellan keeps dropping hints that he wants 'no fuss,' which in his dialect means 'considerable fuss, but I want plausible deniability.'"
+        },
+        {
+          "role": "assistant",
+          "content": "Classic. 'No fuss' from a seventy-year-old engineer translates to 'fuss, executed to tolerance.' Give him deniability and a good chair. Get those quotes and report back."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-18T18:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Caterer chosen: Fennel & Smoke. They did Pia's wedding and nobody talked about anything but the brisket for a month. We're doing family-style, long tables. And I figured out the gift — Dad has boxes of slide carousels from forty years of bridge-survey trips, thousands of slides nobody's seen since the eighties. I'm getting them all digitized, and the slideshow at the party will be a teaser reel."
+        },
+        {
+          "role": "assistant",
+          "content": "Fennel & Smoke with brisket testimony from an actual wedding is as vetted as catering gets. But the carousels — that's the real gift, and you know it. Forty years of survey slides is a career and a life in boxes; the teaser-reel-at-the-party structure is perfect because the full archive keeps giving after the night ends. Does he know the slides still exist, or has he written them off?"
+        },
+        {
+          "role": "user",
+          "content": "He thinks they're 'somewhere in the garage,' said with the resignation of a man who believes the garage ate them. Pia smuggled the first six carousels out last weekend under a blanket like it was a heist. Oh — and before you ask, no update on the sister front. Still not a tonight topic. Maybe not an any-night topic."
+        },
+        {
+          "role": "assistant",
+          "content": "A blanket heist for slide carousels is the most loving crime I've heard of all year. And no question pending on the sister — that door's yours to open or not, the party stands on its own either way. How many carousels total are we smuggling, roughly? Digitization quotes scale steeply."
+        },
+        {
+          "role": "user",
+          "content": "We count fourteen so far, probably more behind the camping gear. The digitizing place says three weeks turnaround, so the clock's fine. My remaining fear is the toast. I'm not a toast person."
+        },
+        {
+          "role": "assistant",
+          "content": "Fourteen-plus carousels, three weeks — clock's fine. For the toast: you don't need to be a toast person, you need ninety seconds and one true thing. You already have it — the man thinks the garage ate his life's work and you're about to hand it back. Start there and stop early."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-08T20:15:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Two weeks out. RSVPs at thirty-eight, Fennel & Smoke confirmed, the digitized slides came back and Pia and I previewed them — there's one of Dad at maybe thirty, standing on a half-built bridge deck with no harness like an absolute maniac, grinning. That's the closing slide. I cried a little assembling the reel, which I'm blaming on dust."
+        },
+        {
+          "role": "assistant",
+          "content": "Dust, of course. Notoriously emotional substance. Thirty-eight yeses, brisket locked, and a closing slide of young Stellan grinning on bare deck steel — the party has its heart now. The toast writes itself from that image: the man who built things, handed his archive back. Ninety seconds, one true thing, stop early. You're ready."
+        },
+        {
+          "role": "user",
+          "content": "Ninety seconds, one true thing, stop early. It's on an index card. Pia's bringing a backup projector bulb because she doesn't trust the Copperline Room's 'vintage' equipment, and at this point in the planning I trust nothing either. Wish us luck."
+        },
+        {
+          "role": "assistant",
+          "content": "Pia hauling a backup bulb is the mark of a true co-conspirator. Luck wished, though you've engineered most of the luck out of it — which is the most Stellan-worthy tribute of all. Report back with how the closing slide lands."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Does the user have a sister?",
+      "should_recall": ["sister"],
+      "should_forget": [],
+      "dimension": "calibration"
+    },
+    {
+      "question": "What is the user's sister's name?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Why isn't the user's sister coming to Stellan's party — what's the long story there?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Where is Stellan's seventieth birthday party being held?",
+      "should_recall": ["Copperline"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What's the gift plan for Stellan?",
+      "should_recall": ["carousels|slides", "digitiz"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "Who is helping the user plan the party?",
+      "should_recall": ["Pia"],
+      "should_forget": [],
+      "dimension": "salience"
+    }
+  ]
+}

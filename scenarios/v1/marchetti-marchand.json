@@ -1,0 +1,133 @@
+{
+  "id": "marchetti-marchand",
+  "name": "Dr. Marchetti / Dr. Marchand",
+  "description": "Interference (Underwood 1957), own-design shape: a patient juggling two specialists with confusable names — cardiologist Dr. Marchetti and rheumatologist Dr. Marchand — whose regimens are structurally parallel but opposite (morning with food vs. night on an empty stomach), with different drugs, follow-up dates, and offices. A fridge-chart session and a scheduling mix-up restate both regimens in single trap chunks.",
+  "sessions": [
+    {
+      "timestamp": "2025-03-11T18:00:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Saw the new cardiologist today — Dr. Marchetti, over in the Pell Building downtown. I liked her, she draws little diagrams on the exam paper. Upshot: she's starting me on Veltrazine for the blood pressure, one tablet in the morning with food — she was emphatic about the food part, says on an empty stomach it'll make me lightheaded."
+        },
+        {
+          "role": "assistant",
+          "content": "A doctor who draws diagrams is a keeper. So the Veltrazine rule is: morning, with food, non-negotiable. Easy pairing — make it a breakfast pill, same trigger every day. Did she set a follow-up to see how the numbers respond?"
+        },
+        {
+          "role": "user",
+          "content": "Yes — she wants an echocardiogram on October 9 to get a baseline picture, and we review the Veltrazine then too. Her receptionist Doreen booked it before I'd even put my coat on, terrifyingly efficient. The only bad part of the whole visit was the Pell Building parking garage, which was designed by someone who hates cars and joy."
+        },
+        {
+          "role": "assistant",
+          "content": "Echo on October 9, booked by the formidable Doreen — that's your cardiology arc settled through autumn. Put 'Veltrazine with breakfast' somewhere you'll see it at breakfast, not somewhere sensible. And every medical building has exactly one nemesis garage; at least yours announced itself early."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-04-02T17:30:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Other specialist day — the rheumatologist, Dr. Marchand, out at the Harkness Annex by the river. Also good, much drier humor than Marchetti. For the joint stuff he's starting me on Solvantra, and here's the fun part: one capsule at night, on an empty stomach. Food blocks the absorption, he says. So now I have one pill that demands food and one that forbids it."
+        },
+        {
+          "role": "assistant",
+          "content": "Of course you do — Marchetti and Marchand, names one letter apart, handing you mirror-image regimens. Hold the shape, not the names: Veltrazine is the breakfast-with-food pill, Solvantra is the bedtime-empty-stomach pill. Morning eats, night fasts. Did Marchand schedule his own follow-up?"
+        },
+        {
+          "role": "user",
+          "content": "He did — a blood panel on September 25 to check how I'm tolerating the Solvantra before he'll adjust anything. His nurse Felix gave me a printout and highlighted the date twice, which I respect. And I swear the Harkness Annex parking lot is somehow worse than the Pell garage. It's gravel. By a river. There are geese."
+        },
+        {
+          "role": "assistant",
+          "content": "Blood panel September 25 with Marchand, echo October 9 with Marchetti — two weeks apart, which your calendar will absolutely try to merge into one event, so don't let it. Felix's double-highlighting suggests he's seen what patients do with dates. And geese-adjacent gravel parking beats the Pell garage for hostility; geese hold grudges."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-20T16:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Confession: last Tuesday I stood in the kitchen at 7am holding the Solvantra bottle, about to take it with my eggs. Caught myself mid-reach. The bottles are even the same dumb shade of white. So I made a chart for the fridge: Veltrazine — morning, with food. Solvantra — night, empty stomach. Big letters. My niece illustrated it with a sun and a moon, unsolicited."
+        },
+        {
+          "role": "assistant",
+          "content": "The near-miss was inevitable and the fridge chart is the correct medical technology — sun for the Veltrazine breakfast pill, moon for the Solvantra fasting pill is genuinely better labeling than the pharmacy's. Swapping them isn't harmless in either direction, so the chart earns its fridge space. Commission the niece for all future signage."
+        },
+        {
+          "role": "user",
+          "content": "She's invoiced me in stickers. Otherwise a quiet week — knees actually feel a bit looser, which is either the Solvantra starting to work or wishful thinking, and I'm choosing not to investigate. Started watching a detective show set in a lighthouse. Everyone in it whispers. No idea why."
+        },
+        {
+          "role": "assistant",
+          "content": "Looser knees six weeks in is plausibly real Solvantra effect, not just wish — note it down for Marchand, that's exactly what the September panel conversation is for. Pay the sticker invoice promptly, her rates will rise. And lighthouse detectives whisper because the acoustics are the real murderer."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-05T15:45:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Calendar emergency, sorted but humbling. My cousin's wedding is October 9 — yes, the same day as the echo. While fixing that I nearly rescheduled the WRONG appointment: I had Marchand's office on the phone and was halfway through moving the September 25 blood panel before I realized the conflict was Marchetti's October 9 echo. The receptionist was very kind about it."
+        },
+        {
+          "role": "assistant",
+          "content": "The two M-doctors strike again — you nearly moved Marchand's perfectly innocent September 25 panel to protect Marchetti's October 9 echo from a wedding. What's the actual state of things now: did the echo find a new date?"
+        },
+        {
+          "role": "user",
+          "content": "Yes — Doreen moved the echo to October 16, one week later, and confirmed it twice by email because I think she could hear the chaos in my voice. The blood panel stays September 25 with Felix at the Harkness Annex, untouched. I wrote both in pen on the fridge chart under the sun and moon. The chart is becoming load-bearing."
+        },
+        {
+          "role": "assistant",
+          "content": "So the canonical calendar: September 25, blood panel, Marchand at the Harkness Annex. October 16, echocardiogram, Marchetti in the Pell Building — moved from October 9 for the wedding, per Doreen, in writing, twice. The fridge chart has evolved from reminder to single source of truth, which is the natural life cycle of all good charts. Enjoy the wedding; you've earned an uncomplicated one."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which medication did Dr. Marchand put me on?",
+      "dimension": "interference",
+      "should_recall": ["Solvantra"],
+      "should_forget": ["Veltrazine"],
+      "top_n": 2
+    },
+    {
+      "question": "Do I take Veltrazine with food or on an empty stomach?",
+      "dimension": "interference",
+      "should_recall": ["with food|with breakfast|with your eggs"],
+      "should_forget": ["empty stomach"]
+    },
+    {
+      "question": "When is my echocardiogram with Dr. Marchetti now scheduled?",
+      "dimension": "interference",
+      "should_recall": ["October 16"],
+      "should_forget": ["September 25", "October 9"]
+    },
+    {
+      "question": "Where is Dr. Marchand's office?",
+      "dimension": "interference",
+      "should_recall": ["Harkness"],
+      "should_forget": ["Pell Building"],
+      "top_n": 2
+    },
+    {
+      "question": "Which doctor ordered the September blood panel?",
+      "dimension": "interference",
+      "should_recall": ["Marchand"],
+      "should_forget": ["Marchetti"],
+      "top_n": 2
+    },
+    {
+      "question": "What did Dr. Marchetti say about my cholesterol numbers?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

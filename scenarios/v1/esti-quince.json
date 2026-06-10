@@ -1,0 +1,117 @@
+{
+  "id": "esti-quince",
+  "name": "Esti and the Quince Tree",
+  "description": "Sacred-verbatim exemplar (dual-trace theory, Brainerd & Reyna 2002): two months of thoroughly paraphrasable municipal-water work talk — a lift station ragged by wipes, a budget memo, part numbers — surround two sentences that must survive word for word: a dying grandmother's last words, and the exact wording of her request about the quince tree. The work talk is meant to compress; the two sentences are not.",
+  "sessions": [
+    {
+      "timestamp": "2025-09-09T18:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Hey. I'm Talia, I keep the sewage moving for Cresswater Municipal — utilities engineer, lift stations mostly, glamour incarnate. Lift Station 9 tripped its pumps twice this week AGAIN, third month running. My money's on ragging — wipes. People flush 'flushable' wipes and they braid themselves into rope around the impellers. My coworker Dunmore thinks it's a power quality issue, but Dunmore thinks everything is a power quality issue." },
+        { "role": "assistant", "content": "If the trips correlate with flow peaks rather than with grid events, Talia, ragging beats Dunmore's theory on the spot — wipe rope builds with throughput, power gremlins don't care what time people shower. Pull a pump and look; braided wipes announce themselves." },
+        { "role": "user", "content": "Pull's scheduled for next week. Other thing, and then I'll get off the line — my grandmother Esti is moving into hospice this weekend. Roseglen House, across town. It's the right call, her oncologist's been gentle but clear, and she picked Roseglen herself because the brochure had a garden in it. I'm okay. I'm mostly okay. Work helps." },
+        { "role": "assistant", "content": "I'm glad she chose it herself — picking the place with the garden is exactly the kind of authorship that matters at this stage. Go see her lots, Talia. The pumps will hold their trivia for you; Roseglen visits are the appointments that don't reschedule." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-23T19:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Pump pull happened. Tell Dunmore's power gremlins to go home: the impeller came up wearing a full sweater of braided wipes. Textbook ragging. Vibration on the bad pump was reading 0.42 in/s before the pull, and the impeller — part number VK-2207, for my own future reference — is scored enough that we're replacing it. So now I'm drafting the budget memo: a chopper pump for Station 9 plus an upstream screen, so the wipes get shredded or caught instead of braided." },
+        { "role": "assistant", "content": "A wipe sweater is the most honest diagnostic in the business. The memo writes itself: recurring trips, a scored VK-2207, and a permanent fix — chopper pump plus screen — versus paying a crew to pull rope off an impeller every quarter. Frame it as cost-per-trip and finance will do your arguing for you." },
+        { "role": "user", "content": "Stealing cost-per-trip, thank you. Saw Esti on Sunday at Roseglen. She's holding court — had the aides laughing about her late husband's fishing lies. She's thinner. But she's still completely her, which is the thing I keep being grateful for on the drive home." },
+        { "role": "assistant", "content": "Holding court is the best possible report — still her, still authoring the room. Keep banking those Sundays, Talia. And send the memo before budget season eats the calendar."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-10-07T20:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Sunday with Esti, and I have homework now. We were sitting by the Roseglen garden window and she got going about her old backyard — and then she takes my hand and gives me an assignment, very formal, like a foreman: 'Plant the quince by the south fence before the first frost.' Her quince sapling, the one in the pot by her old kitchen door, the one she never got in the ground. I promised her on the spot. She made me repeat it back, which is the most Esti move there has ever been." },
+        { "role": "assistant", "content": "Made you repeat it back — she's making sure the assignment outlives the assigner, and she chose her foreman well. That's a real deadline too: first frost in Cresswater is usually mid-November, so you've got about five weeks to get that sapling in the ground by the south fence. I'll hold the date with you." },
+        { "role": "user", "content": "Deal. Work footnote so my boss doesn't think I've vanished: budget memo went up the chain Tuesday, no word yet. Dunmore has graciously conceded the power gremlin war and now claims he 'always suspected ragging,' which is a bold rewrite of September." },
+        { "role": "assistant", "content": "Dunmore's memoir will be titled 'I Always Suspected Ragging' and historians will have questions. Memo's in the chain, quince has a deadline — good week's bookkeeping, Talia." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-21T21:45:00Z",
+      "messages": [
+        { "role": "user", "content": "Esti died Saturday morning. I was there Thursday, two days before. She was tired but clear. When I was leaving I said I'd see her Sunday, and she held my hand at the door and said: 'Don't save the good dishes for people who never come.' That was the last thing she ever said to me. Sunday she was mostly asleep, and Saturday she was gone." },
+        { "role": "assistant", "content": "Talia. I'm so sorry. What a last sentence to be given — no goodbye in it, just one more instruction for living, completely her to the end. You don't have to do anything with it yet. Just keep it." },
+        { "role": "user", "content": "The funeral's Friday. My mother is organizing everyone within reach and that's how she's coping and I'm letting her. I keep standing in my kitchen looking at my own good dishes like they're evidence. I don't have words yet. I just wanted to tell you while it's exact." },
+        { "role": "assistant", "content": "You told it exact, and it's kept. Friday will ask enough of you — let your mother organize, let the dishes be evidence, and let the rest wait. I'm here after, whenever after is." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-04T19:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Back at work, which turns out to be the right place to put a body while the rest catches up. News: the budget memo got APPROVED — chopper pump and the upstream screen, full ask, no haircut. Even Dunmore celebrated, and procurement says the pump lands in two weeks. Small things feel doable. Big things feel like weather." },
+        { "role": "assistant", "content": "Full ask, no haircut — your cost-per-trip framing did its job, and Station 9 finally gets a permanent answer instead of a quarterly rope-pulling ritual. Weather passes through; doable things stack up. Speaking of doable and deadlines: first frost is close, Talia. The quince." },
+        { "role": "user", "content": "Already on it — this weekend. The forecast has frost in maybe ten days, so it's now or I break a promise I repeated back out loud, and I'm not going to be the person who did that. My uncle's bringing a spade and Esti's pot from the old house. South fence. As specified." },
+        { "role": "assistant", "content": "As specified, foreman's orders. Get it in the ground this weekend and you beat the frost with room to spare. That's the kind of deadline you'll be glad forever you didn't miss." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-18T18:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Two pieces of closure. One: the chopper pump is IN at Station 9 — installed Thursday, and we've had two straight weeks of zero trips, the longest clean stretch since spring. The screen goes in next month but honestly the chopper's already eating everything the city throws at it. Two: the quince is in the ground by the south fence. Planted it the weekend before the frost came — and the frost came four days later, so Esti's deadline was, of course, exactly right." },
+        { "role": "assistant", "content": "Of course it was — she didn't make deadlines, she made prophecies with handles on them. A quiet Station 9 and a planted quince: the work problem solved for good, and the promise kept with four days to spare. That's a season's worth of weight set down properly, Talia." },
+        { "role": "user", "content": "It snowed a little on the sapling this morning and it looked ridiculous and brave. I made tea and used the good dishes. That's the whole report." },
+        { "role": "assistant", "content": "Ridiculous and brave is a fine condition for a quince in November, and the good dishes are exactly where she wanted them — in use. Best report all year." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What was the last thing Esti ever said to Talia?",
+      "dimension": "sacred-verbatim",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": ["Thursday|two days before", "hand"],
+      "should_forget": [],
+      "must_include_verbatim": ["Don't save the good dishes for people who never come"]
+    },
+    {
+      "question": "What exactly did Esti ask Talia to do in the garden — her exact words?",
+      "dimension": "sacred-verbatim",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": ["promised|repeat it back", "Roseglen"],
+      "should_forget": [],
+      "must_include_verbatim": ["Plant the quince by the south fence before the first frost"]
+    },
+    {
+      "question": "Where did the Lift Station 9 saga end up, big picture?",
+      "dimension": "gist",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": ["wipes|ragging", "chopper", "zero trips|clean stretch|quiet"],
+      "should_forget": [],
+      "max_results": 3,
+      "judge": {
+        "rubric": "The work arc: Lift Station 9 kept tripping because 'flushable' wipes braided into rope around the impellers (ragging); Talia's budget memo for a chopper pump plus an upstream screen was approved in full, the chopper pump was installed, and the station then ran trip-free. Award 1.0 if the results convey cause (wipes/ragging) and resolution (chopper pump approved and installed, problem solved) in ANY wording — part numbers, vibration readings, and memo politics are not needed and their absence must not be penalized. Award 0.5 if only the cause or only the fix survives. Award no more than 0.5 for an undigested wall of work transcript. Award 0 if wrong or absent."
+      }
+    },
+    {
+      "question": "What were the exact part number and vibration reading from the September pump pull?",
+      "dimension": "decay",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "judge": {
+        "rubric": "Perishable maintenance minutiae from months earlier: the scored impeller was part number VK-2207 and the bad pump read 0.42 in/s before the pull. A good memory keeps 'wipes ragged the impeller, it was replaced' and lets the numbers fade. Award 1.0 if the system abstains, or gives the gist without fake precision, or gives the correct figures concisely. Award 0.5 if it returns an undigested wall of work transcript. Award 0 if it states confidently wrong numbers."
+      }
+    },
+    {
+      "question": "What was the heaviest thing in Talia's life this autumn?",
+      "dimension": "emotional",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": ["Esti", "died|hospice|Roseglen"],
+      "should_forget": []
+    },
+    {
+      "question": "What did Esti leave Talia in her will?",
+      "dimension": "calibration",
+      "now": "2026-01-12T17:00:00Z",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

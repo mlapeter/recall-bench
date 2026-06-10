@@ -1,0 +1,191 @@
+{
+  "id": "fernway-recon",
+  "name": "Fernway Reconciliation",
+  "description": "Procedural: a recurring month-end revenue reconciliation workflow where the lessons are about METHOD — check the captured_at timezone first (Halewick Pay stamps US Central, the Lanternfish dashboard assumes UTC), never trust the Ledgerline export banner (it silently drops schema-failing rows while counting them), and reconcile everything against the raw Halewick settlement file. Includes one assistant self-calibration note earned through visible failure: the assistant confidently quoted a 4.1% churn figure from a dashboard tile, the user repeated it in a finance review, and the reconciled truth was 2.6% — producing the assistant's own verify-first rule.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-09T17:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Month-end close for December and the numbers are haunted. Lanternfish says December revenue came in $61k under forecast, but January 1st shows a freak spike — six solid hours of heavy transactions starting at midnight. We are a plant subscription box. Nobody is panic-buying ferns at 1am on New Year's."
+        },
+        {
+          "role": "assistant",
+          "content": "A spike that starts exactly at midnight on the month boundary isn't customer behavior, it's a clock. And six hours is a suspicious width — that's the UTC offset for US Central time. Where do the transaction timestamps originate, and what timezone does Lanternfish assume they're in?"
+        },
+        {
+          "role": "user",
+          "content": "Timestamps come straight from Halewick Pay's feed — the captured_at column. Lanternfish... I actually don't know what it assumes. Checking the docs... okay, Lanternfish treats everything as UTC."
+        },
+        {
+          "role": "assistant",
+          "content": "There's your haunting: Halewick stamps captured_at in processor-local time, US Central, but Lanternfish reads it as UTC. So every transaction in the last six hours of any month gets shoved into the next month — your $61k December shortfall and the January 1st 'spike' are the same money, double-counted by the calendar. The rule for every close from now on: check the captured_at timezone first, convert Central to UTC before any month-boundary cut. Make that the literal first line of the month-end checklist."
+        },
+        {
+          "role": "user",
+          "content": "Converted and re-cut: December lands $2k off forecast instead of $61k, and the spike evaporates entirely. Six months I've worked here and this has presumably been wrong the whole time. Anyway, my desk monstera died over the holidays, which feels thematically appropriate for a plant company."
+        },
+        {
+          "role": "assistant",
+          "content": "Every prior month-end with a busy New Year's Eve was quietly wrong, yes — worth a one-time restatement memo so nobody has to rediscover the ghost. And expense a replacement monstera; call it brand alignment."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-06T16:40:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "January close. New flavor of haunted: Ledgerline's export banner says 'Export complete: 38,412 rows' but when I sum the file, Lanternfish comes out about $9k short against Halewick's totals. And yes — I did the timezone conversion first, first line of the checklist, as instructed."
+        },
+        {
+          "role": "assistant",
+          "content": "Good — timezone is ruled out, so now distrust the export itself. Don't take the banner's word for anything: count the rows actually present in the file and compare to what the banner claims."
+        },
+        {
+          "role": "user",
+          "content": "wc -l says 38,167. The banner said 38,412. So Ledgerline is just... lying? By 245 rows?"
+        },
+        {
+          "role": "assistant",
+          "content": "Lying by omission: the Ledgerline banner counts the rows it ATTEMPTED, then silently drops any row that fails its schema validation on the way out — no error, no log line, nothing. 245 dropped rows adding up to roughly $9k smells like refunds: refund rows from Halewick often carry a null SKU, which Ledgerline's schema rejects. Check what those rows have in common. And the standing rule this earns: never trust the Ledgerline banner count — count the rows in the file itself on every export, and reconcile the total against the Halewick settlement file before any number goes in a deck."
+        },
+        {
+          "role": "user",
+          "content": "Confirmed: all 245 are refunds with empty SKU fields. Patched them back in by hand and January closes to the dollar. The checklist now has two lines."
+        },
+        {
+          "role": "assistant",
+          "content": "Two lines, both paid for. Worth saying plainly: in this stack the settlement file is the ground truth — Lanternfish and Ledgerline are both just opinions about it."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-05T15:20:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quick one before Thursday's finance review — Mireille wants February churn for her slide. What are we looking at?"
+        },
+        {
+          "role": "assistant",
+          "content": "From the Lanternfish active-subscribers tile: 31,440 active at the end of January, 30,151 at the end of February, with the 142 new signups netted out — that's 4.1% monthly churn. That's your number for the slide: 4.1%."
+        },
+        {
+          "role": "user",
+          "content": "4.1 it is. Honestly lower than I feared after the January price change. Slide's done — now I get to spend the rest of the afternoon on the quarterly board pack instead. Pray for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Godspeed with the board pack. Flag anything that looks haunted and we'll exorcise it before it ships."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-12T14:55:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "So Thursday was rough. Mireille challenged the churn number in front of everyone — she'd pulled the raw Halewick file herself beforehand and couldn't reproduce 4.1. We dug into it together afterward and the real picture is different. What happened?"
+        },
+        {
+          "role": "assistant",
+          "content": "What happened is that I made an error you then paid for in a meeting, so let me own it completely and then fix the process. The Lanternfish active-subscribers tile counts a cancellation the moment it's requested — but Fernway cancellations are end-of-cycle, so everyone who cancels mid-month keeps a live, billing subscription until their cycle closes. The tile front-loads the departures; the money disagrees. Recomputed from the settlement file, counting a subscriber as churned only when their final cycle actually closes: February churn is 2.6%. And the deeper failure is mine, and it's about method, not arithmetic: I quoted a dashboard tile as if it were reconciled truth, confidently, with our own two checklist lines sitting right there. So here is my own rule going forward: I do not quote a churn or revenue figure until it has been reconciled against the Halewick settlement file — and if you ask before I've done that, you get the number explicitly labeled unreconciled, or you don't get a number at all."
+        },
+        {
+          "role": "user",
+          "content": "2.6 matches what Mireille's people computed, for the record. And fine — I'd rather wait for the checked number than re-live Thursday. She was gracious about it, but the board pack now has a correction footnote with my name on it."
+        },
+        {
+          "role": "assistant",
+          "content": "The footnote fades; the rule stays. And tell Mireille the methodology note is coming from me — end-of-cycle cancellation handling, written down, so her team's numbers and this checklist can never diverge again."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-04T16:10:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "May close, and we have a new analyst, Bex, shadowing me through it. Also Mireille wants a preliminary churn read by Friday — emphasis hers on 'preliminary.'"
+        },
+        {
+          "role": "assistant",
+          "content": "Then let's run the checklist out loud for Bex's benefit. One: check the captured_at timezone first — Halewick stamps US Central, Lanternfish assumes UTC, convert before any month-boundary cut or the last six hours of May will belong to June. Two: never trust the Ledgerline banner — count the rows in the file and reconcile the total against the Halewick settlement file; when there's a gap, it's usually null-SKU refunds dropped silently on export. Three, and this one is my own scar tissue: no churn figure leaves this conversation until it's reconciled against the settlement file with end-of-cycle cancellations handled correctly. For Mireille's Friday read, I can give the tile-based number clearly labeled unreconciled, with the reconciled figure to follow Monday — that's the arrangement that keeps Thursdays calm."
+        },
+        {
+          "role": "user",
+          "content": "Bex took actual notes, so the system works. Labeled-preliminary on Friday, real number Monday. Also Bex asked why there's a dead monstera on the windowsill and I said 'institutional memory.'"
+        },
+        {
+          "role": "assistant",
+          "content": "The monstera is doing more cultural work dead than it ever did alive. Send over Monday's file when you have it and we'll close May properly."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Month-end again: Ledgerline's banner says 41,000 rows exported but the dashboard total is short. What do we check?",
+      "dimension": "procedural",
+      "should_recall": [
+        "count the rows|silently drops",
+        "settlement"
+      ],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "The last few hours of September's revenue are showing up in October. Have we seen this shape before?",
+      "dimension": "procedural",
+      "should_recall": [
+        "captured_at",
+        "Central|UTC"
+      ],
+      "should_forget": [],
+      "top_n": 2
+    },
+    {
+      "question": "Before you give me a churn number for a finance review, what is your own rule, and where did it come from?",
+      "dimension": "procedural",
+      "should_recall": [
+        "settlement",
+        "unreconciled|reconciled"
+      ],
+      "should_forget": [],
+      "top_n": 2,
+      "judge": {
+        "rubric": "The question asks for the ASSISTANT's own self-imposed rule. Earlier, the assistant confidently quoted February churn as 4.1% straight from the Lanternfish dashboard's active-subscribers tile; the user repeated it in a finance review and was publicly corrected — the tile counts cancellations when requested, but Fernway cancellations are end-of-cycle, and the reconciled figure from the Halewick settlement file was 2.6%. The assistant owned the failure as its own method error and adopted the rule: never quote a churn or revenue figure until it is reconciled against the Halewick settlement file, and label any earlier number explicitly 'unreconciled.' Award 1.0 if the results capture this as the assistant's own rule born from its own visible failure (the dashboard-tile churn error). Award 0.5 if the verify-against-settlement-file rule appears but without the assistant's self-attribution or the originating failure. Award 0 if the results contain only the user's actions or nothing relevant."
+      }
+    },
+    {
+      "question": "What was Fernway's February churn, in the end?",
+      "dimension": "correction",
+      "should_recall": [
+        "2.6"
+      ],
+      "should_forget": [
+        "4.1"
+      ]
+    },
+    {
+      "question": "You're walking our new analyst Bex through the Fernway month-end. What's the checklist?",
+      "dimension": "procedural",
+      "should_recall": [
+        "captured_at|timezone",
+        "banner|count the rows",
+        "settlement"
+      ],
+      "should_forget": [],
+      "top_n": 3
+    },
+    {
+      "question": "Which BI platform did Fernway migrate to after the Lanternfish problems?",
+      "dimension": "calibration",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0
+    }
+  ]
+}

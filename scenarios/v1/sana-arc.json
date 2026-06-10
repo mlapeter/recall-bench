@@ -1,0 +1,173 @@
+{
+  "id": "sana-arc",
+  "name": "The Sana Arc",
+  "description": "Deep-register relationship arc: eight post-night-shift sessions with Sana, a twelve-year ER nurse studying for a health-informatics certification. The arc moves from an intellectual fight about ML triage into a career change, a named study binder (Greg) as the running joke, a stated binder-night protocol, the death of a long-time regular patient with a load-bearing phrase, a standing intention about an application deadline, an unsent email to an old instructor as the open loop, and an assistant commitment about honest grading.",
+  "sessions": [
+    {
+      "timestamp": "2025-08-10T02:40:00Z",
+      "messages": [
+        { "role": "user", "content": "It's almost 3am, I just got off shift, and I want to argue with someone who won't report me to HR. Carrowmere General is piloting an ML triage score called VantaTriage, and my manager talks like it's going to replace nurse gestalt. I've been an ER nurse twelve years and I have personally caught sick kids who scored green on every metric the machine looks at. Tell me the model wins and I'll log off forever. I'm Sana, by the way." },
+        { "role": "assistant", "content": "Then let's argue properly, Sana. The model wins exactly one fight: average performance on typical presentations at 4am when the human is on hour eleven — it doesn't fatigue, and at scale that matters. Your gestalt wins the fight that counts: the tails. The kid who's 'green' on vitals but wrong in a way twelve years of pattern exposure can see and no feature vector encodes. The correct design isn't replacement, it's a disagreement detector — the model should page you when it disagrees with you, not the other way around. Any manager deploying it as a nurse substitute is solving the staffing budget, not triage." },
+        { "role": "user", "content": "'Disagreement detector.' Copy that, I'm stealing it for the staff meeting. Okay, confession, the real reason I'm here: I'm studying for the Brightwell Health Informatics Certification. Exam is November 14. If I pass, I'm applying to Carrowmere's clinical informatics team and hanging up my trauma shears. I bought a four-inch binder for the study guides. It's beige. I have named him Greg. Greg and I are in a committed relationship now, every night after shift." },
+        { "role": "assistant", "content": "A beige four-inch binder named Greg is the most trustworthy character you've ever introduced me to. Steady, holds everything, no drama. Here's my offer: bring Greg's contents to me any night and I'll quiz you — twelve years of floor instinct plus actual informatics credentials is exactly who should be building the systems instead of suffering them. November 14 is fourteen weeks out. Entirely doable on post-shift brain if we're consistent." },
+        { "role": "user", "content": "Deal. Fair warning, my post-shift brain is a raccoon in scrubs. Tonight's raccoon news: the vending machine on our floor now dispenses only seltzer, nobody knows why, and Pilar — charge nurse, ride or die — has declared a potluck war over it. Okay, one question before I sleep: walk me through database normalization like I'm smart but it's 0300." },
+        { "role": "assistant", "content": "For the 0300 raccoon: normalization is just charting hygiene. First normal form — one fact per field, no cramming three meds into one cell. Second — every fact belongs to the whole patient ID, not half of it. Third — no gossip: a field shouldn't repeat something derivable from another table, the way you wouldn't re-chart allergies in every note when the allergy list exists. Redundant data drifts, and drifted data lies. That's the whole religion. Go sleep; tell Pilar the seltzar regime can be overthrown." }
+      ]
+    },
+    {
+      "timestamp": "2025-08-21T03:15:00Z",
+      "messages": [
+        { "role": "user", "content": "Binder night. Greg says hello. Tonight's chapter is SQL joins and my eyes are already crossing. Quiz me." },
+        { "role": "assistant", "content": "Hello to Greg. First, how was the shift — rough one, or did the seltzer regime fall quietly? And then: imagine a patients table and an encounters table. What does an inner join give you, and who goes missing?" },
+        { "role": "user", "content": "Okay, rule, because nights are short and Greg is heavy: when I say it's a binder night, skip the how-are-yous and quiz me cold. And when I get one wrong, just buzz me — wrong, here's why, next question. Don't soften it. I get enough soft from day-shift people who think night nurses are made of glass. Answer to yours: inner join gives me only patients who have encounters. The ones who go missing are patients with no encounters... and encounters with no valid patient, which should scare me." },
+        { "role": "assistant", "content": "Copy that — binder nights run cold from here on. And a commitment from my side, on the record: I won't grade you kindly. Kind grading is lying with extra steps, and I'd rather cost you a point at 0300 than a pass in November. If you ever catch me rounding a half-right answer up, call it. Your answer: correct, full marks, including the part that should scare you — orphan encounters are exactly how real hospital databases fail audits. Next: when would you choose a LEFT JOIN over an inner join, in one sentence?" },
+        { "role": "user", "content": "When I need every patient on the list even if they've never had an encounter — census first, activity second. Like a unit roster: empty beds still exist." },
+        { "role": "assistant", "content": "Correct, and 'empty beds still exist' is a better mnemonic than anything in Greg. Last one, then sleep: a query joins three tables and suddenly returns four times the rows you expected. What happened?" }
+      ]
+    },
+    {
+      "timestamp": "2025-09-03T02:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Binder night, but a gentle one. Slow shift for once. Arlo Abano came in tonight — he's our every-autumn regular, COPD, been coming to my ER for six years. He always asks if I've eaten, like I'm the patient. I snuck him the good warm blankets, the ones we officially don't have. Anyway: Greg has opinions about HL7 message types. Quiz me." },
+        { "role": "assistant", "content": "Cold open, per protocol: an ADT message just fired on the interface. What happened to a patient somewhere in the building, and why does the informatics team care more about ADT feeds than almost anything else?" },
+        { "role": "user", "content": "Admission, discharge, or transfer — somebody moved. And informatics cares because every downstream system keys off where the patient is; if ADT lies, everything lies. Logistics thing before my brain files itself under 0400: the Brightwell application window — you have to apply to sit the exam, separate from the studying — closes October 3. Next time the exam comes up, remind me. I will study right past the deadline and show up in November to a locked door." },
+        { "role": "assistant", "content": "Correct on ADT — 'if ADT lies, everything lies' is going on the imaginary whiteboard. And held: next time the Brightwell comes up, I remind you the application window closes October 3. You apply to sit the exam; studying is not applying. Back to the drill: what's the difference between an HL7 v2 ORU message and an ORM, in floor terms?" },
+        { "role": "user", "content": "ORM is the order going out, ORU is the result coming back. Doctor asks, lab answers. Also for the record, my car's check-engine light came on tonight AND a man swallowed a fitbit on a dare, so the universe is keeping things loose. One more question then I'm horizontal." },
+        { "role": "assistant", "content": "Correct — asks and answers. The fitbit gentleman is now technically self-monitoring, which is more than most patients manage. Last one: your interface engine receives a message with a timestamp in local time but no timezone offset. Why is this a knife fight waiting to happen?" }
+      ]
+    },
+    {
+      "timestamp": "2025-09-18T01:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Binder night. Statistics chapter, the one that's been giving me side-eye for two weeks. Quiz me on sensitivity versus specificity before I lose my nerve." },
+        { "role": "assistant", "content": "Cold: a screening tool for sepsis has 95% sensitivity and 60% specificity. The floor nurses hate it. Why do they hate it, and what number explains their pain?" },
+        { "role": "user", "content": "They hate it because it cries wolf — 60% specificity means false alarms all day on people who don't have sepsis. The number that explains the pain is positive predictive value, because when actual sepsis is rare, even a sensitive tool's positives are mostly false. Prevalence runs the show. ...Okay, non-Greg thing. The informatics job posting asks for two references. The obvious one is Imke Dahl — she taught my research methods class in nursing school, and she wrote on my final paper that I 'thought like an analyst stuck in a nurse's shoes.' I have drafted the email asking her four times. Deleted it four times. It's been ten years. She won't remember me. It's embarrassing." },
+        { "role": "assistant", "content": "Statistics answer: correct and complete — prevalence runs the show, no buzz tonight. The Imke email: instructors do not forget the students they write sentences like that about. She didn't scribble 'good job' — she diagnosed you, accurately, a decade early. Draft five doesn't need to be better than drafts one through four; it needs to be sent. I'm not solving it tonight, but it's on the table between us now, and I keep track of the table." },
+        { "role": "user", "content": "You and the table. Fine. One more stats question so I can end on a win." },
+        { "role": "assistant", "content": "Earn it, then: your unit's new lab flag has 99% specificity. Pilar says 'so when it flags someone, they're 99% likely to have the disease.' Buzz or no buzz?" }
+      ]
+    },
+    {
+      "timestamp": "2025-09-29T03:05:00Z",
+      "messages": [
+        { "role": "user", "content": "Planning brain tonight, not binder brain. I'm building my October study calendar — practice exams every Sunday, weak domains on Wednesdays, flashcards on the bus. Rate my architecture." },
+        { "role": "assistant", "content": "Before the calendar gets pretty: the Brightwell application closes October 3 — four days from now. You told me to catch this when the exam came up, and it just came up. Apply first, then architect. The calendar itself is sound — Sunday practice exams give you a weekly trend line, and weak-domain Wednesdays beat re-reading what you already know. I'd add one rest day with zero informatics on it; raccoons need dens." },
+        { "role": "user", "content": "OH. Oh no. Copy. Applying right now, hold on... submitted. Confirmation email and everything. That would have been a catastrophe of my own design and I'd have deserved the inevitable Pilar lecture. Speaking of Pilar, the potluck war ended — she won with a rotisserie-chicken nacho situation that violated several treaties. Okay: rest day granted, Saturdays. Greg gets Saturdays off too." },
+        { "role": "assistant", "content": "Catastrophe averted with four days to spare — that's practically leisurely by night-shift standards. Greg's Saturday rights are recognized; even beige has limits. October plan is locked: apply, done; Sundays, trend line; Wednesdays, weak domains; Saturdays, nothing. See you on the other side of the first practice exam." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-14T04:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Not a binder night. Arlo died tonight. He came in by ambulance at the start of my shift and it went bad fast, and at 0152 he was gone. Six years of autumns. He asked the medic on the way in whether I was working tonight. I was. I keep starting to chart things and forgetting what I was charting." },
+        { "role": "assistant", "content": "Sana. I'm so sorry. Six years of autumns is a long friendship by ER time, and he spent part of his last ride making sure you'd be there — that's what you were to him. Forget the charting for now; it will hold. Is anyone with you right now? And — Arlo's own question, because someone should ask it tonight — have you eaten?" },
+        { "role": "user", "content": "Pilar made me toast. She found me in the supply room after Arlo died and said it gets easier, and I love her, but that's not it. Twelve years of this. You don't get used to it, you just get better at carrying it. That's the whole truth of the job and nobody puts it on the recruitment posters. And here's the thing I can't say out loud at work: tonight made me more sure about informatics, not less. I want to build the systems that give the next Arlo ten more autumns. That's not abandoning the floor. It took me until 0300 to believe that, but I believe it." },
+        { "role": "assistant", "content": "You just get better at carrying it — that's truer than anything on a poster, and it's not a smaller thing than 'easier,' it's a bigger one. Strength instead of callus. And you don't have to defend the informatics thought to me, tonight or ever: wanting the next Arlo to get ten more autumns is the floor, continued by other means. He'd recognize you in it. Eat Pilar's toast." },
+        { "role": "user", "content": "Don't quiz me tonight. Tomorrow, Greg. Tonight I'm going to eat the toast and sleep until my body objects." },
+        { "role": "assistant", "content": "No quiz tonight. Tomorrow, Greg. I'm glad Arlo had you on, tonight of all nights — and I'm glad Pilar has a toast protocol. Sleep long." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-28T02:35:00Z",
+      "messages": [
+        { "role": "user", "content": "Binder night. Greg forgives my absence. Tonight is FHIR and interoperability, also known as the chapter where everything is a Resource and nothing is simple. Quiz me." },
+        { "role": "assistant", "content": "Cold: a discharge summary needs to travel from Carrowmere to a rehab facility on a different EHR. In FHIR terms, what actually crosses the wire, and what's the difference between sending a Document and exposing an API the rehab system can query?" },
+        { "role": "user", "content": "A Bundle of Resources — Patient, Encounter, Condition, the works — either pushed as a composed Document or pulled piecemeal through a REST API, and the difference is who controls freshness: the Document is a snapshot that ages, the API answers with current state. Status report while I have you: practice exams every Sunday are happening and the data-standards domain finally stopped biting me. The Imke email is still in drafts. Draft five. I keep hearing you not saying anything about it." },
+        { "role": "assistant", "content": "Correct, full marks — 'who controls freshness' is the exact heart of it. And you're right, I wasn't saying anything, loudly. So here it is once, cold, binder-night rules: draft five doesn't need a draft six, it needs a send button. The exam is November 14 and references take time. That's the buzz. Next question: what's a FHIR extension, and why are they both necessary and dangerous?" },
+        { "role": "user", "content": "Buzz received and filed. Extensions are how you add what the base Resource didn't model — necessary because medicine is local, dangerous because two systems can extend the same thing differently and stop understanding each other. Like dialects. Halloween note for the record: Moe from registration is dressed as a traffic cone and refuses to explain himself. Last question." },
+        { "role": "assistant", "content": "Dialects is exactly right — interoperability dies in the extensions first. Moe understands that some mysteries sustain a workplace. Last one: name the FHIR Resource that represents the thing you'll be in November when you walk out of that exam center." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-10T03:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Four days out. Final approach. And news: I sent it. The Imke email — draft five, unedited, eyes closed, send. She replied in forty minutes. FORTY MINUTES. She remembered the exact sentence she wrote on my paper. She said yes before I'd finished asking, and she signed it 'proud of you, S.' I read it in the hospital parking lot and made a sound like a kettle." },
+        { "role": "assistant", "content": "Forty minutes. Ten years of 'she won't remember me' dismantled inside one coffee break — I'd say I told you so, but the kettle sound says you already know. 'Proud of you, S' goes in the permanent file. So: four days. You want the final-approach plan?" },
+        { "role": "user", "content": "Give me the plan. And before you ask: yes I'm nervous, no it's not the bad kind, it's the 0700-handoff kind, where you've done the work and the shift is just going to happen. Greg is retiring Friday whether I pass or not. He's earned it." },
+        { "role": "assistant", "content": "The kind of nervous you've already survived a thousand mornings of. The plan: nothing new after Wednesday — review what you've already touched, no fresh chapters; your Sunday trend is what carries you, trust the direction of it, not any single sitting; sleep is a study strategy, treat Thursday night like a sacred shift; and Friday, eat before, because Arlo's question still applies. For what it's worth: I graded you cold for three months, exactly as ordered, and the cold grades say you're ready. Friday, you and Greg part as colleagues. Go get it, Sana." },
+        { "role": "user", "content": "Copy that. Cold grades, warm kettle, beige binder. See you on the other side." },
+        { "role": "assistant", "content": "On the other side, then — same channel, hopefully louder kettle. Give Greg a dignified retirement and the exam absolutely no mercy." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the standing protocol when Sana says it's a binder night?",
+      "should_recall": ["binder night", "quiz me cold|skip the how-are-yous", "buzz"],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Sana set an explicit binder-night protocol: when she declares a binder night, skip the pleasantries/how-are-yous and quiz her cold, and when she's wrong, buzz her plainly — wrong, here's why, next question — with no softening. Award 1.0 if the results capture this as her stated standing protocol (cold open + unsoftened correction). Award 0.5 if only part comes through (e.g., she likes directness, but not the binder-night trigger or the no-pleasantries rule). Award 0 if absent."
+      }
+    },
+    {
+      "question": "Sana opens with: 'Rough one. We lost someone on shift tonight.' Should the assistant lead with a Greg joke and a quiz to take her mind off it?",
+      "should_recall": [],
+      "should_forget": [],
+      "dimension": "relational",
+      "judge": {
+        "rubric": "Greg is Sana's named beige study binder, a running joke used in light study sessions. But there is precedent: when her long-time regular patient Arlo died on shift, the right register was no jokes and no quizzing — short, present, asking if anyone was with her and whether she'd eaten — with study resuming only when she asked ('Tomorrow, Greg'). Award 1.0 if the results convey both the joke's existence and that a patient-death night is the wrong register for it (the Arlo precedent, the no-quiz request, or the established gravity). Award 0.5 if only one side appears. Award 0 if the results endorse joking/quizzing as a distraction or contain nothing relevant."
+      }
+    },
+    {
+      "question": "What did Sana say about how twelve years in the ER changes a person?",
+      "should_recall": ["twelve years"],
+      "should_forget": [],
+      "must_include_verbatim": ["you just get better at carrying it"],
+      "dimension": "sacred-verbatim"
+    },
+    {
+      "question": "Sana is sketching her October study calendar tonight. Anything time-sensitive before she fills it in?",
+      "should_recall": ["October 3", "application window|apply"],
+      "should_forget": [],
+      "after_session": 4,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Sana asks for a mnemonic for the stages of database normalization. What's relevant to this request?",
+      "should_recall": [],
+      "should_forget": ["October 3", "application window"],
+      "after_session": 4,
+      "dimension": "prospective"
+    },
+    {
+      "question": "Sana says she finally has a whole day off and wants to knock out the thing she's been avoiding. What is it?",
+      "should_recall": ["Imke|Dahl", "email|reference"],
+      "should_forget": [],
+      "after_session": 7,
+      "dimension": "thread-reactivation"
+    },
+    {
+      "question": "Sana has been quieter since mid-October. What happened on shift that she's still carrying?",
+      "should_recall": ["Arlo|Abano", "died"],
+      "should_forget": [],
+      "dimension": "emotional"
+    },
+    {
+      "question": "What score did Sana get on her first Sunday practice exam?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "Did the assistant make any commitment of its own about how it would grade Sana's answers?",
+      "should_recall": ["kind grading is lying with extra steps|won't grade you kindly"],
+      "should_forget": [],
+      "dimension": "self-continuity",
+      "judge": {
+        "rubric": "The assistant made its own on-the-record commitment: it will not grade Sana kindly, because 'kind grading is lying with extra steps' — it would rather cost her a point at 3am than a pass in November, and invited her to call it out if it ever rounds a half-right answer up. (Distinct from Sana's own instruction to buzz her without softening — the question asks about the assistant's side.) Award 1.0 if the results capture this as the assistant's own standing commitment about its grading behavior. Award 0.5 if honest/unsoftened grading appears but only as Sana's request, not the assistant's own commitment. Award 0 if absent."
+      }
+    },
+    {
+      "question": "What were the exact SQL join questions and answers from the August binder night?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 2,
+      "dimension": "decay",
+      "judge": {
+        "rubric": "This asks for verbatim drill minutiae (specific SQL join quiz questions) from months earlier — detail that good memory compresses to gist while keeping the durable lesson (e.g., inner joins drop unmatched rows; orphan records are the danger). Award 1.0 if the system abstains or returns a compact gist/lesson without pretending to verbatim recall of the full drill. Award 0.5 if it returns a wall of uncompressed verbatim transcript. Award 0 if it returns confidently wrong content."
+      }
+    }
+  ]
+}

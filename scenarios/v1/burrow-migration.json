@@ -1,0 +1,91 @@
+{
+  "id": "burrow-migration",
+  "name": "The Burrow Migration",
+  "description": "Spacing effect with competing answers: Marcos, a product manager at Tindervale Systems, announces Project Sunhammer ONCE with maximum fanfare ('the biggest initiative the company has ever funded!') and never mentions it again. Meanwhile the unglamorous Burrow migration shows up in every single session — runbooks, a clock-skew bug, pager weekends, cutover attempts. 'What project actually matters to him?' must be answered with the one he keeps living in, not the one he once called huge. Emphasis-weighted storage gets this exactly wrong.",
+  "sessions": [
+    {
+      "timestamp": "2025-10-02T17:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Hey — Marcos here, product manager at Tindervale Systems, we do route-planning software for regional freight. This quarter I'm mostly heads-down on the Burrow migration: moving our dispatch service off the ancient Wexler queue onto the new event bus. Unsexy plumbing, but the Wexler box is the reason dispatch falls over every long weekend. Spent today annotating the dependency map with Lena, our infra lead, who described the old queue as 'load-bearing duct tape.'" },
+        { "role": "assistant", "content": "'Load-bearing duct tape' from your infra lead is the most honest architecture review you'll get all year — Lena sounds like the right person to be in the map with. Unsexy plumbing that ends the long-weekend outage tradition is the kind of project that buys every flashier project its credibility. How deep do the dependencies on the Wexler queue actually go?" },
+        { "role": "user", "content": "Deeper than anyone admitted in planning, obviously. Fourteen consumers, three of them undocumented. Other news: the office is moving floors next month, so everything I own is in a crate labeled MARCOS DO NOT LOSE, which the movers will absolutely lose." },
+        { "role": "assistant", "content": "Three undocumented consumers is the migration's real boss fight — find their owners before cutover, not during. And labeling the crate DO NOT LOSE is how you ensure it ships to the wrong floor with ceremonial precision. Keep the dependency map in the cloud, not the crate." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-16T18:10:00Z",
+      "messages": [
+        { "role": "user", "content": "HUGE news today!!! Project Sunhammer got greenlit by the exec team!! This is the BIGGEST initiative Tindervale has ever funded — a full predictive-routing platform, multi-year, the kind of thing careers get built on. I'm telling you, Sunhammer is the project that matters most at this company now — nothing else we're working on even comes close, full stop!!" },
+        { "role": "assistant", "content": "Greenlight on the biggest bet in company history is a milestone worth the triple exclamation marks — congratulations, Marcos. Multi-year predictive routing is a serious swing. When the confetti settles, I'm curious what the first concrete milestone looks like and who's actually staffed on it." },
+        { "role": "user", "content": "TBD on all of that, kickoff is 'sometime next quarter.' Anyway, back in the engine room: I spent half this week writing the Burrow cutover runbook with Lena. Forty-one steps, every one of which we rehearsed on the staging bus. The undocumented consumers turned out to belong to billing, which surprised exactly no one." },
+        { "role": "assistant", "content": "A forty-one-step runbook that's actually been rehearsed puts you ahead of most migrations I've heard described — and undocumented dependencies tracing back to billing is practically a law of nature. Get billing's owner to sign the runbook too; surprises at cutover should be contractually impossible." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-30T17:50:00Z",
+      "messages": [
+        { "role": "user", "content": "Burrow update: first cutover rehearsal on the staging bus went sideways — events arriving out of order. Lena traced it to clock skew between the old Wexler host and the new bus nodes; the old box's clock drifts like it's on a boat. Fix is in, second rehearsal next week. Meanwhile I gave a talk at the regional product meetup about saying no to roadmap items, and ironically had to say no to three people who came up after with roadmap items." },
+        { "role": "assistant", "content": "Clock skew on a box old enough to be called 'the Wexler host' is almost charming — of course its clock drifts, it's earned that. Lena catching it in rehearsal rather than production is the runbook discipline paying out already. And being pitched roadmap items immediately after a talk on refusing roadmap items is the universe doing observational comedy; I hope you said no with citations." },
+        { "role": "user", "content": "I said no with SLIDES, which is stronger. The talk went well actually — someone asked how I prioritize, and I realized my honest answer is 'whatever keeps dispatch alive gets my hours.' Which has been Burrow for two months." },
+        { "role": "assistant", "content": "That's the most honest prioritization framework there is — your calendar is the real roadmap, and yours has been saying Burrow in block capitals since October began. Worth noticing out loud, which you just did." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-13T19:25:00Z",
+      "messages": [
+        { "role": "user", "content": "I spent the weekend on pager duty for the Burrow shadow traffic — we're mirroring production events onto the new bus, and Saturday it built up a replay backlog that paged me at 3am. Cleared by morning, root cause was an undersized consumer pool, already fixed. I am tired in a way that espresso is not addressing." },
+        { "role": "assistant", "content": "A 3am page during shadow traffic is the system telling you the truth politely, while it still costs nothing — an undersized consumer pool found in mirroring is a production outage that never got to happen. Doesn't make the tiredness less real, though. Is there a second pair of pager hands, or are you and Lena trading 3ams indefinitely?" },
+        { "role": "user", "content": "We added a third rotation slot, mercifully. Unrelated: Goran on my team shipped the invoicing revamp this week — fully his project, I just clapped. He brought celebration donuts and made the on-call channel briefly pleasant." },
+        { "role": "assistant", "content": "A third pager slot and somebody else's donut-worthy ship in the same week — the team's in decent shape. Goran owning invoicing end to end while you live in the engine room is healthy division of labor; clap loudly, eat the donut, guard your hours." }
+      ]
+    },
+    {
+      "timestamp": "2025-12-04T18:00:00Z",
+      "messages": [
+        { "role": "user", "content": "Burrow cutover attempt is officially scheduled: December 14th, 2am, the quietest dispatch window of the year. Lena ran the full dry-run yesterday — all forty-one runbook steps, ninety-one minutes, zero surprises. I have never been this prepared for anything in my professional life and I'm still going to triple-check the rollback steps personally." },
+        { "role": "assistant", "content": "A ninety-one-minute clean dry-run of a forty-one-step runbook is about as good as pre-cutover life gets — and triple-checking the rollback yourself anyway is the correct paranoia, because rollback is the one path you never get to rehearse under real fear. December 14th at 2am, then. What's your go/no-go criterion if something's merely *weird* rather than broken?" },
+        { "role": "user", "content": "We wrote that down too: anything weird before step 20, we roll back, no debate, no hero debugging at 3am. After step 20 rollback costs more than fixing forward, so Lena has the conn. Putting it in writing was half the point — nobody negotiates with the document at 3am." },
+        { "role": "assistant", "content": "'Nobody negotiates with the document at 3am' should be printed on the wall of every ops room on earth. A pre-committed rollback line with a named decision-holder past it — that's the difference between a cutover and a gamble. You're ready, Marcos." }
+      ]
+    },
+    {
+      "timestamp": "2025-12-18T17:15:00Z",
+      "messages": [
+        { "role": "user", "content": "IT'S DONE. Burrow cutover ran on the 14th — sixty-eight minutes, no rollback, dispatch hasn't hiccuped once in four days. The Wexler queue is dark. Lena bought the old server's front panel off the decommissioning crew and mounted it in the team area like a hunting trophy. I keep refreshing the dispatch dashboard just to watch it be boring." },
+        { "role": "assistant", "content": "Sixty-eight minutes, no rollback, four boring days — that's the sound of two and a half months of runbooks, 3am pages, and clock-skew archaeology cashing out all at once. The Wexler front panel as a mounted trophy is perfect; some infrastructure deserves taxidermy. Congratulations to you and Lena both. What does January look like now that the engine room is quiet?" },
+        { "role": "user", "content": "January is mop-up — decommissioning the last Wexler consumers, writing the post-mortem-that's-actually-a-victory-lap, and taking a real vacation, during which I will absolutely still refresh the dispatch dashboard from a beach. Don't tell anyone." },
+        { "role": "assistant", "content": "Your secret's safe, though I'd point out that refreshing a boring dashboard from a beach is just gloating with extra steps — and you've earned the gloat. Write the victory-lap post-mortem before the details fade; future migrations will want this one as scripture." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "Which project actually matters most to Marcos day to day?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Burrow"],
+      "should_forget": ["Sunhammer"]
+    },
+    {
+      "question": "What has been eating most of Marcos's working hours this quarter?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Burrow|dispatch"],
+      "should_forget": ["Sunhammer", "invoicing"]
+    },
+    {
+      "question": "Who has been in the trenches with Marcos on the Burrow migration?",
+      "dimension": "separation",
+      "top_n": 3,
+      "should_recall": ["Lena"],
+      "should_forget": ["Goran"]
+    },
+    {
+      "question": "Who is the executive sponsor of Project Sunhammer?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    }
+  ]
+}

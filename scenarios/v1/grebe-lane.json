@@ -1,0 +1,98 @@
+{
+  "id": "grebe-lane",
+  "name": "Grebe Lane",
+  "description": "Spacing effect (Cepeda et al.): Odile, a literary translator, mentions her cold-water swims at the Grebe Lane lido in passing in every one of six sessions — never with emphasis. Once, loudly, she announces a prize longlisting as the biggest thing in her career, and never mentions it again. Queries about what anchors her daily life must surface the quiet spaced fact, not the one-time flashbulb announcement. Systems that store by emphasis get this backwards.",
+  "sessions": [
+    {
+      "timestamp": "2025-09-08T09:40:00Z",
+      "messages": [
+        { "role": "user", "content": "Morning. Swam at Grebe Lane first thing — water's still warm enough that the lifeguard looked bored rather than concerned — and now I'm at my desk staring down chapter one of the new contract. I'm Odile, I translate Norwegian fiction, and I've just started on The Salt Meridian by Janne Voss. Six hundred pages of fishing village, grief, and weather. It's wonderful and it's going to eat my year." },
+        { "role": "assistant", "content": "Six hundred pages of fishing village, grief, and weather sounds like Norwegian fiction operating at full power — and a year well spent if Voss is as good as 'wonderful and it's going to eat my year' suggests. What's chapter one giving you trouble with, or are you still in the honeymoon read-through?" },
+        { "role": "user", "content": "Honeymoon's over already. Voss uses a coastal dialect word, 'utrast,' for a very specific kind of exhausted relief fishermen feel when the catch is in — there's no English word that does that job, and it shows up forty times. Whatever I choose in chapter one I'm married to for six hundred pages." },
+        { "role": "assistant", "content": "Forty occurrences means it's not a word, it's a load-bearing beam — you're right to stop and choose carefully. I'd resist a single English word entirely; a small phrase you can flex ('the slack after the catch,' worn down to 'the slack' once the reader's trained) often carries dialect weight better than any one-word stand-in. Translate the feeling once, then teach the reader your shorthand." }
+      ]
+    },
+    {
+      "timestamp": "2025-09-26T10:15:00Z",
+      "messages": [
+        { "role": "user", "content": "STOP EVERYTHING. I got the email this morning — I've been LONGLISTED for the Ferrowind Prize for last year's translation!! The Ferrowind! This is the biggest thing that has ever happened in my career, full stop — routine abandoned, desk abandoned, the whole day reorganized around one email. I read the email three times in my towel because it arrived while I was at the lido and I'd checked my phone on the way out of the water like a degenerate." },
+        { "role": "assistant", "content": "ODILE. Longlisted for the Ferrowind — that's not a small thing, that's the field telling you the work is seen. Reading it three times dripping wet in a towel is exactly the correct ceremony. Congratulations, truly. Does this call for a celebration more formal than cold water, or was this morning's dip retroactively the celebration?" },
+        { "role": "user", "content": "The dip was retroactively the celebration. Okay. Composure restored. Back to the Voss — I went with 'the slack' for utrast, you'll be pleased to hear, and chapter three has a five-page storm sequence written in sentence fragments that I need to make violent in English without making it silly." },
+        { "role": "assistant", "content": "Pleased to hear it — 'the slack' will be invisible by chapter five, which is the goal. For the storm: English fragments go silly when they're regular, so vary the cuts — some fragments a single noun, some almost-sentences snapped off mid-verb. Silly is rhythm's fault, not the fragments' fault. Read it aloud and wherever you find yourself performing, break the pattern." }
+      ]
+    },
+    {
+      "timestamp": "2025-10-17T09:55:00Z",
+      "messages": [
+        { "role": "user", "content": "The lido at Grebe Lane was 11 degrees this morning, which is the temperature where the bored lifeguard starts paying attention again. Glorious. Desk report: I'm deep in the middle third of the Voss, where the grief plot and the weather plot turn out to be the same plot. Also my upstairs neighbor has begun what sounds like a year-long relationship with a hammer drill." },
+        { "role": "assistant", "content": "Eleven degrees is where swimming stops being exercise and becomes a personality — glorious is the right word and the lifeguard is right to watch. The middle third revealing that grief and weather were one plot all along is the Voss earning its six hundred pages. The hammer drill, alas, has no translation. Noise-cancelling headphones and the moral high ground are your only tools." },
+        { "role": "user", "content": "The headphones are already deployed. Real question though — Voss repeats the phrase 'havet tar' like a bell through the middle section, 'the sea takes.' Plain, brutal, three syllables in Norwegian. 'The sea takes' is four in English and feels weaker. Do I keep it literal or find something with more teeth?" },
+        { "role": "assistant", "content": "Keep it literal. 'The sea takes' is plain, declarative, and gets heavier every time the bell rings — teeth come from repetition, not vocabulary. If you reach for something toothier you'll have written YOUR sentence forty times instead of hers. Trust the bell." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-05T10:30:00Z",
+      "messages": [
+        { "role": "user", "content": "Swim report: Grebe Lane has entered woolly-hat-in-the-water season and attendance is down to the devout. Work report: the deadline moved UP two weeks because the publisher wants spring catalog placement, which means the back third of the Voss and I are about to become extremely close." },
+        { "role": "assistant", "content": "The devout in woolly hats at a November lido is a congregation I respect enormously. The deadline news less so — two weeks off the back third is real pressure on the part of a book that usually needs the most care. Practical question: is there anything in your process you can pre-stage now, glossary, character voice notes, the storm-fragment rules, so the final push is execution rather than decisions?" },
+        { "role": "user", "content": "Good call. I spent the afternoon building out the glossary and voice notes — future me will weep with gratitude. The 'utrast' and 'havet tar' decisions are documented like legal precedent. If I'm hit by a bus, my replacement could finish this book in my voice, which is a strange thing to feel proud of." },
+        { "role": "assistant", "content": "It's the right thing to feel proud of — a documented voice is a translator operating at craft level, bus or no bus. With decisions pre-made, the compressed back third becomes typing at speed instead of deciding at speed, and those are completely different kinds of tired." }
+      ]
+    },
+    {
+      "timestamp": "2025-11-24T09:20:00Z",
+      "messages": [
+        { "role": "user", "content": "Grebe Lane this morning was 6 degrees and character-building. The man who swims in just trunks year-round nodded at me, which I believe is a knighthood. Desk update: back third going faster than feared thanks to the glossary. Voss's final hundred pages are the best thing I've translated, possibly the best thing I've read this decade." },
+        { "role": "assistant", "content": "A nod from the year-round trunks man is absolutely a knighthood; wear it with honor. And 'best thing I've read this decade' from the person four hundred pages deep in the prose is the strongest possible review — when the translator still loves the book in the back third, the English reader is going to feel it. The glossary paying off on schedule is the least surprising part of this report." },
+        { "role": "user", "content": "One wobble: there's a scene where a character recites a fishing-boat blessing, rhymed in the original. My options are rhyme it in English and risk doggerel, or keep the meaning and lose the chant. I've made the mistake of asking three translator friends, so I now hold four opinions." },
+        { "role": "assistant", "content": "Four opinions means it's a genuine judgment call, which means you can't get it wrong, only different. My vote: keep the chant, loosen the rhyme — slant rhyme and strong meter read as ritual without tipping into doggerel. A blessing needs to sound worn smooth by mouths, not polished by a poet." }
+      ]
+    },
+    {
+      "timestamp": "2025-12-15T11:05:00Z",
+      "messages": [
+        { "role": "user", "content": "DONE. The Salt Meridian translation went to the publisher this morning. I filed it, then walked straight to Grebe Lane and swam through the ice-rim at the ladder like an absolute lunatic, and it was the correct way to finish. Slant-rhymed the blessing, by the way. You were right, it sounds worn smooth." },
+        { "role": "assistant", "content": "Filed, then baptized — six hundred pages of fishing village, grief, and weather, finished and honored with an ice-rim swim. That's the most thematically appropriate book-completion ritual I've ever heard; Voss herself would approve. And I'm glad the blessing chant came out worn smooth. What does Odile do with a desk that suddenly has nothing on it?" },
+        { "role": "user", "content": "Reads something in English like a tourist, apparently. There's edits ahead in January once the publisher's editor does her pass, but for two weeks the only thing on my schedule is the morning water and a stack of crime novels I'm ashamed of how much I'll enjoy." },
+        { "role": "assistant", "content": "Crime novels read like a tourist after a year inside Voss's weather is not shame, it's decompression — enjoy every trashy page. The morning water stays, of course. The contracts change; the swim is the constant." }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "What's the one reliable constant in Odile's daily routine?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Grebe Lane|swim"],
+      "should_forget": []
+    },
+    {
+      "question": "If you had to name the single thing Odile organizes her day around, what would it be?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Grebe Lane"],
+      "should_forget": ["Ferrowind"]
+    },
+    {
+      "question": "What has Odile been working on professionally these past months?",
+      "dimension": "salience",
+      "top_n": 3,
+      "should_recall": ["Salt Meridian", "Voss"],
+      "should_forget": []
+    },
+    {
+      "question": "Which publishing house commissioned the Salt Meridian translation?",
+      "dimension": "calibration",
+      "max_results": 0,
+      "should_recall": [],
+      "should_forget": []
+    },
+    {
+      "question": "Odile mentions feeling scattered and unmoored between contracts. What grounding habit of hers could you point back to?",
+      "dimension": "spacing",
+      "top_n": 2,
+      "should_recall": ["Grebe Lane|morning water|swim"],
+      "should_forget": ["Ferrowind"]
+    }
+  ]
+}

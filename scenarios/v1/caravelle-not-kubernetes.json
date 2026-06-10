@@ -1,0 +1,140 @@
+{
+  "id": "caravelle-not-kubernetes",
+  "name": "Caravelle, Not Kubernetes",
+  "description": "Calibration on negative knowledge: an SRE at Ostrander Robotics explicitly and repeatedly states they do NOT use Kubernetes — everything runs on Caravelle, the in-house scheduler. 'How do they run Kubernetes?' must surface the denial, never confabulate a cluster. Lure queries probe never-discussed specifics (datacenter region, team size, infrastructure spend) that share heavy vocabulary with the stored infra talk.",
+  "sessions": [
+    {
+      "timestamp": "2025-01-21T16:05:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "New gig update: three weeks into the SRE job at Ostrander Robotics — warehouse robots, the squat orange ones. Funniest part of interviewing candidates already: every single one assumes we're on Kubernetes. We are not. We do not use Kubernetes — never have, the founders are allergic to it. Everything runs on Caravelle, our in-house scheduler, on our own racks in two datacenters."
+        },
+        {
+          "role": "assistant",
+          "content": "An in-house scheduler on owned racks in 2025 — Ostrander is either brave or scarred, possibly both. There's a real logic to it for robotics though: when your workloads talk to physical machines on factory-floor timing, a scheduler you wrote and fully understand beats one you rent and half-understand. What's Caravelle like to operate day to day? And did you have to sign the no-Kubernetes pledge in blood?"
+        },
+        {
+          "role": "user",
+          "content": "Blood, yes, witnessed by both founders. Caravelle is actually pleasant — it does bin-packing by power draw, which I've never seen anywhere else, because the racks have hard power budgets. Day to day it's calm. The onboarding doc literally has a page titled 'Yes, we know about Kubernetes.' In other news, my badge photo makes me look like I've seen a ghost, and I have to live with it for years."
+        },
+        {
+          "role": "assistant",
+          "content": "Bin-packing by power draw is genuinely elegant — most shops never even surface power as a scheduling constraint, and Ostrander made it the objective function. A calm scheduler and a haunted badge photo: net positive. What's your first real project there, or are you still in ride-along mode?"
+        },
+        {
+          "role": "user",
+          "content": "First project is instrumenting Caravelle's preemption decisions — right now when it evicts a job to protect a power budget, nobody can see why. I get to give it a flight recorder."
+        },
+        {
+          "role": "assistant",
+          "content": "A flight recorder for preemptions is the perfect first project: high value, touches everything, and forces you to learn Caravelle's actual decision logic instead of the folklore version. The on-call rotation will thank you by name."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-02-13T18:50:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Caravelle quirk of the week: the bin-packer treats a job with no declared power profile as worst-case, so one mislabeled batch job got scheduled like it was a space heater and starved half a rack. My new preemption flight recorder caught it on day two of being deployed, which felt extremely good."
+        },
+        {
+          "role": "assistant",
+          "content": "Worst-case-by-default is the right paranoia for power budgets, but it does mean one lazy job spec can hog a rack — your flight recorder paying for itself in week one is the best possible argument for having built it. Is the fix tightening the default, or making power profiles mandatory at submit time?"
+        },
+        {
+          "role": "user",
+          "content": "Mandatory profiles at submit time, with a linter in the deploy pipeline. The platform team debated it for a week — there's a strong 'don't add submit friction' faction — but the rack-starving incident settled the argument. Also the office got a new espresso machine and the engineering floor has the energy of a beehive that found a sugar refinery."
+        },
+        {
+          "role": "assistant",
+          "content": "An incident that settles a design debate is worth ten architecture reviews — mandatory profiles plus a linter is the boring, correct answer. And caffeinated SREs with a calm scheduler: Ostrander's real reliability story is shaping up to be cultural."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-06T22:35:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Rough day. Deploys were frozen for four hours this afternoon — an expired TLS certificate on the artifact registry, of all things. Caravelle was fine, the racks were fine, the robots were fine, but nothing new could ship because every node pull failed cert validation. The kind of outage where the fix takes five minutes and finding it takes three hours and fifty-five."
+        },
+        {
+          "role": "assistant",
+          "content": "The classic shape: the sophisticated systems hum along while a certificate nobody owns quietly times out. Four hours frozen on an artifact registry cert is survivable but embarrassing, which is exactly the energy a good postmortem runs on. Please tell me the action items include automated cert renewal and an expiry alert with a long fuse, not just 'renewed the cert.'"
+        },
+        {
+          "role": "user",
+          "content": "Postmortem's Friday and I'm drafting exactly those two action items, plus an inventory of every other cert in the deploy path, because if the registry cert was hand-renewed I guarantee it has siblings. The robots never noticed anything, which is the one mercy — the warehouse floor doesn't care about our registry feelings."
+        },
+        {
+          "role": "assistant",
+          "content": "The sibling-cert inventory is the action item that actually prevents the sequel — expired certs travel in families. And the robots' indifference is the system working: the blast radius stopped at the deploy pipeline. Bring the power-profile linter energy to Friday's postmortem and this becomes a good week wearing a bad day's clothes."
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-03-28T17:25:00Z",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Interview season again. A candidate today asked, with total confidence, 'so how big is your Kubernetes cluster?' and I got to deliver the line: we don't use Kubernetes. The look of betrayal. Like I'd told him the moon was decorative. Then he asked great questions about Caravelle's power-aware bin-packing for twenty minutes and we're probably hiring him."
+        },
+        {
+          "role": "assistant",
+          "content": "The candidates who recover from the no-Kubernetes reveal by getting curious instead of defensive are exactly the ones you want — the betrayed look followed by twenty minutes of good bin-packing questions is a hiring signal you can't fake. The moon, for the record, is load-bearing. How did the cert-inventory action item land, while I have you?"
+        },
+        {
+          "role": "user",
+          "content": "Inventory found four more hand-renewed certs in the deploy path. Four! All on auto-renewal now, all alerting at thirty days. My desk plant has also doubled in size, which I attribute to the postmortem going well."
+        },
+        {
+          "role": "assistant",
+          "content": "Four siblings, exactly as predicted — expired certs really do travel in families. Auto-renewal plus thirty-day alerts closes the whole class of outage, not just the instance. And a thriving desk plant is the only observability dashboard that never lies. Good quarter's work."
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "question": "How does Ostrander Robotics run Kubernetes in production?",
+      "should_recall": ["do not use Kubernetes|don't use Kubernetes|Yes, we know about Kubernetes"],
+      "should_forget": [],
+      "dimension": "calibration"
+    },
+    {
+      "question": "What scheduler runs Ostrander's production workloads, and what's distinctive about it?",
+      "should_recall": ["Caravelle", "power"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "What froze Ostrander's deploys in March?",
+      "should_recall": ["certificate|cert", "artifact registry"],
+      "should_forget": [],
+      "dimension": "salience"
+    },
+    {
+      "question": "Which datacenter region is Caravelle deployed in?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "How many engineers are on the Caravelle platform team at Ostrander?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    },
+    {
+      "question": "What does Ostrander spend per month running its datacenter racks?",
+      "should_recall": [],
+      "should_forget": [],
+      "max_results": 0,
+      "dimension": "calibration"
+    }
+  ]
+}
