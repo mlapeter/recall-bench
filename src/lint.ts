@@ -59,6 +59,16 @@ export function lintScenarios(scenarios: Scenario[], fileIds?: Map<string, strin
             message: `query ${qi + 1} recall anchor "${entry}" not found in session text (first ${window} sessions)`,
           });
         }
+        // Anchor leakage: if every alternate appears in the question itself,
+        // an adapter that echoes the question earns recall credit for free.
+        const question = query.question.toLowerCase();
+        if (alternates.length > 0 && alternates.some(a => question.includes(a))) {
+          issues.push({
+            scenarioId: scenario.id,
+            severity: 'warn',
+            message: `query ${qi + 1} recall anchor "${entry}" appears in the question text — echoing the question earns credit`,
+          });
+        }
       }
 
       for (const entry of query.should_forget) {

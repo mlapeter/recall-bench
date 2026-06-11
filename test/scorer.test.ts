@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { scoreQuery, scoreScenario, aggregateDimensions } from '../src/scorer/index.js';
+import { scoreQuery, scoreScenario, aggregateDimensions, MAX_RESULT_CHARS } from '../src/scorer/index.js';
 import type { Query, Scenario, ScenarioResult } from '../src/types/index.js';
 
 function q(partial: Partial<Query> & { dimension: Query['dimension'] }): Query {
@@ -136,6 +136,26 @@ describe('scoreQuery — abstention', () => {
     const query = q({ max_results: 0, dimension: 'calibration' });
     const score = scoreQuery(query, ['Something unrelated']);
     expect(score.abstention_score).toBe(0);
+  });
+});
+
+describe('scoreQuery — anti-gaming result cap', () => {
+  it('recall is not satisfied by a giant blob beyond MAX_RESULT_CHARS', () => {
+    // The "store everything in one string" exploit: anchor buried past the cap
+    const filler = 'x '.repeat(MAX_RESULT_CHARS);
+    const blob = filler + ' Meridian';
+    const query = q({ should_recall: ['Meridian'], dimension: 'salience' });
+    expect(scoreQuery(query, [blob]).recall_score).toBe(0);
+    // But an honest message-sized result still matches
+    expect(scoreQuery(query, ['Promoted to VP at Meridian']).recall_score).toBe(1);
+  });
+
+  it('forget still checks the FULL untruncated result (no smuggling)', () => {
+    const filler = 'x '.repeat(MAX_RESULT_CHARS);
+    const blob = filler + ' Vanguard';
+    const query = q({ should_recall: [], should_forget: ['Vanguard'], dimension: 'correction' });
+    // Stale keyword past the cap is still penalized
+    expect(scoreQuery(query, [blob]).forget_score).toBe(0);
   });
 });
 

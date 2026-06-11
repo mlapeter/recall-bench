@@ -58,7 +58,8 @@ async function main() {
       break;
     default:
       console.error(`Unknown adapter: ${adapterName}`);
-      console.error('Available adapters: naive, verbatim-rag, engram');
+      console.error('Built-in adapters: naive, verbatim-rag.');
+      console.error('  engram is also wired up but requires an external ~/claude-engram checkout.');
       process.exit(1);
   }
 

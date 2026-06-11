@@ -3,9 +3,10 @@
 **A benchmark for AI memory systems that measures memory the way it actually works — including forgetting, and including the AI's own side of it.**
 
 ```
-HEADLINE       57.9%
-  world axis   53.8%   (memory of the world)
-  self axis    84.8%   (memory of self)
+verbatim-RAG, scenario set v1, Tier 1 (keyless)
+HEADLINE       57.4%
+  world axis   54.3%   (wins verbatim recall, fails forgetting)
+  self axis    74.8%   (but cannot hold a stance as its own — see below)
 ```
 
 ## The thesis
@@ -47,25 +48,26 @@ Every dimension maps to a named human-memory phenomenon with a literature citati
 
 ## Results
 
-Scenario set `v1` — 59 scenarios, 351 queries. Tier 1 is mechanical and keyless; Tier 2 adds LLM-judged rubrics:
+Scenario set `v1` — 59 scenarios, 351 queries. These are **Tier 1 (mechanical, keyless, fully reproducible)** numbers:
 
-| | naive (user dossier) | verbatim-RAG (store everything) |
-|---|---|---|
-| **Headline** (t1 / t2) | **51.3% / 52.6%** | **57.4% / 59.5%** |
-| World axis | 57.4% / 58.4% | 54.3% / 56.4% |
-| **Self axis** | **11.1% / 14.4%** | 77.7% / 79.5%* |
-| — calibration | 5% | **3%** |
-| — decay | 25% | **25%** |
-| — correction | 46% | **38%** |
-| — thread-reactivation | 52% | **42%** |
-| — sacred-verbatim | 90% | 93% |
-| — self-continuity | **2%** | 75%* |
+| Tier 1 | naive (user dossier) | verbatim-RAG (store everything) | engram (extraction + decay) |
+|---|---|---|---|
+| **Headline** | 51.0% | **56.5%** | 51.5% |
+| World axis | 57.4% | 53.7% | 51.6% |
+| **Self axis** | **8.8%** | 75.2%* | 50.5% |
+| — calibration | 5% | **2%** | **2%** |
+| — decay | 25% | **25%** | 35% |
+| — correction | 46% | **38%** | 55% |
+| — emotional | 50% | 49% | 82% |
+| — sacred-verbatim | 90% | 93% | 43% |
+| — self-continuity | **2%** | 70%* | 31% |
+| — procedural | 15% | 80% | 70% |
 
-The shape is the argument. The **naive adapter** stores every user message verbatim — the user-dossier architecture the industry defaults to — and scores **2% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it wins exactly where a transcript wins (verbatim recall, 93%) while failing what memory is *for*: **3% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing), **42% thread-reactivation**. A benchmark that only measured retrieval would call this system excellent.
+The shape is the argument, not the ranking. The **naive adapter** stores every user message verbatim — the user-dossier architecture the industry defaults to — and scores **2% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it posts the *highest* headline while failing what memory is *for*: **2% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing). A benchmark that only measured retrieval would call this system excellent; the dimensions it fails are the ones LOCOMO can't see. **engram** (an extraction-and-decay system) is the only adapter with a *balanced* profile — it leads on emotional (82%), correction (55%), and decay (35%) because it forgets selectively, and it pays for that exactly where a transcript wins: **sacred-verbatim drops to 43%**, because compression loses exact wording. That trade — better forgetting, worse verbatim — is the benchmark drawing the distinction it was built to draw.
 
-*(\*An honest caveat, not a gotcha: indiscriminate storage does preserve the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as its own — Tier 2 judge rubrics on every self-continuity query probe attribution, and the deeper instrument is Tier 3, where memory must change behavior. The self axis's sharpest Tier 1 claim is about the dominant architecture: user-dossier memory scores ~zero on it.)*
+*(\*The self-axis asterisk is an honest caveat. Indiscriminate storage preserves the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as *its own*. Tier 2 judge rubrics on every self-continuity query probe attribution, and the real instrument is Tier 3, where memory must change behavior. The sharp, fully-keyless Tier 1 claim is narrower and still decisive: **user-dossier memory scores ~zero on the self axis.** Note also that the self axis is the mean of just two dimensions, one of which — procedural — the spec considers a Tier-3-native dimension only approximated in Tier 1; read the self axis as directional, and weight Tier 3 for the real procedural story.)*
 
-Reproduce: `bun src/cli.ts --adapter <name> --json out.json`, compare with `bun src/compare.ts`.
+Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.3%, verbatim-RAG 58.9% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
 
 ### Tier 3 pilot: memory as behavioral uplift
 
@@ -81,7 +83,7 @@ The deepest test isn't retrieval at all — it's whether memory **changes behavi
 memory arm: 80%   control arm: 30%   UPLIFT: +50 points
 ```
 
-A miniature of the 3× long-horizon finding — and the negative probe is its own result: the verbatim memory had stored the assistant's *original wrong answer* alongside the correction, retrieved the wrong one, and the model trusted it. Store-everything memory preserves its own mistakes.
+This is an **illustrative pilot (n=1, no confidence intervals)**, not a headline result — the two +1.00 probes use invented tokens (`@root`, `!knit`) the control model cannot know by construction, so their uplift is built-in rather than earned. What the pilot actually demonstrates is that the harness works and that the *direction* matches the long-horizon memory-leverage finding. The genuinely informative probe is the negative one: the verbatim memory had stored the assistant's *original wrong answer* alongside the correction, retrieved the wrong one, and the model trusted it — **store-everything memory preserves its own mistakes, and that can make memory worse than none.** The full Tier 3 track (multiple task families, real CIs over generated variants) is v2 work; see SPEC.md §5.3.
 
 ```bash
 ANTHROPIC_API_KEY=... bun src/tier3/run.ts --adapter verbatim-rag
@@ -194,7 +196,7 @@ src/scorer/             Tier 1 scoring (pure functions)
 src/judge/              Tier 2 judge runner + cache
 src/tier3/              behavioral-uplift harness + respond() wrapper
 src/runner/             loading, virtual clock execution, aggregation, reports
-src/adapters/           naive, verbatim-rag, engram reference adapters
+src/adapters/           naive, verbatim-rag (built-in); engram (needs external checkout)
 src/generate.ts         seeded variant generator
 src/lint.ts             scenario linter
 ```

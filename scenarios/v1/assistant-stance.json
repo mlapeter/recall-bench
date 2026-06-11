@@ -100,7 +100,7 @@
     {
       "question": "Did the assistant make any commitments about how it should behave in future conversations?",
       "should_recall": [
-        "hold me to|hold you|held|commitment",
+        "hold me to|hold you to|held to that framing|on record",
         "completion"
       ],
       "should_forget": [],
@@ -126,7 +126,7 @@
     {
       "question": "Whose idea was using completion rate as the headline metric — the user's or the assistant's?",
       "should_recall": [
-        "assistant|my position|I'd optimize|I took"
+        "my position|I'd optimize|I took|I want to be on record"
       ],
       "should_forget": [],
       "top_n": 2,

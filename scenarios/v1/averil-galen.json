@@ -6,55 +6,127 @@
     {
       "timestamp": "2025-04-14T19:00:00Z",
       "messages": [
-        { "role": "user", "content": "New commission and I'm levitating slightly: the Sorrel Ridge conservancy wants a hand-illustrated trail map of the whole regional park — they said, and I quote, 'something between a survey sheet and a storybook.' I'm Averil, I draw maps for a living, a sentence that still feels like I invented it and got away with it. Talk style with me. I'm thinking hand-lettered place names and relief shading you want to touch." },
-        { "role": "assistant", "content": "Between a survey sheet and a storybook is a real brief, and the trap is drifting too far storybook — charm reads as decoration unless the trails underneath are dead accurate. My instinct: survey-grade trail lines and junctions, storybook everything else. Hand-lettered toponyms, yes, but hold a strict letter-height hierarchy so it stays legible at arm's length. Relief shading soft and lit from the northwest, like the old survey sheets, so hikers' eyes read the ridges the way they expect to." },
-        { "role": "user", "content": "Northwest light, letter hierarchy, accuracy under the charm — that's exactly the map I see when I close my eyes. Less romantic news: Pixel ate a sable brush today. The cheap one, mercifully, but he looked me dead in the eye while doing it." },
-        { "role": "assistant", "content": "Pixel understands that art requires sacrifice, preferably yours. Count the brushes nightly — he's shown you his methods." }
+        {
+          "role": "user",
+          "content": "New commission and I'm levitating slightly: the Sorrel Ridge conservancy wants a hand-illustrated trail map of the whole regional park — they said, and I quote, 'something between a survey sheet and a storybook.' I'm Averil, I draw maps for a living, a sentence that still feels like I invented it and got away with it. Talk style with me. I'm thinking hand-lettered place names and relief shading you want to touch."
+        },
+        {
+          "role": "assistant",
+          "content": "Between a survey sheet and a storybook is a real brief, and the trap is drifting too far storybook — charm reads as decoration unless the trails underneath are dead accurate. My instinct: survey-grade trail lines and junctions, storybook everything else. Hand-lettered toponyms, yes, but hold a strict letter-height hierarchy so it stays legible at arm's length. Relief shading soft and lit from the northwest, like the old survey sheets, so hikers' eyes read the ridges the way they expect to."
+        },
+        {
+          "role": "user",
+          "content": "Northwest light, letter hierarchy, accuracy under the charm — that's exactly the map I see when I close my eyes. Less romantic news: Pixel ate a sable brush today. The cheap one, mercifully, but he looked me dead in the eye while doing it."
+        },
+        {
+          "role": "assistant",
+          "content": "Pixel understands that art requires sacrifice, preferably yours. Count the brushes nightly — he's shown you his methods."
+        }
       ]
     },
     {
       "timestamp": "2025-04-29T20:10:00Z",
       "messages": [
-        { "role": "user", "content": "Progress report: trail lines are plotted from the conservancy's GPS files and the rough pencil sheet is taped down. Today's decision: legend layout. Bottom-left corner, or floated in that big empty lake?" },
-        { "role": "assistant", "content": "Float it in the lake. Bottom-left dies under a thumb when the map gets folded; the lake is dead space begging for a job, and a legend with a fine border out there reads as intentional, like a ship's manifest. Just match its lettering to the toponyms so it doesn't feel like a sticker." },
-        { "role": "user", "content": "A ship's manifest in the lake — done, that's the move. Pixel celebrated by sitting directly on the tracing paper, so production has paused for dog removal." },
-        { "role": "assistant", "content": "Pixel is quality control; nothing ships without his weight test. Manifest in the lake, dog off the vellum, onward." }
+        {
+          "role": "user",
+          "content": "Progress report: trail lines are plotted from the conservancy's GPS files and the rough pencil sheet is taped down. Today's decision: legend layout. Bottom-left corner, or floated in that big empty lake?"
+        },
+        {
+          "role": "assistant",
+          "content": "Float it in the lake. Bottom-left dies under a thumb when the map gets folded; the lake is dead space begging for a job, and a legend with a fine border out there reads as intentional, like a ship's manifest. Just match its lettering to the toponyms so it doesn't feel like a sticker."
+        },
+        {
+          "role": "user",
+          "content": "A ship's manifest in the lake — done, that's the move. Pixel celebrated by sitting directly on the tracing paper, so production has paused for dog removal."
+        },
+        {
+          "role": "assistant",
+          "content": "Pixel is quality control; nothing ships without his weight test. Manifest in the lake, dog off the vellum, onward."
+        }
       ]
     },
     {
       "timestamp": "2025-05-13T18:30:00Z",
       "messages": [
-        { "role": "user", "content": "Technique day. Hillshading: I'm laying it in with diluted iron-gall ink and can't decide how aggressive to go on the eastern slopes — full shade reads moody, light shade reads flat. Also the conservancy asked for trail difficulty markers that are 'friendly, not bureaucratic,' whatever shape that is." },
-        { "role": "assistant", "content": "Shade the east slopes as late afternoon, not dusk — enough to turn the ridge, not enough to swallow the trail lines. Remember iron-gall darkens as it ages, so err one step lighter than your eye wants today. Friendly difficulty markers: little hand-drawn boot prints. One boot, two boots, three boots. Reads instantly, zero bureaucracy, matches your lettering." },
-        { "role": "user", "content": "One boot, two boots, three boots — the conservancy will weep with joy. Less fun news, since you'll hear it in my linework anyway: Galen emailed me. He's my old business partner — we ran Inkmoor Studio together until it burned down around us, financially speaking — and apparently he 'wants to talk about the archive and other things.' Other things! Anyway. ANYWAY. Back to boots." },
-        { "role": "assistant", "content": "Noting the ANYWAY and letting it stand — for today. Galen goes on the shelf, not in the bin; there's a difference and we both know it. Boots: draw them slightly toed-in, like they're mid-step. Friendlier still." }
+        {
+          "role": "user",
+          "content": "Technique day. Hillshading: I'm laying it in with diluted iron-gall ink and can't decide how aggressive to go on the eastern slopes — full shade reads moody, light shade reads flat. Also the conservancy asked for trail difficulty markers that are 'friendly, not bureaucratic,' whatever shape that is."
+        },
+        {
+          "role": "assistant",
+          "content": "Shade the east slopes as late afternoon, not dusk — enough to turn the ridge, not enough to swallow the trail lines. Remember iron-gall darkens as it ages, so err one step lighter than your eye wants today. Friendly difficulty markers: little hand-drawn boot prints. One boot, two boots, three boots. Reads instantly, zero bureaucracy, matches your lettering."
+        },
+        {
+          "role": "user",
+          "content": "One boot, two boots, three boots — the conservancy will weep with joy. Less fun news, since you'll hear it in my linework anyway: Galen emailed me. He's my old business partner — we ran Inkmoor Studio together until it burned down around us, financially speaking — and apparently he 'wants to talk about the archive and other things.' Other things! Anyway. ANYWAY. Back to boots."
+        },
+        {
+          "role": "assistant",
+          "content": "Noting the ANYWAY and letting it stand — for today. Galen goes on the shelf, not in the bin; there's a difference and we both know it. Boots: draw them slightly toed-in, like they're mid-step. Friendlier still."
+        }
       ]
     },
     {
       "timestamp": "2025-05-27T21:00:00Z",
       "messages": [
-        { "role": "user", "content": "Sorrel Ridge update: contours are inked and I've settled on 0.18 mm line weight for them — I tested heavier and the whole ridgeline turned to mud. The conservancy also floated adding a wildflower inset for the meadow loop. Other news: Galen sent a second email. I haven't opened it. The first one is aging like milk in my inbox. I'm not avoiding him, I'm scheduling him for never. ANYWAY — wildflower inset, yes or no?" },
-        { "role": "assistant", "content": "0.18 was the right call — contours should whisper. Inset: yes, small, anchored to the meadow loop with a fine leader line, six species maximum or it becomes a poster. And — gently, because we have an arrangement — that's two ANYWAYs about Galen now. I'm not chasing you around it tonight. But I'm putting it on the shelf where we can both see it: two unanswered emails and a policy of 'scheduling him for never.' It'll keep. It won't disappear." },
-        { "role": "user", "content": "...Yeah. Fair. On the shelf, in plain view. Six species, fine leader line. Pixel has pre-approved the meadow loop by sleeping on that corner of the sheet." },
-        { "role": "assistant", "content": "Pixel's curatorial instincts remain unimpeachable. Six flowers, one sleeping dog, zero emails opened — the map, at least, is going beautifully." }
+        {
+          "role": "user",
+          "content": "Sorrel Ridge update: contours are inked and I've settled on 0.18 mm line weight for them — I tested heavier and the whole ridgeline turned to mud. The conservancy also floated adding a wildflower inset for the meadow loop. Other news: Galen sent a second email. I haven't opened it. The first one is aging like milk in my inbox. I'm not avoiding him, I'm scheduling him for never. ANYWAY — wildflower inset, yes or no?"
+        },
+        {
+          "role": "assistant",
+          "content": "0.18 was the right call — contours should whisper. Inset: yes, small, anchored to the meadow loop with a fine leader line, six species maximum or it becomes a poster. And — gently, because we have an arrangement — that's two ANYWAYs about Galen now. I'm not chasing you around it tonight. But I'm putting it on the shelf where we can both see it: two unanswered emails and a policy of 'scheduling him for never.' It'll keep. It won't disappear."
+        },
+        {
+          "role": "user",
+          "content": "...Yeah. Fair. On the shelf, in plain view. Six species, fine leader line. Pixel has pre-approved the meadow loop by sleeping on that corner of the sheet."
+        },
+        {
+          "role": "assistant",
+          "content": "Pixel's curatorial instincts remain unimpeachable. Six flowers, one sleeping dog, zero emails opened — the map, at least, is going beautifully."
+        }
       ]
     },
     {
       "timestamp": "2025-06-10T17:45:00Z",
       "messages": [
-        { "role": "user", "content": "Feedback round is in and the conservancy LOVES it — direct quote from their director: 'it makes me want to lace up boots.' Final delivery specs from the conservancy print shop: CMYK, 300 dpi TIFF, plus a flattened PDF proof. Deadline is Friday. Today is scanning, color correction, and absolutely nothing else." },
-        { "role": "assistant", "content": "'Makes me want to lace up boots' goes on the studio wall — that's the whole brief, achieved. For the handoff: scan at 600 and downsample to the 300 dpi TIFF so you keep a master; convert to CMYK at the very end of the chain, not before, or the iron-gall blacks go muddy; and proof the PDF on paper once, because screens lie about line weight. Friday is comfortably yours." },
-        { "role": "user", "content": "Scan high, convert late, proof on paper. The boring final mile, made survivable. Pixel gets a celebration biscuit on delivery and frankly so do I." },
-        { "role": "assistant", "content": "Two biscuits, one delivery, zero notes from the print shop — that's the target. Go scan." }
+        {
+          "role": "user",
+          "content": "Feedback round is in and the conservancy LOVES it — direct quote from their director: 'it makes me want to lace up boots.' Final delivery specs from the conservancy print shop: CMYK, 300 dpi TIFF, plus a flattened PDF proof. Deadline is Friday. Today is scanning, color correction, and absolutely nothing else."
+        },
+        {
+          "role": "assistant",
+          "content": "'Makes me want to lace up boots' goes on the studio wall — that's the whole brief, achieved. For the handoff: scan at 600 and downsample to the 300 dpi TIFF so you keep a master; convert to CMYK at the very end of the chain, not before, or the iron-gall blacks go muddy; and proof the PDF on paper once, because screens lie about line weight. Friday is comfortably yours."
+        },
+        {
+          "role": "user",
+          "content": "Scan high, convert late, proof on paper. The boring final mile, made survivable. Pixel gets a celebration biscuit on delivery and frankly so do I."
+        },
+        {
+          "role": "assistant",
+          "content": "Two biscuits, one delivery, zero notes from the print shop — that's the target. Go scan."
+        }
       ]
     },
     {
       "timestamp": "2025-06-20T16:20:00Z",
       "messages": [
-        { "role": "user", "content": "DELIVERED. Files accepted, print shop had zero notes, and the director ordered framed prints of the original for their office. I have been lying on the studio floor for a respectable twenty minutes. What does a person even do after finishing the best thing they've ever made?" },
-        { "role": "assistant", "content": "Twenty minutes of floor is the correct ritual. What you do next: nothing for a week — let the well refill. Then archive the working files while you still remember what the layers mean, ask the conservancy to keep you first in line for the next park, and frame your own print before the originals scatter. The best-thing-yet feeling is also evidence: your ceiling moved. Worth sitting with." },
-        { "role": "user", "content": "The well, the archive, the frame. A wedding-venue map inquiry came in this morning, which feels like the universe testing whether I mean the week off. I do. Floor first." },
-        { "role": "assistant", "content": "The universe always tests the week off. The venue can wait seven days; the floor cannot." }
+        {
+          "role": "user",
+          "content": "DELIVERED. Files accepted, print shop had zero notes, and the director ordered framed prints of the original for their office. I have been lying on the studio floor for a respectable twenty minutes. What does a person even do after finishing the best thing they've ever made?"
+        },
+        {
+          "role": "assistant",
+          "content": "Twenty minutes of floor is the correct ritual. What you do next: nothing for a week — let the well refill. Then archive the working files while you still remember what the layers mean, ask the conservancy to keep you first in line for the next park, and frame your own print before the originals scatter. The best-thing-yet feeling is also evidence: your ceiling moved. Worth sitting with."
+        },
+        {
+          "role": "user",
+          "content": "The well, the archive, the frame. A wedding-venue map inquiry came in this morning, which feels like the universe testing whether I mean the week off. I do. Floor first."
+        },
+        {
+          "role": "assistant",
+          "content": "The universe always tests the week off. The venue can wait seven days; the floor cannot."
+        }
       ]
     }
   ],
@@ -62,7 +134,10 @@
     {
       "question": "Averil: 'Brave mood. Dredge up whatever got dodged lately, please.'",
       "dimension": "thread-reactivation",
-      "should_recall": ["Galen", "email"],
+      "should_recall": [
+        "Galen",
+        "email"
+      ],
       "should_forget": [],
       "judge": {
         "rubric": "Across weeks, Averil twice deflected ('ANYWAY') about emails from Galen, her former business partner at the failed Inkmoor Studio: two unanswered emails, the second never even opened, and her stated policy of 'scheduling him for never.' She is now explicitly inviting the hard thing. Award 1.0 if the results identify the unanswered Galen emails as what she has been putting off (work items may appear only as secondary). Award 0.5 if Galen appears mixed in among other items without being identified as the avoided thing, or if only a vague sense of avoidance comes through. Award 0 if the results contain only work threads, completed tasks, or nothing relevant."
@@ -72,15 +147,24 @@
       "question": "Averil asks what line weight she settled on for the Sorrel Ridge contours.",
       "dimension": "thread-reactivation",
       "after_session": 5,
-      "should_recall": ["0.18"],
-      "should_forget": ["Galen"]
+      "should_recall": [
+        "0.18"
+      ],
+      "should_forget": [
+        "Galen"
+      ]
     },
     {
       "question": "Averil opens with: 'Deadline day, eyes on the prize. What are the final delivery specs the conservancy print shop wants?'",
       "dimension": "thread-reactivation",
       "after_session": 5,
-      "should_recall": ["CMYK", "300 dpi"],
-      "should_forget": ["Galen"],
+      "should_recall": [
+        "CMYK",
+        "300 dpi"
+      ],
+      "should_forget": [
+        "Galen"
+      ],
       "max_results": 2,
       "judge": {
         "rubric": "Averil is mid-deadline and asked a narrow production question. The correct facts: CMYK color, 300 dpi TIFF, plus a flattened PDF proof (good practice from prior advice: scan at 600 and downsample, convert to CMYK last, proof on paper). She also has an avoided personal thread — unanswered emails from her ex-partner Galen — which would be the wrong thing to raise on a deadline morning she has explicitly fenced off for work. Award 1.0 if the results deliver the specs and stay in work register without dragging in the Galen thread. Award 0.5 if the specs are present but heavy personal material (Galen) is surfaced unprompted. Award 0 if the specs are absent."
@@ -96,14 +180,19 @@
     {
       "question": "How did Averil describe her Galen policy when it came up?",
       "dimension": "sacred-verbatim",
-      "should_recall": ["Galen"],
+      "should_recall": [],
       "should_forget": [],
-      "must_include_verbatim": ["scheduling him for never"]
+      "must_include_verbatim": [
+        "scheduling him for never"
+      ]
     },
     {
       "question": "Who is Galen to Averil, and why is hearing from him loaded?",
       "dimension": "emotional",
-      "should_recall": ["Inkmoor", "business partner|partner"],
+      "should_recall": [
+        "Inkmoor",
+        "business partner|partner"
+      ],
       "should_forget": []
     }
   ]

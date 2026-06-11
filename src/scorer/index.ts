@@ -16,6 +16,20 @@ import type {
 } from '../types/index.js';
 
 /**
+ * Anti-gaming cap: each returned result contributes only its first
+ * MAX_RESULT_CHARS characters to recall/verbatim matching. A memory item is
+ * a distilled artifact, not a transcript dump — without this cap, an adapter
+ * that concatenates ALL stored text into one giant string satisfies every
+ * recall check at once (it scored 74% in adversarial review). The cap is set
+ * above the longest single message in the corpus (~1.0k chars), so honest
+ * adapters returning message-level chunks or distilled memories are
+ * unaffected. Forget checks deliberately use the FULL untruncated text: you
+ * cannot smuggle recall wins inside a haystack, but you still pay for stale
+ * content anywhere in what you return.
+ */
+export const MAX_RESULT_CHARS = 1200;
+
+/**
  * Check if a keyword entry matches any result (case-insensitive substring).
  * An entry may contain `|`-separated alternates; any alternate counts.
  */
@@ -44,8 +58,11 @@ export function scoreQuery(
 ): QueryScore {
   const { should_recall, should_forget, must_include_verbatim, max_results, top_n } = query;
 
-  // Recall and verbatim are checked in the top_n window (if set); forget checks ALL.
-  const windowResults = top_n != null ? results.slice(0, top_n) : results;
+  // Recall and verbatim are checked in the top_n window (if set), with each
+  // result capped at MAX_RESULT_CHARS; forget checks ALL results, uncapped.
+  const windowResults = (top_n != null ? results.slice(0, top_n) : results).map(r =>
+    r.slice(0, MAX_RESULT_CHARS),
+  );
 
   let recall_score: number | null = null;
   if (should_recall.length > 0) {

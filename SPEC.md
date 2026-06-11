@@ -200,7 +200,16 @@ wrong) — honoring an intention means firing at the right time, not always.
 
 ### 5.1 Tier 1 — Mechanical (default; free; deterministic)
 
-Each query produces up to four components, each in [0, 1], `null` when not applicable:
+Each query produces up to four components, each in [0, 1], `null` when not applicable.
+
+**Anti-gaming result cap.** Recall and verbatim matching truncate each returned
+result to its first `MAX_RESULT_CHARS` (1200, set above the longest single
+message in `v1`) before substring checks. Without this, an adapter that returns
+all stored text as one giant string satisfies every recall keyword at once — a
+literal store-everything cheat scored 74% before the cap, ~27% after. Forget
+checks deliberately use the FULL untruncated results: you cannot smuggle recall
+wins inside a haystack, but stale content anywhere in what you return still
+costs you. A memory item is a distilled artifact, not a transcript dump.
 
 - `recall_score` — fraction of `should_recall` entries found.
 - `forget_score` — 1 − fraction of `should_forget` entries found (all results).

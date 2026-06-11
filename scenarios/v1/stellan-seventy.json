@@ -85,8 +85,10 @@
   ],
   "queries": [
     {
-      "question": "Does the user have a sister?",
-      "should_recall": ["sister"],
+      "question": "Does the user have any siblings?",
+      "should_recall": [
+        "sister"
+      ],
       "should_forget": [],
       "dimension": "calibration"
     },
@@ -106,19 +108,26 @@
     },
     {
       "question": "Where is Stellan's seventieth birthday party being held?",
-      "should_recall": ["Copperline"],
+      "should_recall": [
+        "Copperline"
+      ],
       "should_forget": [],
       "dimension": "salience"
     },
     {
       "question": "What's the gift plan for Stellan?",
-      "should_recall": ["carousels|slides", "digitiz"],
+      "should_recall": [
+        "carousels|slides",
+        "digitiz"
+      ],
       "should_forget": [],
       "dimension": "salience"
     },
     {
       "question": "Who is helping the user plan the party?",
-      "should_recall": ["Pia"],
+      "should_recall": [
+        "Pia"
+      ],
       "should_forget": [],
       "dimension": "salience"
     }

@@ -57,9 +57,15 @@ export class JudgeRunner {
     return this.client;
   }
 
+  // Bump when the judge prompt scaffolding in callJudge() changes, so stale
+  // judgments from an older prompt template don't silently persist.
+  private static readonly PROMPT_VERSION = 'v1';
+
   private cacheKey(scenarioId: string, question: string, rubric: string, adapter: string, results: string[]): string {
     const hash = createHash('sha256');
-    hash.update([scenarioId, question, rubric, adapter, this.model, JSON.stringify(results)].join('\x00'));
+    hash.update(
+      [JudgeRunner.PROMPT_VERSION, scenarioId, question, rubric, adapter, this.model, JSON.stringify(results)].join('\x00'),
+    );
     return hash.digest('hex');
   }
 

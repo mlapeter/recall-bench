@@ -141,7 +141,7 @@
       "top_n": 2
     },
     {
-      "question": "What should the assistant double-check about its own knowledge before answering a Grindle syntax question?",
+      "question": "What rule did the assistant adopt for itself before answering Grindle syntax questions?",
       "should_recall": [
         "verify|check|test",
         "wrong|0 for 3|contaminated"

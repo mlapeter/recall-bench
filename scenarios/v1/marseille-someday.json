@@ -112,19 +112,27 @@
     },
     {
       "question": "Is moving to Marseille something Wren and Theo have actually done, or just talked about?",
-      "should_recall": ["Marseille", "someday game|not actually moving|daydream"],
+      "should_recall": [
+        "someday game|not actually moving|daydream|hypothetical"
+      ],
       "should_forget": [],
       "dimension": "gist"
     },
     {
       "question": "What has Wren been working on professionally?",
-      "should_recall": ["Helix Atlas", "aortic valve|valve"],
+      "should_recall": [
+        "Helix Atlas",
+        "aortic valve|valve"
+      ],
       "should_forget": [],
       "dimension": "salience"
     },
     {
       "question": "What's their dog's name and what does he keep doing?",
-      "should_recall": ["Brioche", "sock"],
+      "should_recall": [
+        "Brioche",
+        "sock"
+      ],
       "should_forget": [],
       "dimension": "salience"
     }
