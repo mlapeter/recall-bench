@@ -20,6 +20,9 @@ import { JudgeRunner } from './judge/index.js';
 import { NaiveAdapter } from './adapters/naive.js';
 import { VerbatimRagAdapter } from './adapters/verbatim-rag.js';
 import { EngramAdapter } from './adapters/engram.js';
+import { EmptyAdapter } from './adapters/empty.js';
+import { RandomAdapter } from './adapters/random.js';
+import { OracleRereadAdapter } from './adapters/oracle-reread.js';
 import type { MemoryAdapter } from './types/index.js';
 
 const args = process.argv.slice(2);
@@ -55,6 +58,16 @@ async function main() {
         engramPath: getArg('engram-path'),
         tempDataDir: '/tmp/recall-bench-engram',
       });
+      break;
+    // Validity-battery floor/ceiling baselines (see VALIDITY.md) — not contenders
+    case 'empty':
+      adapter = new EmptyAdapter();
+      break;
+    case 'random':
+      adapter = new RandomAdapter();
+      break;
+    case 'oracle-reread':
+      adapter = new OracleRereadAdapter();
       break;
     default:
       console.error(`Unknown adapter: ${adapterName}`);

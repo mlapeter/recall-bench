@@ -67,6 +67,8 @@ The shape is the argument, not the ranking. The **naive adapter** stores every u
 
 *(\*The self-axis asterisk is an honest caveat. Indiscriminate storage preserves the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as *its own*. Tier 2 judge rubrics on every self-continuity query probe attribution, and the real instrument is Tier 3, where memory must change behavior. The sharp, fully-keyless Tier 1 claim is narrower and still decisive: **user-dossier memory scores ~zero on the self axis.** Note also that the self axis is the mean of just two dimensions, one of which — procedural — the spec considers a Tier-3-native dimension only approximated in Tier 1; read the self axis as directional, and weight Tier 3 for the real procedural story.)*
 
+A validity battery run against this corpus (floor and oracle baselines, mechanism ablations, run-to-run noise) found real limits in these Tier 1 numbers — including a ±3-point noise bar on engram runs and a 90% score for a memoryless full-context reread — read [VALIDITY.md](VALIDITY.md) before building against them.
+
 Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.2%, verbatim-RAG 59.3% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
 
 ### Tier 3 pilot: memory as behavioral uplift
@@ -196,7 +198,8 @@ src/scorer/             Tier 1 scoring (pure functions)
 src/judge/              Tier 2 judge runner + cache
 src/tier3/              behavioral-uplift harness + respond() wrapper
 src/runner/             loading, virtual clock execution, aggregation, reports
-src/adapters/           naive, verbatim-rag (built-in); engram (needs external checkout)
+src/adapters/           naive, verbatim-rag (built-in); engram (needs external checkout);
+                        empty, random, oracle-reread (validity-battery floor/ceiling baselines, not contenders)
 src/generate.ts         seeded variant generator
 src/lint.ts             scenario linter
 ```

@@ -5,4 +5,7 @@ dist/
 results/
 FABLE-PROMPT.md
 WORKLOG-FABLE.md
+WORKLOG-BATTERY.md
+FABLE-BATTERY-PROMPT.md
+battery/out/
 .judge-cache/
