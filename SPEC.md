@@ -303,7 +303,9 @@ definition in `src/types`):
 
 - **Scenario sets are frozen.** `scenarios/v1/` does not change after release (typo
   fixes that cannot affect scores are the only exception). Published scores against
-  `v1` stay comparable forever, MMLU-style. New scenarios go in `v2/`.
+  `v1` stay comparable forever, MMLU-style. New scenarios go in `v2/`. The freeze is
+  pinned by `scenarios/v1/MANIFEST.sha256` — verify with
+  `cd scenarios/v1 && shasum -a 256 -c MANIFEST.sha256`.
 - The harness records `scenarioSet` in every result.
 - **Generated variants are the held-out story.** `bun src/generate.ts --scenario <id>
   --seed <n>` produces a structural variant of any scenario: names, entities,
