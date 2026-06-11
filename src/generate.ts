@@ -12,7 +12,7 @@
  * the public v1 text gains nothing. See SPEC.md §7.
  *
  * Usage:
- *   bun src/generate.ts --scenario scenarios/v1/promotion-arc.json --seed 42
+ *   bun src/generate.ts --scenario scenarios/v1/correction.json --seed 42
  *   bun src/generate.ts --scenario <path> --seed <n> --out scenarios/generated/
  */
 

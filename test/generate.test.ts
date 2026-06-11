@@ -10,11 +10,11 @@ const SCENARIO_DIR = resolve(import.meta.dirname, '..', 'scenarios', 'v1');
 describe('generateVariant', () => {
   it('produces a valid scenario with same structure', async () => {
     const scenarios = await loadScenarios(SCENARIO_DIR);
-    const original = scenarios.find(s => s.id === 'promotion-arc')!;
+    const original = scenarios.find(s => s.id === 'correction')!;
     const variant = generateVariant(original, { seed: 42 });
 
     expect(() => ScenarioSchema.parse(variant)).not.toThrow();
-    expect(variant.id).toBe('promotion-arc-var42');
+    expect(variant.id).toBe('correction-var42');
     expect(variant.sessions.length).toBe(original.sessions.length);
     expect(variant.queries.length).toBe(original.queries.length);
     for (let i = 0; i < original.sessions.length; i++) {
@@ -28,12 +28,12 @@ describe('generateVariant', () => {
 
   it('swaps proper-noun anchors consistently between text and keywords', async () => {
     const scenarios = await loadScenarios(SCENARIO_DIR);
-    const original = scenarios.find(s => s.id === 'promotion-arc')!;
+    const original = scenarios.find(s => s.id === 'correction')!;
     const variant = generateVariant(original, { seed: 42 });
 
-    // "Meridian" is a should_recall anchor and proper noun — must be swapped
+    // "Arcana" is a should_recall anchor and proper noun — must be swapped
     const variantText = JSON.stringify(variant);
-    expect(variantText).not.toContain('Meridian');
+    expect(variantText).not.toContain('Arcana');
 
     // Every swapped recall keyword must still appear in the variant's sessions
     const sessionText = variant.sessions.map(s => s.messages.map(m => m.content).join(' ')).join(' ').toLowerCase();

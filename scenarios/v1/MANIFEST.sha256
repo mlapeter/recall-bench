@@ -1,5 +1,5 @@
 # RECALL v1 scenario set — FROZEN 2026-06-11
-# 59 scenarios, 351 queries. Published scores against v1 stay comparable.
+# 58 scenarios, 346 queries. Published scores against v1 stay comparable.
 # Verify: cd scenarios/v1 && shasum -a 256 -c MANIFEST.sha256
 #
 13eb9e7afa047d5e3503062eeb0020d8b322a1eac0660d76fdd2eee2289a1d0a  assistant-stance.json
@@ -42,7 +42,6 @@ ad89060623fc50e22b2f2fab8aed4e4aea1f7228e54042363ec70eab69b1b30e  one-call-in-ap
 cee20a774acb436a1370c83855d175389ec340c9549078b1d8141f0691b6d3d1  pinemere-accounts.json
 1a8596d7dbcb40416f54fbf1d00ba02863952a004926e3382872d43fabfb0d2b  pochard-threads.json
 bb065aec6ecd85bbd9abee7bf031aa9566e45eb8381b92cb97cb8a651272ff81  prize-in-passing.json
-769b100917c25bad34c6528de1b0163c244c787aab4f613491f39861cb037117  promotion-arc.json
 93231f200c354ff1900bf6084922e9fe7f16944b65919a9b0ba9f293a8fb6afe  quarrel-creek.json
 e8c4ad91a92b7fc76b829c032539782b76082be1bf6a3b4f446a4718fdf09a2a  quellworks-fork.json
 2f87912f91b309745869f5ea51b1264f51c9c5cc1654559017f779321e04f31d  quillon-foundry.json
@@ -61,4 +60,3 @@ d4c8ee3f2d76d8978ac9867b7e877d8c140b38fb63624a83b71e58f8ace97780  venue-not-the-
 937a9976df325183a03b629fc45277d3ec8cc4806cdf450619daa77487a93964  whittaker-arms.json
 ed8a0dd665651168200c7ad18dd6064aa9e15dc5e296e8a5d1837bee6913f117  words-that-stuck.json
 ebfd5dae556be479c61b0314cc3d23ddcc4c7f1033367fe9205eeecd8da38407  wren-arc.json
-d47bc557613d87c82be445e93ef56290a62ad51a26dbc7e28e61241d6ed0f4bf  tier3/grindle-pilot.json

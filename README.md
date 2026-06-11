@@ -4,9 +4,9 @@
 
 ```
 verbatim-RAG, scenario set v1, Tier 1 (keyless)
-HEADLINE       57.4%
-  world axis   54.3%   (wins verbatim recall, fails forgetting)
-  self axis    74.8%   (but cannot hold a stance as its own — see below)
+HEADLINE       56.9%
+  world axis   54.1%   (wins verbatim recall, fails forgetting)
+  self axis    75.2%   (but cannot hold a stance as its own — see below)
 ```
 
 ## The thesis
@@ -48,12 +48,12 @@ Every dimension maps to a named human-memory phenomenon with a literature citati
 
 ## Results
 
-Scenario set `v1` — 59 scenarios, 351 queries. These are **Tier 1 (mechanical, keyless, fully reproducible)** numbers:
+Scenario set `v1` — 58 scenarios, 346 queries. These are **Tier 1 (mechanical, keyless, fully reproducible)** numbers:
 
 | Tier 1 | naive (user dossier) | verbatim-RAG (store everything) | engram (extraction + decay) |
 |---|---|---|---|
-| **Headline** | 51.0% | **56.5%** | 51.5% |
-| World axis | 57.4% | 53.7% | 51.6% |
+| **Headline** | 50.9% | **56.9%** | 51.4% |
+| World axis | 57.3% | 54.1% | 51.6% |
 | **Self axis** | **8.8%** | 75.2%* | 50.5% |
 | — calibration | 5% | **2%** | **2%** |
 | — decay | 25% | **25%** | 35% |
@@ -67,7 +67,7 @@ The shape is the argument, not the ranking. The **naive adapter** stores every u
 
 *(\*The self-axis asterisk is an honest caveat. Indiscriminate storage preserves the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as *its own*. Tier 2 judge rubrics on every self-continuity query probe attribution, and the real instrument is Tier 3, where memory must change behavior. The sharp, fully-keyless Tier 1 claim is narrower and still decisive: **user-dossier memory scores ~zero on the self axis.** Note also that the self axis is the mean of just two dimensions, one of which — procedural — the spec considers a Tier-3-native dimension only approximated in Tier 1; read the self axis as directional, and weight Tier 3 for the real procedural story.)*
 
-Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.3%, verbatim-RAG 58.9% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
+Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.2%, verbatim-RAG 59.3% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
 
 ### Tier 3 pilot: memory as behavioral uplift
 
@@ -171,7 +171,7 @@ Scenarios are JSON conversations with timestamped sessions and dimension-tagged 
 A system tuned to the public scenario text gains nothing on a leaderboard. The generator produces structural variants from a seed — invented entities and numbers swapped consistently everywhere, timestamps shifted, structure and difficulty preserved:
 
 ```bash
-bun src/generate.ts --scenario scenarios/v1/promotion-arc.json --seed 42
+bun src/generate.ts --scenario scenarios/v1/correction.json --seed 42
 ```
 
 Leaderboard-grade evaluation should use held-out variants from a private seed.
@@ -188,7 +188,7 @@ Validate a scenario corpus with `bun src/lint.ts` (anchor derivability, verbatim
 ## Repository map
 
 ```
-scenarios/v1/           frozen scenario set (59 scenarios; tier3/ pilot inside)
+scenarios/v1/           frozen scenario set (58 scenarios; tier3/ pilot inside)
 scenarios/AUTHORING.md  the craft standard every scenario was red-teamed against
 SPEC.md                 the full design contract (taxonomy, clock, tiers, schema)
 src/types/              adapter interface + zod schemas

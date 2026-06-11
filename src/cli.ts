@@ -6,7 +6,7 @@
  *   bun src/cli.ts                              # naive, all v1 scenarios, Tier 1
  *   bun src/cli.ts --adapter verbatim-rag       # the store-everything foil
  *   bun src/cli.ts --adapter engram             # engram (requires ANTHROPIC_API_KEY)
- *   bun src/cli.ts --scenario promotion-arc     # single scenario
+ *   bun src/cli.ts --scenario maren-arc         # single scenario
  *   bun src/cli.ts --judge                      # Tier 2 (requires ANTHROPIC_API_KEY)
  *   bun src/cli.ts --json results.json          # write machine-readable results
  *   bun src/cli.ts --verbose                    # per-query details
