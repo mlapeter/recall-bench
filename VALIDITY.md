@@ -391,3 +391,86 @@ using `--scenarios`.
   ablation were committed to the worklog before the runs executed.
 - Raw artifacts: `battery/out/*.json` (gitignored), scripts in `battery/`,
   chronological log with cost tracking in `WORKLOG-BATTERY.md` (gitignored).
+
+---
+
+## Addendum (2026-07-02): the clock fix — VALIDITY recommendation #1 executed
+
+*Everything above describes the published `engram` adapter and remains accurate for
+it. This addendum reports the virtual-clock-corrected adapter
+(`src/adapters/engram-vclock.ts`) and the ablation re-run the battery called for.
+Frozen corpus untouched (MANIFEST re-verified); scorer/aggregation/published adapters
+unmodified; 54 tests pass. Runs: vclock baseline ×2, decay-off, interference-ON
+(~$7.65). Predictions pre-registered in WORKLOG-VCLOCK.md before any scoring run.
+Isolation re-verified: zero `source_session: "recall-bench"` records in
+`~/.claude-engram`.*
+
+### What was fixed
+
+The published adapter stamps memories with virtual 2025 timestamps while engram ages
+them against `Date.now()` (§3). The new adapter stores identically but, at each query,
+projects `created_at` onto the wall clock so wall-age equals virtual age relative to
+that query's virtual `now`, runs engram's unmodified search, then restores. Query-time
+projection (rather than a per-scenario constant offset) is exact for the 37
+mid-scenario `after_session` queries. The fix also engages a **second wall-clock
+dependency the battery missed**: the search recency boost (`1 + 1/(1+ageHours)`,
+store.ts phase 4) — flat ≈1.0 under year-old stamps in every published run.
+
+### Results
+
+**The strength floor is gone.** Baseline final store measured both ways: wall view
+25.7% of memories at strength 0, mean 0.114 (reproducing §3's 27%/0.122); vclock view
+**0% at zero, mean 0.526**, graded across 1–87 virtual days.
+
+**The fix produced the first above-noise engram result on this benchmark.** Headline
+52 → 56/57 (replicated across both baselines; new noise pair: +0.44pp mean per-query
+overall). Paired per-query deltas (published b1 → vclock b1, 338 queries): **+4.71pp
+overall**, with coherent gains — decay +11.7pp @ 6:1 signed ratio, prospective
++18.2pp @ 3.7:1, emotional +12.3pp @ 2.5:1, gist +8.8pp @ 5:1, self-continuity
++8.8pp @ 2.5:1, correction +6.5pp, thread-reactivation +5.6pp @ 5:1. Salience held.
+**Engram-vclock (56–57%) vs naive (50.9%) is now a real gap**, where the published
+adapter's 0.5pp was coin-flip (§4). The only decline: relational −30pp on n=5 (a
+dimension whose own noise is ±20pp; see fix #7).
+
+**Ablation construct-validity, retested against this battery's own noise pair:**
+
+| Dial | Focal Δ (paired) | Own-noise Δ | Verdict |
+|---|---|---|---|
+| decay-off | decay −4.2pp @ 0.3:1 | −4.2pp @ 0.3:1 | **Still not construct-valid** — identical to noise |
+| interference-ON | correction **+9.9pp @ 7:1** | +2.8pp @ 1.0:1 | **Reconnected** — first dial ever to pass |
+| interference-ON | interference −5.0pp | +2.5pp | Not detected by its namesake dimension |
+
+- **Decay:** the mechanism now demonstrably runs (floor gone, fix moved decay +11.7pp),
+  but toggling it off is invisible at Tier 1 — as §1 predicted, 16/30 decay queries are
+  abstention-only and engram never abstains. This is now firmly a *scoring* defect
+  (fix #3), not a mechanism question.
+- **Interference:** the battery's null (497 firings, no movement) is explained —
+  dampening the salience of strength-0 memories was arithmetic on a floored value.
+  Un-floored, the mechanism does exactly what it claims: superseded facts leave top-k
+  and correction improves 7:1. The "interference" *dimension* still doesn't detect it
+  (its queries measure something else); treat correction as the mechanism's readout.
+  Watch-list: procedural −15.2pp and sacred-verbatim −10.0pp under interference-ON
+  (≈2× their noise, single run) — dampened superseded traces may carry load-bearing
+  wording; confirm with a second run before acting.
+- **Calibration: pinned at 1–3% in all four runs.** Abstention remains untouched and
+  remains the clearest development target.
+
+### What changes in the guidance
+
+1. **Adopt `engram-vclock` for all future engram measurement.** Every published engram
+   number (headline, §3 ablations, §4 noise) understated the system: its temporal
+   machinery had never engaged with the benchmark timeline. Published-adapter numbers
+   stay in this report as the record of that configuration.
+2. **Mechanism work on interference/correction is now measurable** via paired per-query
+   deltas on correction (not dimension scores, and not the interference dimension).
+3. **Tier 1 decay remains unusable as a dial readout** until the v1.1 rescore (fix #3);
+   unchanged.
+4. Everything else in "Guidance for engram development" stands, with one upgrade:
+   engram-vclock vs naive is now a defensible claim (56–57 vs 50.9, gap > noise), the
+   first leaderboard-style statement this benchmark can honestly make below the oracle
+   ceiling (90.1, which still stands as the context-ceiling caveat on any Tier 1
+   ranking).
+
+Raw artifacts: `battery/out/engram-vclock-*.json`; scripts
+`battery/run-engram-vclock.ts`, `battery/strength-dist.ts`, `battery/paired-deltas.ts`;
+chronological log with predictions and cost in `WORKLOG-VCLOCK.md` (gitignored).
