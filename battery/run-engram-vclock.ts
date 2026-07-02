@@ -24,6 +24,9 @@ const CONFIGS: Record<string, { config: Record<string, unknown>; interference: b
   'decay-off': { config: { decayRate: 0, archiveDecayRate: 0 }, interference: false },
   // Interference on (on-stop hook parity), default factor
   'interference-on': { config: {}, interference: true },
+  // Second interference run — confirms/refutes the procedural & sacred-verbatim
+  // side-effect dips seen in the first (both ~2× noise, single run)
+  'interference-on2': { config: {}, interference: true },
 };
 
 const name = process.argv[2];
