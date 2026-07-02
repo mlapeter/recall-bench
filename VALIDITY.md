@@ -437,7 +437,7 @@ dimension whose own noise is ±20pp; see fix #7).
 | Dial | Focal Δ (paired) | Own-noise Δ | Verdict |
 |---|---|---|---|
 | decay-off | decay −4.2pp @ 0.3:1 | −4.2pp @ 0.3:1 | **Still not construct-valid** — identical to noise |
-| interference-ON | correction **+9.9pp @ 7:1** | +2.8pp @ 1.0:1 | **Reconnected** — first dial ever to pass |
+| interference-ON | correction +6pp mean, positive 4/4 (on1/on2 × b1/b2) | +2.8pp @ 1.0:1 | **Reconnected** (≈2× noise; single-run 7:1 overstated it) |
 | interference-ON | interference −5.0pp | +2.5pp | Not detected by its namesake dimension |
 
 - **Decay:** the mechanism now demonstrably runs (floor gone, fix moved decay +11.7pp),
@@ -446,12 +446,18 @@ dimension whose own noise is ±20pp; see fix #7).
   (fix #3), not a mechanism question.
 - **Interference:** the battery's null (497 firings, no movement) is explained —
   dampening the salience of strength-0 memories was arithmetic on a floored value.
-  Un-floored, the mechanism does exactly what it claims: superseded facts leave top-k
-  and correction improves 7:1. The "interference" *dimension* still doesn't detect it
-  (its queries measure something else); treat correction as the mechanism's readout.
-  Watch-list: procedural −15.2pp and sacred-verbatim −10.0pp under interference-ON
-  (≈2× their noise, single run) — dampened superseded traces may carry load-bearing
-  wording; confirm with a second run before acting.
+  Un-floored, the mechanism does what it claims: superseded facts leave top-k and
+  correction improves. A second interference-ON run (on2) refines the effect size:
+  correction is positive in all four on-vs-baseline comparisons (+9.9, ~+7, +5.2,
+  +2.5; mean ≈ +6pp vs +2.8pp noise) — direction confirmed, but the single-run 7:1
+  ratio overstated it; call it ≈2× noise pending the v1.1 correction rescore. The
+  "interference" *dimension* still doesn't detect the mechanism in either run; treat
+  correction as its readout. Side-effect watch-list after the confirm run:
+  procedural dip RETRACTED (sign flipped between runs; ±26pp at n=11 is pure noise);
+  sacred-verbatim dip REPLICATED (−10 to −15pp, sign-stable across all four
+  comparisons vs −5 noise) — dampened superseded traces plausibly carry load-bearing
+  wording; emotional added as a watch item (sign-consistent dips, plausible direct
+  mechanism via salience.emotional ×0.7, magnitude not yet separable from noise).
 - **Calibration: pinned at 1–3% in all four runs.** Abstention remains untouched and
   remains the clearest development target.
 
