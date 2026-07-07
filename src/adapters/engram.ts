@@ -35,6 +35,8 @@ interface EngramMemory {
   content: string;
   scope: 'global' | 'project';
   memory_type: 'episodic' | 'semantic';
+  /** v3 register — different decay/gist physics per kind; absent on pre-v3 memories */
+  register?: 'self' | 'person' | 'craft';
   salience: { novelty: number; relevance: number; emotional: number; predictive: number };
   tags: string[];
   access_count: number;
@@ -46,7 +48,9 @@ interface EngramMemory {
   updated_from: string | null;
 }
 
-type NewEngramMemory = Omit<EngramMemory, 'id' | 'access_count' | 'last_accessed' | 'created_at' | 'consolidated' | 'generalized' | 'updated_from'> & {
+// v3 extraction emits register but no memory_type (gist conversion moved to consolidation)
+type NewEngramMemory = Omit<EngramMemory, 'id' | 'access_count' | 'last_accessed' | 'created_at' | 'consolidated' | 'generalized' | 'updated_from' | 'memory_type'> & {
+  memory_type?: 'episodic' | 'semantic';
   updates: string | null;
 };
 
@@ -115,7 +119,15 @@ export class EngramAdapter implements MemoryAdapter {
       .join('\n\n');
 
     const existing = await this._store.loadAll();
-    const extracted = await this._extractMemories(transcript, existing, 'transcript');
+    let extracted: NewEngramMemory[];
+    try {
+      extracted = await this._extractMemories(transcript, existing, 'transcript');
+    } catch {
+      // One retry: extraction occasionally runs away to max_tokens, and engram
+      // fails loudly rather than store a truncated result — without a retry a
+      // single flaky call kills a full benchmark run.
+      extracted = await this._extractMemories(transcript, existing, 'transcript');
+    }
 
     if (extracted.length === 0) return;
 
@@ -127,7 +139,8 @@ export class EngramAdapter implements MemoryAdapter {
       id: this._generateId(),
       content: m.content,
       scope: m.scope,
-      memory_type: m.memory_type,
+      memory_type: m.memory_type ?? 'episodic',
+      register: m.register,
       salience: m.salience,
       tags: m.tags,
       access_count: 0,
