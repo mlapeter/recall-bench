@@ -50,26 +50,28 @@ Every dimension maps to a named human-memory phenomenon with a literature citati
 
 Scenario set `v1` — 58 scenarios, 346 queries. These are **Tier 1 (mechanical, keyless, fully reproducible)** numbers:
 
-| Tier 1 | naive (user dossier) | verbatim-RAG (store everything) | engram (extraction + decay) |
-|---|---|---|---|
-| **Headline** | 50.9% | **56.9%** | 51.4% |
-| World axis | 57.3% | 54.1% | 51.6% |
-| **Self axis** | **8.8%** | 75.2%* | 50.5% |
-| — calibration | 5% | **2%** | **2%** |
-| — decay | 25% | **25%** | 35% |
-| — correction | 46% | **38%** | 55% |
-| — emotional | 50% | 49% | 82% |
-| — sacred-verbatim | 90% | 93% | 43% |
-| — self-continuity | **2%** | 70%* | 31% |
-| — procedural | 15% | 80% | 70% |
+| Tier 1 | naive (user dossier) | verbatim-RAG (store everything) | engram v3 (extraction + decay) | engram v3, clock-corrected |
+|---|---|---|---|---|
+| **Headline** | 50.9% | **56.9%** | 48.5% | 53.3% |
+| World axis | 57.3% | 54.1% | 48.2% | 54.7% |
+| **Self axis** | **8.8%** | 75.2%* | 50.0% | 44.2% |
+| — calibration | 5% | **2%** | **2%** | 3% |
+| — decay | 25% | **25%** | 22% | 38% |
+| — correction | 46% | **38%** | 52% | 65% |
+| — emotional | 50% | 49% | 90% | 82% |
+| — sacred-verbatim | 90% | 93% | 48% | 47% |
+| — self-continuity | **2%** | 70%* | 57% | 40% |
+| — procedural | 15% | 80% | 42% | 48% |
 
-The shape is the argument, not the ranking. The **naive adapter** stores every user message verbatim — the user-dossier architecture the industry defaults to — and scores **2% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it posts the *highest* headline while failing what memory is *for*: **2% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing). A benchmark that only measured retrieval would call this system excellent; the dimensions it fails are the ones LOCOMO can't see. **engram** (an extraction-and-decay system) is the only adapter with a *balanced* profile — it leads on emotional (82%), correction (55%), and decay (35%) because it forgets selectively, and it pays for that exactly where a transcript wins: **sacred-verbatim drops to 43%**, because compression loses exact wording. That trade — better forgetting, worse verbatim — is the benchmark drawing the distinction it was built to draw.
+The shape is the argument, not the ranking. The **naive adapter** stores every user message verbatim — the user-dossier architecture the industry defaults to — and scores **2% on self-continuity**: the assistant's side of the relationship simply isn't in a user dossier. The **verbatim-RAG adapter** is a competent BM25 store-everything system — the architecture most production memory products use — and it posts the *highest* headline while failing what memory is *for*: **2% calibration** (it returns plausible-wrong chunks instead of knowing it doesn't know), **25% decay**, **38% correction** (superseded facts keep resurfacing). A benchmark that only measured retrieval would call this system excellent; the dimensions it fails are the ones LOCOMO can't see. **engram** (an extraction-and-decay system, v3.0.0-alpha) is the adapter with the *balanced* profile — it leads on emotional (90%) and correction (52%) because it forgets selectively, and it pays for that exactly where a transcript wins: **sacred-verbatim drops to 48%**, because compression loses exact wording. That trade — better forgetting, worse verbatim — is the benchmark drawing the distinction it was built to draw.
+
+The fourth column is the same engram with one benchmark-side correction, and it is a validity lesson in miniature. The v1 scenarios carry 2025 timestamps, so on the wall clock every memory looks ~a year old to engram's decay — uniformly ancient, differences flattened. `--adapter engram-vclock` projects virtual time onto the wall clock at query time (engram itself untouched), and every temporal dimension jumps: **decay 22→38%, spacing 52→69%, prospective 42→58%, correction 52→65%, interference 44→57%**. It also *drops* self-continuity 57→40%: engram v3 decays craft-register memories faster than self/person ones, so the artifact was wiping technical content and leaving self/person memories to dominate retrieval — part of the as-shipped self score was the artifact, not memory behavior. When an engram column matters to you, prefer the clock-corrected one; the as-shipped column is what naive integration of a wall-clock memory system with virtual-time scenarios produces. Read [VALIDITY.md](VALIDITY.md) §3 before building on either.
 
 *(\*The self-axis asterisk is an honest caveat. Indiscriminate storage preserves the **text** of the assistant's side, so a transcript system scores well on self-axis keyword checks. What it can't do is hold a stance as *its own*. Tier 2 judge rubrics on every self-continuity query probe attribution, and the real instrument is Tier 3, where memory must change behavior. The sharp, fully-keyless Tier 1 claim is narrower and still decisive: **user-dossier memory scores ~zero on the self axis.** Note also that the self axis is the mean of just two dimensions, one of which — procedural — the spec considers a Tier-3-native dimension only approximated in Tier 1; read the self axis as directional, and weight Tier 3 for the real procedural story.)*
 
 A validity battery run against this corpus (floor and oracle baselines, mechanism ablations, run-to-run noise) found real limits in these Tier 1 numbers — including a ±3-point noise bar on engram runs and a 90% score for a memoryless full-context reread — read [VALIDITY.md](VALIDITY.md) before building against them.
 
-Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.2%, verbatim-RAG 59.3% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
+Tier 2 (LLM-judged rubrics, needs a key) moves the headline only slightly — naive 52.2%, verbatim-RAG 59.3%, engram 49.0% — and is computed over a different query set, so it is not directly comparable to Tier 1 (see SPEC.md §5.2). The judged deltas underline the Tier 1 caveats: attribution rubrics pull engram's self-continuity from 57% to 44%, while verbatim-RAG holds at 74% — indiscriminate storage really does preserve the text of the assistant's side, and only Tier 3 (behavior, not retrieval) fully separates holding a stance from storing one. Reproduce any column: `bun src/cli.ts --adapter <name> --json out.json`, then `bun src/compare.ts out1.json out2.json`.
 
 ### Tier 3 pilot: memory as behavioral uplift
 

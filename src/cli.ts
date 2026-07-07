@@ -20,6 +20,7 @@ import { JudgeRunner } from './judge/index.js';
 import { NaiveAdapter } from './adapters/naive.js';
 import { VerbatimRagAdapter } from './adapters/verbatim-rag.js';
 import { EngramAdapter } from './adapters/engram.js';
+import { EngramVclockAdapter } from './adapters/engram-vclock.js';
 import { EmptyAdapter } from './adapters/empty.js';
 import { RandomAdapter } from './adapters/random.js';
 import { OracleRereadAdapter } from './adapters/oracle-reread.js';
@@ -59,6 +60,17 @@ async function main() {
         tempDataDir: '/tmp/recall-bench-engram',
       });
       break;
+    // engram with query-time virtual-clock projection — corrects the
+    // evaluation-clock artifact (scenario timestamps sit ~a year in the wall
+    // clock's past, so engram's decay sees uniformly ancient memories); see
+    // VALIDITY.md §3 and the adapter header for why this is a benchmark-side
+    // fix, not an engram change.
+    case 'engram-vclock':
+      adapter = new EngramVclockAdapter({
+        engramPath: getArg('engram-path'),
+        tempDataDir: '/tmp/recall-bench-engram-vclock',
+      });
+      break;
     // Validity-battery floor/ceiling baselines (see VALIDITY.md) — not contenders
     case 'empty':
       adapter = new EmptyAdapter();
@@ -72,7 +84,7 @@ async function main() {
     default:
       console.error(`Unknown adapter: ${adapterName}`);
       console.error('Built-in adapters: naive, verbatim-rag.');
-      console.error('  engram is also wired up but requires an external ~/claude-engram checkout.');
+      console.error('  engram and engram-vclock are also wired up but require an external ~/claude-engram checkout.');
       process.exit(1);
   }
 
